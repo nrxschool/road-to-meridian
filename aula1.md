@@ -237,7 +237,7 @@ cargo login <seu-token>
 name = "u8-calculator"
 version = "0.1.0"
 edition = "2021"
-description = = "Biblioteca simples para operações com u8"
+description = "Biblioteca simples para operações com u8"
 license = "MIT"
 ```
 
