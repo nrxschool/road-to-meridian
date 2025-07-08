@@ -3,7 +3,7 @@ marp: true
 theme: gaia
 ---
 
-# **Flashbootcamp: Rust – Dia 3: WebAssembly com Rust**
+# **Workshop: Rust – Dia 3: WebAssembly com Rust**
 
 - data: 06/05
 - prof: Lucas Oliveira
@@ -12,7 +12,7 @@ theme: gaia
 
 **Hello World!**
 
-Sejam todos bem-vindos ao último dia do **Flashbootcamp: Rust**!
+Sejam todos bem-vindos ao último dia do **Workshop: Rust**!
 
 Chegamos ao gran finale do nosso intensivão de 3 dias. Hoje, vamos criar um módulo **WebAssembly** com duas funções, integrá-lo à API CRUD do Dia 2, and criar um **CRUDE** com uma rota para executar essas funções dinamicamente.
 
@@ -351,11 +351,11 @@ curl -X POST http://127.0.0.1:8080/execute/1 -H "Content-Type: application/json"
 
 ### Desafio de Carreira
 
-- Post no LinkedIn com #FlashbootcampRust (3/3)
+- Post no LinkedIn com #WorkshopRust (3/3)
 
 ### Desafio de Comunidade
 
-- 🚀 Poste o que você mais gostou de aprender no Flashbootcamp! (discord)
+- 🚀 Poste o que você mais gostou de aprender no Workshop! (discord)
 
 **Recursos:**
 
@@ -368,9 +368,9 @@ curl -X POST http://127.0.0.1:8080/execute/1 -H "Content-Type: application/json"
 
 ---
 
-## **12. Encerramento do Flashbootcamp**
+## **12. Encerramento do Workshop**
 
-**Parabéns, coders!** Vocês completaram o **Flashbootcamp: Rust**! 🏆
+**Parabéns, coders!** Vocês completaram o **Workshop: Rust**! 🏆
 
 Dominamos bibliotecas, CRUD, e WebAssembly em apenas 3 dias. Continuem codificando, explorando Rust, WASM, WASI, e runtimes como Wasmer e Wasmtime. O **GRANDE CÓDIGO** agora está com vocês!
 

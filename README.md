@@ -1,6 +1,6 @@
-# Flashbootcamp: Rust (Overview)
+# Workshop: Rust (Overview)
 
-Bem-vindo ao Flashbootcamp de Rust! Este repositório contém os materiais das 3 aulas intensivas:
+Bem-vindo ao Workshop de Rust! Este repositório contém os materiais das 3 aulas intensivas:
 
 - [Aula1 Básico](./aula1.md): 📚 Introdução ao Rust e criação de uma biblioteca básica. Exploramos conceitos fundamentais como ownership, funções, testes automatizados e publicação no crates.io.
 - [Aula2 Intermediário](./aula2.md): 🛠️ Desenvolvimento de uma API CRUD em Rust com o framework Tide. Abordagem prática com gerenciamento de memória, async runtimes, e deploy com Railway.

@@ -3,7 +3,7 @@ marp: true
 theme: gaia
 ---
 
-# **Flashbootcamp: Rust – Dia 2: CRUD em Rust**
+# **Workshop: Rust – Dia 2: CRUD em Rust**
 
 - data: 05/05
 - prof: Lucas Oliveira
@@ -12,7 +12,7 @@ theme: gaia
 
 **Hello World!**
 
-Sejam todos bem-vindos ao segundo dia do **Flashbootcamp: Rust**!
+Sejam todos bem-vindos ao segundo dia do **Workshop: Rust**!
 
 Estamos no intensivão de 3 dias para dominar o Rust. Hoje, vamos construir um sistema **CRUD** completo, explorando o gerenciamento de memória, runtimes assíncronos e criando uma API com o framework **Tide**.
 
@@ -398,7 +398,7 @@ railway up
 
 ### Desafio de Carreira
 
-- Post no LinkedIn com #FlashbootcampRust (2/3)
+- Post no LinkedIn com #WorkshopRust (2/3)
 
 ### Desafio de Comunidade
 
