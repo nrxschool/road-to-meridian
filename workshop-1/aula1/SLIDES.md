@@ -467,11 +467,9 @@ Digite os dados no terminal e veja o resultado calculado com a **sua biblioteca 
 
 ### Desafio de Carreira
 
-- Post no LinkedIn com #road2meridian (1/3)
-
-### Desafio de Comunidade
-
-- 🎮 Poste o jogo que você mais jogou em 2024! (discord)
+- Post no LinkedIn e Twitter com #road2meridian (1/3)
+- Marque a Stellar
+- Marque a NearX
 
 **Recursos:**
 

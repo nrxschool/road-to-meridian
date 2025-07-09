@@ -769,58 +769,24 @@ Depois de desenvolver e testar sua API localmente, o próximo passo é colocá-l
 
 ### Deploy com Railway
 
-1.  **Crie uma conta**: Se você ainda não tem, crie uma conta gratuita em [railway.app](https://railway.app).
-2.  **Instale o CLI do Railway**: O Railway tem uma ferramenta de linha de comando (CLI) que facilita o deploy. Abra seu terminal e instale-o (você precisa ter Node.js e npm instalados):
+Claro! Aqui está a versão ajustada, com linguagem mais clara, objetiva e organizada para facilitar o entendimento de quem está seguindo o tutorial:
 
-    MOSTRAR TERMINAL: `npm install -g @railway/cli`
+1. **Crie uma conta gratuita**: Acesse [railway.app](https://railway.app) e crie sua conta (você pode usar GitHub para facilitar).
 
-    Depois de instalar, faça login na sua conta Railway pelo terminal:
+2. **Configure seu GitHub**: Conecte sua conta do GitHub ao Railway e dê permissão ao repositório do seu projeto.
 
-    MOSTRAR TERMINAL: `railway login`
+3. **Ajuste o ambiente para produção**: No arquivo `main.rs`, certifique-se de mudar de `127.0.0.1` para o servidor está escutando em `0.0.0.0`:
 
-    Isso abrirá uma página no seu navegador para você autorizar o login.
+```rust
+// src/main.rs linha 25
+let addr = "0.0.0.0:8080";
+```
 
----
+4. **Conecte seu repositório no Railway**: Crie um novo projeto → **Deploy from GitHub Repo** → selecione o repositório.
 
-### Deploy com Railway
+5. **Deploy e domínio automático**: O Railway vai compilar e rodar o projeto automaticamente. Ele também gera uma URL pública (como `https://seu-projeto.up.railway.app`).
 
-3.  **Configure e faça o deploy**: Navegue até a pasta raiz do seu projeto `crud` no terminal. Agora, vamos inicializar o projeto Railway e fazer o deploy:
-
-    MOSTRAR TERMINAL: `railway init`
-
-    Este comando vai configurar seu projeto para o Railway. Siga as instruções na tela.
-
-    MOSTRAR TERMINAL: `railway up`
-
-    Este comando vai empacotar seu código Rust, enviá-lo para o Railway, que irá compilá-lo e colocá-lo online. O processo pode levar alguns minutos.
-
----
-
-### Deploy com Railway
-
-4.  **Variáveis de Ambiente (se necessário)**: Se sua API precisar de variáveis de ambiente (como chaves de API, senhas de banco de dados, etc.), você pode adicioná-las no painel da Railway, na seção de configurações do seu projeto.
-
-5.  **Acesse a URL**: Após o deploy ser concluído, o Railway fornecerá uma URL pública para sua API. Você pode acessá-la no navegador ou usar `curl` para testar sua API online!
-
-- **Dica**: Sempre verifique se o seu `Cargo.toml` e todas as dependências estão corretas e atualizadas antes de fazer o deploy. Isso evita erros de compilação no servidor.
-
----
-
-## **12. Hands-on**
-
-MOSTRAR TERMINAL: `cargo run`
-
-MOSTRAR TERMINAL: `curl -X POST http://127.0.0.1:8080/data -H "Content-Type: application/json" -d '{"id": 1, "data": [10, 20, 30]}'`
-
-MOSTRAR TERMINAL: `curl http://127.0.0.1:8080/data`
-
-MOSTRAR TERMINAL: `curl -X PUT http://127.0.0.1:8080/data/1 -H "Content-Type: application/json" -d '{"id": 1, "data": [40, 50, 60]}'`
-
-MOSTRAR TERMINAL: `curl -X DELETE http://127.0.0.1:8080/data/1`
-
-MOSTRAR TERMINAL: `curl http://127.0.0.1:8080/data`
-
-Nesta seção, você deve demonstrar ao vivo a criação, leitura, atualização e exclusão de dados usando os comandos `curl` que aprendemos. Mostre o servidor rodando em um terminal e os comandos `curl` em outro, explicando cada passo e o resultado esperado.
+6. **Tudo pronto!**: Aponte seus scripts de teste (ou Swagger) para o novo domínio e valide a API em produção. ✅
 
 ---
 
@@ -848,16 +814,13 @@ Para consolidar o que você aprendeu, tenho alguns desafios para você:
 
 ### Desafio de Aprendizagem
 
-- **Validação no Endpoint POST**: Modifique o _handler_ `create_data` para garantir que o campo `data` (o `Vec<u8>`) não seja vazio. Se for, retorne um erro apropriado (por exemplo, status 400 Bad Request).
-- **Testes Manuais e Documentação**: Certifique-se de que todos os endpoints (Create, Read, Update, Delete) estão completamente testados manualmente com `curl` e que a documentação Swagger reflete todas as funcionalidades e possíveis respostas.
+- **Adicione uma camada de segurança**: Implemente uma camada de autenticação para que apenas o dono do DataEntry possa atualiza-lo e deleta-lo.
 
 ### Desafio de Carreira
 
-- **Compartilhe seu aprendizado**: Faça um post no LinkedIn sobre o que você construiu hoje no Workshop: Road to Meridian, usando a hashtag `#WorkshopRust`. Mostre sua API CRUD em Rust!
-
-### Desafio de Comunidade
-
-- **Mostre seu ambiente de codificação**: Entre no nosso Discord e poste uma foto do seu ambiente de codificação! Queremos ver onde a mágica acontece!
+- Post no LinkedIn e Twitter com #road2meridian (1/3)
+- Marque a Stellar
+- Marque a NearX
 
 ### Recursos Adicionais
 
