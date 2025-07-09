@@ -14,14 +14,17 @@ theme: gaia
 
 Sejam todos bem-vindos ao último dia do **Workshop: Rust**!
 
-Chegamos ao gran finale do nosso intensivão de 3 dias. Hoje, vamos criar um módulo **WebAssembly** com duas funções, integrá-lo à API CRUD do Dia 2, and criar um **CRUDE** com uma rota para executar essas funções dinamicamente.
+Chegamos ao gran finale do nosso intensivão de 3 dias. Hoje, vamos criar um módulo **WebAssembly** com duas funções, integrá-lo à API CRUD do Dia 2, and criar um **CRUD-E** com uma rota para executar essas funções dinamicamente.
 
-Preparados para fechar com chave de ouro? Vamos ao **GRANDE CÓDIGO**!
+Na verdade o que vc criou até agora sem vc saber foi um protótipo da blockchain Stellar.
+
+Preparados para fechar com chave de ouro?
 
 ---
 
 ## **2. Programação**
 
+0. **História do WebAssembly?**: Qual problema resulve, o que é, por que todas as blockchain estão adotando.
 1. **O que é WebAssembly?**: WASM, WASI, WAT, Wasmer e Wasmtime
 2. **Funções em Rust**: `(u32, u32) -> u32` para soma e subtração
 3. **Compilando para WebAssembly**: Usando cargo
@@ -36,22 +39,12 @@ Preparados para fechar com chave de ouro? Vamos ao **GRANDE CÓDIGO**!
 
 📌 _WebAssembly (WASM): Código portátil e performático._
 
-- **WASM (WebAssembly)**:
-  - Formato binário para executar código de alto desempenho em navegadores ou servidores.
-  - Compilado a partir de linguagens como Rust, C++, ou Go.
-  - Características: Portátil, seguro (sandboxed), e rápido.
-  - Usos: Aplicações web, blockchain (ex.: Solana, Polkadot), jogos.
-
-- **WASI (WebAssembly System Interface)**:
-  - Extensão do WASM para rodar fora de navegadores (ex.: servidores, IoT).
-  - Fornece acesso a recursos do sistema (arquivos, rede) de forma segura.
-
 - **WAT (WebAssembly Text Format)**:
   - Representação textual do WASM, legível por humanos.
   - Usado para debugging ou escrever WASM manualmente.
   - Exemplo de funções `add` e `sub` em WAT:
 
-```wat
+```js
 (module
   (func $add (param $a i32) (param $b i32) (result i32)
     local.get $a
@@ -59,19 +52,30 @@ Preparados para fechar com chave de ouro? Vamos ao **GRANDE CÓDIGO**!
     i32.add
     i32.const 1
     i32.add)
-  (func $sub (param $a i32) (param $b i32) (result i32)
-    local.get $a
-    local.get $b
-    i32.sub)
-  (export "add" (func $add))
-  (export "sub" (func $sub)))
+  (export "add" (func $add)))
 ```
 
+- **WASM (WebAssembly)**:
+
+  - Formato binário para executar código de alto desempenho em navegadores ou servidores.
+  - Compilado a partir de linguagens como Rust, C++, ou Go.
+  - Características: Portátil, seguro (sandboxed), e rápido.
+  - Usos: Aplicações web, blockchain (ex.: Solana, Polkadot), jogos.
+
+- **WASI (WebAssembly System Interface)**:
+
+  - API de comunicaçnao entre o Host e o WASM.
+  - Fornece acesso a recursos do sistema (I/O, networking) de forma segura e controlada.
+
+---
+
 - **Wasmer**:
+
   - Runtime WASM leve para executar módulos WASM em servidores ou desktops.
   - Ideal para: Aplicações standalone.
 
 - **Wasmtime**:
+
   - Runtime WASM focado em performance, mantido pela Bytecode Alliance.
   - Ideal para: Projetos complexos ou blockchain.
 
@@ -103,7 +107,6 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm-bindgen = "0.2"
 ```
 
 ### Código das Funções
@@ -149,6 +152,7 @@ cargo build --target wasm32-unknown-unknown --release
 ```
 
 - **Saída**:
+
   - Gera o arquivo `target/wasm32-unknown-unknown/release/wasm_math.wasm`.
   - Contém as funções `add` e `sub`.
 
@@ -241,7 +245,7 @@ type State = Arc<Mutex<HashMap<u32, DataEntry>>>;
 async fn execute_wasm(mut req: Request<State>) -> tide::Result {
     let id: u32 = req.param("id")?.parse()?;
     let input: ExecuteRequest = req.body_json().await?;
-    
+
     let state = req.state().lock().unwrap();
     let entry = match state.get(&id) {
         Some(entry) => entry,
