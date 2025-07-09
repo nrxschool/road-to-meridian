@@ -55,7 +55,7 @@ Rust usa um sistema chamado **ownership** (posse) para gerenciar a memória. Est
 
 ---
 
-### As 3 Leis do Ownership (cont.)
+### As 3 Leis do Ownership
 
 2.  **Apenas um dono mutável por vez (ou vários imutáveis)**:
     - Um valor pode ter apenas um dono que pode modificá-lo (`mut`).
@@ -64,7 +64,7 @@ Rust usa um sistema chamado **ownership** (posse) para gerenciar a memória. Est
 
 ---
 
-### As 3 Leis do Ownership (cont.)
+### As 3 Leis do Ownership
 
 3.  **Valores são movidos ou emprestados**:
     - Quando você passa um valor de uma variável para outra, ele pode ser **movido** (transferindo a posse) ou **emprestado** (criando uma referência temporária).
@@ -77,13 +77,24 @@ Rust usa um sistema chamado **ownership** (posse) para gerenciar a memória. Est
 
 Vamos ver um exemplo prático de como o _ownership_ funciona com a regra de "movimento".
 
+ERRADO
+
 ```rust
 fn main() {
     let s1 = String::from("Hello"); // s1 é o dono da String "Hello"
     let s2 = s1; // A posse da String é MOVIDA de s1 para s2
 
     // Agora, s1 NÃO é mais válido. Se tentarmos usar s1, teremos um erro de compilação.
-    // println!("{}", s1); // ERRO: s1 não é mais válido após o movimento
+    println!("{}", s1);
+}
+```
+
+CERTO
+
+```rust
+fn main() {
+    let s1 = String::from("Hello"); // s1 é o dono da String "Hello"
+    let s2 = s1; // A posse da String é MOVIDA de s1 para s2
 
     println!("{}", s2); // OK: s2 é o novo dono e pode usar a String
 }
@@ -118,15 +129,23 @@ Mesmo com as regras de _ownership_, é comum encontrar alguns erros no início. 
 
 ---
 
-Exemplo:
+REFERENCIA
 
 ```rust
 fn main() {
     let s1 = String::from("Hello"); // s1 é o dono
 
     // Se você quer apenas ler s1, use uma referência:
-    // let s2 = &s1; // Empresta s1, s1 continua sendo o dono
-    // println!("s1: {}, s2: {}", s1, s2); // Ambos são válidos
+    let s2 = &s1; // Empresta s1, s1 continua sendo o dono
+    println!("s1: {}, s2: {}", s1, s2); // Ambos são válidos
+}
+```
+
+CLONE
+
+```rust
+fn main() {
+    let s1 = String::from("Hello"); // s1 é o dono
 
     let s2 = s1.clone(); // Cria uma CÓPIA independente de s1 para s2
     println!("s1: {}, s2: {}", s1, s2); // OK: s1 e s2 são donos de cópias diferentes
@@ -142,7 +161,7 @@ fn main() {
 
 ---
 
-Exemplo:
+ERRADO
 
 ```rust
 fn main() {
@@ -151,12 +170,26 @@ fn main() {
     let r1 = &mut x; // r1 é a primeira referência mutável para x
 
     // Se tentarmos criar outra referência mutável para x aqui, teremos um erro:
-    // let r2 = &mut x; // ERRO: "cannot borrow `x` as mutable more than once at a time"
+    let r2 = &mut x; // ERRO: "cannot borrow `x` as mutable more than once at a time"
+
+    println!("r1: {}", r1);
+    println!("r2: {}", r2);
+}
+```
+
+CERTO
+
+```rust
+fn main() {
+    let mut x = 10; // x é uma variável mutável
+
+    let r1 = &mut x; // r1 é a primeira referência mutável para x
 
     println!("r1: {}", r1); // Usamos r1. Após este ponto, r1 pode não ser mais usado
 
     // Agora podemos criar outra referência mutável, pois r1 já foi usado e não está mais ativo
     let r2 = &mut x;
+
     println!("r2: {}", r2);
 }
 ```
@@ -204,14 +237,18 @@ Rust, por si só, não tem um "runtime" assíncrono embutido na sua biblioteca p
 
 ### Tokio vs. async-std
 
-Existem dois runtimes assíncronos populares em Rust:
+Existem dois runtimes assíncronos populares em Rust
 
-**Tokio**
+---
+
+#### **Tokio**
 
 - **Descrição**: É o runtime assíncrono mais utilizado e maduro em Rust. É altamente performático, robusto e oferece uma vasta gama de recursos, como timers, tarefas, sockets de rede, etc.
 - **Ideal para**: Aplicações de alto desempenho, sistemas de produção, e quando você precisa de controle de baixo nível sobre as operações assíncronas.
 
-**async-std**
+---
+
+#### **async-std**
 
 - **Descrição**: Oferece uma API que é muito semelhante à biblioteca padrão do Rust (`std`), tornando-o mais fácil de aprender e usar para quem já está familiarizado com Rust síncrono. Possui menos recursos avançados que o Tokio, mas é excelente para a maioria dos casos.
 - **Ideal para**: Projetos menores, para quem está começando com programação assíncrona em Rust, e para prototipagem rápida.
@@ -367,22 +404,52 @@ O que você deve esperar como resultado? O terminal deve exibir a mensagem `Hell
 ### Modelo de Dados
 
 Para o nosso sistema CRUD, não vamos salvar Pessoas ou Livros ou qualquer coisa do tipo.
-Vamos salvar uma simples lista de números. E pra simples apenas número entre 0-255 então vamos usar o tipo: `Vec<u8>`.
-
-Um vetor de números de 8 bits. E vamos identificar essas listas com um ID que vai ser um número qualquer entre 0-4milhões (4.294.967.295).
+Vamos salvar duas lista simples, uma strings e outra de números. E vamos identificar essas listas com um ID que vai ser um número qualquer.
 
 ---
 
 ### Gerenciamento de memória
 
-Nosso servidor precisará de um lugar para armazenar os dados. Usaremos um `HashMap` (um mapa de chave-valor) para guardar nossas `DataEntry`s. A chave será um `u32` e o valor será um `Vec<u8>`.
+Nosso servidor precisará de uma estrutura de dados para armazenar os dados.
+Usaremos um `HashMap` (um mapa de chave-valor) para guardar nossas `DataEntry`s.
+A chave será um `u32` e o valor será dois vetores um de string e outro de u8.
 
 Para garantir que múltiplos acessos (de diferentes requisições HTTP) sejam seguros, usaremos `Arc<Mutex<T>>`:
 
-- `Arc`: Permite que o `Mutex` (e o `T` dentro dele) seja compartilhado de forma segura entre diferentes partes da aplicação (diferentes rotas e _threads_ assíncronas).
-- `Mutex`: Garante que apenas uma requisição por vez possa modificar o `T`, evitando problemas de concorrência.
-- `T`: Um conceito para qualquer tipo, no nosso caso é um `HashMap<u32, Vec<u8>>`.
-- `HashMap<u32, Vec<u8>>`: Onde nossos dados serão armazenados.
+---
+
+### Gestão de Compartilhada de Memória
+
+Como nosso CRUD não vai implementar um banco de dados, usaremos um HashMap. Mas como a API é assíncrona, e várias requisições podem tentar acessar ou modificar os dados ao mesmo tempo. Preciso de algo um pouco mais sofisticado
+
+**Arc: acesso compartilhado**
+
+- Arc: Atomic Reference Counted.
+- Ele permite compartilhar um valor entre várias partes do código — como entre as rotas da API.
+- É como colocar o nosso HashMap dentro de um contador inteligente que sabe quantas pessoas estão usando ao mesmo tempo.
+
+**Mutex: acesso exclusivo**
+
+- Mutex: Mutual Exclusion.
+- Ele garante que só uma parte do código por vez consegue modificar o dado que está dentro dele.
+- Assim, evitamos que duas requisições diferentes estraguem os dados ao mesmo tempo.
+
+---
+
+### Arc, Mutex, HashMap, DataEntry, Dragons, Alossauro...
+
+1. Teremos um tipo DataEntry que junta nossas listas.
+2. Um HashMap que guarda os nossos dados (DataEntry).
+3. Protegido por um Mutex para evitar acessos simultâneos incorretos.
+4. Envolto num Arc, para que possamos compartilhar esse estado entre todas as rotas da API.
+
+- **Por que isso importa?**
+
+Quando uma rota acessa ou modifica o banco de dados (HashMap), ela:
+
+1. Clona o Arc (barato! só aumenta o contador de uso).
+2. Tenta travar o Mutex (espera se alguém estiver usando).
+3. Lê ou escreve com segurança o DataEntry no HashMap.
 
 ---
 
@@ -423,19 +490,10 @@ use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct DataEntry {
-    pub data1: Vec<&str>,
+    pub data1: Vec<String>,
     pub data2: Vec<u8>,
 }
 ```
-
----
-
-### Entendendo as Macros `#[derive]`
-
-Você deve ter notado a linha `#[derive(serde::Serialize, serde::Deserialize, Clone, Debug)]` acima da nossa struct `DataEntry`. Isso é um exemplo de **macro de atributo** em Rust. Macros são como código que escreve código para você, e as macros de atributo são usadas para adicionar funcionalidades a itens como structs, enums e funções.
-
-- `#[]`: Indica que o que vem a seguir é uma macro de atributo.
-- `derive`: É uma macro especial que gera implementações de _traits_ (interfaces) comuns para a sua struct ou enum. Em vez de escrever todo o código repetitivo para, por exemplo, clonar uma struct, você simplesmente usa `#[derive(Clone)]` e o Rust faz o trabalho pesado para você.
 
 ---
 
@@ -459,40 +517,51 @@ use std::sync::{Arc, Mutex};
 // Importamos o modelo de dados que definimos
 use crate::models::DataEntry;
 
-// Definimos o tipo State para facilitar o uso em outras partes do código
-pub type State = Arc<Mutex<HashMap<u32, DataEntry>>>;
+// AppState é o estado global da aplicação.
+pub type AppState = Arc<Mutex<HashMap<u32, DataEntry>>>;
 
-// Função para criar um estado inicial vazio
-pub fn new_state() -> State {
+// Cria um novo estado vazio
+pub fn new_state() -> AppState {
     Arc::new(Mutex::new(HashMap::new()))
 }
 ```
 
 ---
 
-Explique a linha: pub type State = Arc<Mutex<HashMap<u32, DataEntry>>>;
+### `src/handlers/mpd.rs`: Configurando Módulo
 
-- explique q ela será um ponteiro fixo Singleton para toda a plicação
+```rust
+pub mod create;
+pub mod delete;
+pub mod read;
+pub mod update;
+```
 
 ---
 
 ### `src/handlers/create.rs`: Lógica para Criar Dados (POST)
 
 ```rust
-use tide::Request;
-use crate::state::State;
 use crate::models::DataEntry;
+use crate::state::AppState;
+use tide::Request;
 
-pub async fn create_data(mut req: Request<State>) -> tide::Result {
-    // 1. Extrai o corpo da requisição JSON para um DataEntry
+pub async fn create_data(mut req: Request<AppState>) -> tide::Result {
+    // Lê o corpo da requisição como JSON
+    let entry: DataEntry = req.body_json().await?;
 
-    // 2. Bloqueia o Mutex para acessar o estado compartilhado de forma segura
+    // Pega o estado global (HashMap protegido por Mutex)
+    let state = req.state();
+    let mut map = state.lock().unwrap();
 
-    // 3. Gera um novo Id.
+    // Gera um novo id simples
+    let new_id = map.len() as u32 + 1;
 
-    // 4. Insere a nova entrada no HashMap.
+    // Insere o novo registro
+    map.insert(new_id, entry);
 
-    // 5. Retorna o Id como JSON {id: u32} com status 200 OK
+    // Retorna o id criado como JSON
+    Ok(tide::Body::from_json(&serde_json::json!({ "id": new_id }))?.into())
 }
 ```
 
@@ -501,27 +570,35 @@ pub async fn create_data(mut req: Request<State>) -> tide::Result {
 ### `src/handlers/read.rs`: Lógica para Ler Dados (GET)
 
 ```rust
+use crate::state::AppState;
 use tide::Request;
-use crate::state::State;
-use crate::models::DataEntry;
 
-// Função para ler TODOS os dados
-pub async fn read_all_data(req: Request<State>) -> tide::Result {
-    // 1. Bloqueia o Mutex para acessar o estado compartilhado de forma segura
+pub async fn read_all_data(req: Request<AppState>) -> tide::Result {
+    // Pega o estado global
+    let state = req.state();
+    let map = state.lock().unwrap();
 
-    // 2. Devolve o resultado como um JSON { u32: {data1, data2}, u32: {data1, data2} }
-
+    // Retorna todos os registros como JSON
+    Ok(tide::Body::from_json(&*map)?.into())
 }
 
-// Função para ler o um registro específico por ID
-pub async fn read_data(req: Request<State>) -> tide::Result {
-    // 1. Extrai o id de localhost:8080/id
+pub async fn read_data(req: Request<AppState>) -> tide::Result {
+    // Extrai o id da URL (ex: /data/:id)
+    let id: u32 = match req.param("id")?.parse() {
+        Ok(val) => val,
+        Err(_) => return Err(tide::Error::from_str(400, "Invalid id")),
+    };
 
-    // 2. Bloqueia o Mutex para acessar o estado compartilhado de forma segura
+    // Pega o estado global
+    let state = req.state();
+    let map = state.lock().unwrap();
 
-    // 3. Verifica se o ID existe no HashMap
-    // Se existir, Devolve o resultado como um JSON {data1, data2}
-    // Se não existir, retorna status 404 Not Found
+    // Procura o registro pelo id
+    if let Some(entry) = map.get(&id) {
+        Ok(tide::Body::from_json(entry)?.into())
+    } else {
+        Ok(tide::Response::new(404))
+    }
 }
 ```
 
@@ -530,21 +607,31 @@ pub async fn read_data(req: Request<State>) -> tide::Result {
 ### `src/handlers/update.rs`: Lógica para Atualizar Dados (PUT)
 
 ```rust
-use tide::Request;
-use crate::state::State;
 use crate::models::DataEntry;
+use crate::state::AppState;
+use tide::Request;
 
-pub async fn update_data(mut req: Request<State>) -> tide::Result {
-    // 1. extrai o id de localhost:8080/id
+pub async fn update_data(mut req: Request<AppState>) -> tide::Result {
+    // Extrai o id da URL (ex: /data/:id)
+    let id: u32 = match req.param("id")?.parse() {
+        Ok(val) => val,
+        Err(_) => return Err(tide::Error::from_str(400, "Invalid id")),
+    };
 
-    // 2. Extrai o corpo da requisição JSON para um DataEntry { data1, data2 }
+    // Lê o corpo da requisição como JSON
+    let entry: DataEntry = req.body_json().await?;
 
-    // 3. Bloqueia o Mutex para acessar o estado compartilhado
+    // Pega o estado global
+    let state = req.state();
+    let mut map = state.lock().unwrap();
 
-    // 4. Verifica se o ID existe no HashMap
-    // Se existir, atualiza a entrada com os novos dados
-    // Retorna a entrada atualizada como JSON
-    // Se não existir, retorna status 404 Not Found
+    // Atualiza o registro se existir
+    if let std::collections::hash_map::Entry::Occupied(mut e) = map.entry(id) {
+        e.insert(entry);
+        Ok(tide::Response::new(200))
+    } else {
+        Ok(tide::Response::new(404))
+    }
 }
 ```
 
@@ -552,33 +639,28 @@ pub async fn update_data(mut req: Request<State>) -> tide::Result {
 
 ### `src/handlers/delete.rs`: Lógica para Deletar Dados (DELETE)
 
-
 ```rust
+use crate::state::AppState;
 use tide::Request;
-use crate::state::State;
 
-pub async fn delete_data(req: Request<State>) -> tide::Result {
-    // 1. extrai o id de localhost:8080/id
+pub async fn delete_data(req: Request<AppState>) -> tide::Result {
+    // Extrai o id da URL (ex: /data/:id)
+    let id: u32 = match req.param("id")?.parse() {
+        Ok(val) => val,
+        Err(_) => return Err(tide::Error::from_str(400, "Invalid id")),
+    };
 
-    // 2. Bloqueia o Mutex para acessar o estado compartilhado
+    // Pega o estado global
+    let state = req.state();
+    let mut map = state.lock().unwrap();
 
-    // 3. Verifica se o ID existe no HashMap
-    // Se existir, remove o registro
-    // Retorna 204 No Content
-    // Se não existir, retorna status 404 Not Found
+    // Remove o registro se existir
+    if map.remove(&id).is_some() {
+        Ok(tide::Response::new(204))
+    } else {
+        Ok(tide::Response::new(404))
+    }
 }
-```
-
----
-
-### `src/main.rs`: Declarando nossos módulos
-
-
-```rust
-// src/main.rs
-mod state;
-mod models;
-mod handlers;
 ```
 
 ---
@@ -586,41 +668,32 @@ mod handlers;
 ### `src/main.rs`: Conectando Tudo
 
 ```rust
-mod state;
-mod models;
 mod handlers;
+mod models;
+mod state;
 
-use tide::Request;
-use crate::state::State;
-
-// Importa as funções específicas dos handlers
-use crate::handlers::create::create_data;
-use crate::handlers::read::{read_all_data, read_data};
-use crate::handlers::update::update_data;
-use crate::handlers::delete::delete_data;
+use handlers::create::create_data;
+use handlers::delete::delete_data;
+use handlers::read::{read_all_data, read_data};
+use handlers::update::update_data;
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {
-    // Cria uma nova instância do nosso estado global
+    // Cria o estado global da aplicação
     let state = state::new_state();
 
-    // Cria uma nova aplicação Tide e associa o estado a ela
+    // Cria o app Tide e associa o estado
     let mut app = tide::with_state(state);
 
-    // Configura as rotas CRUD
-    // Rota para criar dados (POST /data)
-    app.at("/data").post(create_data);
-    // Rota para ler todos os dados (GET /data)
-    app.at("/data").get(read_all_data);
-    // Rota para ler um dado específico por ID (GET /data/:id)
-    app.at("/data/:id").get(read_data);
-    // Rota para atualizar um dado (PUT /data/:id)
-    app.at("/data/:id").put(update_data);
-    // Rota para deletar um dado (DELETE /data/:id)
-    app.at("/data/:id").delete(delete_data);
+    // Define as rotas CRUD
+    app.at("/data").post(create_data); // Cria
+    app.at("/data").get(read_all_data); // Lê todos
+    app.at("/data/:id").get(read_data); // Lê um
+    app.at("/data/:id").put(update_data); // Atualiza
+    app.at("/data/:id").delete(delete_data); // Deleta
 
     let addr = "127.0.0.1:8080";
-    println!("Servidor CRUD rodando em: http://{}", addr);
+    println!("Servidor CRUD rodando em: http://{addr}");
 
     // Inicia o servidor
     app.listen(addr).await?;
@@ -630,126 +703,59 @@ async fn main() -> tide::Result<()> {
 
 ---
 
-## **10. Swagger e Testes Manuais**
+### Execute
 
-⚡ _Documentando e testando a API._
-
-Documentar sua API é crucial para que outros desenvolvedores (e você mesmo no futuro) possam entender como usá-la. O Swagger (ou OpenAPI) é uma ferramenta popular para isso. Além disso, vamos testar manualmente nossas rotas usando `curl`.
+```bash
+cargo run
+```
 
 ---
 
-### Adicionando Swagger à API
+### 10. Testes Manuais
 
-Primeiro, precisamos adicionar as dependências para o Swagger no nosso `Cargo.toml`. Abra o arquivo `Cargo.toml` e adicione as seguintes linhas na seção `[dependencies]`:
-
-MOSTRAR EDITOR DE TEXTO: Abrindo `Cargo.toml`
-
-MOSTRAR CRIACAO DE MODULO:
-
-```toml
-# Cargo.toml (adicionar)
-
-tide-openapi = "0.2.0"
-openapi-spec = "0.3.0"
-```
-
-Agora, vamos integrar o Swagger ao nosso `main.rs`. Abra o `src/main.rs` e adicione o código para configurar o Swagger. Você pode adicionar a função `setup_swagger` e chamá-la antes de `app.listen`.
-
-MOSTRAR EDITOR DE TEXTO: Abrindo `src/main.rs`
-
-MOSTRAR CRIACAO DA FUNCAO:
-
-```rust
-// src/main.rs (adicionar ao topo, após os 'mod' e 'use')
-use tide_openapi::OpenApi;
-use openapi_spec::OpenApiBuilder;
-
-// ... (restante dos 'use' e 'mod')
-
-// Função para configurar a documentação Swagger/OpenAPI
-async fn setup_swagger(app: &mut tide::Server<State>) {
-    let openapi = OpenApiBuilder::new()
-        .title("Rust CRUD API") // Título da sua API
-        .version("0.1.0") // Versão da sua API
-        .description("Uma API CRUD simples construída com Rust e Tide.") // Descrição
-        .build();
-
-    // Define uma rota para o Swagger UI
-    app.at("/api").get(OpenApi::new(openapi));
-}
-
-#[async_std::main]
-async fn main() -> tide::Result<()> {
-    // ... (código existente para criar 'state' e 'app')
-
-    // Chama a função para configurar o Swagger
-    setup_swagger(&mut app).await;
-
-    // ... (restante do main, incluindo app.listen)
-}
-```
-
-Para ver a documentação Swagger, inicie o servidor com `cargo run` e acesse `http://127.0.0.1:8080/api` no seu navegador. Você verá uma interface interativa com todos os seus endpoints!
+Agora vamos acessar nosso crud e testar todas as rotas seguindo o seguinte roteiro:
 
 ---
 
-### Testes Manuais com `curl`
-
-Agora vamos acessar o swagger e testar todas as rotas seguindo o seguinte roteiro:
-
-MOSTRAR TERMINAL: `cargo run` (no primeiro terminal)
-
-MOSTRAR TERMINAL: (no segundo terminal)
-
-**1. Create (POST)**: Criar um novo item de dados.
+### 1. Criar um novo item de dados.
 
 ```bash
-curl -X POST http://127.0.0.1:8080/data -H "Content-Type: application/json" -d '{"id": 1, "data": [10, 20, 30]}'
+curl -s -X POST http://127.0.0.1:8080/data \
+  -H 'Content-Type: application/json' \
+  -d '{"data1": ["primeiro", "segundo"], "data2": [1,2,3]}'
 ```
 
-- **O que esperar**: Retorno JSON do item criado, com status 200 OK.
+---
 
-**2. Read All (GET)**: Ler todos os itens de dados.
-
-```bash
-curl http://127.0.0.1:8080/data
-```
-
-- **O que esperar**: Retorno JSON de uma lista contendo o item que você acabou de criar.
-
-**3. Read One (GET)**: Ler um item específico por ID.
+### 2. Ler um item específico por ID.
 
 ```bash
 curl http://127.0.0.1:8080/data/1
 ```
 
-- **O que esperar**: Retorno JSON do item com `id: 1`.
+---
 
-**4. Update (PUT)**: Atualizar um item existente.
-
-```bash
-curl -X PUT http://127.0.0.1:8080/data/1 -H "Content-Type: application/json" -d '{"id": 1, "data": [40, 50, 60]}'
-```
-
-- **O que esperar**: Retorno JSON do item atualizado.
-
-**5. Delete (DELETE)**: Remover um item.
+### 3. Atualizar um item existente.
 
 ```bash
-curl -X DELETE http://127.0.0.1:8080/data/1
+curl -s -X PUT http://127.0.0.1:8080/data/1 \
+  -H 'Content-Type: application/json' \
+  -d '{"data1": ["atualizado"], "data2": [9,8,7]}'
 ```
 
-- **O que esperar**: Status 200 OK (sem corpo de resposta).
+### 4. Remover um item.
 
-**6. Read All (GET) novamente**: Verificar se o item foi removido.
+```bash
+curl -s -X DELETE http://127.0.0.1:8080/data/1
+```
+
+---
+
+### 5. Ler todos os dados.
 
 ```bash
 curl http://127.0.0.1:8080/data
 ```
-
-- **O que esperar**: Retorno JSON de uma lista vazia ou sem o item com `id: 1`.
-
-Esses testes manuais confirmam que todas as operações CRUD da sua API estão funcionando como esperado!
 
 ---
 
@@ -776,7 +782,7 @@ Depois de desenvolver e testar sua API localmente, o próximo passo é colocá-l
 
 ---
 
-### Deploy com Railway (cont.)
+### Deploy com Railway
 
 3.  **Configure e faça o deploy**: Navegue até a pasta raiz do seu projeto `crud` no terminal. Agora, vamos inicializar o projeto Railway e fazer o deploy:
 
@@ -790,7 +796,7 @@ Depois de desenvolver e testar sua API localmente, o próximo passo é colocá-l
 
 ---
 
-### Deploy com Railway (cont.)
+### Deploy com Railway
 
 4.  **Variáveis de Ambiente (se necessário)**: Se sua API precisar de variáveis de ambiente (como chaves de API, senhas de banco de dados, etc.), você pode adicioná-las no painel da Railway, na seção de configurações do seu projeto.
 
