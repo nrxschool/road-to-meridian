@@ -25,6 +25,6 @@ pub async fn read_data(req: Request<AppState>) -> tide::Result {
     if let Some(entry) = map.get(&id) {
         Ok(tide::Body::from_json(entry)?.into())
     } else {
-        Ok(tide::Response::new(404))
+        Err(tide::Error::from_str(404, "Not found"))
     }
 }

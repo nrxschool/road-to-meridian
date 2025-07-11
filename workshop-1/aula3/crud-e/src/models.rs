@@ -4,6 +4,6 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct DataEntry {
-    pub data1: Vec<String>, // Lista de textos
-    pub data2: Vec<u8>,     // Lista de números inteiros (bytes)
+    pub func_names: Vec<String>, // Lista de textos
+    pub bytecode: Vec<u8>,       // Lista de números inteiros (bytes)
 }

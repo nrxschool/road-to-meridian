@@ -3,20 +3,21 @@ marp: true
 theme: gaia
 ---
 
-# **Workshop: Rust – Dia 3: WebAssembly com Rust**
+# **Workshop: Road to Meridian**
 
-- data: 06/05
-- prof: Lucas Oliveira
+## **Dia 3: WebAssembly com Rust**
+
+---
 
 ## **1. Abertura**
 
 **Hello World!**
 
-Sejam todos bem-vindos ao último dia do **Workshop: Rust**!
+Sejam todos bem-vindos ao último dia do **Workshop: Road to Meridian**!
 
-Chegamos ao gran finale do nosso intensivão de 3 dias. Hoje, vamos criar um módulo **WebAssembly** com duas funções, integrá-lo à API CRUD do Dia 2, and criar um **CRUD-E** com uma rota para executar essas funções dinamicamente.
+Chegamos ao gran finale do nosso intensivão de 3 dias. Hoje, vamos criar um módulo **WebAssembly** com duas funções, integrá-lo à API CRUD do Dia 2, e criar um **CRUD-E** com uma rota para executar essas funções dinamicamente.
 
-Na verdade o que vc criou até agora sem vc saber foi um protótipo da blockchain Stellar.
+Na verdade o que você criou até agora sem você saber foi um protótipo da blockchain Stellar.
 
 Preparados para fechar com chave de ouro?
 
@@ -24,7 +25,7 @@ Preparados para fechar com chave de ouro?
 
 ## **2. Programação**
 
-0. **História do WebAssembly?**: Qual problema resulve, o que é, por que todas as blockchain estão adotando.
+0. **História do WebAssembly?**: Qual problema resolve, o que é, por que as blockchain estão adotando.
 1. **O que é WebAssembly?**: WASM, WASI, WAT, Wasmer e Wasmtime
 2. **Funções em Rust**: `(u32, u32) -> u32` para soma e subtração
 3. **Compilando para WebAssembly**: Usando cargo
@@ -35,14 +36,59 @@ Preparados para fechar com chave de ouro?
 
 ---
 
-## **3. O que é WebAssembly?**
+## 3. História do WebAssembly
 
-📌 _WebAssembly (WASM): Código portátil e performático._
+📌 _WASM: Performance, Segurança e Portabilidade._
+
+**O que é?**
+
+- WebAssembly é uma plataforma de execução (runtime environment) projetada para ser agnóstica ao host e segura por padrão.
+- Não é assembly, nem apenas “para Web”.
+- É um padrão de formato binário e máquina virtual abstrata que pode ser implementada em qualquer sistema (navegador, edge, blockchain).
+
+---
+
+**Como surgiu?**
+
+- Criada por **Graydon Hoar** enquanto trabalhava na Mozilla em **2015**.
+- Era a evolução natural do asm.js — um subset otimizado de JavaScript.
+- Em **2017**, tornou-se um **padrão oficial do W3C**.
+- Nasceu com foco em **rodar código de alto desempenho no navegador** (ex.: C/C++, Rust), mas se expandiu para **servidores, blockchain e edge computing**.
+
+---
+
+**Quais aplicações?**
+
+- 🎮 **Games**: Portar engines C++ (ex.: Unity, Unreal) direto para o browser.
+- 📦 **Apps Web pesadas**: Ferramentas como Figma e Photoshop online usam WASM para performance.
+- 🧠 **IA e Machine Learning**: Rodar modelos localmente no browser.
+- 🔐 **Blockchain**: Execução segura de smart contracts (ex.: Polkadot, CosmWasm, Near).
+- 🌐 **Edge Computing**: Runtimes como Wasmer e Fastly executam código WASM perto do usuário.
+- 🔧 **Plug-ins seguros**: Permite isolar código de terceiros com segurança e controle total.
+
+---
+
+**Por que Blockchains Adotam WASM?**
+
+- **Performance Superior**: Contratos inteligentes em WASM são 10-100x mais rápidos que em EVM (Ethereum Virtual Machine), crucial para escalabilidade.
+- **Linguagens Múltiplas**: Permite escrever contratos inteligentes em diversas linguagens (Rust, C++, Go), não apenas em uma linguagem específica (como Solidity para EVM).
+- **Determinismo**: Garante que o mesmo código produzirá o mesmo resultado em qualquer ambiente, essencial para a validação de transações em blockchain.
+- **Segurança Aprimorada**: O ambiente sandboxed do WASM reduz a superfície de ataque e minimiza vulnerabilidades.
+- **Interoperabilidade**: Facilita a comunicação entre diferentes blockchains e a criação de aplicações descentralizadas mais complexas.
+
+---
+
+## **4. O que é WebAssembly?**
+
+📌 _WASM, WASI, WAT, Wasmer e Wasmtime: Entendendo o Ecossistema._
 
 - **WAT (WebAssembly Text Format)**:
   - Representação textual do WASM, legível por humanos.
   - Usado para debugging ou escrever WASM manualmente.
-  - Exemplo de funções `add` e `sub` em WAT:
+
+---
+
+### Exemplo em WAT
 
 ```js
 (module
@@ -51,91 +97,137 @@ Preparados para fechar com chave de ouro?
     local.get $b
     i32.add
     i32.const 1
-    i32.add)
+    i32.add) ;; Note: This example adds 1 to the sum
   (export "add" (func $add)))
 ```
 
-- **WASM (WebAssembly)**:
+---
 
-  - Formato binário para executar código de alto desempenho em navegadores ou servidores.
-  - Compilado a partir de linguagens como Rust, C++, ou Go.
-  - Características: Portátil, seguro (sandboxed), e rápido.
-  - Usos: Aplicações web, blockchain (ex.: Solana, Polkadot), jogos.
+### WASM (WebAssembly)
 
-- **WASI (WebAssembly System Interface)**:
-
-  - API de comunicaçnao entre o Host e o WASM.
-  - Fornece acesso a recursos do sistema (I/O, networking) de forma segura e controlada.
+- É uma máquina virtual portátil e/ou um formato binário (.wasm)
+- É o artefato gerado pelo compilador Rust, C++, Go, AssemblyScript.
+- A máquina virtual é agnóstica ao host: não sabe nada sobre sistema de arquivos, rede ou relógio por padrão.
 
 ---
 
-- **Wasmer**:
+### WASI (WebAssembly System Interface)
 
-  - Runtime WASM leve para executar módulos WASM em servidores ou desktops.
-  - Ideal para: Aplicações standalone.
-
-- **Wasmtime**:
-
-  - Runtime WASM focado em performance, mantido pela Bytecode Alliance.
-  - Ideal para: Projetos complexos ou blockchain.
-
-- **Hoje**: Compilaremos um módulo Rust com duas funções para WASM usando `cargo`, usaremos `wasmi` para executá-las na API, and entenderemos WASM, WASI, WAT, Wasmer e Wasmtime.
+- É uma especificação de API de sistema para WebAssembly, semelhante ao POSIX.
+- Permite que módulos WASM acessem funcionalidades como: (Arquivos, Rede, Variáveis de ambiente, Tempo, argumentos, etc.)
+- Garante que o acesso ao sistema seja feito de forma segura, determinística e multiplataforma.
 
 ---
 
-## **4. Funções em Rust**
+### Runtimes WASM
+
+**Wasmi**
+
+- Descrição: Interpretador WASM puro em Rust. É embarcável, leve e escrito 100% em Rust.
+- Integração: Perfeito para embutir a execução de WASM dentro de aplicações Rust (sem dependências externas).
+- Uso ideal: Smart contracts, runtimes de blockchain, APIs que precisam isolar plugins de terceiros com segurança.
+
+**Wasmtime**
+
+- Descrição: Runtime WASM focado em performance e compliance com o padrão WASI, mantido pela Bytecode Alliance.
+- Integração: Exponibiliza bindings para várias linguagens e uma CLI poderosa (wasmtime run ...).
+- Uso ideal: Testes, linha de comando, ambientes que executam WASM isoladamente com acesso a sistema de arquivos, rede, etc.
+
+**Wasmer**
+
+- Descrição: Runtime WASM com foco em portabilidade e virtualização. Suporta múltiplos backends (LLVM, Cranelift, Singlepass).
+- Diferencial: Pode empacotar aplicações como “universal binaries” com WASM e rodar em qualquer lugar.
+- Uso ideal: Distribuição de binários multiplataforma, servidores edge, plugins universais.
+
+---
+
+### Nosso Foco Hoje
+
+1. Refatorar nossa biblioteca para um módulo WebAssembly.
+2. Refatorar nosso crud para suportar e executar módulos Wasm.
+3. Enviar o bytecode Wasm para nosso servidor.
+4. Usaremos `wasmi` para executá-las no servidor.
+5. Entenderemos WASM, WASI, WAT, Wasmi e Wasmtime na prática.
+
+---
+
+## **5. Funções em Rust**
 
 🛠️ _Criando funções `(u32, u32) -> u32` para soma e subtração._
 
-### Criando o Projeto
+### Criando o Projeto `wasm-math`
 
 ```bash
 cargo new --lib wasm-math
 cd wasm-math
 ```
 
-### Configurando o Cargo.toml
+---
+
+### Configurando o `Cargo.toml`
 
 ```toml
-# Cargo.toml
 [package]
-name = "wasm-math"
+name = "math"
 version = "0.1.0"
 edition = "2021"
+
 
 [lib]
 crate-type = ["cdylib"]
 
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "z"
+
 [dependencies]
 ```
 
-### Código das Funções
-
-```rust
-// src/lib.rs
-use wasm_bindgen::prelude::*;
-
-#[wasm_bindgen]
-#[no_mangle]
-pub fn add(a: u32, b: u32) -> u32 {
-    a + b + 1
-}
-
-#[wasm_bindgen]
-#[no_mangle]
-pub fn sub(a: u32, b: u32) -> u32 {
-    a - b
-}
-```
-
-- **Explicação**:
-  - `add`: Soma `a + b + 1` (ex.: `5 + 3 + 1 = 9`).
-  - `sub`: Subtrai `a - b` (ex.: `5 - 3 = 2`).
-  - `#[wasm_bindgen]` e `#[no_mangle]`: Exportam as funções para WASM com nomes preservados.
+- _Esses parâmetros tornam o binário final menor, mais rápido e compatível com ambientes WebAssembly._
 
 ---
 
-## **5. Compilando para WebAssembly**
+### Código das Funções (`src/lib.rs`)
+
+```rust
+#[no_mangle]
+pub extern "C" fn add(x: i32, y: i32) -> i32 {
+    x + y
+}
+
+#[no_mangle]
+pub extern "C" fn mul(x: i32, y: i32) -> i32 {
+    x * y
+}
+
+#[no_mangle]
+pub extern "C" fn sub(x: i32, y: i32) -> i32 {
+    if x < y {
+        return 0;
+    }
+    x - y
+}
+
+#[no_mangle]
+pub extern "C" fn div(x: i32, y: i32) -> i32 {
+    if y == 0 {
+        return 0;
+    }
+    x / y
+}
+```
+
+---
+
+### Explicação das Funções
+
+- `extern "C"`: Define a convenção de chamada C ABI (Application Binary Interface), que é uma forma padronizada de como funções são chamadas na memória. Isso garante compatibilidade com outros ambientes que esperam código C-like, como o WebAssembly.
+- `#[no_mangle]`: Impede que o compilador renomeie a função (name mangling), garantindo que ela mantenha o nome original no binário final. Isso é essencial para que o runtime WASM consiga localizar e chamar a função corretamente.
+
+---
+
+## **6. Compilando para WebAssembly**
 
 ⚡ _Gerando o arquivo `.wasm` com cargo._
 
@@ -145,221 +237,278 @@ pub fn sub(a: u32, b: u32) -> u32 {
 rustup target add wasm32-unknown-unknown
 ```
 
-### Compilando
+---
+
+### Compilando o Projeto
 
 ```bash
 cargo build --target wasm32-unknown-unknown --release
 ```
 
-- **Saída**:
+---
 
-  - Gera o arquivo `target/wasm32-unknown-unknown/release/wasm_math.wasm`.
-  - Contém as funções `add` e `sub`.
+### Saída da Compilação
 
-- **Explicação**:
-  - Usamos `cargo build` com o target `wasm32-unknown-unknown` para compilar para WASM.
-  - A flag `--release` otimiza o binário.
+- Gera o arquivo `target/wasm32-unknown-unknown/release/math.wasm`.
+- Este arquivo binário contém as funções e está pronto para ser executado em um runtime WASM.
 
 ---
 
-## **6. Transformando .wasm em Array u8**
+### Converter Wasm para bytes
 
-🛠️ _Convertendo o `.wasm` para `Vec<u8>`._
+- Esse comando transforma um arquivo `.wasm` em uma lista de número (bytes) separados por vírgula, formatando tudo em uma única linha e salvando no arquivo `BYTES_RESULT.txt`.
 
-### Código para Conversão
-
-```rust
-// src/main.rs (no projeto wasm-math)
-use std::fs;
-
-fn main() {
-    let wasm_bytes = fs::read("target/wasm32-unknown-unknown/release/wasm_math.wasm")
-        .expect("Erro ao ler o arquivo WASM");
-    println!("WASM como array u8: {:?}", wasm_bytes);
-}
+```bash
+od -An -v -t uC *.wasm \
+| tr -s ' ' \
+| tr ' ' ',' \
+| tr -d '\n' \
+| sed 's/^,//;s/,$//g' > BYTES_RESULT.txt
 ```
 
-- **Explicação**:
-  - Usamos `std::fs::read` para ler o arquivo `.wasm` como bytes.
-  - O resultado é um `Vec<u8>`, pronto para ser enviado à API CRUD.
-  - Rode com `cargo run` para verificar.
-
 ---
 
-## **7. Integrando com o CRUD**
+## **8. Integrando com o CRUD**
 
-📌 _Adicionando a rota Execute ao CRUDE._
-
-### Reutilizando a API do Dia 2
-
-Usaremos a API Tide do Dia 2, que armazena dados em um `HashMap<u32, DataEntry>`. O modelo `DataEntry` foi atualizado para incluir `function_name: Vec<String>` com a lista de funções do módulo WASM (ex.: `["add", "sub"]`). Mostraremos apenas a rota POST `/execute/:id`.
+📌 _Adicionando a rota Execute ao CRUD-E, reutilizando a API do Dia 2._
 
 ### Configurando Dependências
 
-```bash
-# Adicionar ao Cargo.toml do projeto rust-crud
+```toml
 [dependencies]
 tide = "0.16.0"
 async-std = { version = "1.12.0", features = ["attributes"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-wasmi = "0.31.0"
+wasmi = "0.47.0"
 ```
 
-### Modelo de Dados Atualizado
+---
+
+### Modelo de Dados Atualizado (`src/models.rs`)
+
+- Usaremos a API Tide do Dia 2, que armazena dados em um `HashMap<u32, DataEntry>`.
+- Vamos renomear o modelo `DataEntry` para:
 
 ```rust
-// src/main.rs (projeto rust-crud)
 use serde::{Deserialize, Serialize};
 
-type MyData = Vec<u8>;
-#[derive(Serialize, Deserialize, Clone)]
-struct DataEntry {
-    id: u32,
-    data: MyData,
-    function_name: Vec<String>, // Lista de funções no WASM: ["add", "sub"]
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct DataEntry {
+    pub func_names: Vec<String>,
+    pub bytecode: Vec<u8>,
 }
 ```
 
-### Nova Rota Execute
+---
+
+### Nova Rota Execute (`src/handlers/execute.rs`)
+
+### `execute.rs`: Imports e Struct
 
 ```rust
-// src/main.rs (adicionar ao projeto rust-crud)
-use tide::Request;
-use serde::{Deserialize, Serialize};
-use std::sync::{Arc, Mutex};
-use std::collections::HashMap;
-use wasmi::{Engine, Module, Store, Func};
+use tide::{Request, Response, StatusCode};
+use crate::state::AppState;
+use serde::Deserialize;
+use serde_json::json;
+use wasmi::{Engine, Module, Store, Instance, TypedFunc};
 
-// Modelos e estado (já definidos no Dia 2)
-#[derive(Serialize, Deserialize)]
-struct ExecuteRequest {
-    a: u32,
-    b: u32,
-    function_name: String, // Nome da função a executar: "add" ou "sub"
+#[derive(Deserialize)]
+struct ExecRequest {
+    #[serde(rename = "fn")]
+    func: String,
+    arg: [i32; 2],
 }
+```
 
-type State = Arc<Mutex<HashMap<u32, DataEntry>>>;
+- Importações necessárias para manipular requisições, JSON e executar módulos WebAssembly via `wasmi`.
+- A struct `ExecRequest` define o formato esperado no corpo da requisição: uma função (`fn`) e dois argumentos.
 
-// Rota Execute
-async fn execute_wasm(mut req: Request<State>) -> tide::Result {
-    let id: u32 = req.param("id")?.parse()?;
-    let input: ExecuteRequest = req.body_json().await?;
+---
 
-    let state = req.state().lock().unwrap();
-    let entry = match state.get(&id) {
-        Some(entry) => entry,
-        None => return Ok(tide::StatusCode::NotFound.into()),
+### `execute_fn`: Início e Validação do Body
+
+```rust
+pub async fn execute_fn(mut req: Request<AppState>) -> tide::Result {
+    let exec_req: ExecRequest = req.body_json().await.map_err(|_| {
+        tide::Error::from_str(400, "Invalid JSON: esperado { fn: string, arg: [i32; 2] }")
+    })?;
+
+    // ...
+```
+
+- A função é assíncrona e recebe uma requisição com estado compartilhado (`AppState`).
+- Lê e valida o JSON do corpo, retornando erro 400 se inválido.
+
+---
+
+### Extração do ID e Busca no HashMap
+
+```rust
+    // ...
+
+    let id: u32 = match req.param("id") {
+        Ok(s) => s
+            .parse()
+            .map_err(|_| tide::Error::from_str(400, "Invalid id"))?,
+        Err(_) => return Err(tide::Error::from_str(400, "Missing id")),
     };
+    let map = req.state().lock().unwrap();
+    let entry = match map.get(&id) {
+        Some(e) => e,
+        None => return Err(tide::Error::from_str(404, "Not found")),
+    };
+    let wasm_bytes = &entry.bytecode;
 
-    // Verificar se a função solicitada existe no módulo
-    if !entry.function_name.contains(&input.function_name) {
-        return Ok(tide::StatusCode::BadRequest.into());
-    }
+    // ...
+```
 
-    // Configurar o interpretador WASM com wasmi
+- Extrai o `id` da URL (`/execute/:id`).
+- Busca o módulo WASM correspondente no estado global protegido com `Mutex`.
+- Retorna 404 se não houver módulo WASM
+
+---
+
+### Carregando e Instanciando o Módulo WASM
+
+```rust
+    // ...
+
     let engine = Engine::default();
-    let module = Module::new(&engine, &entry.data[..]).map_err(|_| tide::StatusCode::BadRequest)?;
+    let module = Module::new(&engine, wasm_bytes)
+        .map_err(|e| tide::Error::from_str(StatusCode::BadRequest, format!("Invalid wasm: {e}")))?;
     let mut store = Store::new(&engine, ());
-    let instance = wasmi::Linker::new(&engine)
-        .instantiate(&mut store, &module)
-        .map_err(|_| tide::StatusCode::InternalServerError)?
-        .start(&mut store)
-        .map_err(|_| tide::StatusCode::InternalServerError)?;
+    let instance = Instance::new(&mut store, &module, &[]).map_err(|e| {
+        tide::Error::from_str(
+            StatusCode::InternalServerError,
+            format!("Wasm instantiation error: {e}"),
+        )
+    })?;
 
-    // Chamar a função especificada
+    // ...
+```
+
+- Usa `wasmi` para criar e instanciar um módulo WebAssembly em tempo de execução.
+- Trata erros se o módulo for inválido ou não puder ser instanciado.
+
+---
+
+### Resolvendo a Função e Executando
+
+```rust
+    // ...
+
     let func = instance
-        .get_export(&store, &input.function_name)
-        .and_then(|e| e.into_func())
-        .ok_or(tide::StatusCode::BadRequest)?;
-    let func = func.typed::<(u32, u32), u32>(&store).unwrap();
+        .get_func(&mut store, &exec_req.func)
+        .ok_or_else(|| {
+            tide::Error::from_str(
+                StatusCode::BadRequest,
+                format!("Function not found: {}", exec_req.func),
+            )
+        })?;
 
-    let result = func.call(&mut store, (input.a, input.b)).map_err(|_| tide::StatusCode::InternalServerError)?;
-    Ok(tide::Body::from_json(&serde_json::json!({ "result": result }))?.into())
+    let typed: TypedFunc<(i32, i32), i32> = func.typed(&store).map_err(|e| {
+        tide::Error::from_str(StatusCode::BadRequest, format!("Signature error: {e}"))
+    })?;
+
+    let result = typed
+        .call(&mut store, (exec_req.arg[0], exec_req.arg[1]))
+        .map_err(|e| {
+            tide::Error::from_str(StatusCode::InternalServerError, format!("Call error: {e}"))
+        })?;
+
+    // ...
+```
+
+- Busca a função exportada no módulo e verifica se a assinatura é válida.
+- Cria a assinatura da função usando a tipagem (u32, u32) -> u32.
+- Chama a função com os dois argumentos fornecidos.
+
+---
+
+### Respondendo com o Resultado
+
+```rust
+    // ...
+
+    Ok(Response::builder(StatusCode::Ok)
+        .body(serde_json::to_string(&json!({ "result": result }))?)
+        .content_type(tide::http::mime::JSON)
+        .build())
 }
 ```
 
-- **Explicação**:
-  - A rota POST `/execute/:id` recebe `{ a: u32, b: u32, function_name: String }` e o `id` do módulo WASM.
-  - Verifica se `function_name` está na lista `entry.function_name` (ex.: `["add", "sub"]`).
-  - Usa `wasmi` para executar a função especificada (`add` ou `sub`).
-  - Exemplo: Para `add` com `a=5, b=3`, retorna `9` (`5 + 3 + 1`); para `sub`, retorna `2` (`5 - 3`).
+- Cria a resposta HTTP com o resultado da execução.
+- Define o tipo de conteúdo como JSON e retorna com status 200.
 
 ---
 
-## **8. Validando o Resultado**
+## **9. Validando o Resultado**
 
-⚡ _Testando e verificando a execução._
+⚡ _Testando e verificando a execução da API CRUDE com WASM._
 
-### Passo a Passo
+Como já compilamos e convertemos nossa biblioteca `.wasm`, agora vamos enviar para salvar no Servidor
 
-1. **Salvar o .wasm no HashMap**:
-   - Use o código do item 6 para converter `wasm_math.wasm` em `Vec<u8>`.
-   - Envie para a API com (substitua `[/* array u8 */]` pelo array real gerado):
+### Passo 1: Salvar o `.wasm` no Servidor
+
+- Use o script para converter `math.wasm` em `bytes`.
+- A lista de bytes está em `BYTES_RESULT.txt`.
+- Copie e cole essa lista de bytes no comando abaixo.
 
 ```bash
-curl -X POST http://127.0.0.1:8080/data -H "Content-Type: application/json" -d '{"id": 1, "data": [/* array u8 do wasm_math.wasm */], "function_name": ["add", "sub"]}'
+curl -s -X POST http://127.0.0.1:8080/data \
+  -H 'Content-Type: application/json' \
+  -d '{"func_names": ["sum", "add", "mul", "div"], "bytecode": [BYTE_CODE]}'
 ```
 
-2. **Testar a Rota Execute**:
+---
+
+### Passo 2: Testar a Rota Execute
 
 ```bash
-# Testar add
-curl -X POST http://127.0.0.1:8080/execute/1 -H "Content-Type: application/json" -d '{"a": 5, "b": 3, "function_name": "add"}'
-# Resposta esperada: {"result": 9}
-
-# Testar sub
-curl -X POST http://127.0.0.1:8080/execute/1 -H "Content-Type: application/json" -d '{"a": 5, "b": 3, "function_name": "sub"}'
-# Resposta esperada: {"result": 2}
+export ID=1
+curl -s -X POST http://127.0.0.1:8080/execute/$ID \
+  -H "Content-Type: application/json" \
+  -d '{"fn": "add", "arg": [1, 2]}'
 ```
 
-3. **Validação**:
-   - Verifique se os resultados estão corretos: `add(5, 3) = 9` (`5 + 3 + 1`), `sub(5, 3) = 2`.
-   - Teste casos de erro:
-     - ID inválido: `curl -X POST http://127.0.0.1:8080/execute/999` (retorna 404).
-     - Função inválida: `curl -X POST http://127.0.0.1:8080/execute/1 -d '{"a": 5, "b": 3, "function_name": "invalid"}'` (retorna 400).
-     - Entrada inválida: `curl -X POST http://127.0.0.1:8080/execute/1 -d '{"a": "invalid", "b": 3}'` (retorna 400).
-
-- **Explicação**:
-  - Usamos `curl` para testar a rota `/execute`.
-  - Validamos que as funções WASM retornam os resultados esperados e que erros são tratados corretamente.
-
----
-
-## **9. Hands-on**
-
-```js
-// PROGRAMMING, MOTHERF****
+```bash
+export ID=1
+curl -s -X POST http://127.0.0.1:8080/execute/$ID \
+  -H "Content-Type: application/json" \
+  -d '{"fn": "mul", "arg": [1, 2]}'
 ```
 
 ---
 
-## **10. Recapitulação**
+## **11. Recapitulação**
 
-1. WASM = formato binário; WASI = interface para sistemas; WAT = formato textual.
-2. Wasmer e Wasmtime = runtimes alternativos; usamos `wasmi` por simplicidade.
-3. Funções `add` e `sub` = compiladas com `cargo` em um único módulo WASM.
-4. `DataEntry` = inclui `function_name: Vec<String>` para listar funções.
-5. CRUDE = CRUD + Execute com a rota `/execute` dinâmica.
-6. Validação = testes manuais garantem funcionamento.
+1. **WASM**: Formato binário compacto e performático; **WASI**: Interface para acesso a recursos do sistema; **WAT**: Formato textual legível.
+2. **Runtimes**: Wasmer e Wasmtime são runtimes WASM; usamos `wasmi` para a execução embarcada na API.
+3. **Funções Rust para WASM**: Criamos e compilamos funções `add` e `sub` em Rust para um módulo WASM.
+4. **`DataEntry` Aprimorado**: Incluímos `function_name: Vec<String>` para gerenciar as funções disponíveis no módulo WASM.
+5. **CRUDE**: Estendemos a API CRUD com uma rota `/execute` dinâmica, permitindo a execução de funções WASM sob demanda.
+6. **Validação**: Realizamos testes manuais para garantir o funcionamento correto e o tratamento de erros da integração WASM na API.
 
 ---
 
-## **11. Lição de Casa**
+## **12. Lição de Casa**
 
 ### Desafio de Aprendizagem
 
-- Adicione uma função WASM `mul` (retorna `a * b + 1`) ao módulo `wasm-math`.
-- Atualize a API para incluir `mul` na lista `function_name` e teste com `/execute`.
-- (Bônus) Experimente executar o `.wasm` com Wasmer ou Wasmtime.
+- Implemente um storage para que as funcoes tenham estado
+
+DICAS:
+
+- adicione um novo elemento ao `DataEntry` como um storage: `HashMap<String, Vec<u8>>`
+- implemente tbm chama syscall de getter e setter para esse storage
+- ...
 
 ### Desafio de Carreira
 
-- Post no LinkedIn com #WorkshopRust (3/3)
-
-### Desafio de Comunidade
-
-- 🚀 Poste o que você mais gostou de aprender no Workshop! (discord)
+- Post no LinkedIn e Twitter com #road2meridian (3/3)
+- Marque a Stellar
+- Marque a NearX
 
 **Recursos:**
 
@@ -372,10 +521,10 @@ curl -X POST http://127.0.0.1:8080/execute/1 -H "Content-Type: application/json"
 
 ---
 
-## **12. Encerramento do Workshop**
+## **13. Encerramento do Workshop**
 
 **Parabéns, coders!** Vocês completaram o **Workshop: Rust**! 🏆
 
-Dominamos bibliotecas, CRUD, e WebAssembly em apenas 3 dias. Continuem codificando, explorando Rust, WASM, WASI, e runtimes como Wasmer e Wasmtime. O **GRANDE CÓDIGO** agora está com vocês!
+Dominamos bibliotecas, CRUD, e WebAssembly em apenas 3 dias. Continuem codificando, explorando Rust, WASM, WASI, e runtimes como Wasmer e Wasmtime.
 
 _"Obrigado por participarem! Nos vemos nos próximos desafios!"_
