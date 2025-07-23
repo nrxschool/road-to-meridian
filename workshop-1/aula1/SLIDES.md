@@ -448,7 +448,7 @@ Digite os dados no terminal e veja o resultado calculado com a **sua biblioteca 
 1. **Rust**: Linguagem segura, performática e produtiva, ideal para sistemas de alta confiabilidade.
 2. **Ferramentas Essenciais**: `rustup` (gerenciador de versões), `cargo` (gerenciador de pacotes e build), e `rustc` (compilador) são a base para o desenvolvimento em Rust.
 3. **Hello World**: O primeiro passo em Rust, demonstrando a compilação e execução de um programa simples.
-4. **Tipos de Dados**: Entendimento de tipos como `u32` (inteiros sem sinal), `String` (textos mutáveis), `&str` (fatias de texto imutáveis) e `Vec<T>` (vetores de elementos).
+4. **Tipos de Dados**: Entendimento de tipos como `u32` (inteiros sem sinal), `String` (textos mutáveis), `&str` (fatias de texto imutáveis).
 5. **Funções**: Como definir e usar funções (`fn`, `->`, `return;`) para organizar blocos de código reutilizáveis.
 6. **Módulos**: A importância da organização do código em módulos (`calc1.rs`, `calc2.rs`) para modularidade e evitar conflitos de nomes.
 7. **Criação de Bibliotecas**: O processo de criar uma biblioteca Rust com `cargo new --lib` e como ela pode ser estruturada.
@@ -462,7 +462,7 @@ Digite os dados no terminal e veja o resultado calculado com a **sua biblioteca 
 
 ### Desafio de Aprendizagem
 
-- Adicione uma função de potência e seu inverso, logaritmo (`pow`) à biblioteca `calculator` em `calc3.rs`.
+- Adicione uma função de potência e seu inverso, logaritmo à biblioteca `calculator` em `calc3.rs`.
 - Escreva testes e publique a nova versão (0.2.0) no crates.io.
 
 ### Desafio de Carreira
@@ -481,7 +481,7 @@ Digite os dados no terminal e veja o resultado calculado com a **sua biblioteca 
 
 ## **12. Próxima Aula**
 
-**05/05 – Dia 2: CRUD em Rust**
+**24/07 – Dia 2: CRUD em Rust**
 
 - Vamos criar um sistema CRUD completo com Rust.
 
