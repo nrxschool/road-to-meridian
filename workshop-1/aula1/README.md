@@ -1,120 +1,216 @@
 # Roteiro Final: Workshop: Road to Meridian – Dia 1: Bibliotecas em Rust
 
-## Introdução: Bem-vindos ao Workshop: Road to Meridian!
+## Introdução: Bem-vindos ao Workshop: Road to Meridian 🚀
 
-Olá a todos e sejam muito bem-vindos ao **Workshop: Road to Meridian**! Eu sou Lucas Oliveira e estou muito feliz em ter vocês aqui. Este é o primeiro dia de um curso intensivo de três dias, onde vamos começar a explorar uma linguagem de programação muito especial chamada Rust.
+Olá, mundo!
 
-Se você nunca programou antes ou se já tem alguma experiência, mas nunca ouviu falar de Rust, não se preocupe! Este workshop foi feito para você. Vamos começar do absoluto zero, explicando cada passo de forma clara e detalhada.
+**Você já se perguntou por que o Rust se tornou a linguagem preferida dos engenheiros que constroem o futuro?**
 
-Hoje, nosso objetivo principal é criar nossa primeira **Biblioteca em Rust**. Uma biblioteca é como um conjunto de ferramentas que podemos usar em diferentes projetos. Ao longo do caminho, vamos entender os conceitos básicos do Rust e descobrir por que essa linguagem é tão valorizada no mundo da programação.
+Meu nome é **Lucas Oliveira**, sou **Matemático** e **Engenheiro Senior de Blockchain**, e hoje você está dando um passo importante numa jornada que vai mudar a forma como você pensa sobre programação.
 
-Então, prepare-se para uma jornada de aprendizado onde cada conceito será explicado de forma simples, com exemplos práticos e visuais. Vamos começar a programar em Rust agora mesmo!
+Seja bem-vindo ao **Workshop: Road to Meridian** — uma imersão de três dias onde vamos sair do zero absoluto até construir confiança na linguagens mais potente, segura e moderna da atualidade: **Rust**.
+
+Este não é só mais um curso de introdução. Aqui, você vai aprender Rust **de verdade** — escrevendo código que compila, que funciona e que pode ser usado no mundo real.
+
+Hoje é o Dia 1. E nosso objetivo é simples: **criar nossa primeira biblioteca em Rust**.
+Sim, você vai sair daqui com algo concreto, algo que você mesmo escreveu e entende.
+
+Se você nunca programou antes, ótimo. Se já tem experiência com outras linguagens, melhor ainda.
+
+Rust vai desafiar seus conceitos — e ao mesmo tempo, vai te ensinar a pensar como um engenheiro de software de verdade.
+
+Prepare-se para entender memória, segurança, performance e concisão como nunca viu antes.
+
+Com explicações claras, exemplos práticos e uma trilha pensada para fazer você evoluir rápido e com profundidade.
+
+Rust não é só uma linguagem — é uma forma de pensar.
+
+E hoje você está cruzando a primeira fronteira rumo a um novo paradigma de engenharia de software.
+
+O caminho para o Meridian começa agora.
 
 ## Capítulo 1: O que é Rust e Por Que Ele é Tão Especial?
 
-Antes de colocarmos a mão na massa, é importante entender o que é Rust e por que ele se destaca. Pense em Rust como uma linguagem de programação feita para construir programas que precisam ser muito rápidos e muito seguros. Ela é usada para criar sistemas complexos, como navegadores de internet e até mesmo partes de *blockchains*.
+Antes de colocarmos a mão na massa, é importante entender o que é Rust e por que ele se destaca.
 
-Rust é especial por três motivos principais:
+Pense em Rust como uma linguagem de programação feita para construir programas que precisam ser muito rápidos e muito seguros.
+
+Ela é usada para criar sistemas complexos, como navegadores de internet e até mesmo _blockchains_.
+
+Rust é especial por três motivos principais: Segurança, Performance, Produtividade.
 
 1.  **Segurança**: Rust foi projetado para evitar erros comuns que acontecem em outras linguagens, especialmente aqueles relacionados ao uso da memória do computador. Isso significa menos travamentos e mais confiabilidade nos seus programas.
+
 2.  **Performance**: Programas escritos em Rust são extremamente rápidos, quase tão rápidos quanto programas escritos em linguagens como C ou C++. Isso é ótimo para aplicações que exigem alta velocidade, como jogos ou sistemas de tempo real.
-3.  **Produtividade**: Apesar de ser uma linguagem poderosa, Rust oferece ferramentas e um sistema que ajudam os programadores a escrever código de forma mais eficiente e com menos bugs.
 
-Rust consegue essa combinação de segurança e performance através de um conceito chamado **ownership**, que vamos explorar mais a fundo. Ele garante que o uso da memória seja feito de forma correta, sem que você precise se preocupar com isso diretamente, como acontece em outras linguagens.
+3.  **Produtividade**: Apesar de ser uma linguagem poderosa, Rust oferece ferramentas e um sistema de tipos que ajudam os programadores a escrever código de forma mais eficiente e com menos bugs.
 
-Você pode encontrar Rust em projetos grandes e importantes, como o navegador Firefox, a plataforma de *blockchain* Solana, Polkadot e Stellar. Isso mostra o quão confiável e poderosa essa linguagem é.
+Rust consegue essa combinação de segurança e performance através de um conceito chamado **ownership**, que vamos explorar mais a fundo.
+
+Ele garante que o uso da memória seja feito de forma correta, sem que você precise se preocupar com isso diretamente, como acontece em outras linguagens.
+
+Você pode encontrar Rust em praticamente todas as grande empresas de técnologia, alguns exemplos são:
+
+- O navegador Firefox
+- Plataformas de edge computing como a Azion, Fastly, Vercel e AWS
+- _blockchain_ como Solana, Ethereum, Polkadot e Stellar.
+
+Isso mostra o quão confiável e poderosa essa linguagem é.
 
 ## Capítulo 2: Preparando Nosso Ambiente de Programação
 
 Para começar a programar em Rust, precisamos instalar algumas ferramentas essenciais no nosso computador. Não se preocupe, o processo é bem simples e eu vou guiar você passo a passo.
 
-As três ferramentas principais que vamos instalar são:
+As três ferramentas principais que vamos instalar são: rustup, rustc, cargo.
 
-*   `rustup`: Este é o gerenciador de versões do Rust. Ele nos ajuda a instalar e atualizar o Rust de forma fácil.
-*   `rustc`: Este é o compilador do Rust. Ele transforma o código que escrevemos em um programa que o computador consegue entender e executar.
-*   `cargo`: Este é o gerenciador de pacotes e a ferramenta de construção de projetos do Rust. Ele nos ajuda a criar novos projetos, adicionar bibliotecas e compilar nosso código.
+- `rustup`: Este é o gerenciador de versões do Rust. Ele nos ajuda a instalar e atualizar o Rust de forma fácil.
+
+- `rustc`: Este é o compilador do Rust. Ele transforma o código que escrevemos em um programa que o computador consegue entender e executar.
+
+- `cargo`: Este é o gerenciador de pacotes e a ferramenta de construção de projetos do Rust. Ele nos ajuda a criar novos projetos, adicionar bibliotecas e compilar nosso código.
 
 ### Instalando o Rust no Seu Computador
 
-Vamos começar a instalação. Abra o seu terminal ou prompt de comando. Se você usa Linux, macOS ou Windows com WSL (Windows Subsystem for Linux), o comando é o mesmo. Digite o seguinte comando e pressione Enter:
+Vamos começar a instalação.
 
-MOSTRAR TERMINAL: `curl --proto \'=https\' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+Abra a página oficial do Rust e clique em "Get Started". Depois disso role pra baixo cópie o script.
 
-Este comando vai baixar e executar um script que instala o `rustup` e, por consequência, o `rustc` e o `cargo`. Durante a instalação, você pode ser perguntado sobre algumas opções. Para a maioria dos casos, a opção padrão (geralmente a primeira) é a melhor. Basta pressionar Enter para continuar.
+Agora abra seu Terminal.
+
+Cole e de Enter para executar o comando.
+
+Este comando vai baixar e executar um script que instala o `rustup` e, por consequência, o `rustc` e o `cargo`.
+
+Durante a instalação, você pode ser perguntado sobre algumas opções.
+
+Pra gente a opção padrão (a primeira) é a melhor. Basta pressionar Enter para continuar.
 
 Após a instalação, o terminal pode pedir para você reiniciar ou abrir uma nova sessão para que as mudanças tenham efeito. Se isso acontecer, feche e abra o terminal novamente.
 
 ### Verificando a Instalação do Rust
 
-Agora que a instalação foi concluída, vamos verificar se tudo está funcionando corretamente. Para isso, vamos usar dois comandos no terminal. Digite o primeiro e pressione Enter:
+Agora que a instalação foi concluída, vamos verificar se tudo está funcionando corretamente.
 
-MOSTRAR TERMINAL: `rustc --version`
+Para isso, vamos usar os comandos de versão do `rustc` e `cargo` no terminal.
 
-O que você deve esperar como resultado? Este comando deve exibir a versão do compilador Rust que foi instalada. Por exemplo, você pode ver algo como `rustc 1.70.0 (90c541806 2023-05-31)`.
+Digite `rustc --version` pressione Enter
 
-Agora, digite o segundo comando e pressione Enter:
+Agora digite `cargo --version` e pressione Enter
 
-MOSTRAR TERMINAL: `cargo --version`
-
-Este comando deve exibir a versão do `cargo` que foi instalada. Por exemplo, você pode ver algo como `cargo 1.70.0 (6535a8722 2023-05-31)`.
+Este comando deve exibir a versão do compilador Rust que foi instalada se tudo correu bem.
 
 Se ambos os comandos exibirem as versões instaladas, parabéns! Sua instalação do Rust está funcionando perfeitamente e você está pronto para começar a programar.
 
 ## Capítulo 3: Nosso Primeiro Programa em Rust – O Famoso "Hello, World!"
 
-Tradicionalmente, o primeiro programa que escrevemos em qualquer linguagem é o "Hello, World!". Ele nos ajuda a entender como criar, compilar e executar um programa simples. Vamos fazer isso em Rust.
+Antes de começarmos a programar, precisamos criar o arquivo que vai conter nosso código em Rust.
 
-### Criando o Arquivo do Programa
+Você pode usar qualquer editor de texto simples, como o Notepad, VS Code, Sublime ou até o editor de txt — o importante é salvar com o nome certo e na pasta certa.
 
-Primeiro, precisamos criar um arquivo para o nosso código. Você pode usar qualquer editor de texto simples para isso. Crie um novo arquivo e salve-o com o nome `hello.rs`. A extensão `.rs` é o padrão para arquivos de código Rust.
+Crie um novo arquivo e salve com o nome **`main.rs`** em uma pasta fácil de encontrar.
 
-MOSTRAR EDITOR DE TEXTO: Criando o arquivo `hello.rs`
+A extensão **`.rs`** indica que este é um arquivo de código escrito em **Rust**.
 
-Dentro deste arquivo, digite o seguinte código:
+Agora, abra esse arquivo e digite exatamente o seguinte código, linha por linha, como vou descrever a seguir:
 
-MOSTRAR CRIACAO DE MODULO:
-```rust
-// hello.rs
-fn main() {
-    println!("Hello, World!");
-}
+```
+fn, espaço, main, abre parênteses, fecha parênteses, espaço, abre chaves.
+Pula linha.
+Tab, ou quatro espaços.
+println, ponto de exclamação, abre parênteses, aspas duplas, Hello, vírgula, espaço, World, ponto de exclamação, aspas duplas, fecha parênteses, ponto e vírgula.
+Pula linha.
+Fecha chaves.
 ```
 
-Vamos entender o que cada parte desse código faz:
+Esse é o nosso primeiro programa em Rust. Agora vamos entender o que cada parte significa:
 
-*   `fn main() { ... }`: Esta é a função principal do nosso programa. Todo programa Rust começa a ser executado a partir da função `main`.
-*   `println!("Hello, World!");`: Esta é uma macro do Rust usada para imprimir texto na tela do terminal. Ela simplesmente exibe a frase "Hello, World!" na saída.
+- **`fn main() { ... }`**: Essa é a função principal do nosso programa. Todo código Rust começa sua execução por aqui — é o ponto de entrada.
+
+- **`println!("Hello, World!");`**: Essa linha usa uma **macro** do Rust chamada `println!`, que serve para imprimir mensagens no terminal. No nosso caso, ela vai mostrar exatamente o texto: **Hello, World!**
+
+Esse é o equivalente ao chute inicial do jogo: simples, direto e poderoso.
+
+Agora que escrevemos e entendemos o código, estamos prontos para compilar e executar.
 
 ### Compilando e Executando Nosso Programa
 
-Agora que temos o código, precisamos transformá-lo em um programa que o computador possa executar. Para isso, usaremos o compilador `rustc`.
+Para isso, vamos usar o **compilador do Rust**, chamado `rustc`.
 
-Abra o terminal na mesma pasta onde você salvou o arquivo `hello.rs`. Digite o seguinte comando e pressione Enter:
+#### Passo 1: Abrindo o Terminal
 
-MOSTRAR TERMINAL: `rustc hello.rs`
+Abra o terminal ou prompt de comando, e navegue até a pasta onde você salvou o arquivo `main.rs`.
 
-O que acontece depois de rodar esse comando? O `rustc` vai ler o seu arquivo `hello.rs` e, se não houver erros, ele vai criar um novo arquivo executável na mesma pasta. No Linux e macOS, o arquivo será chamado `hello`. No Windows, será `hello.exe`.
+Se estiver usando o terminal do VS Code, você já deve estar na pasta certa. Caso contrário, use o comando `cd` para navegar até o local correto.
 
-Agora, para executar o programa, digite o comando apropriado para o seu sistema operacional e pressione Enter:
+## Por isso eu disse que tinha q salvar num lugar fácil de lembrar.
 
-MOSTRAR TERMINAL: `./hello` (para Linux/macOS)
-MOSTRAR TERMINAL: `.\hello.exe` (para Windows)
+#### Passo 2: Compilando o Programa
 
-O que você deve ver na tela? O programa vai imprimir a mensagem "Hello, World!" no seu terminal. Isso significa que seu primeiro programa Rust foi compilado e executado com sucesso! Parabéns!
+No terminal, digite o seguinte comando e pressione Enter:
+
+```
+rustc main.rs
+```
+
+O que esse comando faz?
+
+- O `rustc` é o compilador oficial da linguagem Rust.
+- Ele vai **ler** o arquivo `main.rs`, **verificar se o código está correto** e, se tudo estiver certo, **gerar um arquivo executável**.
+
+Esse novo arquivo terá o nome `main` no Linux ou macOS, e `main.exe` no Windows. Ele será salvo na mesma pasta onde está o seu código-fonte.
+
+---
+
+#### Passo 3: Executando o Programa
+
+Agora, chegou o momento da verdade: vamos rodar o executável que acabamos de compilar.
+
+Digite o comando correspondente ao seu sistema operacional:
+
+- **Linux ou macOS:**
+
+```
+./main
+```
+
+- **Windows:**
+
+```
+.\main.exe
+```
+
+---
+
+#### O Resultado
+
+Se tudo deu certo, você verá no terminal exatamente esta mensagem:
+
+```
+Hello, World!
+```
+
+Parabéns!
+
+Você acabou de escrever, compilar e executar seu **primeiro programa em Rust**.
+
+Esse é o seu primeiro gol — e a partida só está começando.
 
 ## Capítulo 4: Tipos, Funções e Módulos: Construindo Nossa Biblioteca
 
-Até agora, compilamos um programa simples diretamente. Mas para projetos maiores e mais organizados, usamos o `cargo`. O `cargo` não é apenas um gerenciador de pacotes; ele também nos ajuda a criar e gerenciar projetos de forma estruturada. Vamos usá-lo para criar nossa primeira biblioteca.
+Até agora, compilamos um programa simples diretamente. Mas para projetos maiores e mais organizados, usamos o `cargo`.
+
+O `cargo` não é apenas um gerenciador de pacotes; ele também nos ajuda a criar e gerenciar projetos de forma estruturada. Vamos usá-lo para criar nossa primeira biblioteca.
 
 ### Iniciando um Novo Projeto de Biblioteca
 
 Abra seu terminal e navegue até a pasta onde você quer criar seu novo projeto. Digite o seguinte comando e pressione Enter:
 
-MOSTRAR TERMINAL: `cargo new --lib calculator`
+`cargo new --lib calculator`
 
-O que esse comando faz? Ele cria uma nova pasta chamada `calculator`. Dentro dessa pasta, o `cargo` já organiza a estrutura básica de um projeto de biblioteca Rust para você. Veja como a estrutura de arquivos deve parecer:
+Esse comando cria uma nova pasta chamada `calculator`. Dentro dessa pasta, o `cargo` já organiza a estrutura básica de um projeto de biblioteca Rust para você.
 
-MOSTRAR ARVORE DE ARQUIVOS:
+Veja como a estrutura de arquivos deve parecer:
+
 ```
 calculator/
 ├── Cargo.toml   # arquivo de configuração do Rust
@@ -124,10 +220,10 @@ calculator/
 
 Vamos entender essa estrutura:
 
-*   `calculator/`: Esta é a pasta principal do seu projeto.
-*   `Cargo.toml`: Este é o arquivo de configuração do seu projeto. Ele contém informações sobre o nome da sua biblioteca, a versão, as dependências (outras bibliotecas que seu projeto usa) e outras configurações.
-*   `src/`: Esta pasta contém o código-fonte do seu projeto.
-*   `lib.rs`: Este é o arquivo principal da sua biblioteca. É aqui que vamos escrever o código das nossas funções.
+- `calculator/`: Esta é a pasta principal do seu projeto.
+- `Cargo.toml`: Este é o arquivo de configuração do seu projeto. Ele contém informações sobre o nome da sua biblioteca, a versão, as dependências (outras bibliotecas que seu projeto usa) e outras configurações.
+- `src/`: Esta pasta contém o código-fonte do seu projeto.
+- `lib.rs`: Este é o arquivo principal da sua biblioteca. É aqui que vamos escrever o código das nossas funções.
 
 Agora, entre na pasta do projeto que acabamos de criar. Digite o seguinte comando e pressione Enter:
 
@@ -139,21 +235,22 @@ Você está agora dentro da pasta `calculator`, pronto para começar a escrever 
 
 Em Rust, cada valor tem um tipo de dado. Isso ajuda o compilador a entender como o programa deve lidar com as informações e a evitar erros. Alguns tipos comuns que vamos usar são:
 
-*   **Números Inteiros**: Representam números sem casas decimais.
-    *   `u8`: Um número inteiro sem sinal (só positivo) que vai de 0 a 255. O `u` significa *unsigned* (sem sinal) e o `8` indica que ele usa 8 bits de memória.
-    *   `u32`: Um número inteiro sem sinal que vai de 0 a 4.294.967.295. Ele usa 32 bits de memória. É o tipo que vamos usar para nossas operações de calculadora hoje.
-    *   `i8`, `i32`, `i64`: Números inteiros com sinal (podem ser positivos ou negativos). O `i` significa *integer* (inteiro).
-*   **Textos**: Representam sequências de caracteres.
-    *   `String`: Um texto que pode ser modificado e crescer de tamanho.
-    *   `&str`: Uma "fatia" de texto, que é imutável e geralmente aponta para um texto já existente.
-*   **Vetores**: Representam listas de elementos.
-    *   `Vec<T>`: Um vetor (ou lista) de elementos de um tipo `T`. Por exemplo, `Vec<u8>` é uma lista de números do tipo `u8`.
+- **Números Inteiros**: Representam números sem casas decimais.
+  - `u8`: Um número inteiro sem sinal (só positivo) que vai de 0 a 255. O `u` significa _unsigned_ (sem sinal) e o `8` indica que ele usa 8 bits de memória.
+  - `u32`: Um número inteiro sem sinal que vai de 0 a 4.294.967.295. Ele usa 32 bits de memória. É o tipo que vamos usar para nossas operações de calculadora hoje.
+  - `i8`, `i32`, `i64`: Números inteiros com sinal (podem ser positivos ou negativos). O `i` significa _integer_ (inteiro).
+- **Textos**: Representam sequências de caracteres.
+  - `String`: Um texto que pode ser modificado e crescer de tamanho.
+  - `&str`: Uma "fatia" de texto, que é imutável e geralmente aponta para um texto já existente.
+- **Vetores**: Representam listas de elementos.
+  - `Vec<T>`: Um vetor (ou lista) de elementos de um tipo `T`. Por exemplo, `Vec<u8>` é uma lista de números do tipo `u8`.
 
 ### Definindo Funções em Rust
 
 Funções são blocos de código que realizam uma tarefa específica. Em Rust, definimos funções usando a palavra-chave `fn`. Veja a estrutura básica de uma função:
 
 MOSTRAR CRIACAO DA FUNCAO:
+
 ```rust
 fn nome_da_funcao(parametro1: Tipo1, parametro2: Tipo2) -> TipoDeRetorno {
     // Código da função
@@ -163,17 +260,18 @@ fn nome_da_funcao(parametro1: Tipo1, parametro2: Tipo2) -> TipoDeRetorno {
 }
 ```
 
-*   `fn`: Palavra-chave para definir uma função.
-*   `nome_da_funcao`: O nome que você dá à sua função.
-*   `(parametro1: Tipo1, parametro2: Tipo2)`: São os valores que a função recebe como entrada. Você precisa especificar o nome e o tipo de cada parâmetro.
-*   `-> TipoDeRetorno`: A seta `->` indica o tipo de valor que a função vai devolver (retornar) após ser executada. Se a função não retorna nada, você pode omitir essa parte.
-*   `return ;`: Você pode usar a palavra-chave `return` seguida de um ponto e vírgula para sair da função e retornar um valor a qualquer momento. No entanto, em Rust, a última expressão de uma função (sem ponto e vírgula) é automaticamente o valor de retorno.
+- `fn`: Palavra-chave para definir uma função.
+- `nome_da_funcao`: O nome que você dá à sua função.
+- `(parametro1: Tipo1, parametro2: Tipo2)`: São os valores que a função recebe como entrada. Você precisa especificar o nome e o tipo de cada parâmetro.
+- `-> TipoDeRetorno`: A seta `->` indica o tipo de valor que a função vai devolver (retornar) após ser executada. Se a função não retorna nada, você pode omitir essa parte.
+- `return ;`: Você pode usar a palavra-chave `return` seguida de um ponto e vírgula para sair da função e retornar um valor a qualquer momento. No entanto, em Rust, a última expressão de uma função (sem ponto e vírgula) é automaticamente o valor de retorno.
 
 ### Módulos em Rust: Organizando o Código
 
 Módulos servem para agrupar funções com um propósito comum. Eles são essenciais para organizar o código em projetos maiores, ajudando a evitar conflitos de nomes e a manter tudo limpo e fácil de entender. Um módulo pode ser definido dentro do mesmo arquivo ou em arquivos separados.
 
 MOSTRAR CRIACAO DE MODULO:
+
 ```rust
 // Exemplo de módulo dentro do mesmo arquivo
 mod saudacoes {
@@ -195,6 +293,7 @@ No nosso caso, para a biblioteca `calculator`, vamos usar um arquivo separado pa
 Para a nossa biblioteca `calculator`, vamos criar dois novos arquivos dentro da pasta `src/` para organizar as operações. Crie os arquivos `calc1.rs` e `calc2.rs`:
 
 MOSTRAR ARVORE DE ARQUIVOS:
+
 ```
 calculator/
 ├── Cargo.toml
@@ -209,6 +308,7 @@ Agora, vamos adicionar o código para as operações de soma e subtração no ar
 MOSTRAR EDITOR DE TEXTO: Abrindo `src/calc1.rs`
 
 MOSTRAR CRIACAO DE MODULO:
+
 ```rust
 // src/calc1.rs
 pub fn add(a: u32, b: u32) -> u32 {
@@ -231,6 +331,7 @@ Agora, vamos adicionar o código para as operações de multiplicação e divis�
 MOSTRAR EDITOR DE TEXTO: Abrindo `src/calc2.rs`
 
 MOSTRAR CRIACAO DE MODULO:
+
 ```rust
 // src/calc2.rs
 pub fn multiply(a: u32, b: u32) -> u32 {
@@ -257,6 +358,7 @@ Abra o arquivo `src/lib.rs` no seu editor de texto. Apague o conteúdo existente
 MOSTRAR EDITOR DE TEXTO: Abrindo `src/lib.rs`
 
 MOSTRAR CRIACAO DE MODULO:
+
 ```rust
 // src/lib.rs
 pub mod calc1;
@@ -276,6 +378,7 @@ MOSTRAR EDITOR DE TEXTO: Criando/Editando `src/main.rs`
 Dentro de `src/main.rs`, digite o seguinte código:
 
 MOSTRAR CRIACAO DA FUNCAO:
+
 ```rust
 // src/main.rs
 use calculator::calc1::{add, sub};
@@ -310,9 +413,9 @@ fn main() {
 
 Vamos entender as novidades:
 
-*   `use calculator::calc1::{add, sub};`: Esta linha nos permite usar as funções `add` e `sub` que definimos no módulo `calc1` da nossa biblioteca `calculator`.
-*   `use calculator::calc2::{multiply, rate};`: Similarmente, esta linha nos permite usar as funções `multiply` e `rate` do módulo `calc2`.
-*   `let result_add = add(3, 8);`: Aqui, chamamos a função `add` e guardamos o resultado na variável `result_add`.
+- `use calculator::calc1::{add, sub};`: Esta linha nos permite usar as funções `add` e `sub` que definimos no módulo `calc1` da nossa biblioteca `calculator`.
+- `use calculator::calc2::{multiply, rate};`: Similarmente, esta linha nos permite usar as funções `multiply` e `rate` do módulo `calc2`.
+- `let result_add = add(3, 8);`: Aqui, chamamos a função `add` e guardamos o resultado na variável `result_add`.
 
 Para executar este programa e ver nossa biblioteca em ação, abra o terminal na pasta `calculator` (se você não estiver nela, use `cd calculator`). Digite o seguinte comando e pressione Enter:
 
@@ -328,9 +431,10 @@ Vamos adicionar testes automatizados à nossa biblioteca `calculator`. Abra nova
 
 MOSTRAR EDITOR DE TEXTO: Abrindo `src/lib.rs`
 
-Role até o final do arquivo e adicione o seguinte bloco de código *após* a declaração dos módulos `calc1` e `calc2`:
+Role até o final do arquivo e adicione o seguinte bloco de código _após_ a declaração dos módulos `calc1` e `calc2`:
 
 MOSTRAR CRIACAO DE MODULO:
+
 ```rust
 // src/lib.rs (continuação)
 #[cfg(test)]
@@ -367,13 +471,13 @@ mod tests {
 
 Vamos entender o que adicionamos:
 
-*   `#[cfg(test)]`: Esta linha é uma *diretiva de compilação*. Ela diz ao Rust para incluir o código dentro deste módulo `tests` *apenas* quando estamos rodando os testes. Isso significa que o código de teste não será incluído no seu programa final, mantendo-o leve.
-*   `mod tests { ... }`: Este é o nosso módulo de testes. É uma boa prática agrupar os testes em um módulo separado.
-*   `use super::calc1::{add, sub};` e `use super::calc2::{multiply, rate};`: Aqui, estamos importando as funções dos nossos módulos `calc1` e `calc2` para que possamos testá-las. O `super::` indica que estamos nos referindo aos módulos que estão um nível acima no nosso arquivo `lib.rs`.
-*   `#[test]`: Esta é uma *anotação* que marca a função seguinte como uma função de teste. O Rust vai procurar por todas as funções marcadas com `#[test]` e executá-las quando você rodar os testes.
-*   `fn test_add() { ... }`: Esta é uma função de teste específica para a operação `add`.
-*   `assert_eq!(add(10, 20), 30);`: Esta é uma *macro de asserção*. Ela verifica se o resultado da função `add(10, 20)` é exatamente igual a `30`. Se for diferente, o teste falha.
-*   `assert_eq!(add(u32::MAX, 1), u32::MAX);`: Este é um exemplo de como testar o comportamento de *overflow* para `u32`. Como nossas funções não usam `checked_*` e `u32` satura no valor máximo em caso de *overflow* (ao invés de retornar um erro), testamos se o resultado é o valor máximo de `u32`.
+- `#[cfg(test)]`: Esta linha é uma _diretiva de compilação_. Ela diz ao Rust para incluir o código dentro deste módulo `tests` _apenas_ quando estamos rodando os testes. Isso significa que o código de teste não será incluído no seu programa final, mantendo-o leve.
+- `mod tests { ... }`: Este é o nosso módulo de testes. É uma boa prática agrupar os testes em um módulo separado.
+- `use super::calc1::{add, sub};` e `use super::calc2::{multiply, rate};`: Aqui, estamos importando as funções dos nossos módulos `calc1` e `calc2` para que possamos testá-las. O `super::` indica que estamos nos referindo aos módulos que estão um nível acima no nosso arquivo `lib.rs`.
+- `#[test]`: Esta é uma _anotação_ que marca a função seguinte como uma função de teste. O Rust vai procurar por todas as funções marcadas com `#[test]` e executá-las quando você rodar os testes.
+- `fn test_add() { ... }`: Esta é uma função de teste específica para a operação `add`.
+- `assert_eq!(add(10, 20), 30);`: Esta é uma _macro de asserção_. Ela verifica se o resultado da função `add(10, 20)` é exatamente igual a `30`. Se for diferente, o teste falha.
+- `assert_eq!(add(u32::MAX, 1), u32::MAX);`: Este é um exemplo de como testar o comportamento de _overflow_ para `u32`. Como nossas funções não usam `checked_*` e `u32` satura no valor máximo em caso de _overflow_ (ao invés de retornar um erro), testamos se o resultado é o valor máximo de `u32`.
 
 As outras funções de teste (`test_sub`, `test_multiply`, `test_rate`) seguem a mesma lógica, testando tanto os casos de sucesso quanto os casos especiais que definimos (subtração que resultaria em negativo e divisão por zero).
 
@@ -389,7 +493,7 @@ Isso significa que sua biblioteca está funcionando corretamente e que você tem
 
 ## Capítulo 6: Compartilhando Nossa Biblioteca com o Mundo: Crates.io
 
-Uma das grandes vantagens de criar bibliotecas é poder compartilhá-las com outros programadores ou usá-las em seus próprios projetos. O `crates.io` é o registro oficial de pacotes (ou *crates*) do Rust. É como uma grande loja onde você pode publicar suas bibliotecas e encontrar bibliotecas criadas por outras pessoas.
+Uma das grandes vantagens de criar bibliotecas é poder compartilhá-las com outros programadores ou usá-las em seus próprios projetos. O `crates.io` é o registro oficial de pacotes (ou _crates_) do Rust. É como uma grande loja onde você pode publicar suas bibliotecas e encontrar bibliotecas criadas por outras pessoas.
 
 Vamos aprender como preparar e publicar nossa biblioteca `calculator` no `crates.io`.
 
@@ -413,6 +517,7 @@ MOSTRAR EDITOR DE TEXTO: Abrindo `Cargo.toml`
 Localize a seção `[package]`. Se ela não existir, crie-a. Adicione as seguintes linhas. Se algumas já existirem, apenas verifique se os valores estão corretos ou adicione as que faltam:
 
 MOSTRAR CRIACAO DE MODULO:
+
 ```toml
 # Cargo.toml
 [package]
@@ -425,11 +530,11 @@ license = "MIT"
 
 Vamos entender o que cada linha significa:
 
-*   `name = "calculator-olivmath"`: Este é o nome da sua biblioteca no `crates.io`. **É muito importante que este nome seja único!** Se você tentar publicar com um nome que já existe, o `crates.io` não permitirá. O nome `calculator-olivmath` foi sugerido para garantir a unicidade.
-*   `version = "0.1.0"`: Esta é a versão da sua biblioteca. É uma boa prática seguir o versionamento semântico (maior.menor.patch).
-*   `edition = "2021"`: Indica a edição do Rust que seu projeto está usando. A edição 2021 é a mais recente e recomendada.
-*   `description = "Biblioteca simples para operações com u32"`: Uma breve descrição do que sua biblioteca faz. Isso ajuda outras pessoas a entenderem o propósito dela.
-*   `license = "MIT"`: A licença sob a qual sua biblioteca é distribuída. A licença MIT é uma licença de código aberto muito comum e permissiva.
+- `name = "calculator-olivmath"`: Este é o nome da sua biblioteca no `crates.io`. **É muito importante que este nome seja único!** Se você tentar publicar com um nome que já existe, o `crates.io` não permitirá. O nome `calculator-olivmath` foi sugerido para garantir a unicidade.
+- `version = "0.1.0"`: Esta é a versão da sua biblioteca. É uma boa prática seguir o versionamento semântico (maior.menor.patch).
+- `edition = "2021"`: Indica a edição do Rust que seu projeto está usando. A edição 2021 é a mais recente e recomendada.
+- `description = "Biblioteca simples para operações com u32"`: Uma breve descrição do que sua biblioteca faz. Isso ajuda outras pessoas a entenderem o propósito dela.
+- `license = "MIT"`: A licença sob a qual sua biblioteca é distribuída. A licença MIT é uma licença de código aberto muito comum e permissiva.
 
 Salve o arquivo `Cargo.toml` após fazer essas alterações.
 
@@ -467,6 +572,7 @@ MOSTRAR TERMINAL: `cd interactive_calculator`
 Agora você tem uma nova pasta `interactive_calculator` com a estrutura básica de um projeto executável, incluindo um `src/main.rs` e um `Cargo.toml`.
 
 MOSTRAR ARVORE DE ARQUIVOS:
+
 ```
 interactive_calculator/
 ├── Cargo.toml
@@ -483,13 +589,14 @@ MOSTRAR EDITOR DE TEXTO: Abrindo `interactive_calculator/Cargo.toml`
 Localize a seção `[dependencies]`. Se ela não existir, crie-a. Adicione a seguinte linha abaixo dela, especificando o nome da biblioteca e a versão que você quer usar:
 
 MOSTRAR CRIACAO DE MODULO:
+
 ```toml
 # interactive_calculator/Cargo.toml
 [dependencies]
 calculator-olivmath = "0.1.0"
 ```
 
-*   `calculator-olivmath = "0.1.0"`: Esta linha diz ao `cargo` que seu projeto `interactive_calculator` precisa da biblioteca `calculator-olivmath` na versão `0.1.0`. Se você publicou sua biblioteca com um nome diferente, use esse nome aqui.
+- `calculator-olivmath = "0.1.0"`: Esta linha diz ao `cargo` que seu projeto `interactive_calculator` precisa da biblioteca `calculator-olivmath` na versão `0.1.0`. Se você publicou sua biblioteca com um nome diferente, use esse nome aqui.
 
 Salve o arquivo `Cargo.toml`.
 
@@ -500,6 +607,7 @@ Agora, vamos abrir o arquivo `src/main.rs` do seu projeto `interactive_calculato
 MOSTRAR EDITOR DE TEXTO: Abrindo `interactive_calculator/src/main.rs`
 
 MOSTRAR CRIACAO DA FUNCAO:
+
 ```rust
 // src/main.rs
 use std::io;
@@ -557,15 +665,15 @@ fn main() {
 
 Vamos entender as partes importantes deste código:
 
-*   `use std::io;`: Esta linha importa o módulo `io` da biblioteca padrão do Rust, que nos permite ler a entrada do usuário.
-*   `use calculator_olivmath::calc1::{add, sub};` e `use calculator_olivmath::calc2::{multiply, rate};`: Aqui, importamos as funções da nossa biblioteca `calculator-olivmath` que vamos usar.
-*   `println!("Escolha a operação (+, -, *, /):");`: Exibe uma mensagem para o usuário escolher a operação.
-*   `let mut operation = String::new();`: Cria uma nova string mutável para armazenar a operação digitada pelo usuário.
-*   `io::stdin().read_line(&mut operation).expect("Falha ao ler a operação");`: Lê a linha digitada pelo usuário e armazena na variável `operation`.
-*   `let operation = operation.trim();`: Remove espaços em branco e quebras de linha da entrada do usuário.
-*   `let num_a: u32 = num_a_str.trim().parse().expect("Entrada inválida para o número a");`: Lê o número digitado, remove espaços, tenta converter para `u32` e, se falhar, exibe uma mensagem de erro.
-*   `match operation { ... }`: Esta estrutura `match` verifica qual operação o usuário escolheu e chama a função correspondente da nossa biblioteca (`add`, `sub`, `multiply` ou `rate`).
-*   `println!("Resultado {} {} {}: {}", num_a, op_symbol, num_b, result);`: Exibe o resultado da operação de forma formatada.
+- `use std::io;`: Esta linha importa o módulo `io` da biblioteca padrão do Rust, que nos permite ler a entrada do usuário.
+- `use calculator_olivmath::calc1::{add, sub};` e `use calculator_olivmath::calc2::{multiply, rate};`: Aqui, importamos as funções da nossa biblioteca `calculator-olivmath` que vamos usar.
+- `println!("Escolha a operação (+, -, *, /):");`: Exibe uma mensagem para o usuário escolher a operação.
+- `let mut operation = String::new();`: Cria uma nova string mutável para armazenar a operação digitada pelo usuário.
+- `io::stdin().read_line(&mut operation).expect("Falha ao ler a operação");`: Lê a linha digitada pelo usuário e armazena na variável `operation`.
+- `let operation = operation.trim();`: Remove espaços em branco e quebras de linha da entrada do usuário.
+- `let num_a: u32 = num_a_str.trim().parse().expect("Entrada inválida para o número a");`: Lê o número digitado, remove espaços, tenta converter para `u32` e, se falhar, exibe uma mensagem de erro.
+- `match operation { ... }`: Esta estrutura `match` verifica qual operação o usuário escolheu e chama a função correspondente da nossa biblioteca (`add`, `sub`, `multiply` ou `rate`).
+- `println!("Resultado {} {} {}: {}", num_a, op_symbol, num_b, result);`: Exibe o resultado da operação de forma formatada.
 
 Para executar este programa, abra o terminal na pasta `interactive_calculator` (se você não estiver nela, use `cd interactive_calculator`). Digite o seguinte comando e pressione Enter:
 
@@ -577,7 +685,7 @@ O que você deve esperar como resultado? O `cargo` vai primeiro baixar a bibliot
 
 Chegamos ao final do nosso primeiro dia de Workshop! Vamos revisar os pontos mais importantes que cobrimos:
 
-1.  **Rust**: Vimos que Rust é uma linguagem de programação de sistemas que se destaca por sua **segurança de memória**, **alta performance** (próxima de C/C++) e **produtividade**. Ele evita erros comuns com o conceito de *ownership* e é usado em projetos críticos como Firefox, Solana, Polkadot e Stellar.
+1.  **Rust**: Vimos que Rust é uma linguagem de programação de sistemas que se destaca por sua **segurança de memória**, **alta performance** (próxima de C/C++) e **produtividade**. Ele evita erros comuns com o conceito de _ownership_ e é usado em projetos críticos como Firefox, Solana, Polkadot e Stellar.
 2.  **Ferramentas Essenciais**: Aprendemos a instalar e usar as ferramentas fundamentais para o desenvolvimento em Rust: `rustup` (o gerenciador de versões), `cargo` (o gerenciador de pacotes e ferramenta de build) e `rustc` (o compilador). Esses são seus companheiros diários no Rust.
 3.  **Hello World**: Demos nossos primeiros passos escrevendo e executando o clássico "Hello, World!". Isso nos mostrou como compilar um programa simples diretamente com `rustc` e entender a estrutura básica de um programa Rust.
 4.  **Tipos de Dados em Rust**: Exploramos os tipos de dados básicos, com foco nos números inteiros `u32` (inteiro sem sinal de 32 bits), além de `u8`, `u64`, `i8`, `i32`, `i64`. Também vimos `String` para textos mutáveis, `&str` para fatias de texto imutáveis e `Vec<T>` para listas de elementos.
@@ -596,24 +704,24 @@ Para consolidar o que você aprendeu, tenho alguns desafios para você:
 
 ### Desafio de Aprendizagem
 
-*   **Adicione uma função de potência e seu inverso, logaritmo (`pow`)**: Tente adicionar uma nova função à sua biblioteca `calculator` em um novo módulo chamado `calc3.rs` que calcule a potência de um número `u32` (por exemplo, `a` elevado a `b`) e, se possível, uma função para logaritmo. Lembre-se de considerar os casos de *overflow* e de escrever testes para essa nova função.
-*   **Publique a nova versão**: Depois de adicionar a função `pow` (e logaritmo, se conseguir) e os testes, atualize a versão da sua biblioteca no `Cargo.toml` para `0.2.0` e publique a nova versão no `crates.io`.
+- **Adicione uma função de potência e seu inverso, logaritmo (`pow`)**: Tente adicionar uma nova função à sua biblioteca `calculator` em um novo módulo chamado `calc3.rs` que calcule a potência de um número `u32` (por exemplo, `a` elevado a `b`) e, se possível, uma função para logaritmo. Lembre-se de considerar os casos de _overflow_ e de escrever testes para essa nova função.
+- **Publique a nova versão**: Depois de adicionar a função `pow` (e logaritmo, se conseguir) e os testes, atualize a versão da sua biblioteca no `Cargo.toml` para `0.2.0` e publique a nova versão no `crates.io`.
 
 ### Desafio de Carreira
 
-*   **Compartilhe seu aprendizado**: Faça um post no LinkedIn sobre o que você aprendeu hoje no Workshop: Road to Meridian, usando a hashtag `#road2meridian`. Compartilhar seu conhecimento é uma ótima forma de fixar o conteúdo e mostrar seu desenvolvimento!
+- **Compartilhe seu aprendizado**: Faça um post no LinkedIn sobre o que você aprendeu hoje no Workshop: Road to Meridian, usando a hashtag `#road2meridian`. Compartilhar seu conhecimento é uma ótima forma de fixar o conteúdo e mostrar seu desenvolvimento!
 
 ### Desafio de Comunidade
 
-*   **Qual seu jogo favorito de 2024?**: Entre no nosso Discord e compartilhe qual foi o jogo que você mais jogou em 2024! Vamos interagir e nos divertir um pouco.
+- **Qual seu jogo favorito de 2024?**: Entre no nosso Discord e compartilhe qual foi o jogo que você mais jogou em 2024! Vamos interagir e nos divertir um pouco.
 
 ### Recursos Adicionais
 
 Para continuar seus estudos, recomendo:
 
-*   [Documentação Oficial do Rust](https://www.rust-lang.org/learn): O site oficial do Rust tem uma documentação excelente.
-*   [Crates.io](https://crates.io): Explore outras bibliotecas e veja como elas são usadas.
-*   [The Rust Book](https://doc.rust-lang.org/book/): Um livro completo e gratuito sobre Rust, ideal para aprofundar seus conhecimentos.
+- [Documentação Oficial do Rust](https://www.rust-lang.org/learn): O site oficial do Rust tem uma documentação excelente.
+- [Crates.io](https://crates.io): Explore outras bibliotecas e veja como elas são usadas.
+- [The Rust Book](https://doc.rust-lang.org/book/): Um livro completo e gratuito sobre Rust, ideal para aprofundar seus conhecimentos.
 
 ## Encerramento: Até a Próxima Aula!
 
@@ -622,4 +730,3 @@ Chegamos ao fim do nosso primeiro dia de Workshop! Espero que vocês tenham gost
 E preparem-se, porque amanhã, no Dia 2, vamos mergulhar no mundo do **CRUD em Rust**, criando um sistema completo para gerenciar dados. A aula ao vivo será amanhã, às 19h, no YouTube. Tragam suas dúvidas e sua energia!
 
 Muito obrigado por participarem e até a próxima!
-
