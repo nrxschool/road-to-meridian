@@ -287,83 +287,125 @@ Soroban, é a plataforma de contratos inteligentes da Stellar, concentra-se em t
 
 ---
 
+### 4.0 Instalar e Configurar Dependencias
+
+- Instalar Rust
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+- Instalar o target wasm
+
+```bash
+rustup target add wasm32-unknown-unknown
+```
+
+- Instalar Stellar CLI
+
+```bash
+brew install stellar-cli
+# or
+# cargo install --locked stellar-cli@23.0.0
+```
+
+- Criar Conta
+
+```bash
+stellar keys generate --global alice --network testnet --fund
+# next
+# stellar keys address alice
+```
+
 ### 4.1 Criar Projeto
 
-- Iniciar projeto: `cargo new --lib hello_world`
-- Estrutura de arquivos:
-  - `Cargo.toml`
-  - `src/lib.rs`
-  - `src/test.rs`
-- Base para contrato Soroban
+- Iniciar projeto
+
+```bash
+stellar contract init hello-world
+```
+
+- Estrutura de arquivos
+
+```bash
+├── hello-world                    # Diretório raiz do projeto
+│   ├── Cargo.toml                 # Configurações do workspace Rust
+│   ├── README.md                  # Documentação do projeto
+│   └── contracts                  # Pasta contendo todos os contratos
+│       ├── projeto-1
+│       ├── projeto-2
+│       └── hello-world            # Diretório do contrato específico
+│           ├── Cargo.toml         # Dependências e configurações do contrato
+│           ├── Makefile           # Scripts de automação (build, test, deploy)
+│           └── src                # Código fonte do contrato
+│               ├── lib.rs         # Implementação principal do contrato
+│               └── test.rs        # Testes unitários do contrato
+```
 
 ---
 
-### 4.2 Configurar Projeto
+### 4.2 Escrever Contrato
 
-- Editar `Cargo.toml`:
-  - Definir `crate-type = ["cdylib"]`
-  - Adicionar `soroban-sdk = "20.0.0"`
-  - Configurar `[profile.release]` para WebAssembly
-- Habilitar `no_std`
-- Rede: Testnet
+```rust
+#![no_std]
+use soroban_sdk::{contract, contractimpl, vec, Env, String, Vec};
 
----
+#[contract]
+pub struct Contract;
 
-### 4.3 Estrutura de um Contrato Soroban
-
-- **DSL (Domain Specific Language)**:
-  - `#[contract]` e `#[contractimpl]`
-  - Função: `hello(env: Env, to: Symbol)`
-- **No STD**:
-  - Sem standard library
-  - Usa `soroban-sdk`
-  - Ambiente determinístico
-- **Env**:
-  - Interface com runtime
-  - Acesso a storage, eventos, criptografia
+#[contractimpl]
+impl Contract {
+    pub fn hello(env: Env, to: String) -> Vec<String> {
+        vec![&env, String::from_str(&env, "Hello"), to]
+    }
+}
+```
 
 ---
 
-### 4.4 Criar Contrato
+### 4.3 Compilar Contrato
 
-- Arquivo: `src/lib.rs`
-- Código base:
-  - `#![no_std]`
-  - Importar `soroban-sdk`
-  - Definir `HelloContract`
-  - Função: `hello` retorna `Vec<Symbol>`
-- Exemplo: `Hello, world`
+```bash
+stellar contract build
+```
 
 ---
 
-### 4.5 Compilar Contrato
+### 4.4 Testar Contrato
 
-- Comando: `cargo build --target wasm32-unknown-unknown --release`
-- Output: `target/wasm32-unknown-unknown/release/hello_world.wasm`
-- Gera bytecode WebAssembly
-- Otimização: `opt-level = "z"`
-
----
-
-### 4.6 Testar Contrato
-
-- Comando: `cargo test`
-- Usa `soroban-sdk` com `testutils`
-- Verifica função `hello`
-- Garante comportamento correto
-- Exemplo: Testar output `["Hello", "world"]`
+```bash
+cargo test
+```
 
 ---
 
-### 4.7 Deploy e Interação
+### 4.5 Upload
 
-- **Install**:
-  - `soroban contract install --wasm hello_world.wasm --source alice --network testnet`
-- **Deploy**:
-  - `soroban contract deploy --wasm hello_world.wasm --source alice --network testnet`
-- **Interagir**:
-  - `soroban contract invoke --id CONTRACT_ID --source alice --network testnet -- hello --to world`
-- Resultado: `["Hello", "world"]`
+```bash
+stellar contract upload --source-account alice --wasm ./target/wasm32v1-none/release/hello_world.wasm
+# or in rust<1.85
+# stellar contract upload --source-account alice --wasm ./target/wasm32-unknown-unknown/release/hello_world.wasm
+```
+
+### 4.6 Install
+
+```bash
+stellar contract deploy --source-account alice --wasm-hash WASM_HASH
+```
+
+### 4.7 Interagir
+
+- Simulação
+
+```bash
+stellar contract invoke --id CA2DJTTURO5I6MSIACUBQP7P3RG3GAJBALUAZULKWH7A32SHRIP4I5GT --source alice  -- hello --to Lucas
+```
+
+- Broadcast
+
+```bash
+stellar contract invoke --id CA2DJTTURO5I6MSIACUBQP7P3RG3GAJBALUAZULKWH7A32SHRIP4I5GT --send=yes  --source alice  -- hello --to Lucas
+```
 
 ---
 
@@ -418,7 +460,7 @@ Soroban, é a plataforma de contratos inteligentes da Stellar, concentra-se em t
 
 - Post no LinkedIn e Twitter com #road2meridian (1/3)
 - Marque a Stellar (@StellarOrg)
-- Marque a NearX (@NearX\_)
+- Marque a NearX (@NearX)
 
 ### Desafio de Comunidade
 

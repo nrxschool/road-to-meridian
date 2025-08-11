@@ -115,3 +115,16 @@
 - Mineradores competem usando poder reputação
 
 ---
+
+## Smartcontracts
+
+- o que é DSL (Domain Specific Language)
+- o que é `#[contract]` e `#[contractimpl]`
+- o que é o env: Env em `hello(env: Env, to: Symbol)`:
+  - Interface com runtime
+  - Acesso a storage, eventos, criptografia
+- o que é o `#[no_std]`?
+- Sem standard library
+- Usa `soroban-sdk`
+- Ambiente determinístico
+
