@@ -25,12 +25,15 @@
 
 **Saldos:**
 
-- Temos o token nativo XLM (que chamamos de criptomoeda)
-- Temos tokens criados por meio de trustlines chamados Ativos
-- Temos tokens criados por meio de contratos inteligentes
-- lunes é a menor unidade de XLM
-- 1 XLM = 100000000 lumens
-- 1 lumens = 0.000000001 XLM
+**Saldos:**
+
+- Temos o token nativo **XLM** (chamado de criptomoeda nativa da rede Stellar).
+- Temos tokens criados por meio de **trustlines**, chamados de **Ativos**.
+- Temos tokens criados por meio de **contratos inteligentes** (introduzidos com o protocolo Soroban).
+- **Stroop** é a menor unidade de XLM.
+- 1 XLM = **10.000.000 stroops**.
+- 1 stroop = **0.0000001 XLM**.
+- A taxa base da rede é: 100 stroops = **0.00001 XLM**
 
 ## Transações
 
@@ -46,6 +49,35 @@
 4. Validação pelos nós
 5. Inclusão em um bloco
 6. Confirmação final
+
+| **Operação**                     | **Descrição**                                                                |
+| -------------------------------- | ---------------------------------------------------------------------------- |
+| **Create Account**               | Cria e financia uma nova conta com um saldo inicial de XLM.                  |
+| Payment                          | Envia um valor em um ativo para uma conta de destino.                        |
+| Path Payment Strict Send         | Envia um ativo e recebe outro, especificando a quantidade enviada.           |
+| Path Payment Strict Receive      | Envia um ativo e recebe outro, especificando a quantidade recebida.          |
+| Manage Buy Offer                 | Cria, atualiza ou deleta uma oferta para comprar um ativo.                   |
+| Manage Sell Offer                | Cria, atualiza ou deleta uma oferta para vender um ativo.                    |
+| Create Passive Sell Offer        | Cria uma oferta de venda passiva que não consome uma oferta correspondente.  |
+| Set Options                      | Define opções da conta, como destino de inflação, signatários ou limites.    |
+| Change Trust                     | Cria, atualiza ou deleta uma linha de confiança para um ativo.               |
+| Allow Trust                      | Atualiza a autorização de uma linha de confiança existente.                  |
+| Account Merge                    | Deleta uma conta e transfere seu saldo para outra.                           |
+| Inflation                        | Executa a inflação na rede (atualmente obsoleta).                            |
+| Manage Data                      | Define, modifica ou deleta uma entrada de dados (nome/valor) para uma conta. |
+| Bump Sequence                    | Avança o número de sequência de uma conta.                                   |
+| Invoke Host Function             | Executa funções de contratos inteligentes (Soroban).                         |
+| Extend Footprint TTL             | Estende o tempo de vida (TTL) de dados de contratos inteligentes.            |
+| Restore Footprint                | Restaura dados de contratos inteligentes que expiraram.                      |
+| Create Claimable Balance         | Cria um saldo resgatável para outra conta.                                   |
+| Claim Claimable Balance          | Resgata um saldo resgatável.                                                 |
+| Begin Sponsoring Future Reserves | Inicia o patrocínio de reservas futuras para uma conta.                      |
+| End Sponsoring Future Reserves   | Finaliza o patrocínio de reservas futuras.                                   |
+| Revoke Sponsorship               | Revoga o patrocínio de uma conta ou ativo.                                   |
+| Clawback                         | Recupera ativos de uma conta (exige autorização).                            |
+| Clawback Claimable Balance       | Recupera um saldo resgatável.                                                |
+| Set Trustline Flags              | Define configurações específicas para linhas de confiança.                   |
+| Liquidity Pool Deposit/Withdraw  | Deposita ou retira ativos de um pool de liquidez.                            |
 
 ## Blocos
 

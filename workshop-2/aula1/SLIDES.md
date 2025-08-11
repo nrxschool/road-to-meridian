@@ -55,7 +55,7 @@ Bem-vindos ao **Workshop: Road to Meridian 2**! Hoje vamos mergulhar no mundo do
 
 - +13Bi de captalização de mercado.
 - Fundada em 2014 pelo Jed McCaleb, founder da Mt. Gox e co-founder da Ripple.
-- Smartcontracts em Rust lançados em 2022 por Grandon Hoare.
+- Smartcontracts em Rust lançados em 2023 por Grandon Hoare.
 
 ---
 
@@ -95,27 +95,27 @@ Wallets -> Transações -> Blocos -> Consenso -> Smartcontracts
 
 ---
 
-### Wallets
+### Carteiras (Wallets)
 
-![](./assets/wallet.png)
+<img src="./assets/wallet.png" alt="wallet" style="width: 70%; height: auto;">
 
 ---
 
 ### Transações
 
-![](./assets/transaction.png)
+<img src="./assets/tx.png" alt="tx" style="width: 70%; height: auto;">
 
 ---
 
 ### Blocos
 
-![](./assets/block.png)
+<img src="./assets/block.png" alt="block" style="width: 70%; height: auto;">
 
 ---
 
 ### Consenso
 
-![](./assets/consenso.png)
+<img src="./assets/consenso.png" alt="consenso" style="width: 70%; height: auto;">
 
 ---
 
@@ -123,71 +123,104 @@ Wallets -> Transações -> Blocos -> Consenso -> Smartcontracts
 
 A Stellar é uma blockchain focada em pagamentos globais rápidos e baratos. Vamos entender suas características únicas!
 
-### Características da Stellar
+---
 
-**Velocidade:**
+### Tokenomics
 
-- Transações confirmadas em 3-5 segundos
-- Throughput de ~1000 transações por segundo
+A tokenomics da Stellar representa a distribuição e economia dos tokens XLM na rede. Abaixo estão os principais indicadores econômicos:
 
-**Custo:**
+| Indicador                 | Valor              | Descrição                                          |
+| ------------------------- | ------------------ | -------------------------------------------------- |
+| Fornecimento Inicial      | 100B XLM           | Quantidade total de tokens criados no lançamento   |
+| Queima                    | 55B XLM (Nov 2019) | Tokens permanentemente removidos de circulação     |
+| Fornecimento Máximo Atual | 50B XLM            | Limite máximo de tokens que podem existir          |
+| Fornecimento Circulante   | 31.28B XLM         | Tokens atualmente em circulação no mercado         |
+| Capitalização de Mercado  | $13.84B USD        | Valor total do mercado (preço × oferta circulante) |
+| Volume 24h                | $557.8M USD        | Valor total negociado nas últimas 24 horas         |
 
-- Fees extremamente baixas (0.00001 XLM)
-- Ideal para micropagamentos
+---
 
-**Sustentabilidade:**
+### Wallet
 
-- Não usa mineração
-- Consumo energético mínimo
+- Hash Functions: SHA-256 e RIPEMD-160 `ripemd160(sha256(data))`
+- Curva Elliptica: Ed25519
+- Wallets: Freighter, Lobstr
+- Redes: PublicNet, TestNet, Futurenet
 
-### Stellar Consensus Protocol (SCP)
+---
 
-**Como Funciona:**
+### Transações
 
-- Cada nó escolhe outros nós em quem confia
-- Forma "quorum slices" para validação
-- Consenso sem necessidade de token staking
+- 26 tipos de operações
+- Taxa Base 100 stroops == 0.00001 XLM
+- `n * 100 stroops` onde `n` é o número de operações na transação.
 
-**Vantagens:**
+| **Operação**         | **Descrição**                                                  |
+| -------------------- | -------------------------------------------------------------- |
+| Create Account       | Cria e financia uma nova conta com um saldo inicial de XLM.    |
+| Payment              | Envia um valor em um ativo para uma conta de destino.          |
+| Change Trust         | Cria, atualiza ou deleta uma linha de confiança para um ativo. |
+| Invoke Host Function | Executa funções de contratos inteligentes (Soroban).           |
 
-- Descentralizado mas eficiente
-- Resistente a falhas bizantinas
-- Flexível na escolha de validadores
+---
 
-### Ecossistema Stellar
+### Blocos
 
-**Lumens (XLM):**
+- Blocos == Ledgers
+- Limite padrão de 2000 operações
+- Um ledger a cada 5-7 segundos (~8.600-10.300 ledgers por dia)
 
-- Token nativo da rede
-- Usado para fees e anti-spam
-- Bridge currency para trocas
+---
 
-**Anchors:**
+### Consenso
 
-- Entidades que emitem tokens na Stellar
-- Representam ativos do mundo real
-- Facilitam on/off ramps
+O Stellar Consensus Protocol (SCP) é um protocolo de acordo bizantino federado (FBA) com membresia aberta, onde nós configuram fatias de quórum para alcançar consenso global sem mineração ou stake, garantindo transações atômicas e irreversíveis em segundos.
 
-**Stellar Development Foundation:**
+---
 
-- Organização sem fins lucrativos
-- Desenvolve e mantém a rede
-- Foca em inclusão financeira
+- A rede suporta mais de 3,3 milhões de contas.
+- +15 TPS (Transações por segundo)
+- Consensus time = 1.061 ms
+- Atualização do ledger = 46 ms.
+
+---
+
+- Figura 2
+
+---
+
+- Figura 6
+
+---
+
+- Figura 7
 
 ---
 
 ## 3. Smartcontracts na Stellar com Soroban
 
-Agora vamos entender como os smartcontracts funcionam na Stellar através do Soroban!
+Soroban, é a plataforma de contratos inteligentes da Stellar, concentra-se em três pilares essenciais:
+
+- Desempenho
+- Sustentabilidade
+- Segurança.
+
+---
 
 ### O que é Soroban?
 
-**Soroban** é a plataforma de smartcontracts da Stellar:
+- Mainnet: Março 2024
+- Runtime: WebAssembly (Wasm)
+- Linguagem principal: Rust
+- Integração com Stellar Network
+- 150+ projetos financiados
+- Fundo: US$100 milhões
 
-- Lançada em 2023
-- Usa WebAssembly (Wasm) como runtime
-- Suporte nativo para Rust
-- Integração perfeita com a Stellar Network
+- Processamento paralelo
+- Concorrência sem conflitos
+- Taxas multidimensionais
+
+---
 
 ### Por que Rust?
 
@@ -200,9 +233,12 @@ Agora vamos entender como os smartcontracts funcionam na Stellar através do Sor
 
 **Rust + Wasm:**
 
-- Compilação eficiente para WebAssembly
+- Soroban DSL
+- Compilação eficiente
 - Execução determinística
 - Portabilidade entre plataformas
+
+---
 
 ### VMs e Runtimes
 
@@ -211,6 +247,9 @@ Agora vamos entender como os smartcontracts funcionam na Stellar através do Sor
 - Bytecode portável e eficiente
 - Sandbox seguro para execução
 - Suporte a múltiplas linguagens
+- Alta performance
+
+---
 
 **Outras VMs:**
 
@@ -220,136 +259,111 @@ Agora vamos entender como os smartcontracts funcionam na Stellar através do Sor
 - **Move:** Linguagem da Diem/Aptos
 - **Cairo:** Linguagem da StarkNet
 
+---
+
 ### Ferramentas de Desenvolvimento
-
-**Stellar SDK:**
-
-- Bibliotecas para interagir com Stellar
-- Suporte a múltiplas linguagens
-- Facilita integração com aplicações
-
-**Soroban CLI:**
-
-- Ferramenta de linha de comando
-- Deploy e teste de contratos
-- Interação com a rede
-
-**Stellar Plus:**
-
-- Framework de alto nível
-- Simplifica desenvolvimento de dApps
-- Abstrações úteis para casos comuns
 
 ---
 
-## 4. Deploy do Primeiro Hello World
+---
 
-Vamos colocar a mão na massa e fazer nosso primeiro smartcontract!
+## 4. Deploy do Primeiro Hello World com Soroban
 
-### Estrutura de um Contrato Soroban
+- Mão na massa: criar um smart contract
+- Objetivo: Hello World na rede Stellar
+- Ferramentas: Rust, Soroban CLI, Stellar SDK
 
-**DSL (Domain Specific Language):**
+---
 
-```rust
-#[contract]
-pub struct HelloContract;
+### Ciclo de Desenvolvimento Soroban
 
-#[contractimpl]
-impl HelloContract {
-    pub fn hello(env: Env, to: Symbol) -> Vec<Symbol> {
-        vec![&env, symbol_short!("Hello"), to]
-    }
-}
-```
+1. Configuração: Criar conta e adicionar faucets
+2. Escrever: Contrato
+3. Compilar: Gerar Wasm
+4. Testar: Validar localmente
+5. Upload: Carregar contrato na rede
+6. Intalar: Inicializar contrato na rede
+7. Interagir: Executar funções
 
-**No STD:**
+---
 
-- Contratos Soroban não usam a standard library
-- Ambiente restrito para determinismo
-- Usa `soroban-sdk` em vez de `std`
+### 4.1 Criar Projeto
 
-**Env (Environment):**
+- Iniciar projeto: `cargo new --lib hello_world`
+- Estrutura de arquivos:
+  - `Cargo.toml`
+  - `src/lib.rs`
+  - `src/test.rs`
+- Base para contrato Soroban
 
-- Interface com o runtime Soroban
-- Acesso a storage, eventos, criptografia
-- Gerenciamento de recursos
+---
 
-### Ciclo de Desenvolvimento
+### 4.2 Configurar Projeto
 
-**1. Compilar:**
-MOSTRAR TERMINAL: `cargo build --target wasm32-unknown-unknown --release`
+- Editar `Cargo.toml`:
+  - Definir `crate-type = ["cdylib"]`
+  - Adicionar `soroban-sdk = "20.0.0"`
+  - Configurar `[profile.release]` para WebAssembly
+- Habilitar `no_std`
+- Rede: Testnet
 
-**2. Testar:**
-MOSTRAR TERMINAL: `cargo test`
+---
 
-**3. Upload:**
-MOSTRAR TERMINAL: `soroban contract deploy --wasm target/wasm32-unknown-unknown/release/hello_world.wasm --source alice --network testnet`
+### 4.3 Estrutura de um Contrato Soroban
 
-**4. Install:**
-MOSTRAR TERMINAL: `soroban contract install --wasm target/wasm32-unknown-unknown/release/hello_world.wasm --source alice --network testnet`
+- **DSL (Domain Specific Language)**:
+  - `#[contract]` e `#[contractimpl]`
+  - Função: `hello(env: Env, to: Symbol)`
+- **No STD**:
+  - Sem standard library
+  - Usa `soroban-sdk`
+  - Ambiente determinístico
+- **Env**:
+  - Interface com runtime
+  - Acesso a storage, eventos, criptografia
 
-**5. Interagir:**
-MOSTRAR TERMINAL: `soroban contract invoke --id CONTRACT_ID --source alice --network testnet -- hello --to world`
+---
 
-### Primeiro Projeto
+### 4.4 Criar Contrato
 
-MOSTRAR TERMINAL: `cargo new --lib hello_world`
+- Arquivo: `src/lib.rs`
+- Código base:
+  - `#![no_std]`
+  - Importar `soroban-sdk`
+  - Definir `HelloContract`
+  - Função: `hello` retorna `Vec<Symbol>`
+- Exemplo: `Hello, world`
 
-MOSTRAR ARVORE DE ARQUIVOS:
+---
 
-```
-hello_world/
-├── Cargo.toml
-└── src/
-    └── lib.rs
-```
+### 4.5 Compilar Contrato
 
-MOSTRAR CRIACAO DE MODULO: `Cargo.toml`
+- Comando: `cargo build --target wasm32-unknown-unknown --release`
+- Output: `target/wasm32-unknown-unknown/release/hello_world.wasm`
+- Gera bytecode WebAssembly
+- Otimização: `opt-level = "z"`
 
-```toml
-[package]
-name = "hello_world"
-version = "0.1.0"
-edition = "2021"
+---
 
-[lib]
-crate-type = ["cdylib"]
+### 4.6 Testar Contrato
 
-[dependencies]
-soroban-sdk = "20.0.0"
+- Comando: `cargo test`
+- Usa `soroban-sdk` com `testutils`
+- Verifica função `hello`
+- Garante comportamento correto
+- Exemplo: Testar output `["Hello", "world"]`
 
-[dev-dependencies]
-soroban-sdk = { version = "20.0.0", features = ["testutils"] }
+---
 
-[profile.release]
-opt-level = "z"
-overflow-checks = true
-debug = 0
-strip = "symbols"
-debug-assertions = false
-panic = "abort"
-codegen-units = 1
-lto = true
-```
+### 4.7 Deploy e Interação
 
-MOSTRAR CRIACAO DA FUNCAO: `src/lib.rs`
-
-```rust
-#![no_std]
-use soroban_sdk::{contract, contractimpl, symbol_short, vec, Env, Symbol, Vec};
-
-#[contract]
-pub struct HelloContract;
-
-#[contractimpl]
-impl HelloContract {
-    pub fn hello(env: Env, to: Symbol) -> Vec<Symbol> {
-        vec![&env, symbol_short!("Hello"), to]
-    }
-}
-
-mod test;
-```
+- **Install**:
+  - `soroban contract install --wasm hello_world.wasm --source alice --network testnet`
+- **Deploy**:
+  - `soroban contract deploy --wasm hello_world.wasm --source alice --network testnet`
+- **Interagir**:
+  - `soroban contract invoke --id CONTRACT_ID --source alice --network testnet -- hello --to world`
+- Resultado: `["Hello", "world"]`
 
 ---
 
