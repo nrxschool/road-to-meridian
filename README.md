@@ -7,3 +7,25 @@ Bem-vindo ao Workshop de Rust! Este repositório contém os materiais das 3 aula
 - [Aula3 Avançado](./aula3.md): 🚀 Compilação de módulos Rust para WebAssembly (WASM) e integração com a API. Criamos rotas dinâmicas para executar funções WASM com `wasmi`.
 
 Aproveite os conteúdos e bons estudos com Rust! 🦀
+
+Aula 1:
+
+- blockchain básico
+- ferramentas
+- deploy Rust Hello World
+
+Aula 2:
+
+- storage types e TTL
+- auth
+- erros, loggins e events
+- Integrar tudo no backend python (FastAPI) via restapi
+- deploy no railway e testnet
+
+Aula 3
+
+- wallets
+- criptografia: hash, chaves e assinaturas
+- redes: mainet e testnet
+- integrar tudo no frontend e contratos
+- deploy no vercel e testnet
