@@ -263,7 +263,6 @@ Soroban, é a plataforma de contratos inteligentes da Stellar, concentra-se em t
 
 ### Ferramentas de Desenvolvimento
 
----
 
 ---
 
