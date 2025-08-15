@@ -4,7 +4,7 @@ use hello_world::{Contract, ContractClient};
 use soroban_sdk::{vec, Env, String};
 
 #[test]
-fn test() {
+fn simple_test() {
     let env = Env::default();
     let contract_id = env.register(Contract, ());
     let client = ContractClient::new(&env, &contract_id);

@@ -185,15 +185,15 @@ O Stellar Consensus Protocol (SCP) é um protocolo de acordo bizantino federado 
 
 ---
 
-- Figura 2
+- [Figura 2](./assets/image1.png)
 
 ---
 
-- Figura 6
+- [Figura 6](./assets/image2.png)
 
 ---
 
-- Figura 7
+- [Figura 7](./assets/image3.png)
 
 ---
 
@@ -263,6 +263,9 @@ Soroban, é a plataforma de contratos inteligentes da Stellar, concentra-se em t
 
 ### Ferramentas de Desenvolvimento
 
+- Stellar CLI
+- Soroban SDK (Rust)
+- Stellar SDK (Javascript, Python)
 
 ---
 
@@ -278,11 +281,12 @@ Soroban, é a plataforma de contratos inteligentes da Stellar, concentra-se em t
 
 1. Configuração: Criar conta e adicionar faucets
 2. Escrever: Contrato
-3. Compilar: Gerar Wasm
+3. Compilar/Otimizar: Gerar Wasm
 4. Testar: Validar localmente
-5. Upload: Carregar contrato na rede
-6. Intalar: Inicializar contrato na rede
-7. Interagir: Executar funções
+5. Deploy: Implantar contrato na rede
+   a. Upload: Carregar contrato na rede
+   b. Intalar: Inicializar contrato na rede
+6. Interagir: Executar funções
 
 ---
 
@@ -366,6 +370,8 @@ impl Contract {
 
 ```bash
 stellar contract build
+# Otimizar contrato
+stellar contract optimize --wasm ./target/wasm32-unknown-unknown/release/hello_world.wasm
 ```
 
 ---
