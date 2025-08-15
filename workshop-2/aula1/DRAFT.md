@@ -1,56 +1,59 @@
----
-marp: true
-theme: gaia
----
-
 # **Workshop: Road to Meridian 2**
 
-## Blockchain
+## Bloco 1
 
-### Wallet
+_Apresentação_
 
-- Contas
-- Found
+- quem é o Lucas
+- quem é a Nearx
+- quem é a Stellar
+- o que é o Road to Meridian
 
-### Transações
+## Bloco 2
 
-- Operações
-- Fee
-- Ciclo de vida de uma transação
+_Blockchain Fundamentos_
 
-### Blocos
+- wallets
+- transactions
+- blocks
+- consenso
 
-- Tempo de bloco
-- Anatomia
-- STF (State Transition Function)
+## Bloco 3
 
-### Consenso
+_Stellar Fundamentos_
 
-- Proof of Work
-- Proof of Stake
-- Stellar Consensus Protocol
+- tokenomics
+- wallet
+- transactions
+- blocks
+- consenso
 
-### Smartcontract
+## Bloco 4
+
+_Smartcontracts_
 
 - Rust
-- VMs (Wasm, eBPF, RiscV, EVM, Move, Cairo)
+- Soroban
+- VMs e Runtimes
+- Ferramentas
 
-## Ferramentas
+## Bloco 5
 
-- stellar sdk
-- soroban
-- stellar plus
+_Hands On_
 
-## Hello World
+- Ciclo de Desenvolvimento Web3
+- Configuração
+- Criar Projeto
+- Escrever contrato
+- Compilar/Otimizar
+- Testar
+- Deploy/Instalar
+- Interagir
 
-- dsl
-- nostd
-- env
+## Bloco 6
 
-## Deploy
+_Finalizar_
 
-- compilar
-- testar
-- upload
-- install
-- interagir
+- Recapitulação
+- Lição de casa
+- Próxima aula
