@@ -185,15 +185,15 @@ O Stellar Consensus Protocol (SCP) é um protocolo de acordo bizantino federado 
 
 ---
 
-- [Figura 2](./assets/image1.png)
+- ![Figura 2](./assets/image1.png)
 
 ---
 
-- [Figura 6](./assets/image2.png)
+- ![Figura 6](./assets/image2.png)
 
 ---
 
-- [Figura 7](./assets/image3.png)
+- ![Figura 7](./assets/image3.png)
 
 ---
 
