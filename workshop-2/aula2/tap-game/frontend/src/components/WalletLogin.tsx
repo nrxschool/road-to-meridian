@@ -29,17 +29,26 @@ const WalletLogin: React.FC = () => {
               TAP GAME
             </h1>
             <p className="text-lg text-gray-300">
-              Tap fast!⚡️
+              fast and furious ⚡️
             </p>
           </div>
           
-          <button 
-            onClick={handleLogin}
-            disabled={isLoading}
-            className="w-full h-16 btn-primary pixel-border text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLoading ? 'Connecting...' : 'Enter'}
-          </button>
+          {isLoading ? (
+            <div className="w-full h-16 bg-gray-200 rounded-lg overflow-hidden pixel-border">
+              <div className="h-full bg-blue-500 transition-all duration-300 ease-out animate-pulse" style={{width: '60%'}}>
+                <div className="h-full flex items-center justify-center text-white font-bold">
+                  Connecting...
+                </div>
+              </div>
+            </div>
+          ) : (
+            <button
+              onClick={handleLogin}
+              className="w-full h-16 btn-primary pixel-border text-xl font-bold"
+            >
+              Enter
+            </button>
+          )}
         </div>
       </div>
     </div>

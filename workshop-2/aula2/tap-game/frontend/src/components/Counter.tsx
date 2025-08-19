@@ -161,7 +161,7 @@ const Counter: React.FC = () => {
                 onClick={handleClick}
                 className="w-48 h-48 btn-danger pixel-border text-4xl font-bold rounded-full mx-auto"
               >
-                TAP!
+                TAP
               </button>
             ) : (
               <div className="space-y-4">
