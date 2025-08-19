@@ -9,12 +9,12 @@ impl Contract {
     pub fn new_game(
         env: Env,
         player_address: Address,
-        player_name: String,
+        nickname: String,
         score: i32,
         game_time: i32,
     ) {
         let value = Game {
-            player_name,
+            nickname,
             score,
             game_time,
         };

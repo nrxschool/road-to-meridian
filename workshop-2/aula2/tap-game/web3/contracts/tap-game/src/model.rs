@@ -3,7 +3,7 @@ use soroban_sdk::{contracttype, Address, String};
 #[derive(Clone)]
 #[contracttype]
 pub struct Game {
-    pub player_name: String,
+    pub nickname: String,
     pub game_time: i32,
     pub score: i32,
 }

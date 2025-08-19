@@ -1,81 +1,114 @@
-import React, { createContext, useContext, ReactNode, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Player } from '@/blockchain/types/blockchain';
+import { useStellarWallet } from '@/blockchain/hooks/useStellarWallet';
+import { SorobanService } from '@/services/SorobanService';
+import { toast } from 'sonner';
 
 interface AuthContextType {
   // Auth state
   isConnected: boolean;
-  login: () => void;
+  login: () => Promise<void>;
   logout: () => void;
   
-  // Mock wallet data
+  // Stellar wallet data
   address: string | undefined;
   formatAddress: (address: string) => string;
   
-  // Mock blockchain operations
-  saveScore: (score: number) => Promise<boolean>;
+  // Blockchain operations
+  saveScore: (score: number, nickname: string, gameTime: number) => Promise<boolean>;
   getLeaderboard: () => Promise<Player[]>;
   isLoading: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Mock data for demonstration
-const MOCK_ADDRESS = 'bypass1234567890abcdef1234567890abcdef12345678';
+// Mock data for leaderboard (será substituído pelo contrato)
 const MOCK_LEADERBOARD: Player[] = [
-  { address: 'bypass1111111111111111111111111111111111111111', score: 9999, rank: 1 },
-  { address: 'bypass2222222222222222222222222222222222222222', score: 8888, rank: 2 },
-  { address: 'bypass3333333333333333333333333333333333333333', score: 7777, rank: 3 },
-  { address: 'bypass4444444444444444444444444444444444444444', score: 6666, rank: 4 },
-  { address: 'bypass5555555555555555555555555555555555555555', score: 5555, rank: 5 },
+  { address: 'GABC1234567890ABCDEF1234567890ABCDEF123456', score: 9999, rank: 1, nickname: 'CryptoKing' },
+  { address: 'GDEF2345678901BCDEF2345678901BCDEF234567A', score: 8888, rank: 2, nickname: 'TapMaster' },
+  { address: 'GHIJ3456789012CDEF3456789012CDEF345678BC', score: 7777, rank: 3, nickname: 'SpeedTapper' },
+  { address: 'GKLM4567890123DEF4567890123DEF456789CDE', score: 6666, rank: 4, nickname: 'ClickHero' },
+  { address: 'GNOP5678901234EF5678901234EF567890DEFG', score: 5555, rank: 5, nickname: 'GamePro' },
 ];
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [isConnected, setIsConnected] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const { wallet, isConnected, isLoading, createAndFundWallet, disconnect, formatAddress: stellarFormatAddress } = useStellarWallet();
   const [leaderboard, setLeaderboard] = useState<Player[]>(MOCK_LEADERBOARD);
+  const [isLoadingRanking, setIsLoadingRanking] = useState(false);
 
-  const login = () => {
-    setIsConnected(true);
-  };
-
-  const logout = () => {
-    setIsConnected(false);
-  };
-
-  const formatAddress = (address: string) => {
-    if (address.length <= 8) return address;
-    return `${address.slice(0, 4)}...${address.slice(-4)}`;
-  };
-
-  const saveScore = async (score: number): Promise<boolean> => {
-    setIsLoading(true);
-    
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Add user's score to leaderboard and re-sort
-    const newEntry: Player = {
-      address: MOCK_ADDRESS,
-      score,
-      rank: 0 // Will be calculated after sorting
+  // Busca o ranking do contrato ao carregar
+  useEffect(() => {
+    const fetchRanking = async () => {
+      try {
+        setIsLoadingRanking(true);
+        const ranking = await SorobanService.fetchRanking();
+        setLeaderboard(ranking);
+      } catch (error) {
+        console.error('Error fetching ranking:', error);
+        // Mantém o mock data em caso de erro
+      } finally {
+        setIsLoadingRanking(false);
+      }
     };
-    
-    const updatedLeaderboard = [...leaderboard, newEntry]
-      .sort((a, b) => b.score - a.score)
-      .map((player, index) => ({
-        ...player,
-        rank: index + 1
-      }))
-      .slice(0, 10); // Keep top 10
-    
-    setLeaderboard(updatedLeaderboard);
-    setIsLoading(false);
-    
-    return true;
+
+    fetchRanking();
+  }, []);
+
+  const login = async (): Promise<void> => {
+    await createAndFundWallet();
+  };
+
+  const logout = (): void => {
+    disconnect();
+  };
+
+  const formatAddress = (addr: string): string => {
+    return stellarFormatAddress(addr);
+  };
+
+  const saveScore = async (score: number, nickname: string, gameTime: number): Promise<boolean> => {
+    if (!wallet?.publicKey || !wallet?.secretKey) {
+      toast.error('Wallet não conectada');
+      return false;
+    }
+
+    try {
+      toast.loading('Enviando score para o contrato...');
+      
+      // Envia o score para o contrato Soroban
+      const txHash = await SorobanService.submitScore(
+        wallet.publicKey,
+        nickname,
+        score,
+        gameTime,
+        wallet.secretKey
+      );
+      
+      toast.dismiss();
+      toast.success(`Score ${score} salvo com sucesso!`);
+      
+      console.log('Transaction hash:', txHash);
+      
+      // Atualiza o ranking após enviar o score
+      try {
+        const updatedRanking = await SorobanService.fetchRanking();
+        setLeaderboard(updatedRanking);
+      } catch (error) {
+        console.error('Error updating ranking:', error);
+      }
+      
+      return true;
+    } catch (error) {
+      toast.dismiss();
+      console.error('Error saving score:', error);
+      toast.error('Erro ao salvar score no contrato');
+      return false;
+    }
   };
 
   const getLeaderboard = async (): Promise<Player[]> => {
-    // Simulate API delay
+    // TODO: Buscar do contrato Soroban
+    // Por enquanto, retornar mock data
     await new Promise(resolve => setTimeout(resolve, 500));
     return leaderboard;
   };
@@ -84,11 +117,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     isConnected,
     login,
     logout,
-    address: isConnected ? MOCK_ADDRESS : undefined,
+    address: wallet?.publicKey,
     formatAddress,
     saveScore,
     getLeaderboard,
-    isLoading,
+    isLoading: isLoading || isLoadingRanking,
   };
 
   return (

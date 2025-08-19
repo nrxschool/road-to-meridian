@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/contexts/XionContext';
 import { Player } from '@/blockchain/types/blockchain';
 import { toast } from 'sonner';
+import PlayerNameModal from './PlayerNameModal';
 
 /**
  * Tap-to-Earn Game - Estilo 8-bit Minimalista
@@ -14,6 +15,8 @@ const Counter: React.FC = () => {
   const [gameActive, setGameActive] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [finalScore, setFinalScore] = useState<number | null>(null);
+  const [gameTime, setGameTime] = useState(0);
+  const [showNameModal, setShowNameModal] = useState(false);
   const [leaderboard, setLeaderboard] = useState<Player[]>([]);
 
   useEffect(() => {
@@ -36,17 +39,29 @@ const Counter: React.FC = () => {
     return () => clearInterval(interval);
   }, [gameActive, timeLeft]);
 
-  const endGame = useCallback(async () => {
+  const endGame = useCallback(() => {
     setGameActive(false);
     setFinalScore(count);
+    setGameTime(10 - timeLeft); // Calcular tempo jogado
+    setShowNameModal(true);
+  }, [count, timeLeft]);
+
+  const handleSaveScore = useCallback(async (nickname: string) => {
+    const gameTimeUsed = 10 - timeLeft;
+    const success = await saveScore(count, nickname, gameTimeUsed);
     
-    const success = await saveScore(count);
     if (success) {
-      toast.success(`Score ${count} salvo!`);
+      toast.success(`Score ${count} salvo como ${nickname}!`);
       const players = await getLeaderboard();
       setLeaderboard(players);
     }
-  }, [count, saveScore, getLeaderboard]);
+    
+    setShowNameModal(false);
+  }, [count, timeLeft, saveScore, getLeaderboard]);
+
+  const handleCloseModal = useCallback(() => {
+    setShowNameModal(false);
+  }, []);
 
   const startGame = () => {
     setCount(0);
@@ -198,7 +213,7 @@ const Counter: React.FC = () => {
                       }}
                     >
                       <div className="text-xs font-bold">
-                        #{player.rank} {player.score.toString().padStart(4, '0')} - {formatAddress(player.address)}
+                        {player.score.toString().padStart(4, '0')} - {player.nickname || 'Anônimo'} - {player.address.substring(0, 4)}
                       </div>
                     </div>
                   );
@@ -217,6 +232,15 @@ const Counter: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Modal para capturar nome do jogador */}
+      <PlayerNameModal
+        isOpen={showNameModal}
+        onSubmit={handleSaveScore}
+        onClose={handleCloseModal}
+        score={finalScore || 0}
+        gameTime={gameTime}
+      />
     </div>
   );
 };

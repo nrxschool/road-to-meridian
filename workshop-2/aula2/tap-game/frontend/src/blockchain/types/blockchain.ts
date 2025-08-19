@@ -6,6 +6,7 @@ export interface Player {
   address: string;
   score: number;
   rank: number;
+  nickname?: string;
 }
 
 export interface UserStats {

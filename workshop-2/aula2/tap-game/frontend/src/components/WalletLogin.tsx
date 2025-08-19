@@ -2,7 +2,11 @@ import React from 'react';
 import { useAuth } from '@/contexts/XionContext';
 
 const WalletLogin: React.FC = () => {
-  const { isConnected, login } = useAuth();
+  const { isConnected, login, isLoading } = useAuth();
+
+  const handleLogin = async () => {
+    await login();
+  };
 
   if (isConnected) {
     return null;
@@ -48,13 +52,14 @@ const WalletLogin: React.FC = () => {
           
           {/* Botão de conexão */}
           <button 
-            onClick={login}
-            className="w-full h-16 btn-primary pixel-border text-lg font-bold"
+            onClick={handleLogin}
+            disabled={isLoading}
+            className="w-full h-16 btn-primary pixel-border text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               boxShadow: '4px 4px 0px hsl(var(--pixel-black))'
             }}
           >
-            CONNECT WALLET
+            {isLoading ? 'CRIANDO WALLET...' : 'CONNECT WALLET'}
           </button>
           
           {/* Footer */}
