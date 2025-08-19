@@ -16,7 +16,7 @@ export interface FundingResponse {
 
 export class StellarService {
   private static readonly BACKEND_URL = 'http://localhost:3001';
-  private static readonly HORIZON_URL = 'https://horizon-testnet.stellar.org';
+  private static readonly HORIZON_URL = import.meta.env.VITE_RPC_ENDPOINT || 'https://horizon-testnet.stellar.org';
   private server: StellarSdk.Horizon.Server;
 
   constructor() {

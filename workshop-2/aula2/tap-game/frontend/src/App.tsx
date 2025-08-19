@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
-import { AuthProvider } from "@/contexts/XionContext";
+import { AuthProvider } from "@/contexts/StellarContext";
 import Index from "./pages/Index";
 
 const queryClient = new QueryClient();

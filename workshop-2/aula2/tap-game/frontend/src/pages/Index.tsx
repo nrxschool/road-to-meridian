@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '@/contexts/XionContext';
+import { useAuth } from '@/contexts/StellarContext';
 import WalletLogin from '@/components/WalletLogin';
 import Counter from '@/components/Counter';
 

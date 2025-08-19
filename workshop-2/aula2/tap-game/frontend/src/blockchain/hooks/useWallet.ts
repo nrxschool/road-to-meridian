@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 /**
- * Hook para simular conexão da carteira
- * Fornece funcionalidades simuladas sem dependência real da Abstraxion
+ * Hook para simular funcionalidades de wallet
+ * Fornece funcionalidades simuladas para desenvolvimento
  */
 export const useWallet = () => {
   // Endereço simulado de carteira

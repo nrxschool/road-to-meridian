@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useAuth } from '@/contexts/XionContext';
+import { useAuth } from '@/contexts/StellarContext';
 import { Player } from '@/blockchain/types/blockchain';
 import { toast } from 'sonner';
 import PlayerNameModal from './PlayerNameModal';
@@ -212,7 +212,7 @@ const Counter: React.FC = () => {
                         color: '#ffffff'
                       }}
                     >
-                      <div className="text-xs font-bold">
+                      <div className="text-xs font-bold text-left">
                         {player.score.toString().padStart(4, '0')} - {player.nickname || 'Anônimo'} - {player.address.substring(0, 4)}
                       </div>
                     </div>
@@ -222,7 +222,7 @@ const Counter: React.FC = () => {
                     backgroundColor: '#606060',
                     color: '#ffffff'
                   }}>
-                    <div className="text-xs font-bold text-center">
+                    <div className="text-xs font-bold text-left">
                       CARREGANDO RANKING...
                     </div>
                   </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '@/contexts/XionContext';
+import { useAuth } from '@/contexts/StellarContext';
 
 const WalletLogin: React.FC = () => {
   const { isConnected, login, isLoading } = useAuth();
@@ -47,7 +47,7 @@ const WalletLogin: React.FC = () => {
           <div className="text-sm" style={{
             color: 'hsl(var(--pixel-white))'
           }}>
-            BYPASS LOGIN
+            STELLAR LOGIN
           </div>
           
           {/* Botão de conexão */}
@@ -66,7 +66,7 @@ const WalletLogin: React.FC = () => {
           <div className="text-xs" style={{
             color: 'hsl(var(--pixel-white))'
           }}>
-            POWERED BY BYPASS
+            POWERED BY STELLAR
           </div>
         </div>
       </div>
