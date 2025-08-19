@@ -1,80 +1,72 @@
-import { useState, useCallback, useEffect } from "react";
-import { XionBlockchainService } from "../services/XionBlockchainService";
+import { useState, useCallback } from "react";
 import { Player } from "../types/blockchain";
-import { useWallet } from "./useWallet";
 import { toast } from "sonner";
 
+// Mock data para o leaderboard
+const mockLeaderboard: Player[] = [
+  { address: "cosmos1abc123def456", score: 87, rank: 1 },
+  { address: "cosmos1xyz789uvw321", score: 65, rank: 2 },
+  { address: "cosmos1pqr456stu789", score: 54, rank: 3 },
+  { address: "cosmos1lmn987opq654", score: 42, rank: 4 },
+  { address: "cosmos1hij321klm654", score: 36, rank: 5 },
+];
+
 /**
- * Hook para interações com a blockchain
- * Centraliza todas as operações de smart contract
+ * Hook para simular interações com a blockchain
+ * Fornece funcionalidades simuladas sem dependência real da blockchain
  */
 export const useBlockchain = () => {
-  const { client, address } = useWallet();
   const [isLoading, setIsLoading] = useState(false);
-  const [service, setService] = useState<XionBlockchainService>(
-    () => new XionBlockchainService(client)
-  );
-
-  // Atualizar o serviço quando o cliente mudar
-  useEffect(() => {
-    if (client) {
-      setService(new XionBlockchainService(client));
-    }
-  }, [client]);
-
+  
+  // Simula salvar a pontuação
   const saveScore = useCallback(
     async (score: number) => {
-      if (!address) {
-        toast.error("Carteira não conectada");
-        return false;
-      }
-
       setIsLoading(true);
+      
+      // Simula um delay de rede
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       try {
-        await service.saveScore(address, score);
-        return true;
+        // Simula sucesso com 90% de chance
+        if (Math.random() > 0.1) {
+          return true;
+        } else {
+          toast.error("Falha ao salvar pontuação");
+          return false;
+        }
       } catch (error) {
         console.error("Erro ao salvar pontuação:", error);
-        toast.error("Falha ao salvar na blockchain");
+        toast.error("Falha ao salvar pontuação");
         return false;
       } finally {
         setIsLoading(false);
       }
     },
-    [address, service, toast]
+    []
   );
 
+  // Simula obter o leaderboard
   const getLeaderboard = useCallback(async (): Promise<Player[]> => {
-    if (!client) {
-      return [];
-    }
+    // Simula um delay de rede
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    // Retorna o leaderboard mockado
+    return [...mockLeaderboard];
+  }, []);
 
-    try {
-      return await service.getLeaderboard();
-    } catch (error) {
-      console.error("Erro ao buscar leaderboard:", error);
-      toast.error("Falha ao carregar ranking");
-      return [];
-    }
-  }, [client, service, toast]);
-
+  // Simula obter o total de jogos
   const totalGames = useCallback(async (): Promise<number> => {
-    if (!client) {
-      return 0;
-    }
-
-    try {
-      return await service.totalGames();
-    } catch (error) {
-      console.error("Erro ao verificar contrato:", error);
-      return 0;
-    }
-  }, [client, service]);
+    // Simula um delay de rede
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Retorna um número aleatório entre 100 e 500
+    return Math.floor(Math.random() * 400) + 100;
+  }, []);
 
   return {
+    isLoading,
     saveScore,
     getLeaderboard,
     totalGames,
-    isLoading,
   };
 };

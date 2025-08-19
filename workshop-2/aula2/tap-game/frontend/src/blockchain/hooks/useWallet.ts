@@ -1,36 +1,34 @@
-import { useState, useEffect } from 'react';
-import { useAbstraxionAccount, useAbstraxionSigningClient } from '@burnt-labs/abstraxion';
+import { useState } from 'react';
 
 /**
- * Hook para gerenciar conexão da carteira
- * Separado da lógica do jogo
+ * Hook para simular conexão da carteira
+ * Fornece funcionalidades simuladas sem dependência real da Abstraxion
  */
 export const useWallet = () => {
-  const { data: account } = useAbstraxionAccount();
-  const { client } = useAbstraxionSigningClient();
+  // Endereço simulado de carteira
+  const mockAddress = 'cosmos1mock123address456789abcdef';
+  
+  // Estado para controlar se está conectado
   const [isConnected, setIsConnected] = useState(false);
 
-  useEffect(() => {
-    setIsConnected(!!account?.bech32Address);
-  }, [account]);
-
   const connect = () => {
-    // Abstraxion handles connection automatically via modal
+    setIsConnected(true);
   };
 
   const disconnect = () => {
-    // Handle logout if needed
     setIsConnected(false);
   };
 
+  // Formata o endereço para exibição
   const formatAddress = (address: string) => {
     if (address.length <= 8) return address;
     return `${address.slice(0, 4)}...${address.slice(-4)}`;
   };
+
   return {
-    address: account?.bech32Address,
+    address: isConnected ? mockAddress : undefined,
     isConnected,
-    client,
+    client: null, // Não precisamos mais do cliente real
     connect,
     disconnect,
     formatAddress,

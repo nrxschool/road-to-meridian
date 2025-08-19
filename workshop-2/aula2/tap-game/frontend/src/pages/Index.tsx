@@ -1,10 +1,10 @@
 import React from 'react';
-import { useXion } from '@/contexts/XionContext';
+import { useAuth } from '@/contexts/XionContext';
 import WalletLogin from '@/components/WalletLogin';
 import Counter from '@/components/Counter';
 
 const Index = () => {
-  const { isConnected } = useXion();
+  const { isConnected } = useAuth();
 
   return (
     <div className="min-h-screen pixel-bg" style={{

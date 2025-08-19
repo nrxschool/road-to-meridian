@@ -1,16 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useWallet } from '@/blockchain/hooks/useWallet';
-import { useBlockchain } from '@/blockchain/hooks/useBlockchain';
+import { useAuth } from '@/contexts/XionContext';
 import { Player } from '@/blockchain/types/blockchain';
 import { toast } from 'sonner';
 
 /**
  * Tap-to-Earn Game - Estilo 8-bit Minimalista
- * Jogo de cliques com contador regressivo integrado à blockchain Xion
+ * Jogo de cliques com contador regressivo
  */
 const Counter: React.FC = () => {
-  const { address, disconnect, formatAddress } = useWallet();
-  const { saveScore, getLeaderboard, isLoading } = useBlockchain();
+  const { address, logout, formatAddress, saveScore, getLeaderboard, isLoading } = useAuth();
   const [count, setCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(10);
   const [gameActive, setGameActive] = useState(false);
@@ -44,7 +42,7 @@ const Counter: React.FC = () => {
     
     const success = await saveScore(count);
     if (success) {
-      toast.success(`Score ${count} salvo na blockchain Xion!`);
+      toast.success(`Score ${count} salvo!`);
       const players = await getLeaderboard();
       setLeaderboard(players);
     }
@@ -82,7 +80,7 @@ const Counter: React.FC = () => {
         }}>
           <div className="p-6 text-center space-y-6 relative">
             <button
-              onClick={disconnect}
+              onClick={logout}
               className="absolute top-2 right-2 w-8 h-8 btn-danger text-xs font-bold"
               title="Desconectar"
             >
@@ -107,7 +105,7 @@ const Counter: React.FC = () => {
               <div className="text-xs mt-1" style={{
                  color: 'hsl(var(--pixel-yellow))'
                }}>
-                 ▲ XION BLOCKCHAIN
+                 ▲ BLOCKCHAIN GAME
                </div>
              </div>
 
@@ -162,7 +160,7 @@ const Counter: React.FC = () => {
                   <div className="text-sm animate-pulse" style={{
                     color: 'hsl(var(--pixel-yellow))'
                   }}>
-                    SAVING TO BLOCKCHAIN...
+                    SAVING SCORE...
                   </div>
                 ) : (
                   <div className="text-sm font-bold" style={{

@@ -1,10 +1,8 @@
 import React from 'react';
-import { useXion } from '@/contexts/XionContext';
-import { Abstraxion, useModal } from '@burnt-labs/abstraxion';
+import { useAuth } from '@/contexts/XionContext';
 
 const WalletLogin: React.FC = () => {
-  const { isConnected } = useXion();
-  const [showModal, setShowModal] = useModal();
+  const { isConnected, login } = useAuth();
 
   if (isConnected) {
     return null;
@@ -45,12 +43,12 @@ const WalletLogin: React.FC = () => {
           <div className="text-sm" style={{
             color: 'hsl(var(--pixel-white))'
           }}>
-            CONNECT XION WALLET
+            BYPASS LOGIN
           </div>
           
           {/* Botão de conexão */}
           <button 
-            onClick={() => setShowModal(true)}
+            onClick={login}
             className="w-full h-16 btn-primary pixel-border text-lg font-bold"
             style={{
               boxShadow: '4px 4px 0px hsl(var(--pixel-black))'
@@ -59,15 +57,11 @@ const WalletLogin: React.FC = () => {
             CONNECT WALLET
           </button>
           
-
-          
-          <Abstraxion onClose={() => setShowModal(false)} />
-          
           {/* Footer */}
           <div className="text-xs" style={{
             color: 'hsl(var(--pixel-white))'
           }}>
-            POWERED BY XION
+            POWERED BY BYPASS
           </div>
         </div>
       </div>
