@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useStellarWallet } from "@/blockchain/hooks/useStellarWallet";
-import { Player } from "@/blockchain/types/blockchain";
-import { Client, Game } from "@/lib/src/index";
+import { useStellarWallet } from "../blockchain/hooks/useStellarWallet";
+import { Player } from "../blockchain/types/blockchain";
+import { Client, Game } from "../lib/src/index";
 import { toast } from "sonner";
 
 interface PlayProps {

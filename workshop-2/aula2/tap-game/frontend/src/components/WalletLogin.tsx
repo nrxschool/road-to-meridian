@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStellarWallet } from '@/blockchain/hooks/useStellarWallet';
+import { useStellarWallet } from '../blockchain/hooks/useStellarWallet';
 
 interface WalletLoginProps {
   onConnect: () => void;
