@@ -1,19 +1,19 @@
-# 🎮 Xion Tap-to-Earn Game
+# 🎮 Stellar Tap-to-Earn Game
 
-Um jogo **Tap-to-Earn** estilo 8-bit minimalista integrado à blockchain **Xion**. Os jogadores têm 10 segundos para clicar o máximo possível e salvar sua pontuação na blockchain, competindo em um ranking global.
+Um jogo **Tap-to-Earn** estilo 8-bit minimalista integrado à blockchain **Stellar**. Os jogadores têm 10 segundos para clicar o máximo possível e salvar sua pontuação na blockchain, competindo em um ranking global.
 
 ## ✨ Características Principais
 
 - 🎯 **Jogo Tap-to-Earn**: 10 segundos de cliques intensos
-- 🏆 **Ranking Global**: Leaderboard salvo na blockchain Xion
+- 🏆 **Ranking Global**: Leaderboard salvo na blockchain Stellar
 - 🎨 **Design 8-bit**: Interface minimalista com apenas 5 cores
-- 🔗 **Integração Xion**: Conexão via Abstraxion wallet
+- 🔗 **Integração Stellar**: Conexão via Stellar wallet
 - ⚡ **Performance**: Arquitetura otimizada e responsiva
 - 🏗️ **Arquitetura Limpa**: Separação clara de responsabilidades
 
 ## 🎮 Como Jogar
 
-1. **Conecte sua wallet Xion** através do Abstraxion
+1. **Conecte sua wallet Stellar** através do Stellar SDK
 2. **Clique em "START GAME"** para iniciar o contador de 10 segundos
 3. **Clique rapidamente** na área de jogo para aumentar sua pontuação
 4. **Sua pontuação é automaticamente salva** na blockchain quando o tempo acaba
@@ -23,14 +23,14 @@ Um jogo **Tap-to-Earn** estilo 8-bit minimalista integrado à blockchain **Xion*
 
 ```
 src/
-├── blockchain/                 # Lógica da blockchain Xion
+├── blockchain/                 # Lógica da blockchain Stellar
 │   ├── config/
-│   │   └── xion.ts            # Configurações da rede
+│   │   └── stellar.ts         # Configurações da rede
 │   ├── hooks/
 │   │   ├── useWallet.ts       # Hook de gerenciamento da wallet
 │   │   └── useBlockchain.ts   # Hook de interações blockchain
 │   ├── services/
-│   │   └── XionBlockchainService.ts # Serviço centralizado
+│   │   └── StellarService.ts  # Serviço centralizado
 │   └── types/
 │       └── blockchain.ts      # Tipos TypeScript
 ├── components/
@@ -38,7 +38,7 @@ src/
 │   ├── Counter.tsx            # Componente principal do jogo
 │   └── WalletLogin.tsx        # Tela de conexão da wallet
 ├── contexts/
-│   └── XionContext.tsx        # Contexto global do Xion
+│   └── StellarContext.tsx     # Contexto global do Stellar
 ├── pages/
 │   └── Index.tsx              # Página principal
 ├── lib/
@@ -55,7 +55,7 @@ src/
 - **Tailwind CSS** - Framework CSS utilitário
 
 ### Blockchain Integration
-- **@burnt-labs/abstraxion** - SDK oficial para Xion blockchain
+- **@stellar/stellar-sdk** - SDK oficial para Stellar blockchain
 - **@tanstack/react-query** - Gerenciamento de estado e cache
 - **CosmJS** - Biblioteca para interação com Cosmos SDK
 
@@ -75,7 +75,7 @@ src/
 ### Pré-requisitos
 - Node.js 18+ 
 - npm ou yarn
-- Wallet Xion (Abstraxion)
+- Wallet Stellar
 
 ### Instalação
 ```bash
@@ -90,11 +90,11 @@ npm install --legacy-peer-deps
 ### Configuração
 Crie um arquivo `.env` na raiz do projeto:
 ```env
-VITE_NETWORK=xion-testnet-2
-VITE_RPC_ENDPOINT=https://rpc.xion-testnet-2.burnt.com:443
-VITE_CODE_ID=1431
-VITE_CONTRACT_ADDRESS=xion14yu57e3xh0f9j4xqy8ed635074749np8auq0969vhjzq532zacds7rl382
-VITE_TREASURY_ADDRESS=xion1apgmwm45uqf9wcrzdk4uyz24x645w9ltrqgtqpt7ek6z3rnrj2zszmma52
+VITE_NETWORK=testnet
+VITE_RPC_ENDPOINT=https://horizon-testnet.stellar.org
+VITE_CHAIN_ID=testnet
+VITE_CONTRACT_ADDRESS=CCOT2GXJ2ND4FSHSG22USR2244ZJDBEBQZYEBBD3DQ45BGLYVDT3WUJB
+VITE_TREASURY_ADDRESS=GBTESTACCOUNTADDRESSFORSTELLARNETWORK123456789
 ```
 
 ### Desenvolvimento
@@ -112,8 +112,8 @@ npm run preview
 ## 🎯 Funcionalidades do Jogo
 
 ### 🔐 Sistema de Autenticação
-- Conexão segura via Abstraxion wallet
-- Suporte completo à blockchain Xion
+- Conexão segura via Stellar wallet
+- Suporte completo à blockchain Stellar
 - Interface de login minimalista 8-bit
 
 ### 🎮 Mecânicas do Jogo
@@ -124,7 +124,7 @@ npm run preview
 
 ### 🏆 Sistema de Ranking
 - **Leaderboard global**: Ranking de todos os jogadores
-- **Persistência blockchain**: Dados imutáveis na Xion
+- **Persistência blockchain**: Dados imutáveis na Stellar
 - **Atualização em tempo real**: Ranking atualizado após cada jogo
 
 ## 🏗️ Arquitetura do Projeto
@@ -146,7 +146,7 @@ const { address, connect, disconnect } = useWallet();
 const { saveScore, getLeaderboard } = useBlockchain();
 
 // Contexto global
-const { isConnected } = useXion();
+const { isConnected } = useStellar();
 ```
 
 ## 🎨 Design System 8-bit
@@ -171,7 +171,7 @@ const { isConnected } = useXion();
 ```mermaid
 graph TD
     A[Usuário acessa app] --> B[Tela de Login]
-    B --> C[Conecta Wallet Xion]
+    B --> C[Conecta Wallet Stellar]
     C --> D[Tela do Jogo]
     D --> E[Clica START GAME]
     E --> F[10 segundos de cliques]
@@ -184,16 +184,16 @@ graph TD
 
 ### Variáveis de Ambiente
 ```env
-# Rede Xion
-VITE_NETWORK=xion-testnet-2
-VITE_RPC_ENDPOINT=https://rpc.xion-testnet-2.burnt.com:443
+# Rede Stellar
+VITE_NETWORK=testnet
+VITE_RPC_ENDPOINT=https://horizon-testnet.stellar.org
 
 # Smart Contract
 VITE_CODE_ID=1431
-VITE_CONTRACT_ADDRESS=xion14yu57e3xh0f9j4xqy8ed635074749np8auq0969vhjzq532zacds7rl382
+VITE_CONTRACT_ADDRESS=CCOT2GXJ2ND4FSHSG22USR2244ZJDBEBQZYEBBD3DQ45BGLYVDT3WUJB
 
 # Treasury
-VITE_TREASURY_ADDRESS=xion1apgmwm45uqf9wcrzdk4uyz24x645w9ltrqgtqpt7ek6z3rnrj2zszmma52
+VITE_TREASURY_ADDRESS=GBTESTACCOUNTADDRESSFORSTELLARNETWORK123456789
 ```
 
 ### Customização do Tema
@@ -244,5 +244,5 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ---
 
-**🎮 Desenvolvido com ❤️ para a blockchain Xion**  
+**🎮 Desenvolvido com ❤️ para a blockchain Stellar**  
 *Um exemplo prático de integração Web3 com design 8-bit autêntico*
