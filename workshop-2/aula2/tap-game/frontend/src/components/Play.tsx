@@ -4,7 +4,7 @@ import { Player } from "@/blockchain/types/blockchain";
 import { Client, Game } from "@/lib/src/index";
 import { toast } from "sonner";
 
-interface CounterProps {
+interface PlayProps {
   onDisconnect: () => void;
 }
 
@@ -12,7 +12,7 @@ interface CounterProps {
  * Tap-to-Earn Game - Versão Minimalista
  * Jogo de cliques com timer de 10 segundos
  */
-const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
+const Play: React.FC<PlayProps> = ({ onDisconnect }) => {
   const { wallet, disconnect } = useStellarWallet();
   const [isSaving, setIsSaving] = useState(false);
   const [count, setCount] = useState(0);
@@ -27,32 +27,32 @@ const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
       try {
         const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
         const rpcUrl = import.meta.env.VITE_RPC_ENDPOINT;
-        
+
         if (!contractAddress || !rpcUrl) {
-          console.error('Contract address or RPC URL not configured');
+          console.error("Contract address or RPC URL not configured");
           return;
         }
 
         const client = new Client({
           contractId: contractAddress,
           rpcUrl: rpcUrl,
-          networkPassphrase: 'Test SDF Network ; September 2015'
+          networkPassphrase: "Test SDF Network ; September 2015",
         });
-        
+
         const result = await client.get_rank();
         const games = result.result || [];
-        
+
         // Converter Game[] para Player[]
         const players: Player[] = games.map((game: Game, index: number) => ({
-          address: 'N/A', // A lib não retorna o endereço
+          address: "N/A", // A lib não retorna o endereço
           score: game.score,
           rank: index + 1,
-          nickname: game.nickname
+          nickname: game.nickname,
         }));
-        
+
         setLeaderboard(players);
       } catch (error) {
-        console.error('Erro ao carregar ranking:', error);
+        console.error("Erro ao carregar ranking:", error);
       }
     };
     loadRanking();
@@ -73,58 +73,58 @@ const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
 
   const endGame = useCallback(async () => {
     setGameActive(false);
-    
+
     if (!wallet?.publicKey || !wallet?.secretKey) {
-      toast.error('Wallet não conectada');
+      toast.error("Wallet não conectada");
       return;
     }
 
     // Salvar pontuação automaticamente
     try {
       setIsSaving(true);
-      toast.loading('Salvando pontuação no contrato...');
-      
+      toast.loading("Salvando pontuação no contrato...");
+
       const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
       const rpcUrl = import.meta.env.VITE_RPC_ENDPOINT;
-      
+
       if (!contractAddress || !rpcUrl) {
-        throw new Error('Contract address or RPC URL not configured');
+        throw new Error("Contract address or RPC URL not configured");
       }
 
       const client = new Client({
         contractId: contractAddress,
         rpcUrl: rpcUrl,
-        networkPassphrase: 'Test SDF Network ; September 2015'
+        networkPassphrase: "Test SDF Network ; September 2015",
       });
-      
+
       // Criar transação para salvar o jogo
       const tx = await client.new_game({
         player_address: wallet.publicKey,
-        nickname: 'Player', // Nickname fixo para versão minimalista
+        nickname: "Player", // Nickname fixo para versão minimalista
         score: count,
-        game_time: 10 - timeLeft
+        game_time: 10 - timeLeft,
       });
-      
+
       // Assinar e enviar a transação
       // Nota: Você precisará implementar a assinatura com a secret key
-      
+
       toast.dismiss();
       toast.success(`Pontuação ${count} salva com sucesso!`);
-      
+
       // Atualizar ranking
       const result = await client.get_rank();
       const games = result.result || [];
       const players: Player[] = games.map((game: Game, index: number) => ({
-        address: 'N/A',
+        address: "N/A",
         score: game.score,
         rank: index + 1,
-        nickname: game.nickname
+        nickname: game.nickname,
       }));
       setLeaderboard(players);
     } catch (error) {
       toast.dismiss();
-      console.error('Erro ao salvar pontuação:', error);
-      toast.error('Falha ao salvar pontuação no contrato');
+      console.error("Erro ao salvar pontuação:", error);
+      toast.error("Falha ao salvar pontuação no contrato");
     } finally {
       setIsSaving(false);
     }
@@ -304,4 +304,4 @@ const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
   );
 };
 
-export default Counter;
+export default Play;

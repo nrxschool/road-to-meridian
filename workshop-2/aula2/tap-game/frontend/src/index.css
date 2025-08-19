@@ -31,12 +31,6 @@
     box-shadow: 3px 3px 0px hsl(var(--pixel-black));
   }
 
-  .pixel-perfect {
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-  }
-
   /* Botões com cores específicas */
 .btn-primary {
   background-color: hsl(var(--pixel-white));
@@ -111,7 +105,6 @@
 }
 
   body {
-    @apply bg-background text-foreground;
     font-family: 'Press Start 2P', 'Courier New', monospace;
     background-color: hsl(var(--pixel-black));
     color: hsl(var(--pixel-white));
