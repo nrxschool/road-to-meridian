@@ -24,7 +24,7 @@ export class StellarService {
   }
 
   /**
-   * Cria uma nova wallet Stellar
+   * Creates a new Stellar wallet
    */
   createWallet(): StellarWallet {
     const keypair = StellarSdk.Keypair.random();
@@ -35,7 +35,7 @@ export class StellarService {
   }
 
   /**
-   * Chama o backend para financiar a wallet na testnet
+   * Calls backend to fund wallet on testnet
    */
   async fundWallet(publicKey: string): Promise<FundingResponse> {
     try {
@@ -51,24 +51,25 @@ export class StellarService {
       if (response.ok) {
         return data;
       } else {
+        console.error('Funding failed:', data.error);
         return {
           success: false,
-          message: data.error || 'Erro ao financiar wallet',
+          message: data.error || 'Failed to fund wallet',
           error: data.error
         };
       }
     } catch (error) {
-      console.error('Erro ao chamar backend de funding:', error);
+      console.error('Error calling funding backend:', error);
       return {
         success: false,
-        message: 'Erro de conexão com o backend',
-        error: error instanceof Error ? error.message : 'Erro desconhecido'
+        message: 'Backend connection error',
+        error: error instanceof Error ? error.message : 'Unknown error'
       };
     }
   }
 
   /**
-   * Verifica o saldo de uma conta
+   * Checks account balance
    */
   async getBalance(publicKey: string): Promise<string> {
     try {
@@ -76,13 +77,13 @@ export class StellarService {
       const balance = account.balances.find(b => b.asset_type === 'native');
       return balance ? balance.balance : '0';
     } catch (error) {
-      console.error('Erro ao verificar saldo:', error);
+      console.error('Error checking balance:', error);
       return '0';
     }
   }
 
   /**
-   * Verifica se uma conta existe
+   * Checks if account exists
    */
   async accountExists(publicKey: string): Promise<boolean> {
     try {
@@ -94,7 +95,7 @@ export class StellarService {
   }
 
   /**
-   * Formata um endereço Stellar para exibição
+   * Formats Stellar address for display
    */
   formatAddress(address: string): string {
     if (address.length <= 8) return address;
@@ -102,7 +103,7 @@ export class StellarService {
   }
 
   /**
-   * Valida se uma chave pública Stellar é válida
+   * Validates if Stellar public key is valid
    */
   isValidPublicKey(publicKey: string): boolean {
     try {
@@ -114,14 +115,14 @@ export class StellarService {
   }
 
   /**
-   * Salva wallet no localStorage (apenas para desenvolvimento)
+   * Saves wallet to localStorage (development only)
    */
   saveWalletToStorage(wallet: StellarWallet): void {
     localStorage.setItem('stellar_wallet', JSON.stringify(wallet));
   }
 
   /**
-   * Recupera wallet do localStorage
+   * Retrieves wallet from localStorage
    */
   getWalletFromStorage(): StellarWallet | null {
     try {
@@ -133,7 +134,7 @@ export class StellarService {
   }
 
   /**
-   * Remove wallet do localStorage
+   * Removes wallet from localStorage
    */
   clearWalletFromStorage(): void {
     localStorage.removeItem('stellar_wallet');

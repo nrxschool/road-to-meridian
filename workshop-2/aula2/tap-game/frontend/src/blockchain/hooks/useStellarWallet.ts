@@ -13,7 +13,6 @@ export interface UseStellarWalletReturn {
 
 export const useStellarWallet = (): UseStellarWalletReturn => {
   const [wallet, setWallet] = useState<StellarWallet | null>(() => {
-    // Tentar recuperar wallet do localStorage na inicialização
     return stellarService.getWalletFromStorage();
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -22,28 +21,26 @@ export const useStellarWallet = (): UseStellarWalletReturn => {
     setIsLoading(true);
     
     try {
-      // 1. Criar nova wallet
-      toast.info('Criando nova wallet Stellar...');
+      toast.info('Creating new Stellar wallet...');
       const newWallet = stellarService.createWallet();
       
-      // 2. Chamar backend para funding
-      toast.info('Financiando wallet na testnet...');
+      toast.info('Funding wallet on testnet...');
       const fundingResult: FundingResponse = await stellarService.fundWallet(newWallet.publicKey);
       
       if (fundingResult.success) {
-        // 3. Salvar wallet e atualizar estado
         stellarService.saveWalletToStorage(newWallet);
         setWallet(newWallet);
         
-        toast.success('Wallet criada e financiada com sucesso!');
+        toast.success('Wallet created and funded successfully!');
         return true;
       } else {
-        toast.error(`Erro ao financiar wallet: ${fundingResult.message}`);
+        console.error('Wallet funding failed:', fundingResult.message);
+        toast.error(`Error funding wallet: ${fundingResult.message}`);
         return false;
       }
     } catch (error) {
-      console.error('Erro ao criar e financiar wallet:', error);
-      toast.error('Erro ao criar wallet. Tente novamente.');
+      console.error('Error creating and funding wallet:', error);
+      toast.error('Error creating wallet. Please try again.');
       return false;
     } finally {
       setIsLoading(false);
@@ -53,7 +50,7 @@ export const useStellarWallet = (): UseStellarWalletReturn => {
   const disconnect = useCallback(() => {
     stellarService.clearWalletFromStorage();
     setWallet(null);
-    toast.info('Wallet desconectada');
+    toast.info('Wallet disconnected');
   }, []);
 
   const formatAddress = useCallback((address: string) => {

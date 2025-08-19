@@ -13,14 +13,9 @@ const WalletLogin: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 pixel-bg" style={{
-      backgroundColor: 'hsl(var(--pixel-black))'
-    }}>
-      <div className="w-full max-w-md pixel-border" style={{
-        backgroundColor: 'hsl(var(--pixel-black))'
-      }}>
+    <div className="min-h-screen flex items-center justify-center p-4 pixel-bg">
+      <div className="w-full max-w-md pixel-border">
         <div className="text-center space-y-8 p-8">
-          {/* Logo */}
           <div className="mx-auto w-24 h-24 flex items-center justify-center">
             <img 
               src="/logo512x512.png" 
@@ -29,43 +24,24 @@ const WalletLogin: React.FC = () => {
             />
           </div>
           
-          {/* Título */}
           <div>
-            <h1 className="text-2xl font-bold pixel-shadow mb-3" style={{
-              color: 'hsl(var(--pixel-white))'
-            }}>
+            <h1 className="text-2xl font-bold pixel-shadow mb-3">
               TAP-TO-EARN
             </h1>
-            <div className="text-xs" style={{
-              color: 'hsl(var(--pixel-yellow))'
-            }}>
+            <div className="text-xs text-yellow-400">
               ▲ BLOCKCHAIN GAME ▲
             </div>
           </div>
           
-          {/* Descrição */}
-          <div className="text-sm" style={{
-            color: 'hsl(var(--pixel-white))'
-          }}>
-            STELLAR LOGIN
-          </div>
-          
-          {/* Botão de conexão */}
           <button 
             onClick={handleLogin}
             disabled={isLoading}
             className="w-full h-16 btn-primary pixel-border text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{
-              boxShadow: '4px 4px 0px hsl(var(--pixel-black))'
-            }}
           >
-            {isLoading ? 'CRIANDO WALLET...' : 'CONNECT WALLET'}
+            {isLoading ? 'CREATING WALLET...' : 'LOG IN'}
           </button>
           
-          {/* Footer */}
-          <div className="text-xs" style={{
-            color: 'hsl(var(--pixel-white))'
-          }}>
+          <div className="text-xs">
             POWERED BY STELLAR
           </div>
         </div>

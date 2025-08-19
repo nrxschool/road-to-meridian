@@ -59,14 +59,14 @@ const PlayerNameModal: React.FC<PlayerNameModalProps> = ({
               <label className="block text-sm font-bold mb-2" style={{
                 color: 'hsl(var(--pixel-white))'
               }}>
-                SEU NICKNAME:
+                YOUR NICKNAME:
               </label>
               <input
                 type="text"
                 value={nickname}
                 onChange={(e) => setNickname(e.target.value)}
                 maxLength={20}
-                placeholder="Digite seu nome..."
+                placeholder="Enter your name..."
                 className="w-full p-3 pixel-border bg-black text-white font-mono text-sm"
                 style={{
                   color: 'hsl(var(--pixel-white))',
@@ -84,7 +84,7 @@ const PlayerNameModal: React.FC<PlayerNameModalProps> = ({
                 disabled={!nickname.trim() || isSubmitting}
                 className="w-full h-12 btn-primary pixel-border font-bold text-sm disabled:opacity-50"
               >
-                {isSubmitting ? 'SALVANDO...' : 'SALVAR'}
+                {isSubmitting ? 'SAVING...' : 'SAVE'}
               </button>
             </div>
           </form>

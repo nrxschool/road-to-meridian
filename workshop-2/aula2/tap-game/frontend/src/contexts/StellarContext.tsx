@@ -22,21 +22,14 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Mock data for leaderboard (será substituído pelo contrato)
-const MOCK_LEADERBOARD: Player[] = [
-  { address: 'GABC1234567890ABCDEF1234567890ABCDEF123456', score: 9999, rank: 1, nickname: 'CryptoKing' },
-  { address: 'GDEF2345678901BCDEF2345678901BCDEF234567A', score: 8888, rank: 2, nickname: 'TapMaster' },
-  { address: 'GHIJ3456789012CDEF3456789012CDEF345678BC', score: 7777, rank: 3, nickname: 'SpeedTapper' },
-  { address: 'GKLM4567890123DEF4567890123DEF456789CDE', score: 6666, rank: 4, nickname: 'ClickHero' },
-  { address: 'GNOP5678901234EF5678901234EF567890DEFG', score: 5555, rank: 5, nickname: 'GamePro' },
-];
+
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { wallet, isConnected, isLoading, createAndFundWallet, disconnect, formatAddress: stellarFormatAddress } = useStellarWallet();
-  const [leaderboard, setLeaderboard] = useState<Player[]>(MOCK_LEADERBOARD);
+  const [leaderboard, setLeaderboard] = useState<Player[]>([]);
   const [isLoadingRanking, setIsLoadingRanking] = useState(false);
 
-  // Busca o ranking do contrato ao carregar
+  // Fetch ranking from contract on load
   useEffect(() => {
     const fetchRanking = async () => {
       try {
@@ -45,7 +38,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         setLeaderboard(ranking);
       } catch (error) {
         console.error('Error fetching ranking:', error);
-        // Mantém o mock data em caso de erro
       } finally {
         setIsLoadingRanking(false);
       }
@@ -68,14 +60,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const saveScore = async (score: number, nickname: string, gameTime: number): Promise<boolean> => {
     if (!wallet?.publicKey || !wallet?.secretKey) {
-      toast.error('Wallet não conectada');
+      toast.error('Wallet not connected');
       return false;
     }
 
     try {
-      toast.loading('Enviando score para o contrato...');
+      toast.loading('Submitting score to contract...');
       
-      // Envia o score para o contrato Soroban
       const txHash = await SorobanService.submitScore(
         wallet.publicKey,
         nickname,
@@ -85,11 +76,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       );
       
       toast.dismiss();
-      toast.success(`Score ${score} salvo com sucesso!`);
+      toast.success(`Score ${score} saved successfully!`);
       
       console.log('Transaction hash:', txHash);
       
-      // Atualiza o ranking após enviar o score
       try {
         const updatedRanking = await SorobanService.fetchRanking();
         setLeaderboard(updatedRanking);
@@ -101,15 +91,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     } catch (error) {
       toast.dismiss();
       console.error('Error saving score:', error);
-      toast.error('Erro ao salvar score no contrato');
+      toast.error('Failed to save score to contract');
       return false;
     }
   };
 
   const getLeaderboard = async (): Promise<Player[]> => {
-    // TODO: Buscar do contrato Soroban
-    // Por enquanto, retornar mock data
-    await new Promise(resolve => setTimeout(resolve, 500));
     return leaderboard;
   };
 

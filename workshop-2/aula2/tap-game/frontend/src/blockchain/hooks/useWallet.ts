@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 /**
- * Hook para simular funcionalidades de wallet
- * Fornece funcionalidades simuladas para desenvolvimento
+ * Hook to simulate wallet functionalities
+ * Provides simulated functionalities for development
  */
 export const useWallet = () => {
-  // Endereço simulado de carteira
+  // Simulated wallet address
   const mockAddress = 'cosmos1mock123address456789abcdef';
   
-  // Estado para controlar se está conectado
+  // State to control connection status
   const [isConnected, setIsConnected] = useState(false);
 
   const connect = () => {
@@ -19,7 +19,7 @@ export const useWallet = () => {
     setIsConnected(false);
   };
 
-  // Formata o endereço para exibição
+  // Format address for display
   const formatAddress = (address: string) => {
     if (address.length <= 8) return address;
     return `${address.slice(0, 4)}...${address.slice(-4)}`;
@@ -28,7 +28,7 @@ export const useWallet = () => {
   return {
     address: isConnected ? mockAddress : undefined,
     isConnected,
-    client: null, // Não precisamos mais do cliente real
+    client: null, // No longer need the real client
     connect,
     disconnect,
     formatAddress,

@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 8-bit Minimalista - Apenas 5 cores permitidas */
+/* 8-bit Minimalist - Only 5 colors allowed */
 
 @layer base {
   :root {
@@ -29,16 +29,16 @@
     --accent: 0 0% 100%;
     --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 100% 50%; /* Vermelho */
+    --destructive: 0 100% 50%; /* Red */
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 100%;
     --input: 0 0% 100%;
     --ring: 0 0% 100%;
 
-    --radius: 0px; /* Sem bordas arredondadas para estilo 8-bit */
+    --radius: 0px; /* No rounded borders for 8-bit style */
 
-    /* Paleta 8-bit minimalista - apenas 5 cores */
+    /* 8-bit minimalist palette - only 5 colors */
     --pixel-black: 0 0% 0%;
     --pixel-white: 0 0% 100%;
     --pixel-red: 0 100% 50%;
@@ -99,7 +99,7 @@
     @apply border-border;
   }
 
-  /* Estilos 8-bit minimalistas */
+  /* 8-bit minimalist styles */
   .pixel-font {
     font-family: 'Press Start 2P', 'Courier New', monospace;
     font-weight: normal;
@@ -201,7 +201,7 @@
     color: hsl(var(--pixel-white));
   }
 
-  /* Padrão de fundo 8-bit */
+  /* 8-bit background pattern */
   .pixel-bg {
     background-image: 
       linear-gradient(45deg, hsl(var(--pixel-black)) 25%, transparent 25%),

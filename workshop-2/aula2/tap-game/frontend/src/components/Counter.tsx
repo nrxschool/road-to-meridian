@@ -5,8 +5,8 @@ import { toast } from 'sonner';
 import PlayerNameModal from './PlayerNameModal';
 
 /**
- * Tap-to-Earn Game - Estilo 8-bit Minimalista
- * Jogo de cliques com contador regressivo
+ * Tap-to-Earn Game - 8-bit Minimalist Style
+ * Click game with countdown timer
  */
 const Counter: React.FC = () => {
   const { address, logout, formatAddress, saveScore, getLeaderboard, isLoading } = useAuth();
@@ -42,7 +42,7 @@ const Counter: React.FC = () => {
   const endGame = useCallback(() => {
     setGameActive(false);
     setFinalScore(count);
-    setGameTime(10 - timeLeft); // Calcular tempo jogado
+    setGameTime(10 - timeLeft);
     setShowNameModal(true);
   }, [count, timeLeft]);
 
@@ -51,7 +51,6 @@ const Counter: React.FC = () => {
     const success = await saveScore(count, nickname, gameTimeUsed);
     
     if (success) {
-      toast.success(`Score ${count} salvo como ${nickname}!`);
       const players = await getLeaderboard();
       setLeaderboard(players);
     }
@@ -97,7 +96,7 @@ const Counter: React.FC = () => {
             <button
               onClick={logout}
               className="absolute top-2 right-2 w-8 h-8 btn-danger text-xs font-bold"
-              title="Desconectar"
+              title="Disconnect"
             >
               X
             </button>
@@ -219,9 +218,9 @@ const Counter: React.FC = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-blue-300 hover:text-blue-100 underline transition-colors"
-                          title={`Ver wallet: ${player.address}`}
+                          title={`View wallet: ${player.address}`}
                         >
-                          {player.nickname || 'Anônimo'}
+                          {player.nickname || 'Anonymous'}
                         </a>
                       </div>
                     </div>
@@ -232,7 +231,7 @@ const Counter: React.FC = () => {
                     color: '#ffffff'
                   }}>
                     <div className="text-xs font-bold text-left">
-                      CARREGANDO RANKING...
+                      LOADING RANKING...
                     </div>
                   </div>
                 )}
@@ -242,7 +241,7 @@ const Counter: React.FC = () => {
         </div>
       </div>
       
-      {/* Modal para capturar nome do jogador */}
+      {/* Modal to capture player name */}
       <PlayerNameModal
         isOpen={showNameModal}
         onSubmit={handleSaveScore}

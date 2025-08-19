@@ -1,5 +1,5 @@
 /**
- * Tipos relacionados à blockchain e smart contracts
+ * Types related to blockchain and smart contracts
  */
 
 export interface Player {
