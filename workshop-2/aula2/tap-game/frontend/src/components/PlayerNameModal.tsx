@@ -46,28 +46,28 @@ const PlayerNameModal: React.FC<PlayerNameModalProps> = ({
         <div className="p-6 space-y-6">
           {/* Header */}
           <div className="text-center">
-            <div className="text-xl font-bold" style={{
+            <h2 className="text-2xl font-bold mb-2" style={{
+              color: 'hsl(var(--pixel-white))'
+            }}>
+              Congratulations!
+            </h2>
+            <div className="text-3xl font-bold" style={{
               color: 'hsl(var(--pixel-yellow))'
             }}>
-              Score: {score}
+              {score} points
             </div>
           </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-bold mb-2" style={{
-                color: 'hsl(var(--pixel-white))'
-              }}>
-                YOUR NICKNAME:
-              </label>
               <input
                 type="text"
                 value={nickname}
                 onChange={(e) => setNickname(e.target.value)}
                 maxLength={20}
-                placeholder="Enter your name..."
-                className="w-full p-3 pixel-border bg-black text-white font-mono text-sm"
+                placeholder="Enter your name"
+                className="w-full p-4 pixel-border bg-black text-white font-mono text-lg"
                 style={{
                   color: 'hsl(var(--pixel-white))',
                   backgroundColor: 'hsl(var(--pixel-black))'
@@ -82,14 +82,12 @@ const PlayerNameModal: React.FC<PlayerNameModalProps> = ({
               <button
                 type="submit"
                 disabled={!nickname.trim() || isSubmitting}
-                className="w-full h-12 btn-primary pixel-border font-bold text-sm disabled:opacity-50"
+                className="w-full h-14 btn-primary pixel-border font-bold text-lg disabled:opacity-50"
               >
-                {isSubmitting ? 'SAVING...' : 'SAVE'}
+                {isSubmitting ? 'Saving...' : 'Save'}
               </button>
             </div>
           </form>
-
-
         </div>
       </div>
     </div>
