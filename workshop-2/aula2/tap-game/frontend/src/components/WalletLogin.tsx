@@ -35,7 +35,7 @@ const WalletLogin: React.FC = () => {
           
           {isLoading ? (
             <div className="w-full h-16 bg-gray-200 rounded-lg overflow-hidden pixel-border">
-              <div className="h-full bg-blue-500 transition-all duration-300 ease-out animate-pulse" style={{width: '60%'}}>
+              <div className="h-full bg-blue-500 transition-all duration-300 ease-out animate-pulse" style={{width: '70%'}}>
                 <div className="h-full flex items-center justify-center text-white font-bold">
                   Connecting...
                 </div>
