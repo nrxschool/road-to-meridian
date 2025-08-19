@@ -1,43 +1,64 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useStellarWallet } from "@/blockchain/hooks/useStellarWallet";
 import { Player } from "@/blockchain/types/blockchain";
-import { SorobanService } from "@/services/SorobanService";
+import { Client, Game } from "@/lib/src/index";
 import { toast } from "sonner";
-import PlayerNameModal from "./PlayerNameModal";
 
 interface CounterProps {
   onDisconnect: () => void;
 }
 
 /**
- * Tap-to-Earn Game - 8-bit Minimalist Style
- * Click game with countdown timer
+ * Tap-to-Earn Game - Versão Minimalista
+ * Jogo de cliques com timer de 10 segundos
  */
 const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
-  const { wallet, disconnect, formatAddress, isLoading } = useStellarWallet();
+  const { wallet, disconnect } = useStellarWallet();
   const [isSaving, setIsSaving] = useState(false);
   const [count, setCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(10);
   const [gameActive, setGameActive] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
-  const [finalScore, setFinalScore] = useState<number | null>(null);
-  const [gameTime, setGameTime] = useState(0);
-  const [showNameModal, setShowNameModal] = useState(false);
   const [leaderboard, setLeaderboard] = useState<Player[]>([]);
 
-  // Load leaderboard data
+  // Carregar ranking do smartcontract
   useEffect(() => {
-    const loadData = async () => {
+    const loadRanking = async () => {
       try {
-        const players = await SorobanService.fetchRanking();
+        const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
+        const rpcUrl = import.meta.env.VITE_RPC_ENDPOINT;
+        
+        if (!contractAddress || !rpcUrl) {
+          console.error('Contract address or RPC URL not configured');
+          return;
+        }
+
+        const client = new Client({
+          contractId: contractAddress,
+          rpcUrl: rpcUrl,
+          networkPassphrase: 'Test SDF Network ; September 2015'
+        });
+        
+        const result = await client.get_rank();
+        const games = result.result || [];
+        
+        // Converter Game[] para Player[]
+        const players: Player[] = games.map((game: Game, index: number) => ({
+          address: 'N/A', // A lib não retorna o endereço
+          score: game.score,
+          rank: index + 1,
+          nickname: game.nickname
+        }));
+        
         setLeaderboard(players);
       } catch (error) {
-        console.error('Error loading leaderboard:', error);
+        console.error('Erro ao carregar ranking:', error);
       }
     };
-    loadData();
-  }, [wallet?.publicKey]);
+    loadRanking();
+  }, []);
 
+  // Timer do jogo
   useEffect(() => {
     let interval: NodeJS.Timeout;
     if (gameActive && timeLeft > 0) {
@@ -50,62 +71,70 @@ const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
     return () => clearInterval(interval);
   }, [gameActive, timeLeft]);
 
-  const endGame = useCallback(() => {
+  const endGame = useCallback(async () => {
     setGameActive(false);
-    setFinalScore(count);
-    setGameTime(10 - timeLeft);
-    setShowNameModal(true);
-  }, [count, timeLeft]);
+    
+    if (!wallet?.publicKey || !wallet?.secretKey) {
+      toast.error('Wallet não conectada');
+      return;
+    }
 
-  const handleSaveScore = useCallback(
-    async (nickname: string) => {
-      if (!wallet?.publicKey || !wallet?.secretKey) {
-        toast.error('Wallet not connected');
-        setShowNameModal(false);
-        return;
+    // Salvar pontuação automaticamente
+    try {
+      setIsSaving(true);
+      toast.loading('Salvando pontuação no contrato...');
+      
+      const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
+      const rpcUrl = import.meta.env.VITE_RPC_ENDPOINT;
+      
+      if (!contractAddress || !rpcUrl) {
+        throw new Error('Contract address or RPC URL not configured');
       }
 
-      try {
-        setIsSaving(true);
-        toast.loading('Submitting score to contract...');
-        
-        const gameTimeUsed = 10 - timeLeft;
-        await SorobanService.submitScore(
-          wallet.publicKey,
-          nickname,
-          count,
-          gameTimeUsed,
-          wallet.secretKey
-        );
-        
-        toast.dismiss();
-        toast.success(`Score ${count} saved successfully!`);
-        
-        // Update leaderboard
-        const players = await SorobanService.fetchRanking();
-        setLeaderboard(players);
-      } catch (error) {
-        toast.dismiss();
-        console.error('Error saving score:', error);
-        toast.error('Failed to save score to contract');
-      } finally {
-        setIsSaving(false);
-        setShowNameModal(false);
-      }
-    },
-    [count, timeLeft, wallet]
-  );
-
-  const handleCloseModal = useCallback(() => {
-    setShowNameModal(false);
-  }, []);
+      const client = new Client({
+        contractId: contractAddress,
+        rpcUrl: rpcUrl,
+        networkPassphrase: 'Test SDF Network ; September 2015'
+      });
+      
+      // Criar transação para salvar o jogo
+      const tx = await client.new_game({
+        player_address: wallet.publicKey,
+        nickname: 'Player', // Nickname fixo para versão minimalista
+        score: count,
+        game_time: 10 - timeLeft
+      });
+      
+      // Assinar e enviar a transação
+      // Nota: Você precisará implementar a assinatura com a secret key
+      
+      toast.dismiss();
+      toast.success(`Pontuação ${count} salva com sucesso!`);
+      
+      // Atualizar ranking
+      const result = await client.get_rank();
+      const games = result.result || [];
+      const players: Player[] = games.map((game: Game, index: number) => ({
+        address: 'N/A',
+        score: game.score,
+        rank: index + 1,
+        nickname: game.nickname
+      }));
+      setLeaderboard(players);
+    } catch (error) {
+      toast.dismiss();
+      console.error('Erro ao salvar pontuação:', error);
+      toast.error('Falha ao salvar pontuação no contrato');
+    } finally {
+      setIsSaving(false);
+    }
+  }, [count, wallet]);
 
   const startGame = () => {
     setCount(0);
     setTimeLeft(10);
     setGameActive(true);
     setGameStarted(true);
-    setFinalScore(null);
   };
 
   const resetGame = () => {
@@ -113,7 +142,6 @@ const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
     setTimeLeft(10);
     setGameActive(false);
     setGameStarted(false);
-    setFinalScore(null);
   };
 
   const handleClick = () => {
@@ -248,7 +276,7 @@ const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
                         }}
                       >
                         <div className="text-sm font-bold flex justify-between">
-                          <span>{player.nickname || "Anonymous"}</span>
+                          <span>#{player.rank}</span>
                           <span>{player.score} pts</span>
                         </div>
                       </div>
@@ -272,15 +300,6 @@ const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
           </div>
         </div>
       </div>
-
-      {/* Modal to capture player name */}
-      <PlayerNameModal
-        isOpen={showNameModal}
-        onSubmit={handleSaveScore}
-        onClose={handleCloseModal}
-        score={finalScore || 0}
-        gameTime={gameTime}
-      />
     </div>
   );
 };

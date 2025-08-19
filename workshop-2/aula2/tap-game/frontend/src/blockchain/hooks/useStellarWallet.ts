@@ -9,7 +9,6 @@ export interface UseStellarWalletReturn {
   createAndFundWallet: () => Promise<boolean>;
   disconnect: () => void;
   formatAddress: (address: string) => string;
-  downloadSeed: () => void;
 }
 
 export const useStellarWallet = (): UseStellarWalletReturn => {
@@ -56,38 +55,13 @@ export const useStellarWallet = (): UseStellarWalletReturn => {
     }
   }, []);
 
-  const downloadSeed = useCallback(() => {
-    if (!wallet) {
-      toast.error('Nenhuma wallet encontrada para baixar');
-      return;
-    }
 
-    const seedData = `Stellar Wallet Seed\n\nPublic Key: ${wallet.publicKey}\nSecret Key: ${wallet.secretKey}\n\nIMPORTANTE: Mantenha esta seed em segurança. Qualquer pessoa com acesso a ela pode controlar sua wallet.\n\nData: ${new Date().toLocaleString()}`;
-    
-    const blob = new Blob([seedData], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `stellar-wallet-seed-${Date.now()}.txt`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    URL.revokeObjectURL(url);
-    toast.success('Seed da wallet baixada com sucesso!');
-  }, [wallet]);
 
   const disconnect = useCallback(() => {
-    // Baixar seed antes de remover do localStorage
-    if (wallet) {
-      downloadSeed();
-    }
-    
     stellarService.clearWalletFromStorage();
     setWallet(null);
-    toast.info('Wallet desconectada e seed baixada');
-  }, [wallet, downloadSeed]);
+    toast.info('Wallet desconectada');
+  }, []);
 
   const formatAddress = useCallback((address: string) => {
     return stellarService.formatAddress(address);
@@ -100,6 +74,5 @@ export const useStellarWallet = (): UseStellarWalletReturn => {
     createAndFundWallet,
     disconnect,
     formatAddress,
-    downloadSeed,
   };
 };
