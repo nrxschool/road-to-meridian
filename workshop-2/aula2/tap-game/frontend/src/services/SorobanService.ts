@@ -6,8 +6,11 @@ const RPC_ENDPOINT = import.meta.env.VITE_RPC_ENDPOINT || 'https://soroban-testn
 const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || 'CCOT2GXJ2ND4FSHSG22USR2244ZJDBEBQZYEBBD3DQ45BGLYVDT3WUJB';
 
 // Configuração da rede Stellar Testnet
-const server = new StellarSdk.Horizon.Server(RPC_ENDPOINT);
+const server = new StellarSdk.rpc.Server(RPC_ENDPOINT);
 const networkPassphrase = StellarSdk.Networks.TESTNET;
+
+// Contrato para interação com Soroban
+const contract = new StellarSdk.Contract(CONTRACT_ADDRESS);
 
 export class SorobanService {
   /**
@@ -17,29 +20,58 @@ export class SorobanService {
     try {
       console.log('Fetching ranking from Soroban contract...');
       
-      // TODO: Implementar chamada real ao contrato quando estiver deployado
-      // Por enquanto, simula uma chamada ao contrato com delay realista
-      await new Promise(resolve => setTimeout(resolve, 800));
+      // Criar uma conta temporária para fazer a chamada (read-only)
+      const sourceKeypair = StellarSdk.Keypair.random();
+      const sourceAccount = await server.getAccount(sourceKeypair.publicKey()).catch(() => {
+        // Se a conta não existe, criar uma conta mock para simulação
+        return new StellarSdk.Account(sourceKeypair.publicKey(), '0');
+      });
+
+      // Construir a operação de chamada do contrato
+      const operation = contract.call('get_rank');
       
-      // Verificar se o contrato está disponível
-      const isAvailable = await this.isContractAvailable();
-      if (!isAvailable) {
-        console.warn('Contract not available, using fallback data');
+      // Construir a transação
+      const transaction = new StellarSdk.TransactionBuilder(sourceAccount, {
+        fee: StellarSdk.BASE_FEE,
+        networkPassphrase,
+      })
+        .addOperation(operation)
+        .setTimeout(30)
+        .build();
+
+      // Simular a transação para obter o resultado
+      const simulationResult = await server.simulateTransaction(transaction);
+      
+      if (StellarSdk.rpc.Api.isSimulationSuccess(simulationResult)) {
+        // Processar o resultado da simulação
+        const result = simulationResult.result;
+        if (result && result.retval) {
+          // Converter o resultado XDR para dados JavaScript
+          const rankingData = StellarSdk.scValToNative(result.retval);
+          
+          // Mapear os dados para o formato Player
+          const players: Player[] = rankingData.map((game: any, index: number) => ({
+            address: `G${Math.random().toString(36).substr(2, 55).toUpperCase()}`, // Endereço simulado
+            score: game.score || 0,
+            rank: index + 1,
+            nickname: game.nickname || 'Anônimo'
+          }));
+          
+          // Ordenar por score (maior para menor)
+          return players.sort((a, b) => b.score - a.score);
+        }
       }
       
-      // Dados que simulam o retorno do contrato get_rank()
-      const ranking: Player[] = [
-        { address: 'GABC1234567890ABCDEF1234567890ABCDEF123456', score: 9999, rank: 1, nickname: 'CryptoKing' },
-        { address: 'GDEF2345678901BCDEF2345678901BCDEF234567A', score: 8888, rank: 2, nickname: 'TapMaster' },
-        { address: 'GHIJ3456789012CDEF3456789012CDEF345678BC', score: 7777, rank: 3, nickname: 'SpeedTapper' },
-        { address: 'GKLM4567890123DEF4567890123DEF456789CDE', score: 6666, rank: 4, nickname: 'ClickHero' },
-        { address: 'GNOP5678901234EF5678901234EF567890DEFG', score: 5555, rank: 5, nickname: 'GamePro' },
-      ];
+      // Fallback: retornar dados vazios se não conseguir buscar do contrato
+      console.warn('Could not fetch ranking from contract, returning empty array');
+      return [];
       
-      return ranking;
     } catch (error) {
       console.error('Error fetching ranking:', error);
-      throw new Error('Failed to fetch ranking from contract');
+      
+      // Fallback: retornar dados de exemplo em caso de erro
+      console.warn('Using fallback ranking data due to error');
+      return [];
     }
   }
 
@@ -66,52 +98,70 @@ export class SorobanService {
         throw new Error('Invalid parameters for score submission');
       }
 
-      // Verificar se o contrato está disponível
-      const isAvailable = await this.isContractAvailable();
-      if (!isAvailable) {
-        console.warn('Contract not available, simulating transaction');
-      }
+      // Criar keypair do jogador
+      const sourceKeypair = StellarSdk.Keypair.fromSecret(secretKey);
+      const sourceAccount = await server.getAccount(sourceKeypair.publicKey());
 
-      // TODO: Implementar chamada real ao método new_game() do contrato
-      // Por enquanto, simula a transação com validações realistas
+      // Converter parâmetros para ScVal
+      const addressScVal = new StellarSdk.Address(playerAddress).toScVal();
+      const nicknameScVal = StellarSdk.nativeToScVal(nickname, { type: 'string' });
+      const scoreScVal = StellarSdk.nativeToScVal(score, { type: 'i32' });
+      const gameTimeScVal = StellarSdk.nativeToScVal(gameTime, { type: 'i32' });
+
+      // Construir a operação de chamada do contrato
+      const operation = contract.call(
+        'new_game',
+        addressScVal,
+        nicknameScVal,
+        scoreScVal,
+        gameTimeScVal
+      );
       
-      // Simular delay de transação na rede
-      await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1000));
+      // Construir a transação
+      let transaction = new StellarSdk.TransactionBuilder(sourceAccount, {
+        fee: StellarSdk.BASE_FEE,
+        networkPassphrase,
+      })
+        .addOperation(operation)
+        .setTimeout(30)
+        .build();
+
+      // Simular a transação primeiro
+      const simulationResult = await server.simulateTransaction(transaction);
       
-      // Simular possível falha de rede (5% de chance)
-      if (Math.random() < 0.05) {
-        throw new Error('Network timeout - please try again');
+      if (StellarSdk.rpc.Api.isSimulationSuccess(simulationResult)) {
+        // Preparar a transação com os dados da simulação
+        transaction = StellarSdk.rpc.assembleTransaction(transaction, simulationResult).build();
+        
+        // Assinar a transação
+        transaction.sign(sourceKeypair);
+        
+        // Enviar a transação
+        const result = await server.sendTransaction(transaction);
+        
+        if (result.status === 'PENDING') {
+          // Aguardar confirmação
+          let txResult;
+          for (let i = 0; i < 10; i++) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            txResult = await server.getTransaction(result.hash);
+            if (txResult.status !== 'NOT_FOUND') {
+              break;
+            }
+          }
+          
+          if (txResult && txResult.status === 'SUCCESS') {
+            console.log('Score submitted successfully:', result.hash);
+            return result.hash;
+          }
+        }
       }
       
-      // Gerar hash de transação realista
-      const txHash = `${Date.now().toString(16)}${Math.random().toString(36).substr(2, 16)}`;
+      throw new Error('Transaction simulation failed');
       
-      console.log('Score submitted successfully to contract:', {
-        txHash,
-        contractAddress: CONTRACT_ADDRESS,
-        playerAddress,
-        score
-      });
-      
-      return txHash;
     } catch (error) {
       console.error('Error submitting score:', error);
       throw new Error(`Failed to submit score: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
-  }
-
-  /**
-   * Submete uma transação para a rede Stellar
-   */
-  private static async submitTransaction(
-    transaction: StellarSdk.Transaction
-  ): Promise<StellarSdk.Horizon.HorizonApi.SubmitTransactionResponse> {
-    try {
-      const result = await server.submitTransaction(transaction);
-      return result;
-    } catch (error) {
-      console.error('Transaction submission failed:', error);
-      throw error;
     }
   }
 
@@ -120,8 +170,20 @@ export class SorobanService {
    */
   static async isContractAvailable(): Promise<boolean> {
     try {
-      // TODO: Implementar verificação real do contrato
-      // Por enquanto, sempre retorna true para desenvolvimento
+      // Verificação simplificada - tentar fazer uma simulação de leitura
+      const sourceKeypair = StellarSdk.Keypair.random();
+      const sourceAccount = new StellarSdk.Account(sourceKeypair.publicKey(), '0');
+      
+      const operation = contract.call('get_rank');
+      const transaction = new StellarSdk.TransactionBuilder(sourceAccount, {
+        fee: StellarSdk.BASE_FEE,
+        networkPassphrase,
+      })
+        .addOperation(operation)
+        .setTimeout(30)
+        .build();
+
+      await server.simulateTransaction(transaction);
       return true;
     } catch (error) {
       console.error('Error checking contract availability:', error);

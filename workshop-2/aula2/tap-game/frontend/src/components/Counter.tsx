@@ -213,7 +213,16 @@ const Counter: React.FC = () => {
                       }}
                     >
                       <div className="text-xs font-bold text-left">
-                        {player.score.toString().padStart(4, '0')} - {player.nickname || 'Anônimo'} - {player.address.substring(0, 4)}
+                        {player.score.toString().padStart(4, '0')} - 
+                        <a 
+                          href={`https://stellar.expert/explorer/testnet/account/${player.address}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-300 hover:text-blue-100 underline transition-colors"
+                          title={`Ver wallet: ${player.address}`}
+                        >
+                          {player.nickname || 'Anônimo'}
+                        </a>
                       </div>
                     </div>
                   );

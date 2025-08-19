@@ -46,15 +46,10 @@ const PlayerNameModal: React.FC<PlayerNameModalProps> = ({
         <div className="p-6 space-y-6">
           {/* Header */}
           <div className="text-center">
-            <h2 className="text-xl font-bold pixel-shadow" style={{
-              color: 'hsl(var(--pixel-white))'
-            }}>
-              GAME OVER!
-            </h2>
-            <div className="mt-2 text-sm" style={{
+            <div className="text-xl font-bold" style={{
               color: 'hsl(var(--pixel-yellow))'
             }}>
-              Score: {score} | Tempo: {gameTime}s
+              Score: {score}
             </div>
           </div>
 
@@ -83,31 +78,18 @@ const PlayerNameModal: React.FC<PlayerNameModalProps> = ({
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-3">
-              <button
-                type="button"
-                onClick={handleClose}
-                disabled={isSubmitting}
-                className="flex-1 h-12 btn-danger pixel-border font-bold text-sm disabled:opacity-50"
-              >
-                PULAR
-              </button>
+            <div className="flex justify-center">
               <button
                 type="submit"
                 disabled={!nickname.trim() || isSubmitting}
-                className="flex-1 h-12 btn-primary pixel-border font-bold text-sm disabled:opacity-50"
+                className="w-full h-12 btn-primary pixel-border font-bold text-sm disabled:opacity-50"
               >
                 {isSubmitting ? 'SALVANDO...' : 'SALVAR'}
               </button>
             </div>
           </form>
 
-          {/* Info */}
-          <div className="text-xs text-center" style={{
-            color: 'hsl(var(--pixel-white))'
-          }}>
-            Seu score será salvo no ranking!
-          </div>
+
         </div>
       </div>
     </div>
