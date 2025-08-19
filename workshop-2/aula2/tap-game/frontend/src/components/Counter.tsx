@@ -1,22 +1,21 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useAuth } from "@/contexts/StellarContext";
+import { useStellarWallet } from "@/blockchain/hooks/useStellarWallet";
 import { Player } from "@/blockchain/types/blockchain";
+import { SorobanService } from "@/services/SorobanService";
 import { toast } from "sonner";
 import PlayerNameModal from "./PlayerNameModal";
+
+interface CounterProps {
+  onDisconnect: () => void;
+}
 
 /**
  * Tap-to-Earn Game - 8-bit Minimalist Style
  * Click game with countdown timer
  */
-const Counter: React.FC = () => {
-  const {
-    address,
-    logout,
-    formatAddress,
-    saveScore,
-    getLeaderboard,
-    isLoading,
-  } = useAuth();
+const Counter: React.FC<CounterProps> = ({ onDisconnect }) => {
+  const { wallet, disconnect, formatAddress, isLoading } = useStellarWallet();
+  const [isSaving, setIsSaving] = useState(false);
   const [count, setCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(10);
   const [gameActive, setGameActive] = useState(false);
@@ -26,13 +25,18 @@ const Counter: React.FC = () => {
   const [showNameModal, setShowNameModal] = useState(false);
   const [leaderboard, setLeaderboard] = useState<Player[]>([]);
 
+  // Load leaderboard data
   useEffect(() => {
     const loadData = async () => {
-      const players = await getLeaderboard();
-      setLeaderboard(players);
+      try {
+        const players = await SorobanService.fetchRanking();
+        setLeaderboard(players);
+      } catch (error) {
+        console.error('Error loading leaderboard:', error);
+      }
     };
     loadData();
-  }, [address, getLeaderboard]);
+  }, [wallet?.publicKey]);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -55,17 +59,41 @@ const Counter: React.FC = () => {
 
   const handleSaveScore = useCallback(
     async (nickname: string) => {
-      const gameTimeUsed = 10 - timeLeft;
-      const success = await saveScore(count, nickname, gameTimeUsed);
-
-      if (success) {
-        const players = await getLeaderboard();
-        setLeaderboard(players);
+      if (!wallet?.publicKey || !wallet?.secretKey) {
+        toast.error('Wallet not connected');
+        setShowNameModal(false);
+        return;
       }
 
-      setShowNameModal(false);
+      try {
+        setIsSaving(true);
+        toast.loading('Submitting score to contract...');
+        
+        const gameTimeUsed = 10 - timeLeft;
+        await SorobanService.submitScore(
+          wallet.publicKey,
+          nickname,
+          count,
+          gameTimeUsed,
+          wallet.secretKey
+        );
+        
+        toast.dismiss();
+        toast.success(`Score ${count} saved successfully!`);
+        
+        // Update leaderboard
+        const players = await SorobanService.fetchRanking();
+        setLeaderboard(players);
+      } catch (error) {
+        toast.dismiss();
+        console.error('Error saving score:', error);
+        toast.error('Failed to save score to contract');
+      } finally {
+        setIsSaving(false);
+        setShowNameModal(false);
+      }
     },
-    [count, timeLeft, saveScore, getLeaderboard]
+    [count, timeLeft, wallet]
   );
 
   const handleCloseModal = useCallback(() => {
@@ -120,7 +148,10 @@ const Counter: React.FC = () => {
                 TAP GAME
               </h1>
               <button
-                onClick={logout}
+                onClick={() => {
+                  disconnect();
+                  onDisconnect();
+                }}
                 className="w-10 h-10 flex items-center justify-center pixel-border btn-danger text-lg font-bold"
               >
                 ×
@@ -165,7 +196,7 @@ const Counter: React.FC = () => {
               </button>
             ) : (
               <div className="space-y-4">
-                {isLoading ? (
+                {isSaving ? (
                   <div
                     className="text-lg animate-pulse"
                     style={{
@@ -186,7 +217,7 @@ const Counter: React.FC = () => {
                 )}
                 <button
                   onClick={startGame}
-                  disabled={isLoading}
+                  disabled={isSaving}
                   className="w-full h-16 btn-warning pixel-border text-xl font-bold disabled:opacity-50"
                 >
                   Play Again
