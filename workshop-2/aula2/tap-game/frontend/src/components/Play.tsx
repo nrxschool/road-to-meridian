@@ -61,8 +61,9 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
     setShowNicknameModal(true);
   }, []);
 
+
   // Regular function - simple state updates, no dependencies needed
-  const startGame = () => {
+  const startGame = async () => {
     setCount(0);
     setTimeLeft(10);
     setGameActive(true);

@@ -9,8 +9,9 @@ Este é um contrato inteligente Soroban que implementa um jogo de ranking onde j
 ├── contracts/
 │   └── tap-game/
 │       ├── src/
-│       │   ├── lib.rs          # Contrato principal
-│       │   └── test.rs         # Testes unitários
+│       │   ├── lib.rs          # Módulos do contrato
+│       │   ├── contract.rs     # Implementação do contrato
+│       │   └── model.rs        # Estruturas de dados
 │       └── Cargo.toml          # Dependências do contrato
 ├── Cargo.toml                  # Workspace configuration
 └── README.md                   # Esta documentação
@@ -20,13 +21,14 @@ Este é um contrato inteligente Soroban que implementa um jogo de ranking onde j
 
 ### Estruturas de Dados
 
-- **Game**: Estrutura que representa um jogo com jogador, apelido, pontuação e tempo
-- **DataKey**: Enum para chaves de armazenamento (atualmente apenas `Rank`)
+- **Game**: Estrutura que representa um jogo com jogador, apelido, pontuação e tempo de jogo
+- **DataKey**: Enum para chaves de armazenamento (`Rank` e `PlayerAddress`)
 
 ### Funções Disponíveis
 
-1. **new_game**: Adiciona um novo jogo ao ranking
-2. **get_rank**: Retorna o ranking completo ordenado por pontuação
+1. **initialize**: Inicializa o contrato com um ranking vazio
+2. **new_game**: Adiciona um novo jogo ao ranking
+3. **get_rank**: Retorna o ranking completo
 
 ## Passo a Passo Completo
 
@@ -51,8 +53,9 @@ stellar contract build
 
 Este comando irá:
 - Compilar o contrato Rust para WebAssembly (WASM)
-- Gerar o arquivo `target/wasm32-unknown-unknown/release/tap_game.wasm`
+- Gerar o arquivo `target/wasm32v1-none/release/tap_game.wasm`
 - Otimizar o WASM para deploy
+- Exportar 4 funções: `_`, `get_rank`, `initialize`, `new_game`
 
 ### 3. Testes
 
@@ -81,12 +84,24 @@ stellar keys list
 ```bash
 # Deploy na testnet
 stellar contract deploy \
-  --wasm target/wasm32-unknown-unknown/release/tap_game.wasm \
-  --source alice \
+  --wasm target/wasm32v1-none/release/tap_game.wasm \
+  --source-account alice \
   --network testnet
 ```
 
-O comando retornará o ID do contrato (ex: `CAGFRUMLQVBUEAKG5CTB25DYCVBM2KVZOKZ2PMUKT2G34233CDKU3TLM`)
+O comando retornará o ID do contrato (ex: `CDRAVC5KLCTCVXSI6MG6SCULMJ5LBT33ZY5LVTAZPWRL2REXCLFE3TQK`)
+
+#### 4.3. Inicializar o Contrato
+
+```bash
+# Inicializar o contrato (obrigatório antes do primeiro uso)
+stellar contract invoke \
+  --id CDRAVC5KLCTCVXSI6MG6SCULMJ5LBT33ZY5LVTAZPWRL2REXCLFE3TQK \
+  --source-account alice \
+  --send=yes \
+  -- \
+  initialize
+```
 
 ### 5. Invocação de Funções
 
@@ -94,14 +109,14 @@ O comando retornará o ID do contrato (ex: `CAGFRUMLQVBUEAKG5CTB25DYCVBM2KVZOKZ2
 
 ```bash
 stellar contract invoke \
-  --id CAGFRUMLQVBUEAKG5CTB25DYCVBM2KVZOKZ2PMUKT2G34233CDKU3TLM \
-  --source alice \
-  --network testnet \
+  --id CDRAVC5KLCTCVXSI6MG6SCULMJ5LBT33ZY5LVTAZPWRL2REXCLFE3TQK \
+  --source-account alice \
+  --send=yes \
   -- \
   new_game \
-  --player GDIY6AQQ75WMD4W46EYB7O6UYMHOCGQHLAQGQTKHDX4J2DYQCHVCR4W4 \
-  --nickname "TestPlayer" \
-  --score 100 \
+  --player alice \
+  --nickname "ProPlayer" \
+  --score 250 \
   --game_time 10
 ```
 
@@ -109,87 +124,123 @@ stellar contract invoke \
 
 ```bash
 stellar contract invoke \
-  --id CAGFRUMLQVBUEAKG5CTB25DYCVBM2KVZOKZ2PMUKT2G34233CDKU3TLM \
-  --source alice \
-  --network testnet \
+  --id CDRAVC5KLCTCVXSI6MG6SCULMJ5LBT33ZY5LVTAZPWRL2REXCLFE3TQK \
+  --source-account alice \
   -- \
   get_rank
 ```
 
-### 6. Integração com Frontend
-
-#### 6.1. Gerar Bindings TypeScript
-
-```bash
-# No diretório frontend
-cd ../frontend
-
-# Gerar bindings
-stellar contract bindings typescript \
-  --contract-id CAGFRUMLQVBUEAKG5CTB25DYCVBM2KVZOKZ2PMUKT2G34233CDKU3TLM \
-  --output-dir lib \
-  --overwrite
+Exemplo de resposta:
+```json
+[
+  {
+    "game_time": 10,
+    "nickname": "ProPlayer",
+    "player": "GAXZWWXHEDRIXW75C35DKXXWX2ARU23OU6AUEXGXQP4XOXHLUPTLXC3F",
+    "score": 250
+  }
+]
 ```
 
-#### 6.2. Usar no Frontend React
+### 6. Comandos CLI Úteis
 
-```typescript
-import { Contract } from './lib';
+#### 6.1. Verificar Informações do Contrato
 
-// Inicializar contrato
-const contract = new Contract({
-  contractId: 'CAGFRUMLQVBUEAKG5CTB25DYCVBM2KVZOKZ2PMUKT2G34233CDKU3TLM',
-  networkPassphrase: Networks.TESTNET,
-  rpcUrl: 'https://soroban-testnet.stellar.org'
-});
+```bash
+# Verificar se o contrato está deployado e funcionando
+stellar contract invoke \
+  --id CDRAVC5KLCTCVXSI6MG6SCULMJ5LBT33ZY5LVTAZPWRL2REXCLFE3TQK \
+  --source-account alice \
+  -- \
+  get_rank
+```
 
-// Chamar funções
-const ranking = await contract.get_rank();
-const result = await contract.new_game({
-  player: 'GDIY6AQQ75WMD4W46EYB7O6UYMHOCGQHLAQGQTKHDX4J2DYQCHVCR4W4',
-  nickname: 'Player1',
-  score: 150,
-  game_time: 12
-});
+#### 6.2. Adicionar Múltiplos Jogos
+
+```bash
+# Adicionar primeiro jogo
+stellar contract invoke \
+  --id CDRAVC5KLCTCVXSI6MG6SCULMJ5LBT33ZY5LVTAZPWRL2REXCLFE3TQK \
+  --source-account alice \
+  --send=yes \
+  -- \
+  new_game \
+  --player alice \
+  --nickname "ProPlayer" \
+  --score 250 \
+  --game_time 10
+
+# Adicionar segundo jogo
+stellar contract invoke \
+  --id CDRAVC5KLCTCVXSI6MG6SCULMJ5LBT33ZY5LVTAZPWRL2REXCLFE3TQK \
+  --source-account alice \
+  --send=yes \
+  -- \
+  new_game \
+  --player alice \
+  --nickname "GamerPro" \
+  --score 180 \
+  --game_time 8
 ```
 
 ## Estrutura do Código
 
-### Contrato Principal (`lib.rs`)
+### Contrato Principal (`contract.rs`)
 
 ```rust
+use crate::model::{DataKey, Game};
+use soroban_sdk::{contract, contractimpl, Address, Env, String, Vec};
+
 #[contract]
-pub struct TapGameContract;
+pub struct Contract;
 
 #[contractimpl]
-impl TapGameContract {
+impl Contract {
+    // Inicializa o contrato com ranking vazio
+    pub fn initialize(env: Env) {
+        if env.storage().persistent().has(&DataKey::Rank) {
+            return;
+        }
+        let initial_rank: Vec<Game> = Vec::new(&env);
+        env.storage().persistent().set(&DataKey::Rank, &initial_rank);
+    }
+
     // Adiciona novo jogo ao ranking
-    pub fn new_game(env: Env, player: Address, nickname: String, score: i32, game_time: i32) -> Vec<Game> {
-        // Implementação...
+    pub fn new_game(env: Env, player: Address, nickname: String, score: i32, game_time: i32) {
+        let value = Game { player: player.clone(), nickname, score, game_time };
+        let mut rank = env.storage().persistent()
+            .get::<DataKey, Vec<Game>>(&DataKey::Rank).unwrap();
+        rank.push_back(value);
+        env.storage().persistent().set(&DataKey::Rank, &rank);
     }
     
-    // Retorna ranking ordenado por pontuação
+    // Retorna ranking completo
     pub fn get_rank(env: Env) -> Vec<Game> {
-        // Implementação...
+        env.storage().persistent()
+            .get::<DataKey, Vec<Game>>(&DataKey::Rank).unwrap()
     }
 }
 ```
 
-### Estruturas de Dados
+### Estruturas de Dados (`model.rs`)
 
 ```rust
+use soroban_sdk::{contracttype, Address, String};
+
+#[derive(Clone)]
 #[contracttype]
-#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct Game {
     pub player: Address,
     pub nickname: String,
-    pub score: i32,
     pub game_time: i32,
+    pub score: i32,
 }
 
+#[derive(Clone)]
 #[contracttype]
 pub enum DataKey {
     Rank,
+    PlayerAddress(Address),
 }
 ```
 
@@ -203,15 +254,25 @@ stellar contract build
 ```
 
 ### Erro de Unwrap
-O contrato foi corrigido para usar `unwrap_or_else(|| Vec::new(&env))` ao invés de `unwrap()` para evitar panics quando dados não existem.
+O contrato atual usa `unwrap()` e requer inicialização antes do primeiro uso. Certifique-se de chamar `initialize` após o deploy.
+
+### Erro de Storage Vazio
+Se receber erro ao chamar `get_rank` ou `new_game`, inicialize o contrato:
+```bash
+stellar contract invoke \
+  --id SEU_CONTRACT_ID \
+  --source-account alice \
+  --send=yes \
+  -- \
+  initialize
+```
 
 ### Verificar Status do Contrato
 ```bash
-# Verificar se o contrato está deployado
+# Verificar se o contrato está deployado e inicializado
 stellar contract invoke \
   --id SEU_CONTRACT_ID \
-  --source alice \
-  --network testnet \
+  --source-account alice \
   -- \
   get_rank
 ```
@@ -230,6 +291,14 @@ stellar contract invoke \
 
 ## ID do Contrato Atual
 
-**Testnet**: `CAGFRUMLQVBUEAKG5CTB25DYCVBM2KVZOKZ2PMUKT2G34233CDKU3TLM`
+**Testnet**: `CDRAVC5KLCTCVXSI6MG6SCULMJ5LBT33ZY5LVTAZPWRL2REXCLFE3TQK`
 
 > **Nota**: Este ID é específico para a versão atual do contrato na testnet. Atualize conforme necessário após novos deploys.
+
+## Fluxo Completo de Uso
+
+1. **Compilar**: `stellar contract build`
+2. **Deploy**: `stellar contract deploy --wasm target/wasm32v1-none/release/tap_game.wasm --source-account alice --network testnet`
+3. **Inicializar**: `stellar contract invoke --id CONTRACT_ID --source-account alice --send=yes -- initialize`
+4. **Adicionar jogos**: `stellar contract invoke --id CONTRACT_ID --source-account alice --send=yes -- new_game --player alice --nickname "Player" --score 100 --game_time 10`
+5. **Consultar ranking**: `stellar contract invoke --id CONTRACT_ID --source-account alice -- get_rank`

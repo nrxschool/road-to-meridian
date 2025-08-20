@@ -19,7 +19,7 @@ export interface UseContractReadReturn {
 export const useContractRead = (): UseContractReadReturn => {
   const [isReadLoading, setIsReadLoading] = useState(false);
   const [rank, setRank] = useState<Player[]>([]);
-  const { contract } = useProvider();
+  const { contract, sorobanServer } = useProvider();
 
   const getRanking = useCallback(async (): Promise<Player[]> => {
     setIsReadLoading(true);

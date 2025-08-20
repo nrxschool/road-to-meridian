@@ -11,18 +11,7 @@ interface UseContractWrite {
 export const useContractWrite = (wallet: StellarWallet): UseContractWrite => {
   const [isWriteLoading, setIsWriteLoading] = useState(false);
   const { contract, signAndSend } = useProvider();
-
-  const assembleTransaction = async (
-    nickName: string,
-    score: number
-  ) => {
-    return await contract().new_game({
-      player: wallet.publicKey,
-      nickname: nickName,
-      score,
-      game_time: 10,
-    });
-  };
+  
 
   const sendNewGame = async (
     score: number,
@@ -32,10 +21,18 @@ export const useContractWrite = (wallet: StellarWallet): UseContractWrite => {
     setIsWriteLoading(true);
 
     try {
-      const assembledTx = await assembleTransaction(nickName, score);
-      const result = await signAndSend(assembledTx, wallet);
+      const tx = await contract(wallet.publicKey).new_game({
+        player: wallet.publicKey,
+        nickname: nickName,
+        score,
+        game_time: 10,
+      })
+      
+      const result = await signAndSend(tx, wallet)
+      
+      console.log('Transaction result:', result)
       toast.success("Score successfully saved on contract!", { id });
-      return result && result.hash ? result.hash : "ok";
+      return result && result.hash ? result.hash : "Transaction completed";
     } catch (err) {
       console.error(err);
       toast.error("Failed to save score on contract", { id });

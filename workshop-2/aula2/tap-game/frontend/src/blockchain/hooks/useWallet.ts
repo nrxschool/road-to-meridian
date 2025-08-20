@@ -1,4 +1,4 @@
-import { Horizon, Keypair } from "@stellar/stellar-sdk";
+import { Keypair } from "@stellar/stellar-sdk";
 import { useState } from "react";
 import { toast } from "sonner";
 
