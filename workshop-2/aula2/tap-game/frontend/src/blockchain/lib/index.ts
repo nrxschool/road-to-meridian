@@ -31,7 +31,12 @@ if (typeof window !== 'undefined') {
 }
 
 
-
+export const networks = {
+  testnet: {
+    networkPassphrase: "Test SDF Network ; September 2015",
+    contractId: "CDK2HVUG7226QJFO5JL6S2WWB5V4UNQ3VUPKLKKQ6GWWFCZW7Y3ZAZNJ",
+  }
+} as const
 
 
 export interface Game {

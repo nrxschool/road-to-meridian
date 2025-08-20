@@ -10,13 +10,13 @@ interface UseContractWrite {
 
 export const useContractWrite = (wallet: StellarWallet): UseContractWrite => {
   const [isWriteLoading, setIsWriteLoading] = useState(false);
-  const { client, signAndSend } = useProvider();
+  const { contract, signAndSend } = useProvider();
 
   const assembleTransaction = async (
     nickName: string,
     score: number
   ) => {
-    return await client.new_game({
+    return await contract().new_game({
       player: wallet.publicKey,
       nickname: nickName,
       score,

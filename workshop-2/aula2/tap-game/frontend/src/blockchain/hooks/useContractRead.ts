@@ -1,7 +1,6 @@
 import { useState, useCallback } from 'react';
 import { toast } from 'sonner';
 import { useProvider } from './useProvider';
-import type { StellarWallet } from './useWallet';
 
 export interface Player {
   address: string;
@@ -20,13 +19,13 @@ export interface UseContractReadReturn {
 export const useContractRead = (): UseContractReadReturn => {
   const [isReadLoading, setIsReadLoading] = useState(false);
   const [data, setData] = useState<Player[]>([]);
-  const { client } = useProvider();
+  const { contract } = useProvider();
 
   const getRanking = useCallback(async (): Promise<Player[]> => {
     setIsReadLoading(true);
 
     try {
-      const assembledTx = await client.get_rank();
+      const assembledTx = await contract().get_rank();
       const rank = (assembledTx.result || []).map((g, idx) => ({
         address: g.player,
         nickname: g.nickname,
@@ -43,7 +42,7 @@ export const useContractRead = (): UseContractReadReturn => {
     } finally {
       setIsReadLoading(false);
     }
-  }, [client]);
+  }, [contract]);
 
   const refreshRank = useCallback(async (): Promise<void> => {
     await getRanking();

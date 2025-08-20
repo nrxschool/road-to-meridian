@@ -66,8 +66,11 @@ export const useWallet = (): UseWalletReturn => {
   };
 
   const getFaucet = async (publicKey: string) => {
-    const horizon = new Horizon.Server("https://horizon-testnet.stellar.org");
-    await horizon.friendbot(publicKey).call();
+    const result = await fetch(
+      `https://horizon-testnet.stellar.org/friendbot?addr=${publicKey}`
+    );
+
+    console.log(result);
   };
 
   const createWallet = async () => {
@@ -92,6 +95,7 @@ export const useWallet = (): UseWalletReturn => {
       setIsLoading(false);
     }
   };
+
   const disconnect = () => {
     clearWalletFromStorage();
     setIsConnected(false);
