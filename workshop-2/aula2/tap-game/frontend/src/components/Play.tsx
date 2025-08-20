@@ -267,13 +267,12 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
               placeholder="enter your nickname"
               value={nickname}
               onChange={(e) => setNickname(e.target.value)}
-              className="w-full p-3 pixel-border"
+              className="w-full p-3 pixel-border text-center"
               style={{
                 backgroundColor: "hsl(var(--pixel-white))",
                 color: "hsl(var(--pixel-black))",
               }}
             />
-            
             <button
               onClick={saveScore}
               disabled={isWriteLoading}
