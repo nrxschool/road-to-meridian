@@ -8,18 +8,18 @@ pub struct Contract;
 impl Contract {
     pub fn new_game(
         env: Env,
-        player_address: Address,
+        player: Address,
         nickname: String,
         score: i32,
         game_time: i32,
     ) {
+        env.storage().persistent().set(&player, &score);
         let value = Game {
+            player: player.clone(),
             nickname,
             score,
             game_time,
         };
-        let key = DataKey::PlayerAddress(player_address);
-        env.storage().persistent().set(&key, &value);
 
         let mut rank = env
             .storage()

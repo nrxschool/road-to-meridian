@@ -1,41 +1,58 @@
 import { useState, useCallback } from 'react';
-import { stellarService, Player } from '../services/StellarSDK';
 import { toast } from 'sonner';
+import { useProvider } from './useProvider';
+import type { StellarWallet } from './useWallet';
+
+export interface Player {
+  address: string;
+  score: number;
+  rank: number;
+  nickname: string;
+}
 
 export interface UseContractReadReturn {
-  isLoading: boolean;
+  isReadLoading: boolean;
   data: Player[];
   getRanking: () => Promise<Player[]>;
-  refetch: () => Promise<void>;
+  refreshRank: () => Promise<void>;
 }
 
 export const useContractRead = (): UseContractReadReturn => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isReadLoading, setIsReadLoading] = useState(false);
   const [data, setData] = useState<Player[]>([]);
+  const { client } = useProvider();
 
   const getRanking = useCallback(async (): Promise<Player[]> => {
-    setIsLoading(true);
+    setIsReadLoading(true);
+
     try {
-      const players = await stellarService.getRankFromContract();
-      setData(players);
-      return players;
+      const assembledTx = await client.get_rank();
+      const rank = (assembledTx.result || []).map((g, idx) => ({
+        address: g.player,
+        nickname: g.nickname,
+        score: Number(g.score),
+        rank: idx + 1,
+      }));
+
+      setData(rank);
+      return rank;
     } catch (error) {
       console.error('Error getting ranking:', error);
       toast.error('Failed to get ranking');
       return [];
     } finally {
-      setIsLoading(false);
+      setIsReadLoading(false);
     }
-  }, []);
+  }, [client]);
 
-  const refetch = useCallback(async (): Promise<void> => {
+  const refreshRank = useCallback(async (): Promise<void> => {
     await getRanking();
   }, [getRanking]);
 
   return {
-    isLoading,
+    isReadLoading,
     data,
     getRanking,
-    refetch,
+    refreshRank,
   };
 };

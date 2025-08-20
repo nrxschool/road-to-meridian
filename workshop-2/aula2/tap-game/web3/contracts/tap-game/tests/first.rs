@@ -1,7 +1,7 @@
 #![cfg(test)]
 
 use soroban_sdk::testutils::Address as _; // enables Address::generate in tests
-use soroban_sdk::{Address, Env, String, Vec};
+use soroban_sdk::{log, Address, Env, String, Vec};
 use tap_game::contract::{Contract, ContractClient};
 use tap_game::model::{DataKey, Game};
 
@@ -31,7 +31,7 @@ fn new_game_and_rank_single() {
     let rank = client.get_rank();
     assert_eq!(rank.len(), 1);
     let g0 = rank.get(0).unwrap();
-    assert_eq!(g0.player_name, name);
+    assert_eq!(g0.nickname, name);
     assert_eq!(g0.score, score);
     assert_eq!(g0.game_time, game_time);
 }
@@ -62,12 +62,12 @@ fn new_game_multiple_order() {
     assert_eq!(rank.len(), 2);
 
     let g0 = rank.get(0).unwrap();
-    assert_eq!(g0.player_name, n1);
+    assert_eq!(g0.nickname, n1);
     assert_eq!(g0.score, s1);
     assert_eq!(g0.game_time, t1);
 
     let g1 = rank.get(1).unwrap();
-    assert_eq!(g1.player_name, n2);
+    assert_eq!(g1.nickname, n2);
     assert_eq!(g1.score, s2);
     assert_eq!(g1.game_time, t2);
 }
@@ -88,14 +88,13 @@ fn new_game_stores_by_address() {
     client.new_game(&player, &name, &score, &game_time);
 
     // Read back the per-player storage directly from contract storage
-    let stored: Game = env.as_contract(&contract_id, || {
+    let saved = env.as_contract(&contract_id, || {
         env.storage()
             .persistent()
-            .get::<DataKey, Game>(&DataKey::PlayerAddress(player.clone()))
+            .get::<DataKey, i32>(&DataKey::PlayerAddress(player.clone()))
             .unwrap()
     });
 
-    assert_eq!(stored.player_name, name);
-    assert_eq!(stored.score, score);
-    assert_eq!(stored.game_time, game_time);
+    log!(&env, "saved: {}", saved);
+    assert_eq!(saved, score);
 }

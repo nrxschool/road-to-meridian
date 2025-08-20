@@ -37,6 +37,7 @@ if (typeof window !== 'undefined') {
 export interface Game {
   game_time: i32;
   nickname: string;
+  player: string;
   score: i32;
 }
 
@@ -46,7 +47,7 @@ export interface Client {
   /**
    * Construct and simulate a new_game transaction. Returns an `AssembledTransaction` object which will have a `result` field containing the result of the simulation. If this transaction changes contract state, you will need to call `signAndSend()` on the returned object.
    */
-  new_game: ({player_address, nickname, score, game_time}: {player_address: string, nickname: string, score: i32, game_time: i32}, options?: {
+  new_game: ({player, nickname, score, game_time}: {player: string, nickname: string, score: i32, game_time: i32}, options?: {
     /**
      * The fee to pay for the transaction. Default: BASE_FEE
      */
@@ -101,9 +102,9 @@ export class Client extends ContractClient {
   }
   constructor(public readonly options: ContractClientOptions) {
     super(
-      new ContractSpec([ "AAAAAAAAAAAAAAAIbmV3X2dhbWUAAAAEAAAAAAAAAA5wbGF5ZXJfYWRkcmVzcwAAAAAAEwAAAAAAAAAIbmlja25hbWUAAAAQAAAAAAAAAAVzY29yZQAAAAAAAAUAAAAAAAAACWdhbWVfdGltZQAAAAAAAAUAAAAA",
+      new ContractSpec([ "AAAAAAAAAAAAAAAIbmV3X2dhbWUAAAAEAAAAAAAAAAZwbGF5ZXIAAAAAABMAAAAAAAAACG5pY2tuYW1lAAAAEAAAAAAAAAAFc2NvcmUAAAAAAAAFAAAAAAAAAAlnYW1lX3RpbWUAAAAAAAAFAAAAAA==",
         "AAAAAAAAAAAAAAAIZ2V0X3JhbmsAAAAAAAAAAQAAA+oAAAfQAAAABEdhbWU=",
-        "AAAAAQAAAAAAAAAAAAAABEdhbWUAAAADAAAAAAAAAAlnYW1lX3RpbWUAAAAAAAAFAAAAAAAAAAhuaWNrbmFtZQAAABAAAAAAAAAABXNjb3JlAAAAAAAABQ==",
+        "AAAAAQAAAAAAAAAAAAAABEdhbWUAAAAEAAAAAAAAAAlnYW1lX3RpbWUAAAAAAAAFAAAAAAAAAAhuaWNrbmFtZQAAABAAAAAAAAAABnBsYXllcgAAAAAAEwAAAAAAAAAFc2NvcmUAAAAAAAAF",
         "AAAAAgAAAAAAAAAAAAAAB0RhdGFLZXkAAAAAAgAAAAAAAAAAAAAABFJhbmsAAAABAAAAAAAAAA1QbGF5ZXJBZGRyZXNzAAAAAAAAAQAAABM=" ]),
       options
     )

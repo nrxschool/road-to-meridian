@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useWallet } from "../blockchain/hooks/useWallet";
 import { useContractWrite } from "../blockchain/hooks/useContractWrite";
 import { useContractRead } from "../blockchain/hooks/useContractRead";
 import { toast } from "sonner";
+import { StellarWallet } from "@/blockchain/hooks/useWallet";
 
 interface Player {
   address: string;
@@ -19,16 +19,16 @@ interface PlayProps {
  * Tap-to-Earn Game - Versão Minimalista
  * Jogo de cliques com timer de 10 segundos
  */
-const Play: React.FC<PlayProps> = ({ onDisconnect }) => {
-  const { wallet, disconnect } = useWallet();
-  const { sendGameResult, isLoading: isWriteLoading } = useContractWrite();
-  const { getRanking, refetch: refetchRanking, data: leaderboard, isLoading: isReadLoading } = useContractRead();
-  const [isSaving, setIsSaving] = useState(false);
-  const [count, setCount] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(10);
-  const [gameActive, setGameActive] = useState(false);
+const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
+  onDisconnect,
+  wallet,
+}) => {
+  const { getRanking, refreshRank, data: leaderboard, isReadLoading }  = useContractRead();
+  const { sendNewGame, isWriteLoading } = useContractWrite(wallet);
   const [gameStarted, setGameStarted] = useState(false);
-
+  const [gameActive, setGameActive] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(10);
+  const [count, setCount] = useState(0);
 
   // Carregar ranking do smartcontract
   useEffect(() => {
@@ -48,34 +48,9 @@ const Play: React.FC<PlayProps> = ({ onDisconnect }) => {
     return () => clearInterval(interval);
   }, [gameActive, timeLeft]);
 
-  const saveScore = useCallback(async () => {
-    if (!wallet) {
-      toast.error("Wallet não conectada");
-      return;
-    }
-
-    setIsSaving(true);
-    toast.loading("Salvando pontuação no contrato...");
-
-    try {
-      const gameTime = 10 - timeLeft;
-      const success = await sendGameResult(wallet, count, gameTime);
-
-      if (success) {
-        toast.dismiss();
-        toast.success(`Pontuação ${count} salva com sucesso!`);
-        
-        // Atualizar ranking
-        await refetchRanking();
-      }
-    } catch (error) {
-      toast.dismiss();
-      console.error("Erro ao salvar pontuação:", error);
-      toast.error("Falha ao salvar pontuação no contrato");
-    } finally {
-      setIsSaving(false);
-    }
-  }, [count, timeLeft, wallet, sendGameResult, getRanking]);
+  const saveScore = async () => {
+    sendNewGame(count, wallet.publicKey);
+  };
 
   const endGame = useCallback(async () => {
     setGameActive(false);
@@ -128,10 +103,7 @@ const Play: React.FC<PlayProps> = ({ onDisconnect }) => {
                 TAP GAME
               </h1>
               <button
-                onClick={() => {
-                  disconnect();
-                  onDisconnect();
-                }}
+                onClick={onDisconnect}
                 className="w-10 h-10 flex items-center justify-center pixel-border btn-danger text-lg font-bold"
               >
                 ×
@@ -176,7 +148,7 @@ const Play: React.FC<PlayProps> = ({ onDisconnect }) => {
               </button>
             ) : (
               <div className="space-y-4">
-                {isSaving ? (
+                {isWriteLoading ? (
                   <div
                     className="text-lg animate-pulse"
                     style={{
@@ -197,7 +169,7 @@ const Play: React.FC<PlayProps> = ({ onDisconnect }) => {
                 )}
                 <button
                   onClick={startGame}
-                  disabled={isSaving}
+                  disabled={isWriteLoading}
                   className="w-full h-16 btn-warning pixel-border text-xl font-bold disabled:opacity-50"
                 >
                   Play Again

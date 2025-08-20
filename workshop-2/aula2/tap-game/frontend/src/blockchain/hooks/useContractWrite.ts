@@ -1,43 +1,52 @@
-import { useState, useCallback } from 'react';
-import { stellarService, StellarWallet } from '../services/StellarSDK';
-import { toast } from 'sonner';
+import { useState } from "react";
+import { toast } from "sonner";
+import { useProvider } from "./useProvider";
+import type { StellarWallet } from "./useWallet";
 
-export interface UseContractWriteReturn {
-  isLoading: boolean;
-  sendGameResult: (wallet: StellarWallet, score: number, gameTime: number) => Promise<boolean>;
+interface UseContractWrite {
+  isWriteLoading: boolean;
+  sendNewGame: (score: number, nickName: string) => Promise<string>;
 }
 
-export const useContractWrite = (): UseContractWriteReturn => {
-  const [isLoading, setIsLoading] = useState(false);
+export const useContractWrite = (wallet: StellarWallet): UseContractWrite => {
+  const [isWriteLoading, setIsWriteLoading] = useState(false);
+  const { client, signAndSend } = useProvider();
 
-  const sendGameResult = useCallback(async (wallet: StellarWallet, score: number, gameTime: number): Promise<boolean> => {
-    if (!wallet) {
-      toast.error('No wallet available');
-      return false;
-    }
-    
-    setIsLoading(true);
+  const assembleTransaction = async (
+    nickName: string,
+    score: number
+  ) => {
+    return await client.new_game({
+      player: wallet.publicKey,
+      nickname: nickName,
+      score,
+      game_time: 10,
+    });
+  };
+
+  const sendNewGame = async (
+    score: number,
+    nickName: string
+  ): Promise<string> => {
+    const id = toast.loading("Sending transaction...") as string;
+    setIsWriteLoading(true);
+
     try {
-      const success = await stellarService.sendGameResultToContract(wallet, score, gameTime);
-      
-      if (success) {
-        toast.success('Game result sent successfully!');
-      } else {
-        toast.error('Failed to send game result');
-      }
-      
-      return success;
-    } catch (error) {
-      console.error('Error sending game result:', error);
-      toast.error('Failed to send game result');
-      return false;
+      const assembledTx = await assembleTransaction(nickName, score);
+      const result = await signAndSend(assembledTx, wallet);
+      toast.success("Score successfully saved on contract!", { id });
+      return result && result.hash ? result.hash : "ok";
+    } catch (err) {
+      console.error(err);
+      toast.error("Failed to save score on contract", { id });
+      return "";
     } finally {
-      setIsLoading(false);
+      setIsWriteLoading(false);
     }
-  }, []);
+  };
 
   return {
-    isLoading,
-    sendGameResult,
+    isWriteLoading,
+    sendNewGame,
   };
 };
