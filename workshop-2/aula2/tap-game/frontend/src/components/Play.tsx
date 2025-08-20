@@ -4,6 +4,7 @@ import { useContractRead } from "../blockchain/hooks/useContractRead";
 import { toast } from "sonner";
 import { StellarWallet } from "@/blockchain/hooks/useWallet";
 
+
 interface Player {
   address: string;
   score: number;
@@ -29,6 +30,8 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
   const [gameActive, setGameActive] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
   const [count, setCount] = useState(0);
+  const [showNicknameModal, setShowNicknameModal] = useState(false);
+  const [nickname, setNickname] = useState("");
 
   // Carregar ranking do smartcontract
   useEffect(() => {
@@ -49,13 +52,18 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
   }, [gameActive, timeLeft]);
 
   const saveScore = async () => {
-    sendNewGame(count, wallet.publicKey);
+    if (nickname) {
+      sendNewGame(count, nickname);
+      setShowNicknameModal(false);
+    } else {
+      setShowNicknameModal(true);
+    }
   };
 
   const endGame = useCallback(async () => {
     setGameActive(false);
-    await saveScore();
-  }, [saveScore]);
+    setShowNicknameModal(true);
+  }, []);
 
   const startGame = () => {
     setCount(0);
@@ -78,6 +86,7 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
   };
 
   return (
+    <>
     <div
       className="min-h-screen flex items-center justify-center p-4 pixel-bg"
       style={{
@@ -225,6 +234,58 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
         </div>
       </div>
     </div>
+
+    {/* Modal de Nickname */}
+    {showNicknameModal && (
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div 
+          className="pixel-border p-6 w-full max-w-sm"
+          style={{
+            backgroundColor: "hsl(var(--pixel-black))",
+          }}
+        >
+          <div className="text-center space-y-4">
+            <h2 
+              className="text-2xl font-bold pixel-shadow"
+              style={{
+                color: "hsl(var(--pixel-yellow))",
+              }}
+            >
+              CONGRATS!
+            </h2>
+            <h3
+              className="text-xl font-bold"
+              style={{
+                color: "hsl(var(--pixel-white))",
+              }}
+            >
+              {count} Score!
+            </h3>
+            
+            <input
+              type="text"
+              placeholder="enter your nickname"
+              value={nickname}
+              onChange={(e) => setNickname(e.target.value)}
+              className="w-full p-3 pixel-border"
+              style={{
+                backgroundColor: "hsl(var(--pixel-white))",
+                color: "hsl(var(--pixel-black))",
+              }}
+            />
+            
+            <button
+              onClick={saveScore}
+              disabled={isWriteLoading}
+              className="w-full h-12 btn-success pixel-border text-lg font-bold disabled:opacity-50"
+            >
+              Save onchain!
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 };
 

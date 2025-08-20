@@ -11,7 +11,6 @@ export const ToasterProvider = ({ children }: ToasterProviderProps) => {
         position="top-center"
         expand={true}
         richColors
-        closeButton
         duration={4000}
       />
       {children}
