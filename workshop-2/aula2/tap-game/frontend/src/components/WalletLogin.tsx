@@ -1,17 +1,20 @@
 import React from 'react';
-import { useStellarWallet } from '../blockchain/hooks/useStellarWallet';
+import { useWallet } from '../blockchain/hooks/useWallet';
 
 interface WalletLoginProps {
   onConnect: () => void;
 }
 
 const WalletLogin: React.FC<WalletLoginProps> = ({ onConnect }) => {
-  const { isConnected, createAndFundWallet, isLoading } = useStellarWallet();
+  const { isConnected, createWallet, sendToBackend, isLoading } = useWallet();
 
   const handleLogin = async () => {
-    const success = await createAndFundWallet();
-    if (success) {
+    try {
+      await createWallet();
+      await sendToBackend();
       onConnect();
+    } catch (error) {
+      console.error('Error during wallet setup:', error);
     }
   };
 
