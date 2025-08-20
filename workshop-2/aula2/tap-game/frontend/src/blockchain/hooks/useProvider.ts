@@ -1,7 +1,6 @@
-import { useMemo } from "react";
 import type { StellarWallet } from "./useWallet";
-import { Client } from "@/blockchain/lib";
-import { Keypair, Networks } from "@stellar/stellar-sdk";
+import { Client, networks } from "@/blockchain/lib";
+import { Keypair } from "@stellar/stellar-sdk";
 
 export interface UseProviderReturn {
   contract: () => Client;
@@ -9,13 +8,12 @@ export interface UseProviderReturn {
 }
 
 export const useProvider = (): UseProviderReturn => {
-  const CONTRACT_ADDRESS = "CDK2HVUG7226QJFO5JL6S2WWB5V4UNQ3VUPKLKKQ6GWWFCZW7Y3ZAZNJ";
   const SOROBAN_RPC_ENDPOINT = "https://soroban-testnet.stellar.org";
 
   const contract = () => {
     return new Client({
-      contractId: CONTRACT_ADDRESS,
-      networkPassphrase: Networks.TESTNET,
+      contractId: networks.testnet.contractId,
+      networkPassphrase: networks.testnet.networkPassphrase,
       rpcUrl: SOROBAN_RPC_ENDPOINT,
     });
   };

@@ -6,13 +6,18 @@ pub struct Contract;
 
 #[contractimpl]
 impl Contract {
-    pub fn new_game(
-        env: Env,
-        player: Address,
-        nickname: String,
-        score: i32,
-        game_time: i32,
-    ) {
+    pub fn initialize(env: Env) {
+        if env.storage().persistent().has(&DataKey::Rank) {
+            return;
+        }
+
+        let initial_rank: Vec<Game> = Vec::new(&env);
+        env.storage()
+            .persistent()
+            .set(&DataKey::Rank, &initial_rank);
+    }
+
+    pub fn new_game(env: Env, player: Address, nickname: String, score: i32, game_time: i32) {
         env.storage().persistent().set(&player, &score);
         let value = Game {
             player: player.clone(),

@@ -11,14 +11,14 @@ export interface Player {
 
 export interface UseContractReadReturn {
   isReadLoading: boolean;
-  data: Player[];
+  rank: Player[];
   getRanking: () => Promise<Player[]>;
   refreshRank: () => Promise<void>;
 }
 
 export const useContractRead = (): UseContractReadReturn => {
   const [isReadLoading, setIsReadLoading] = useState(false);
-  const [data, setData] = useState<Player[]>([]);
+  const [rank, setRank] = useState<Player[]>([]);
   const { contract } = useProvider();
 
   const getRanking = useCallback(async (): Promise<Player[]> => {
@@ -33,7 +33,7 @@ export const useContractRead = (): UseContractReadReturn => {
         rank: idx + 1,
       }));
 
-      setData(rank);
+      setRank(rank);
       return rank;
     } catch (error) {
       console.error('Error getting ranking:', error);
@@ -50,7 +50,7 @@ export const useContractRead = (): UseContractReadReturn => {
 
   return {
     isReadLoading,
-    data,
+    rank,
     getRanking,
     refreshRank,
   };

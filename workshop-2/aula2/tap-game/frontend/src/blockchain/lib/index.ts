@@ -34,7 +34,7 @@ if (typeof window !== 'undefined') {
 export const networks = {
   testnet: {
     networkPassphrase: "Test SDF Network ; September 2015",
-    contractId: "CDK2HVUG7226QJFO5JL6S2WWB5V4UNQ3VUPKLKKQ6GWWFCZW7Y3ZAZNJ",
+    contractId: "CAGFRUMLQVBUEAKG5CTB25DYCVBM2KVZOKZ2PMUKT2G34233CDKU3TLM",
   }
 } as const
 
@@ -116,6 +116,6 @@ export class Client extends ContractClient {
   }
   public readonly fromJSON = {
     new_game: this.txFromJSON<null>,
-        get_rank: this.txFromJSON<Array<Game>>
+    get_rank: this.txFromJSON<Array<Game>>
   }
 }
