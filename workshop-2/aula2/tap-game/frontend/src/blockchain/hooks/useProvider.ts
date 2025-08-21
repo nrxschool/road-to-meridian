@@ -1,5 +1,5 @@
 import type { StellarWallet } from "./useWallet";
-import { Client, networks } from "@/blockchain/lib";
+import { Client, networks } from "@/blockchain/lib/src";
 import { Keypair, Transaction, rpc } from "@stellar/stellar-sdk";
 
 export interface UseProviderReturn {

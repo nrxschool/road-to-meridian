@@ -34,7 +34,7 @@ if (typeof window !== 'undefined') {
 export const networks = {
   testnet: {
     networkPassphrase: "Test SDF Network ; September 2015",
-    contractId: "CBXJATCCWI2D2W5KY4YCFT2NS7XYKGGF44CQPQGPTU6O4AXCHY2JQE4U",
+    contractId: "CDXEYUXHAAPX6ZL6YN2BLHGS5DIDUVBCUYVM7CSQFEMF76SSJENCLDGM",
   }
 } as const
 
@@ -49,6 +49,26 @@ export interface Game {
 export type DataKey = {tag: "Rank", values: void} | {tag: "PlayerAddress", values: readonly [string]};
 
 export interface Client {
+  /**
+   * Construct and simulate a initialize transaction. Returns an `AssembledTransaction` object which will have a `result` field containing the result of the simulation. If this transaction changes contract state, you will need to call `signAndSend()` on the returned object.
+   */
+  initialize: (options?: {
+    /**
+     * The fee to pay for the transaction. Default: BASE_FEE
+     */
+    fee?: number;
+
+    /**
+     * The maximum amount of time to wait for the transaction to complete. Default: DEFAULT_TIMEOUT
+     */
+    timeoutInSeconds?: number;
+
+    /**
+     * Whether to automatically simulate the transaction when constructing the AssembledTransaction. Default: true
+     */
+    simulate?: boolean;
+  }) => Promise<AssembledTransaction<null>>
+
   /**
    * Construct and simulate a new_game transaction. Returns an `AssembledTransaction` object which will have a `result` field containing the result of the simulation. If this transaction changes contract state, you will need to call `signAndSend()` on the returned object.
    */
@@ -107,7 +127,8 @@ export class Client extends ContractClient {
   }
   constructor(public readonly options: ContractClientOptions) {
     super(
-      new ContractSpec([ "AAAAAAAAAAAAAAAIbmV3X2dhbWUAAAAEAAAAAAAAAAZwbGF5ZXIAAAAAABMAAAAAAAAACG5pY2tuYW1lAAAAEAAAAAAAAAAFc2NvcmUAAAAAAAAFAAAAAAAAAAlnYW1lX3RpbWUAAAAAAAAFAAAAAA==",
+      new ContractSpec([ "AAAAAAAAAAAAAAAKaW5pdGlhbGl6ZQAAAAAAAAAAAAA=",
+        "AAAAAAAAAAAAAAAIbmV3X2dhbWUAAAAEAAAAAAAAAAZwbGF5ZXIAAAAAABMAAAAAAAAACG5pY2tuYW1lAAAAEAAAAAAAAAAFc2NvcmUAAAAAAAAFAAAAAAAAAAlnYW1lX3RpbWUAAAAAAAAFAAAAAA==",
         "AAAAAAAAAAAAAAAIZ2V0X3JhbmsAAAAAAAAAAQAAA+oAAAfQAAAABEdhbWU=",
         "AAAAAQAAAAAAAAAAAAAABEdhbWUAAAAEAAAAAAAAAAlnYW1lX3RpbWUAAAAAAAAFAAAAAAAAAAhuaWNrbmFtZQAAABAAAAAAAAAABnBsYXllcgAAAAAAEwAAAAAAAAAFc2NvcmUAAAAAAAAF",
         "AAAAAgAAAAAAAAAAAAAAB0RhdGFLZXkAAAAAAgAAAAAAAAAAAAAABFJhbmsAAAABAAAAAAAAAA1QbGF5ZXJBZGRyZXNzAAAAAAAAAQAAABM=" ]),
@@ -115,7 +136,8 @@ export class Client extends ContractClient {
     )
   }
   public readonly fromJSON = {
-    new_game: this.txFromJSON<null>,
-    get_rank: this.txFromJSON<Array<Game>>
+    initialize: this.txFromJSON<null>,
+        new_game: this.txFromJSON<null>,
+        get_rank: this.txFromJSON<Array<Game>>
   }
 }
