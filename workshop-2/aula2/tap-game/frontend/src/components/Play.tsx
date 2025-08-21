@@ -252,7 +252,7 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
                   color: "hsl(var(--pixel-yellow))",
                 }}
               >
-                WOWW WOWW
+                WOWW  
               </h2>
               <h3
                 className="text-xl font-bold"
