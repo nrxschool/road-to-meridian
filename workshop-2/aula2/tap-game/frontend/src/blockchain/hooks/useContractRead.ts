@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import { useProvider } from './useProvider';
+import { useContract } from '../providers/ContractProvider';
 
 export interface Player {
   address: string;
@@ -12,46 +12,34 @@ export interface Player {
 export interface UseContractReadReturn {
   isReadLoading: boolean;
   rank: Player[];
-  getRanking: () => Promise<Player[]>;
-  refreshRank: () => Promise<void>;
+  refreshRank: () => void;
 }
 
 export const useContractRead = (): UseContractReadReturn => {
-  const [isReadLoading, setIsReadLoading] = useState(false);
-  const [rank, setRank] = useState<Player[]>([]);
-  const { contract, sorobanServer } = useProvider();
+  const { contract } = useContract();
 
-  const getRanking = useCallback(async (): Promise<Player[]> => {
-    setIsReadLoading(true);
-
-    try {
-      const assembledTx = await contract().get_rank();
-      const rank = (assembledTx.result || []).map((g, idx) => ({
-        address: g.player,
-        nickname: g.nickname,
-        score: Number(g.score),
-        rank: idx + 1,
-      }));
-
-      setRank(rank);
-      return rank;
-    } catch (error) {
-      console.error('Error getting ranking:', error);
-      toast.error('Failed to get ranking');
-      return [];
-    } finally {
-      setIsReadLoading(false);
-    }
-  }, [contract]);
-
-  const refreshRank = useCallback(async (): Promise<void> => {
-    await getRanking();
-  }, [getRanking]);
+  const { data: rank = [], isLoading: isReadLoading, refetch: refreshRank } = useQuery({
+    queryKey: ['ranking'],
+    queryFn: async () => {
+      try {
+        const assembledTx = await contract().get_rank();
+        return (assembledTx.result || []).map((g, idx) => ({
+          address: g.player,
+          nickname: g.nickname,
+          score: Number(g.score),
+          rank: idx + 1,
+        }));
+      } catch (error) {
+        console.error('Error getting ranking:', error);
+        toast.error('Failed to get ranking');
+        return [];
+      }
+    },
+  });
 
   return {
     isReadLoading,
     rank,
-    getRanking,
     refreshRank,
   };
 };

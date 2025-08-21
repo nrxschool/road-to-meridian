@@ -12,7 +12,7 @@ Nesta aula, vamos mergulhar no desenvolvimento completo de smart contracts na bl
 ### Programa da aula:
 
 1. **Apresentação**: Contexto e demonstração do projeto
-2. **Smart Contracts**: Desenvolvimento, testes e deploy
+2. **Smart Contracts**: Desenvolvimento, testes, otimização, deploy e bindings
 3. **Frontend**: Integração e interação com contratos
 4. **Finalização**: Recapitulação e próximos passos
 
@@ -89,16 +89,14 @@ pub struct Contract;
 **MOSTRAR ÁRVORE DE ARQUIVOS**:
 ```
 tap-game/
-└── web3/
-    └── contracts/
-        └── tap-game/
-            ├── Cargo.toml
-            ├── src/
-            │   ├── lib.rs
-            │   ├── contract.rs
-            │   └── model.rs
-            └── tests/
-                └── first.rs
+├── Cargo.toml
+├── src/
+│   └── lib.rs
+└── contracts/
+    └── tap_game/
+        ├── Cargo.toml
+        └── src/
+            └── lib.rs
 ```
 
 ### Estrutura de Dados
@@ -247,9 +245,31 @@ fn new_game_multiple_order() {
 }
 ```
 
+### Teste get_account_score
+
+```rust
+#[test]
+fn get_account_score() {
+    let env = Env::default();
+    let contract_id = env.register(Contract, ());
+    let client = ContractClient::new(&env, &contract_id);
+    
+    init_rank_storage(&env, &contract_id);
+    
+    let player = Address::generate(&env);
+    let name = String::from_str(&env, "Dave");
+    client.new_game(&player, &name, &50, &150);
+    
+    // Implementação do teste para get_account_score
+    // Verificar score do jogador específico
+}
+```
+
+**MOSTRAR TERMINAL**: `cargo test`
+
 ---
 
-## 5. Deploy e Otimização
+## 5. Otimizar/Deploy
 
 ### Compilação Otimizada
 
@@ -273,141 +293,12 @@ stellar contract invoke \
   --id CONTRACT_ID \
   --source alice \
   --network testnet \
-  -- new_game \
-  --player_address alice \
-  --nickname "Alice" \
-  --score 100 \
-  --game_time 60
+  -- new_game --player_address alice --nickname Alice --score 42 --game_time 120
 ```
 
----
-
-## 6. Frontend - Integração
-
-### Gerando Bindings
+### Gerar Bindings
 
 **MOSTRAR TERMINAL**: `stellar contract bindings typescript`
-
-**MOSTRAR ÁRVORE DE ARQUIVOS**:
-```
-frontend/
-├── src/
-│   ├── contracts/
-│   │   └── tap-game.ts
-│   ├── components/
-│   └── utils/
-└── package.json
-```
-
-### Criando Wallets
-
-**MOSTRAR CRIAÇÃO DA FUNÇÃO**:
-```typescript
-import { Keypair } from '@stellar/stellar-sdk';
-
-const createWallet = () => {
-  const keypair = Keypair.random();
-  return {
-    publicKey: keypair.publicKey(),
-    secretKey: keypair.secret()
-  };
-};
-```
-
----
-
-## 7. Interação com Contratos
-
-### Lendo do Contrato
-
-**MOSTRAR CRIAÇÃO DA FUNÇÃO**:
-```typescript
-const getRank = async (playerAddress: string) => {
-  const result = await contract.get_rank({
-    player: playerAddress
-  });
-  return result;
-};
-```
-
-### Escrevendo no Contrato
-
-**MOSTRAR CRIAÇÃO DA FUNÇÃO**:
-```typescript
-const startNewGame = async (wallet: Wallet) => {
-  const tx = await contract.new_game({
-    player: wallet.publicKey
-  }, {
-    fee: '100000',
-    networkPassphrase: Networks.TESTNET
-  });
-  
-  return await tx.signAndSend();
-};
-```
-
-### Configuração de Contas
-
-**MOSTRAR TERMINAL**: Processo de funding via faucet
-```bash
-curl "https://friendbot.stellar.org?addr=PUBLIC_KEY"
-```
-
----
-
-## Revisão
-
-1. **Apresentação**
-
-- [x] Contexto do Road to Meridian e demonstração do DApp
-- [x] Visão geral da arquitetura Stellar com Rust
-
-2. **Smart Contracts**
-
-- [x] Estrutura de dados e tipos de storage na Stellar
-- [x] Implementação das funções new_game e get_rank
-- [x] Testes unitários e de integração
-- [x] Processo de deploy e otimização
-
-3. **Frontend**
-
-- [x] Geração de bindings TypeScript
-- [x] Criação e gerenciamento de wallets
-- [x] Integração com faucet para funding de contas
-- [x] Leitura e escrita em contratos via frontend
-
-4. **Integração Completa**
-
-- [x] Fluxo completo de desenvolvimento Web3
-- [x] Interação wallet-to-contract em tempo real
-
----
-
-## Lição de casa
-
-### Desafio de Aprendizagem
-
-- **Fácil**: Adicione uma função para pausar/despausar jogos ativos
-- **Médio**: Implemente um sistema de power-ups que modifica a pontuação
-- **Difícil**: Crie um torneio multi-jogador com eliminatórias
-
-**Recursos:**
-
-- [Stellar Docs](https://developers.stellar.org/)
-- [Soroban Examples](https://github.com/stellar/soroban-examples)
-- [Rust Book](https://doc.rust-lang.org/book/)
-
-### Desafio de Carreira
-
-- Post no LinkedIn e Twitter com #road2meridian (2/3)
-- Marque a Stellar
-- Marque a NearX
-- Compartilhe seu progresso no desenvolvimento
-
-### Desafio de Comunidade
-
-- Poste um screenshot do seu contrato funcionando! (discord da nearx)
-- Ajude outros desenvolvedores com dúvidas (discord da stellar)
 
 ---
 
