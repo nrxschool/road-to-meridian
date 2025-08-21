@@ -38,7 +38,14 @@ export const useProvider = (): UseProviderReturn => {
     const result = await sorobanServer.sendTransaction(transaction);
     console.log("Send transaction result:", result);
 
-    return result
+    let status = result.status as string
+    while (status === "PENDING") {
+      const txResult = await sorobanServer.getTransaction(result.hash);
+      status = txResult.status as string;
+      console.log("Transaction status:", status);
+    } 
+
+    return result.hash
   };
 
   return { contract, sorobanServer, signAndSend };
