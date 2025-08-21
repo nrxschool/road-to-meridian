@@ -35,23 +35,10 @@ export const useProvider = (): UseProviderReturn => {
     console.log("Signing transaction");
     transaction.sign(keypair);
 
-    const sendResult = await sorobanServer.sendTransaction(transaction);
-    console.log("Send transaction result:", sendResult);
+    const result = await sorobanServer.sendTransaction(transaction);
+    console.log("Send transaction result:", result);
 
-    if (sendResult.status === 'PENDING') {
-      let getTxResult;
-      while (true) {
-        getTxResult = await sorobanServer.getTransaction(sendResult.hash);
-        console.log("Get transaction result:", getTxResult);
-        if (getTxResult.status !== 'PENDING') {
-          break;
-        }
-        await new Promise(resolve => setTimeout(resolve, 1000));
-      }
-      return getTxResult;
-    } else {
-      return sendResult;
-    }
+    return result
   };
 
   return { contract, sorobanServer, signAndSend };

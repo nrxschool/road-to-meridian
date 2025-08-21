@@ -27,12 +27,18 @@ export const useContractRead = (): UseContractReadReturn => {
     try {
       const assembledTx = await contract().get_rank()
       console.log(assembledTx)
-      const rank = ((await assembledTx.simulate()).result || []).map((g, idx) => ({
+      const players = ((await assembledTx.simulate()).result || []).map((g) => ({
         address: g.player,
         nickname: g.nickname,
         score: Number(g.score.toString()),
-        rank: idx + 1,
       }));
+
+      const rank = players
+        .sort((a, b) => b.score - a.score)
+        .map((player, idx) => ({
+          ...player,
+          rank: idx + 1,
+        }));
       console.log(rank)
 
       setRank(rank);

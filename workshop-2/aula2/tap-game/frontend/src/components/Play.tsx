@@ -188,7 +188,7 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
                 </h2>
 
                 <div className="space-y-2">
-                  {!!rank ? (
+                  {isReadLoading ? (
                     <div
                       className="pixel-border p-3"
                       style={{
@@ -197,7 +197,7 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
                       }}
                     >
                       <div className="text-sm font-bold text-center">
-                        failed get rank
+                        Loading ranking...
                       </div>
                     </div>
                   ) : rank.length > 0 ? (
@@ -211,7 +211,7 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
                         }}
                       >
                         <div className="text-sm font-bold flex justify-between">
-                          <span>#{player.rank}</span>
+                          <span>#{player.rank} {player.nickname}</span>
                           <span>{player.score} pts</span>
                         </div>
                       </div>
@@ -225,7 +225,7 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
                       }}
                     >
                       <div className="text-sm font-bold text-center">
-                        Loading ranking...
+                        No players yet
                       </div>
                     </div>
                   )}
