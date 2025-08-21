@@ -28,7 +28,7 @@ export const useContractWrite = (wallet: StellarWallet): UseContractWrite => {
         game_time: 10,
       })
       
-      const result = await signAndSend(tx, wallet)
+      const result = await signAndSend(tx.toXDR(), wallet)
       
       console.log('Transaction result:', result)
       toast.success("Score successfully saved on contract!", { id });

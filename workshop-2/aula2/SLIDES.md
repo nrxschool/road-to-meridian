@@ -11,10 +11,10 @@ Nesta aula, vamos mergulhar no desenvolvimento completo de smart contracts na bl
 
 ### Programa da aula:
 
-1. **Apresentação**: Contexto e demonstração do projeto
-2. **Smart Contracts**: Desenvolvimento, testes, otimização, deploy e bindings
-3. **Frontend**: Integração e interação com contratos
-4. **Finalização**: Recapitulação e próximos passos
+1. Conceitos Requisitos: Fundamentos de Smart Contracts na Stellar
+2. Introdução ao Desenvolvimento: Criando o Projeto e Estrutura de Dados
+3. Tema Principal: Implementação, Testes e Deploy
+4. Aplicações Avançadas: Integração com SDK JS e Frontend
 
 ---
 
@@ -60,7 +60,7 @@ Nesta aula, vamos mergulhar no desenvolvimento completo de smart contracts na bl
 
 ---
 
-## 1. Smart Contracts - Fundamentos
+## 1. Conceitos Requisitos: Fundamentos de Smart Contracts na Stellar
 
 Smart contracts na Stellar são programas executados na blockchain que automatizam acordos e lógicas de negócio. Diferente de outras blockchains, a Stellar utiliza Rust como linguagem principal, oferecendo performance e segurança excepcionais.
 
@@ -80,7 +80,7 @@ pub struct Contract;
 
 ---
 
-## 2. Desenvolvimento do Contrato
+## 2. Introdução ao Desenvolvimento: Criando o Projeto e Estrutura de Dados
 
 ### Criando o Projeto
 
@@ -129,7 +129,26 @@ pub enum DataKey {
 
 ---
 
-## 3. Implementação das Funções
+## 3. Tema Principal: Implementação das Funções, Testes e Deploy
+
+### Programa da aula:
+
+1. Bloco 1: Smart Contracts - Escrever Funções e Storage
+2. Bloco 2: Escrever Testes
+3. Bloco 3: Otimizar/Deploy e Interagir CLI
+4. Bloco 4: Stellar SDK JS, Criar Carteira e Conta
+5. Bloco 5: Ler e Escrever Smart Contracts
+6. Bloco 6: Recapitulação, Lição de Casa e Próxima Aula
+
+## 1. Bloco 1: Smart Contracts - Escrever Funções e Storage
+
+### Escrever Funções
+- new_game (Write)
+- get_rank (Read)
+
+### Escrever Storage
+- Tipos de storage
+- Estrutura de dados (struct e enums)
 
 ### Função new_game
 
@@ -197,8 +216,15 @@ fn init_rank_storage(env: &Env, contract_id: &Address) {
     });
 }
 
+## 2. Bloco 2: Escrever Testes
+
+### Teste create_single_game
+
+**MOSTRAR CRIAÇÃO DE MÓDULO**:
+```rust
 #[test]
-fn new_game_and_rank_single() {
+fn create_single_game() {
+    // Código ajustado do new_game_and_rank_single
     let env = Env::default();
     let contract_id = env.register(Contract, ());
     let client = ContractClient::new(&env, &contract_id);
@@ -207,38 +233,30 @@ fn new_game_and_rank_single() {
     
     let player = Address::generate(&env);
     let name = String::from_str(&env, "Alice");
-    let score: i32 = 42;
-    let game_time: i32 = 120;
-    
-    client.new_game(&player, &name, &score, &game_time);
+    client.new_game(&player, &name, &42, &120);
     
     let rank = client.get_rank();
     assert_eq!(rank.len(), 1);
 }
 ```
 
-### Teste Multiple Games
-
-**MOSTRAR TERMINAL**: `cargo test`
+### Teste multiple_games
 
 ```rust
 #[test]
-fn new_game_multiple_order() {
+fn multiple_games() {
+    // Código ajustado do new_game_multiple_order
     let env = Env::default();
     let contract_id = env.register(Contract, ());
     let client = ContractClient::new(&env, &contract_id);
     
     init_rank_storage(&env, &contract_id);
     
-    // Primeiro jogador
     let p1 = Address::generate(&env);
-    let n1 = String::from_str(&env, "Bob");
-    client.new_game(&p1, &n1, &10, &30);
+    client.new_game(&p1, &String::from_str(&env, "Bob"), &10, &30);
     
-    // Segundo jogador
     let p2 = Address::generate(&env);
-    let n2 = String::from_str(&env, "Carol");
-    client.new_game(&p2, &n2, &77, &200);
+    client.new_game(&p2, &String::from_str(&env, "Carol"), &77, &200);
     
     let rank = client.get_rank();
     assert_eq!(rank.len(), 2);
@@ -260,8 +278,9 @@ fn get_account_score() {
     let name = String::from_str(&env, "Dave");
     client.new_game(&player, &name, &50, &150);
     
-    // Implementação do teste para get_account_score
-    // Verificar score do jogador específico
+    let key = DataKey::PlayerAddress(player);
+    let game: Game = env.storage().persistent().get(&key).unwrap();
+    assert_eq!(game.score, 50);
 }
 ```
 
@@ -269,14 +288,12 @@ fn get_account_score() {
 
 ---
 
-## 5. Otimizar/Deploy
+## 5. Bloco 3: Otimizar/Deploy e Interagir CLI
 
-### Compilação Otimizada
-
+### Otimizar e Compilação
 **MOSTRAR TERMINAL**: `cargo build --target wasm32-unknown-unknown --release`
 
 ### Deploy no Testnet
-
 **MOSTRAR TERMINAL**: 
 ```bash
 stellar contract deploy \
@@ -285,8 +302,7 @@ stellar contract deploy \
   --network testnet
 ```
 
-### Interação via CLI
-
+### Interagir via CLI
 **MOSTRAR TERMINAL**:
 ```bash
 stellar contract invoke \
@@ -305,4 +321,108 @@ stellar contract invoke \
 ## Próxima Aula
 
 Na próxima aula, vamos explorar **Padrões Avançados e Otimizações em Smart Contracts Stellar**. Até lá!
+
+
+## 4. Bloco 4: Stellar SDK JS, Criar Carteira e Conta com Faucets
+
+### Stellar SDK JS
+A SDK em JavaScript permite interagir com a rede Stellar de forma programática.
+
+**MOSTRAR TERMINAL**: `npm install @stellar/stellar-sdk`
+
+### Criar Carteira
+**MOSTRAR CRIAÇÃO DA FUNÇÃO**:
+```typescript
+import { Keypair } from '@stellar/stellar-sdk';
+
+const createWallet = () => {
+  const keypair = Keypair.random();
+  return {
+    publicKey: keypair.publicKey(),
+    secretKey: keypair.secretKey()
+  };
+};
+```
+
+### Criar Conta e Faucets
+**MOSTRAR TERMINAL**: Funding via faucet
+```bash
+curl "https://friendbot.stellar.org?addr=PUBLIC_KEY"
+```
+
+
+## 5. Bloco 5: Ler e Escrever Smart Contracts
+
+### Ler Smart Contract
+**MOSTRAR CRIAÇÃO DA FUNÇÃO**:
+```typescript
+import { Contract, SorobanRpc, TransactionBuilder, Networks } from '@stellar/stellar-sdk';
+
+async function getRank(contractId: string, server: SorobanRpc.Server) {
+  const contract = new Contract(contractId);
+  const tx = new TransactionBuilder(await server.getAccount('SOME_ACCOUNT'), { fee: '100', networkPassphrase: Networks.TESTNET })
+    .addOperation(contract.call('get_rank'))
+    .setTimeout(30)
+    .build();
+  const result = await server.simulateTransaction(tx);
+  // Decode result
+}
+```
+
+### Escrever Smart Contract
+**MOSTRAR CRIAÇÃO DA FUNÇÃO**:
+```typescript
+async function newGame(contractId: string, server: SorobanRpc.Server, keypair: Keypair, params: {player_address: string, nickname: string, score: number, game_time: number}) {
+  const contract = new Contract(contractId);
+  const tx = new TransactionBuilder(await server.getAccount(keypair.publicKey()), { fee: '100', networkPassphrase: Networks.TESTNET })
+    .addOperation(contract.call('new_game', ...Object.values(params).map(xdr.ScVal.from)))
+    .setTimeout(30)
+    .build();
+  tx.sign(keypair);
+  await server.sendTransaction(tx);
+}
+```
+
+
+## 6. Bloco 6: Recapitulação, Lição de Casa e Próxima Aula
+
+### Revisão
+1. Bloco 1: Escrever Funções e Storage
+- [x] Implementação de new_game e get_rank
+- [x] Estrutura de dados Game e DataKey
+
+2. Bloco 2: Escrever Testes
+- [x] create_single_game
+- [x] multiple_games
+- [x] get_account_score
+
+3. Bloco 3: Otimizar/Deploy e Interagir CLI
+- [x] Compilação e deploy
+- [x] Interação via CLI
+
+4. Bloco 4: Stellar SDK JS
+- [x] Criar carteira e conta com faucets
+
+5. Bloco 5: Ler e Escrever Smart Contracts
+- [x] Funções de leitura e escrita
+
+### Lição de Casa
+#### Desafio de Aprendizagem
+- Fácil: Crie um novo teste para o contrato.
+- Médio: Deploy um contrato no testnet.
+- Difícil: Integre SDK JS em um app simples.
+
+**Recursos:**
+- [Documentação Stellar](https://developers.stellar.org)
+- [Rust Book](https://doc.rust-lang.org/book/)
+
+#### Desafio de Carreira
+- Poste no LinkedIn com #road2meridian (2/3)
+- Marque Stellar e NearX
+
+#### Desafio de Comunidade
+- Compartilhe seu deploy no Discord da NearX
+
+### Próxima Aula
+Na próxima aula, vamos explorar **Integração Frontend Avançada**. Até lá!
 

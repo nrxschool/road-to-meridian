@@ -26,17 +26,32 @@ export const useProvider = (): UseProviderReturn => {
     return new Client(options);
   };
 
-  const signAndSend = async (xdr: string, wallet: StellarWallet) => {
+  const signAndSend = async (tx: string, wallet: StellarWallet) => {
     const keypair = Keypair.fromSecret(wallet.secretKey);
     const transaction = new Transaction(
-      xdr,
+      tx,
       networks.testnet.networkPassphrase
     );
     console.log("Signing transaction");
     transaction.sign(keypair);
-    const result = await sorobanServer.sendTransaction(transaction);
-    console.log(result);
-    return result;
+
+    const sendResult = await sorobanServer.sendTransaction(transaction);
+    console.log("Send transaction result:", sendResult);
+
+    if (sendResult.status === 'PENDING') {
+      let getTxResult;
+      while (true) {
+        getTxResult = await sorobanServer.getTransaction(sendResult.hash);
+        console.log("Get transaction result:", getTxResult);
+        if (getTxResult.status !== 'PENDING') {
+          break;
+        }
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+      return getTxResult;
+    } else {
+      return sendResult;
+    }
   };
 
   return { contract, sorobanServer, signAndSend };
