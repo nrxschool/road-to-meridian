@@ -23,6 +23,7 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
   const [count, setCount] = useState(0);
   const [showNicknameModal, setShowNicknameModal] = useState(false);
   const [nickname, setNickname] = useState("");
+  const [showFullRanking, setShowFullRanking] = useState(false);
 
   useEffect(() => {
     getRanking();
@@ -41,7 +42,6 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
     return () => clearInterval(interval);
   }, [gameActive, timeLeft]);
 
-  // Regular function - recreated on every render since it depends on nickname, sendNewGame, count, and refreshRank
   const saveScore = async () => {
     if (nickname) {
       try {
@@ -79,12 +79,12 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
   return (
     <>
       <div
-        className="min-h-screen flex items-center justify-center p-4 pixel-bg"
+        className="min-h-screen p-4 pixel-bg"
         style={{
           backgroundColor: "hsl(var(--pixel-black))",
         }}
       >
-        <div className="w-full max-w-sm">
+        <div className="w-full max-w-sm mx-auto mt-32">
           <div
             className="pixel-border"
             style={{
@@ -177,7 +177,8 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
                 </div>
               )}
 
-              <div className="space-y-3">
+              {!gameActive && (
+                <div className="space-y-3">
                 <h2
                   className="text-xl font-bold pixel-shadow"
                   style={{
@@ -201,21 +202,31 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
                       </div>
                     </div>
                   ) : rank.length > 0 ? (
-                    rank.slice(0, 5).map((player, index) => (
-                      <div
-                        key={`${player.address}-${player.rank}-${index}`}
-                        className="pixel-border p-3"
-                        style={{
-                          backgroundColor: "#606060",
-                          color: "#ffffff",
-                        }}
-                      >
-                        <div className="text-sm font-bold flex justify-between">
-                          <span>#{player.rank} {player.nickname}</span>
-                          <span>{player.score} pts</span>
+                    <>
+                      {(showFullRanking ? rank : rank.slice(0, 5)).map((player, index) => (
+                        <div
+                          key={`${player.address}-${player.rank}-${index}`}
+                          className="pixel-border p-3"
+                          style={{
+                            backgroundColor: "#606060",
+                            color: "#ffffff",
+                          }}
+                        >
+                          <div className="text-sm font-bold flex justify-between">
+                            <span>#{player.rank} {player.nickname}</span>
+                            <span>{player.score} pts</span>
+                          </div>
                         </div>
-                      </div>
-                    ))
+                      ))}
+                      {rank.length > 5 && (
+                        <button
+                          onClick={() => setShowFullRanking(!showFullRanking)}
+                          className="w-full h-10 btn-primary pixel-border text-sm font-bold mt-2"
+                        >
+                          {showFullRanking ? "Ver menos" : "Ver mais"}
+                        </button>
+                      )}
+                    </>
                   ) : (
                     <div
                       className="pixel-border p-3"
@@ -231,6 +242,7 @@ const Play: React.FC<PlayProps & { wallet: StellarWallet }> = ({
                   )}
                 </div>
               </div>
+              )}
             </div>
           </div>
         </div>

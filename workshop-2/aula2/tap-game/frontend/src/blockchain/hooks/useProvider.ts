@@ -44,6 +44,7 @@ export const useProvider = (): UseProviderReturn => {
       status = txResult.status as string;
       console.log("Transaction status:", status);
     } 
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
     return result.hash
   };

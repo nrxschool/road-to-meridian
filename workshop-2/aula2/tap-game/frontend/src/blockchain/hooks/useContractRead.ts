@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
-import { toast } from 'sonner';
-import { useProvider } from './useProvider';
+import { useProvider } from "./useProvider";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export interface Player {
   address: string;
@@ -19,19 +19,21 @@ export interface UseContractReadReturn {
 export const useContractRead = (): UseContractReadReturn => {
   const [isReadLoading, setIsReadLoading] = useState(false);
   const [rank, setRank] = useState<Player[]>([]);
-  const { contract, sorobanServer } = useProvider();
+  const { contract } = useProvider();
 
-  const getRanking = useCallback(async (): Promise<Player[]> => {
+  const getRanking = async (): Promise<Player[]> => {
     setIsReadLoading(true);
 
     try {
-      const assembledTx = await contract().get_rank()
-      console.log(assembledTx)
-      const players = ((await assembledTx.simulate()).result || []).map((g) => ({
-        address: g.player,
-        nickname: g.nickname,
-        score: Number(g.score.toString()),
-      }));
+      const assembledTx = await contract().get_rank();
+      console.log(assembledTx);
+      const players = ((await assembledTx.simulate()).result || []).map(
+        (g) => ({
+          address: g.player,
+          nickname: g.nickname,
+          score: Number(g.score.toString()),
+        })
+      );
 
       const rank = players
         .sort((a, b) => b.score - a.score)
@@ -39,22 +41,22 @@ export const useContractRead = (): UseContractReadReturn => {
           ...player,
           rank: idx + 1,
         }));
-      console.log(rank)
+      console.log(rank);
 
       setRank(rank);
       return rank;
     } catch (error) {
-      console.error('Error getting ranking:', error);
-      toast.error('Failed to get ranking');
+      console.error("Error getting ranking:", error);
+      toast.error("Failed to get ranking");
       return [];
     } finally {
       setIsReadLoading(false);
     }
-  }, [contract]);
+  };
 
-  const refreshRank = useCallback(async (): Promise<void> => {
+  const refreshRank = async (): Promise<void> => {
     await getRanking();
-  }, [getRanking]);
+  };
 
   return {
     isReadLoading,
