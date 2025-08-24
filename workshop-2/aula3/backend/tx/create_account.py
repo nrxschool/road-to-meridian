@@ -6,6 +6,7 @@ import time
 
 
 def create_account_operation(source_keypair: Keypair, destination_public_key: str, starting_balance: str, server: Server, logger: Logger):
+    logger.warning("=" * 30 + "create_account_operation".upper() + "=" * 30)
     logger.info(f"🏗️ Iniciando criação de conta via CreateAccount operation")
     logger.info(f"📤 Source Account: {source_keypair.public_key}")
     logger.info(f"📥 Destination Account: {destination_public_key}")
@@ -30,17 +31,17 @@ def create_account_operation(source_keypair: Keypair, destination_public_key: st
             .build()
         )
 
-        logger.info(f"📝 Transação construída")
+        logger.info("📝 Transação construída")
         logger.info(f"🔖 Memo: Creating account {destination_public_key[:8]}...")
         
         # Assinar transação
         transaction.sign(source_keypair)
-        logger.info(f"✍️ Transação assinada")
+        logger.info("✍️ Transação assinada")
         
         # Submeter transação
-        logger.info(f"📡 Submetendo transação...")
+        logger.info("📡 Submetendo transação...")
         response = server.submit_transaction(transaction)
-        logger.info(f"✅ Transação submetida com sucesso")
+        logger.info("✅ Transação submetida com sucesso")
         logger.info("🔗 https://stellar.expert/explorer/testnet/tx/" + response["hash"])
             
     except BadRequestError as e:

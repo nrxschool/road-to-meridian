@@ -3,7 +3,8 @@ from stellar_sdk.exceptions import NotFoundError, BadRequestError
 from logging import Logger
 
 def payment_operation(source_keypair: Keypair, destination_public_key: str, amount: str, server: Server, logger: Logger):
-    logger.info(f"💸 Iniciando pagamento XLM")
+    logger.warning("=" * 30 + "payment_operation".upper() + "=" * 30)
+    logger.info("💸 Iniciando pagamento XLM")
     logger.info(f"📤 From: {source_keypair.public_key}")
     logger.info(f"📥 To: {destination_public_key}")
     logger.info(f"💰 Amount: {amount} XLM")
