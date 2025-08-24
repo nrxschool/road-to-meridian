@@ -1,1367 +1,396 @@
-2025-08-22 16:03:47,411 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:03:47,411 - __main__ - INFO - 📍 Public Key: GAASJBGCYAIOHHSYGOQGUBEIOS6ZITFK2YKJHIZFHJWWBOGGCZWMFCVC
-2025-08-22 16:03:47,411 - __main__ - INFO - 🔐 Secret Key: SDGH2NPF...
-2025-08-22 16:03:51,527 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:03:51,529 - __main__ - INFO - 🔍 Consultando saldo da conta: GAASJBGCYAIOHHSYGOQGUBEIOS6ZITFK2YKJHIZFHJWWBOGGCZWMFCVC
-2025-08-22 16:03:52,214 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:03:52,214 - __main__ - INFO - 📊 Sequence: 598117145640960
-2025-08-22 16:03:52,214 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:03:52,215 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:03:52,216 - __main__ - INFO - 📍 Public Key: GB35HKTEQV74ZE33AL5IKILHB2ZFRDGZCAK73BQCXYE5SWZ5CCVTI7YI
-2025-08-22 16:03:52,216 - __main__ - INFO - 🔐 Secret Key: SB6RZMDT...
-2025-08-22 16:03:52,216 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:03:52,216 - __main__ - INFO - 📤 Source Account: GAASJBGCYAIOHHSYGOQGUBEIOS6ZITFK2YKJHIZFHJWWBOGGCZWMFCVC
-2025-08-22 16:03:52,216 - __main__ - INFO - 📥 Destination Account: GB35HKTEQV74ZE33AL5IKILHB2ZFRDGZCAK73BQCXYE5SWZ5CCVTI7YI
-2025-08-22 16:03:52,216 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:03:53,211 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598117145640960
-2025-08-22 16:03:53,211 - __main__ - ERROR - ❌ Erro inesperado: name 'NETWORK_PASSPHRASE' is not defined
-2025-08-22 16:05:32,585 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:05:32,585 - __main__ - INFO - 📍 Public Key: GAHB5VQWNOQCOUFBYUZWMSYWHI6XK27OZDF6ZUCXIM4KDAR4K46UCYSV
-2025-08-22 16:05:32,585 - __main__ - INFO - 🔐 Secret Key: SDVEMKOV...
-2025-08-22 16:05:36,134 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:05:36,138 - __main__ - INFO - 🔍 Consultando saldo da conta: GAHB5VQWNOQCOUFBYUZWMSYWHI6XK27OZDF6ZUCXIM4KDAR4K46UCYSV
-2025-08-22 16:05:36,839 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:05:36,839 - __main__ - INFO - 📊 Sequence: 598207339954176
-2025-08-22 16:05:36,839 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:05:36,840 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:05:36,840 - __main__ - INFO - 📍 Public Key: GDGSEEPOLXGMSIK7HQVRH7DAH7CNPGK2CQYYVHES43PQ2NJYXXQWBV7R
-2025-08-22 16:05:36,840 - __main__ - INFO - 🔐 Secret Key: SDGTFJEL...
-2025-08-22 16:05:36,840 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:05:36,840 - __main__ - INFO - 📤 Source Account: GAHB5VQWNOQCOUFBYUZWMSYWHI6XK27OZDF6ZUCXIM4KDAR4K46UCYSV
-2025-08-22 16:05:36,840 - __main__ - INFO - 📥 Destination Account: GDGSEEPOLXGMSIK7HQVRH7DAH7CNPGK2CQYYVHES43PQ2NJYXXQWBV7R
-2025-08-22 16:05:36,840 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:05:37,000 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598207339954176
-2025-08-22 16:05:37,000 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:05:37,000 - __main__ - INFO - 🔖 Memo: Creating account GDGSEEPO...
-2025-08-22 16:05:37,001 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:05:37,001 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:05:58,175 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:05:58,176 - __main__ - INFO - 📍 Public Key: GCVXTYXOZI56W7NNGHGQOFB3MBN4OJQAPY7KNCILDVXHPIOSFIQGYCFQ
-2025-08-22 16:05:58,176 - __main__ - INFO - 🔐 Secret Key: SDYS7HBX...
-2025-08-22 16:06:00,984 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:06:00,985 - __main__ - INFO - 🔍 Consultando saldo da conta: GCVXTYXOZI56W7NNGHGQOFB3MBN4OJQAPY7KNCILDVXHPIOSFIQGYCFQ
-2025-08-22 16:06:01,744 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:06:01,744 - __main__ - INFO - 📊 Sequence: 598228814790656
-2025-08-22 16:06:01,744 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:06:01,745 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:06:01,746 - __main__ - INFO - 📍 Public Key: GCFMCPLYDU3S4QQIOWH2QWO5N5EZJ7UT4HCRKJGCLYVAVZUQQ25KAXLI
-2025-08-22 16:06:01,746 - __main__ - INFO - 🔐 Secret Key: SDDHBNGK...
-2025-08-22 16:06:01,746 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:06:01,746 - __main__ - INFO - 📤 Source Account: GCVXTYXOZI56W7NNGHGQOFB3MBN4OJQAPY7KNCILDVXHPIOSFIQGYCFQ
-2025-08-22 16:06:01,746 - __main__ - INFO - 📥 Destination Account: GCFMCPLYDU3S4QQIOWH2QWO5N5EZJ7UT4HCRKJGCLYVAVZUQQ25KAXLI
-2025-08-22 16:06:01,746 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:06:01,929 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598228814790656
-2025-08-22 16:06:01,929 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:06:01,930 - __main__ - INFO - 🔖 Memo: Creating account GCFMCPLY...
-2025-08-22 16:06:01,930 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:06:01,930 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:06:34,937 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=0, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='horizon-testnet.stellar.org', port=443): Read timed out. (read timeout=33.0)")': /transactions
-2025-08-22 16:06:56,694 - __main__ - INFO - https://stellar.expert/explorer/testnet/tx/aa0c35672e5ac7c13d3e9a493c634766152c2518cde784beee94567abab29cf3
-2025-08-22 16:07:02,736 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:07:02,736 - __main__ - INFO - 📍 Public Key: GCHNT5KRDQMF4X5UWFWMHI2X4ORFPTE2EJ6VLPNZ7SWU26KJEBZSL2U2
-2025-08-22 16:07:02,736 - __main__ - INFO - 🔐 Secret Key: SAQDC73D...
-2025-08-22 16:07:06,990 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:07:06,992 - __main__ - INFO - 🔍 Consultando saldo da conta: GCHNT5KRDQMF4X5UWFWMHI2X4ORFPTE2EJ6VLPNZ7SWU26KJEBZSL2U2
-2025-08-22 16:07:07,646 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:07:07,646 - __main__ - INFO - 📊 Sequence: 598284649365504
-2025-08-22 16:07:07,646 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:07:07,647 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:07:07,647 - __main__ - INFO - 📍 Public Key: GBAIW6HE6P4C3T6PKTYAQBOPX62AI5JGOS2YMRGYAAIV3NJHMW2DRXEZ
-2025-08-22 16:07:07,647 - __main__ - INFO - 🔐 Secret Key: SAXTTL2I...
-2025-08-22 16:07:07,647 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:07:07,647 - __main__ - INFO - 📤 Source Account: GCHNT5KRDQMF4X5UWFWMHI2X4ORFPTE2EJ6VLPNZ7SWU26KJEBZSL2U2
-2025-08-22 16:07:07,647 - __main__ - INFO - 📥 Destination Account: GBAIW6HE6P4C3T6PKTYAQBOPX62AI5JGOS2YMRGYAAIV3NJHMW2DRXEZ
-2025-08-22 16:07:07,647 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:07:08,249 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598284649365504
-2025-08-22 16:07:08,250 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:07:08,250 - __main__ - INFO - 🔖 Memo: Creating account GBAIW6HE...
-2025-08-22 16:07:08,252 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:07:08,252 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:07:11,548 - __main__ - ERROR - ❌ Erro inesperado: can only concatenate str (not "dict") to str
-2025-08-22 16:07:27,514 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:07:27,514 - __main__ - INFO - 📍 Public Key: GBMZLHOZHPUD5OD2L32KYB2XHXQ5N6WSLMPUKWY5CKLY2DHJXDBOBDNQ
-2025-08-22 16:07:27,514 - __main__ - INFO - 🔐 Secret Key: SASHT37S...
-2025-08-22 16:07:31,525 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:07:31,526 - __main__ - INFO - 🔍 Consultando saldo da conta: GBMZLHOZHPUD5OD2L32KYB2XHXQ5N6WSLMPUKWY5CKLY2DHJXDBOBDNQ
-2025-08-22 16:07:32,122 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:07:32,123 - __main__ - INFO - 📊 Sequence: 598306124201984
-2025-08-22 16:07:32,123 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:07:32,123 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:07:32,123 - __main__ - INFO - 📍 Public Key: GAYAIFAYBQKSDHVAD6GFLGNOQVNW7R4VHO2ED5SGSUGGHYGVOS3NSNU3
-2025-08-22 16:07:32,123 - __main__ - INFO - 🔐 Secret Key: SCRKOOZ2...
-2025-08-22 16:07:32,124 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:07:32,124 - __main__ - INFO - 📤 Source Account: GBMZLHOZHPUD5OD2L32KYB2XHXQ5N6WSLMPUKWY5CKLY2DHJXDBOBDNQ
-2025-08-22 16:07:32,124 - __main__ - INFO - 📥 Destination Account: GAYAIFAYBQKSDHVAD6GFLGNOQVNW7R4VHO2ED5SGSUGGHYGVOS3NSNU3
-2025-08-22 16:07:32,124 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:07:32,277 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598306124201984
-2025-08-22 16:07:32,278 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:07:32,278 - __main__ - INFO - 🔖 Memo: Creating account GAYAIFAY...
-2025-08-22 16:07:32,280 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:07:32,280 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:07:36,977 - __main__ - INFO - ✅ Transação submetida com sucesso: 
-2025-08-22 16:07:36,978 - __main__ - INFO - {'memo': 'Creating account GAYAIFAY...', 'memo_bytes': 'Q3JlYXRpbmcgYWNjb3VudCBHQVlBSUZBWS4uLg==', '_links': {'self': {'href': 'https://horizon-testnet.stellar.org/transactions/e5cf9dd6684a2a9a167a8c8cf01061f3957dfedda430f1ab5cf34d52f60210de'}, 'account': {'href': 'https://horizon-testnet.stellar.org/accounts/GBMZLHOZHPUD5OD2L32KYB2XHXQ5N6WSLMPUKWY5CKLY2DHJXDBOBDNQ'}, 'ledger': {'href': 'https://horizon-testnet.stellar.org/ledgers/139305'}, 'operations': {'href': 'https://horizon-testnet.stellar.org/transactions/e5cf9dd6684a2a9a167a8c8cf01061f3957dfedda430f1ab5cf34d52f60210de/operations{?cursor,limit,order}', 'templated': True}, 'effects': {'href': 'https://horizon-testnet.stellar.org/transactions/e5cf9dd6684a2a9a167a8c8cf01061f3957dfedda430f1ab5cf34d52f60210de/effects{?cursor,limit,order}', 'templated': True}, 'precedes': {'href': 'https://horizon-testnet.stellar.org/transactions?order=asc&cursor=598310419173376'}, 'succeeds': {'href': 'https://horizon-testnet.stellar.org/transactions?order=desc&cursor=598310419173376'}, 'transaction': {'href': 'https://horizon-testnet.stellar.org/transactions/e5cf9dd6684a2a9a167a8c8cf01061f3957dfedda430f1ab5cf34d52f60210de'}}, 'id': 'e5cf9dd6684a2a9a167a8c8cf01061f3957dfedda430f1ab5cf34d52f60210de', 'paging_token': '598310419173376', 'successful': True, 'hash': 'e5cf9dd6684a2a9a167a8c8cf01061f3957dfedda430f1ab5cf34d52f60210de', 'ledger': 139305, 'created_at': '2025-08-22T19:07:35Z', 'source_account': 'GBMZLHOZHPUD5OD2L32KYB2XHXQ5N6WSLMPUKWY5CKLY2DHJXDBOBDNQ', 'source_account_sequence': '598306124201985', 'fee_account': 'GBMZLHOZHPUD5OD2L32KYB2XHXQ5N6WSLMPUKWY5CKLY2DHJXDBOBDNQ', 'fee_charged': '100', 'max_fee': '100', 'operation_count': 1, 'envelope_xdr': 'AAAAAgAAAABZlZ3ZO+g+uHpe9KwHVz3h1vrSWx9FWx0Sl40M6bjC4AAAAGQAAiAoAAAAAQAAAAEAAAAAAAAAAAAAAABoqMASAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdBWUFJRkFZLi4uAAAAAQAAAAAAAAAAAAAAADAEFBgMFSGeoB+MVZmuhVtvx5U7tEH2RpUMY+DVdLbZAAAAADuaygAAAAAAAAAAAem4wuAAAABA0/r//V0k4Gfb/GehcnwIgMNVtC4VW0Xe2KwcjcizgPtqeDfa4E8O3JCWHaPnREVvAz20rYuWNiwWyRBHJUejDw==', 'result_xdr': 'AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=', 'fee_meta_xdr': 'AAAAAgAAAAMAAiAoAAAAAAAAAABZlZ3ZO+g+uHpe9KwHVz3h1vrSWx9FWx0Sl40M6bjC4AAAABdIdugAAAIgKAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAiApAAAAAAAAAABZlZ3ZO+g+uHpe9KwHVz3h1vrSWx9FWx0Sl40M6bjC4AAAABdIduecAAIgKAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA==', 'memo_type': 'text', 'signatures': ['0/r//V0k4Gfb/GehcnwIgMNVtC4VW0Xe2KwcjcizgPtqeDfa4E8O3JCWHaPnREVvAz20rYuWNiwWyRBHJUejDw=='], 'preconditions': {'timebounds': {'min_time': '0', 'max_time': '1755889682'}}}
-2025-08-22 16:07:38,981 - __main__ - INFO - https://stellar.expert/explorer/testnet/tx/e5cf9dd6684a2a9a167a8c8cf01061f3957dfedda430f1ab5cf34d52f60210de
-2025-08-22 16:08:35,166 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:08:35,166 - __main__ - INFO - 📍 Public Key: GB5GLLY25ELGZQFURBBQHU5ZNLSFGH52ZG6DSNBFLD357OBPC5JKJXLX
-2025-08-22 16:08:35,166 - __main__ - INFO - 🔐 Secret Key: SCHZVOGP...
-2025-08-22 16:08:41,519 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:08:41,520 - __main__ - INFO - 🔍 Consultando saldo da conta: GB5GLLY25ELGZQFURBBQHU5ZNLSFGH52ZG6DSNBFLD357OBPC5JKJXLX
-2025-08-22 16:08:42,154 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:08:42,154 - __main__ - INFO - 📊 Sequence: 598366253744128
-2025-08-22 16:08:42,154 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:08:42,155 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:08:42,155 - __main__ - INFO - 📍 Public Key: GBYCIYBEKAUHVHRXVICG5TGQLWJFVKTLUW4R7MXGMGIMNPK3NGWHMOTK
-2025-08-22 16:08:42,155 - __main__ - INFO - 🔐 Secret Key: SB2Y5SZE...
-2025-08-22 16:08:42,155 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:08:42,155 - __main__ - INFO - 📤 Source Account: GB5GLLY25ELGZQFURBBQHU5ZNLSFGH52ZG6DSNBFLD357OBPC5JKJXLX
-2025-08-22 16:08:42,155 - __main__ - INFO - 📥 Destination Account: GBYCIYBEKAUHVHRXVICG5TGQLWJFVKTLUW4R7MXGMGIMNPK3NGWHMOTK
-2025-08-22 16:08:42,155 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:08:42,327 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598366253744128
-2025-08-22 16:08:42,331 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:08:42,331 - __main__ - INFO - 🔖 Memo: Creating account GBYCIYBE...
-2025-08-22 16:08:42,333 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:08:42,333 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:08:47,760 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 16:08:47,763 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/54852aad6fb6abf41b4b726a81e51509d851f8b616092c00e10d257046cd3830
-2025-08-22 16:14:21,380 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:14:21,380 - __main__ - INFO - 📍 Public Key: GATO774Z6YQBLBIZROQAYQR2ATNTBLKSJ7XCJGKMMNJHV5JTXNKLV4D4
-2025-08-22 16:14:21,381 - __main__ - INFO - 🔐 Secret Key: SCZJYJPUTED4SGWHB2YWTKLUJCCBTIIKR72KMYD4VWLUHEQDQXXRJRAG
-2025-08-22 16:14:26,978 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:14:26,983 - __main__ - INFO - 🔍 Consultando saldo da conta: GATO774Z6YQBLBIZROQAYQR2ATNTBLKSJ7XCJGKMMNJHV5JTXNKLV4D4
-2025-08-22 16:14:27,661 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:14:27,661 - __main__ - INFO - 📊 Sequence: 598662606487552
-2025-08-22 16:14:27,661 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:14:27,661 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:14:27,661 - __main__ - INFO - 📍 Public Key: GCXQQ4LJ6UILHW4W33V234EUMB3LKBDA4IA6FY43NWYZYFAR3HNVQYUK
-2025-08-22 16:14:27,661 - __main__ - INFO - 🔐 Secret Key: SCVXD4C2TOSS3ZQYWKWABMV3AOI5G4LGBPBU4UEQFYYQBK34RSRZUI67
-2025-08-22 16:14:27,661 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:14:27,661 - __main__ - INFO - 📤 Source Account: GATO774Z6YQBLBIZROQAYQR2ATNTBLKSJ7XCJGKMMNJHV5JTXNKLV4D4
-2025-08-22 16:14:27,661 - __main__ - INFO - 📥 Destination Account: GCXQQ4LJ6UILHW4W33V234EUMB3LKBDA4IA6FY43NWYZYFAR3HNVQYUK
-2025-08-22 16:14:27,661 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:14:27,823 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598662606487552
-2025-08-22 16:14:27,824 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:14:27,824 - __main__ - INFO - 🔖 Memo: Creating account GCXQQ4LJ...
-2025-08-22 16:14:27,826 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:14:27,826 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:14:32,529 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 16:14:32,529 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/3dce310ed80684bd85c4f8570c3cb15eb67f56671bd51bd52c3e3e13739975e9
-2025-08-22 16:15:47,418 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:15:47,420 - __main__ - INFO - 📍 Public Key: GC6PYCLIZV2Y36UCWOMDLAS3V7XEQ7V6EZ7IQL7WBED7SS5B2VRC4DEY
-2025-08-22 16:15:47,420 - __main__ - INFO - 🔐 Secret Key: SBFSYYTVTME4SNPCXEUAZL5NCEENY7PVMJBTYR5QIQ4FKMEMR5GNM42R
-2025-08-22 16:16:00,722 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:16:00,723 - __main__ - INFO - 📍 Public Key: GBXUONPR6IFTQDRG3TBMZXB7LVVKA7XFA7EG2N6J77FLZYWEYUMDOHCP
-2025-08-22 16:16:00,723 - __main__ - INFO - 🔐 Secret Key: SCUXQDPDC2R3A27BL3UNH7MT4APJCUSCAIXGZOUXYE55QGWDLALKPGSE
-2025-08-22 16:16:07,515 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:16:07,516 - __main__ - INFO - 🔍 Consultando saldo da conta: GBXUONPR6IFTQDRG3TBMZXB7LVVKA7XFA7EG2N6J77FLZYWEYUMDOHCP
-2025-08-22 16:16:11,236 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:16:11,236 - __main__ - INFO - 📊 Sequence: 598748505833472
-2025-08-22 16:16:11,236 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:16:11,236 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:16:11,236 - __main__ - INFO - 📍 Public Key: GBWQ44TFVIZIWYPESP5BERW4N2UETU26O5XBHI44DHZL3PZKLWXYLWL3
-2025-08-22 16:16:11,236 - __main__ - INFO - 🔐 Secret Key: SA3GEMYX3OVL77WX3D7WC2NYDBLE766UIYNCHKXVZ7HPDJ7MC4NMXTFO
-2025-08-22 16:16:11,236 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:16:11,236 - __main__ - INFO - 📤 Source Account: GBXUONPR6IFTQDRG3TBMZXB7LVVKA7XFA7EG2N6J77FLZYWEYUMDOHCP
-2025-08-22 16:16:11,237 - __main__ - INFO - 📥 Destination Account: GBWQ44TFVIZIWYPESP5BERW4N2UETU26O5XBHI44DHZL3PZKLWXYLWL3
-2025-08-22 16:16:11,237 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:16:11,399 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598748505833472
-2025-08-22 16:16:11,402 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:16:11,402 - __main__ - INFO - 🔖 Memo: Creating account GBWQ44TF...
-2025-08-22 16:16:11,403 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:16:11,403 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:16:17,530 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 16:16:17,531 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/445a97a24fcc92833e289aa2f9c64ac08a740b09a808f62eb68a79294f9e8518
-2025-08-22 16:16:17,531 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-22 16:16:17,531 - __main__ - INFO - 📤 From: GBXUONPR6IFTQDRG3TBMZXB7LVVKA7XFA7EG2N6J77FLZYWEYUMDOHCP
-2025-08-22 16:16:17,531 - __main__ - INFO - 📥 To: GBWQ44TFVIZIWYPESP5BERW4N2UETU26O5XBHI44DHZL3PZKLWXYLWL3
-2025-08-22 16:16:17,531 - __main__ - INFO - 💰 Amount: 100 XLM
-2025-08-22 16:16:35,918 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:16:35,918 - __main__ - INFO - 📍 Public Key: GC6CSKDD7DCRHJWFCQ6DQHJILNFCCUOKOWHXA7FWKEKBUKU4L732ZQNS
-2025-08-22 16:16:35,918 - __main__ - INFO - 🔐 Secret Key: SBFIBWA3XR5OR7HNUQELKTIJRP4EKCYPGEAID2W3LHROI725CBYB22FV
-2025-08-22 16:16:48,616 - __main__ - ERROR - ❌ Erro ao fundir conta: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
-2025-08-22 16:16:48,617 - __main__ - INFO - 🔍 Consultando saldo da conta: GC6CSKDD7DCRHJWFCQ6DQHJILNFCCUOKOWHXA7FWKEKBUKU4L732ZQNS
-2025-08-22 16:16:49,212 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:16:49,212 - __main__ - INFO - 📊 Sequence: 598778570604544
-2025-08-22 16:16:49,212 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:16:49,212 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:16:49,212 - __main__ - INFO - 📍 Public Key: GCOFJZ3YMCDPIZL5FAX3ACDKIB4RDPPELYDAFE5TD2DHZWE6EOEOSDQC
-2025-08-22 16:16:49,212 - __main__ - INFO - 🔐 Secret Key: SAX2UXQ6ZBJ67XNW6PZUPPWJVCCWINTOO6VI35IMG3LOYBCFNFK2QY4T
-2025-08-22 16:16:49,212 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:16:49,213 - __main__ - INFO - 📤 Source Account: GC6CSKDD7DCRHJWFCQ6DQHJILNFCCUOKOWHXA7FWKEKBUKU4L732ZQNS
-2025-08-22 16:16:49,213 - __main__ - INFO - 📥 Destination Account: GCOFJZ3YMCDPIZL5FAX3ACDKIB4RDPPELYDAFE5TD2DHZWE6EOEOSDQC
-2025-08-22 16:16:49,213 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:16:49,375 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598778570604544
-2025-08-22 16:16:49,377 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:16:49,377 - __main__ - INFO - 🔖 Memo: Creating account GCOFJZ3Y...
-2025-08-22 16:16:49,382 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:16:49,383 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:16:52,519 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 16:16:52,520 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/25f1f2783dbfdd603234b2883b6f0d5aab70af3c0bfbd19039ad8286fe7c47d6
-2025-08-22 16:16:52,520 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-22 16:16:52,520 - __main__ - INFO - 📤 From: GC6CSKDD7DCRHJWFCQ6DQHJILNFCCUOKOWHXA7FWKEKBUKU4L732ZQNS
-2025-08-22 16:16:52,520 - __main__ - INFO - 📥 To: GCOFJZ3YMCDPIZL5FAX3ACDKIB4RDPPELYDAFE5TD2DHZWE6EOEOSDQC
-2025-08-22 16:16:52,520 - __main__ - INFO - 💰 Amount: 100 XLM
-2025-08-22 16:16:52,520 - __main__ - ERROR - ❌ Erro inesperado: name 'source_account' is not defined
-2025-08-22 16:17:12,483 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:17:12,484 - __main__ - INFO - 📍 Public Key: GCWRDJOAAU3TBYQCABHAA5FUSRHA5VUSMBT5J5CELFYIAUAVYILQ3NP6
-2025-08-22 16:17:12,484 - __main__ - INFO - 🔐 Secret Key: SCZP6J2WBYPKWZ4JJTASJGO4NHRQPENMXTKH25RPBAEP3YM3TLVZNXZ2
-2025-08-22 16:17:16,983 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:17:16,985 - __main__ - INFO - 🔍 Consultando saldo da conta: GCWRDJOAAU3TBYQCABHAA5FUSRHA5VUSMBT5J5CELFYIAUAVYILQ3NP6
-2025-08-22 16:17:17,637 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:17:17,637 - __main__ - INFO - 📊 Sequence: 598808635375616
-2025-08-22 16:17:17,637 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:17:17,637 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:17:17,638 - __main__ - INFO - 📍 Public Key: GAI3APFJSDCRHGBJSVDDPUKD4RRNP5F6K6DTA6MUHYTZT4JMGUJCMLHM
-2025-08-22 16:17:17,638 - __main__ - INFO - 🔐 Secret Key: SC53443N656EN7WUEPHYRBUUDSTFTPOPNDOX6VSXF6OGWBN6II4MSPLB
-2025-08-22 16:17:17,638 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:17:17,638 - __main__ - INFO - 📤 Source Account: GCWRDJOAAU3TBYQCABHAA5FUSRHA5VUSMBT5J5CELFYIAUAVYILQ3NP6
-2025-08-22 16:17:17,638 - __main__ - INFO - 📥 Destination Account: GAI3APFJSDCRHGBJSVDDPUKD4RRNP5F6K6DTA6MUHYTZT4JMGUJCMLHM
-2025-08-22 16:17:17,638 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:17:17,791 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598808635375616
-2025-08-22 16:17:17,792 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:17:17,792 - __main__ - INFO - 🔖 Memo: Creating account GAI3APFJ...
-2025-08-22 16:17:17,793 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:17:17,793 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:17:50,796 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=0, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='horizon-testnet.stellar.org', port=443): Read timed out. (read timeout=33.0)")': /transactions
-2025-08-22 16:17:51,384 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 16:17:51,384 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/5e847282555dc79160ae7e7bca84d8b8a56f513eb402fb043c9a5ee34b9b6559
-2025-08-22 16:17:51,385 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-22 16:17:51,385 - __main__ - INFO - 📤 From: GCWRDJOAAU3TBYQCABHAA5FUSRHA5VUSMBT5J5CELFYIAUAVYILQ3NP6
-2025-08-22 16:17:51,385 - __main__ - INFO - 📥 To: GAI3APFJSDCRHGBJSVDDPUKD4RRNP5F6K6DTA6MUHYTZT4JMGUJCMLHM
-2025-08-22 16:17:51,385 - __main__ - INFO - 💰 Amount: 100 XLM
-2025-08-22 16:17:51,386 - __main__ - ERROR - ❌ Erro inesperado: 'Keypair' object has no attribute 'account'
-2025-08-22 16:19:20,184 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:19:20,186 - __main__ - INFO - 📍 Public Key: GBUJZCUON37M34J3QCLXR7JSFFRI53QBFSF5BCAESSXTAXBASQAPXKJJ
-2025-08-22 16:19:20,186 - __main__ - INFO - 🔐 Secret Key: SAXLQ7MNDPDKUH4Y37RSRLEIMVTCUZIGUO4RGG6WZYGQ535XFJRRCEPY
-2025-08-22 16:19:22,532 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 16:19:22,535 - __main__ - INFO - 🔍 Consultando saldo da conta: GBUJZCUON37M34J3QCLXR7JSFFRI53QBFSF5BCAESSXTAXBASQAPXKJJ
-2025-08-22 16:19:24,202 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 16:19:24,203 - __main__ - INFO - 📊 Sequence: 598916009558016
-2025-08-22 16:19:24,203 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 16:19:24,204 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 16:19:24,204 - __main__ - INFO - 📍 Public Key: GDM5XPS2LHTLPTQQ6PEY6OIFFA2LMFYWMOPOLUGQKIYW2TZBMJACLAGF
-2025-08-22 16:19:24,204 - __main__ - INFO - 🔐 Secret Key: SCTIBWSRZRVWTGHFDZCQKSC3QCU5HDZX4M46NMTPL5KWBJD6F54UFWXQ
-2025-08-22 16:19:24,204 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 16:19:24,205 - __main__ - INFO - 📤 Source Account: GBUJZCUON37M34J3QCLXR7JSFFRI53QBFSF5BCAESSXTAXBASQAPXKJJ
-2025-08-22 16:19:24,205 - __main__ - INFO - 📥 Destination Account: GDM5XPS2LHTLPTQQ6PEY6OIFFA2LMFYWMOPOLUGQKIYW2TZBMJACLAGF
-2025-08-22 16:19:24,205 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 16:19:24,369 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 598916009558016
-2025-08-22 16:19:24,370 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:19:24,370 - __main__ - INFO - 🔖 Memo: Creating account GDM5XPS2...
-2025-08-22 16:19:24,372 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:19:24,372 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:19:27,990 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 16:19:27,992 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/ed293d7db736413301d64788fb5bdd5d29a08294a39d785fa8542aca6c419dcc
-2025-08-22 16:19:27,992 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-22 16:19:27,992 - __main__ - INFO - 📤 From: GBUJZCUON37M34J3QCLXR7JSFFRI53QBFSF5BCAESSXTAXBASQAPXKJJ
-2025-08-22 16:19:27,992 - __main__ - INFO - 📥 To: GDM5XPS2LHTLPTQQ6PEY6OIFFA2LMFYWMOPOLUGQKIYW2TZBMJACLAGF
-2025-08-22 16:19:27,992 - __main__ - INFO - 💰 Amount: 100 XLM
-2025-08-22 16:19:28,179 - __main__ - INFO - 📝 Transação construída
-2025-08-22 16:19:28,180 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 16:19:28,180 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 16:19:32,974 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 16:19:32,975 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/ecd1e309a88ef591f079277bfd22a9ce10af4949dd0c813716b17e21666da33e
-2025-08-22 19:23:38,229 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:23:38,230 - __main__ - INFO - 📍 Public Key: GB6WAQP74RM63PVEB7QXFYTIP2CQZVTNUY5YT7ALLXYK66J6UN7V2RUL
-2025-08-22 19:23:38,230 - __main__ - INFO - 🔐 Secret Key: SAFFGTF22NBK52SZRIP2E3CQJD3CHSXJM4365DW27U2GGEHPMREE47MZ
-2025-08-22 19:29:06,057 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:29:06,058 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:29:06,058 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:29:07,986 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-22 19:31:09,164 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:31:09,165 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:31:09,165 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:31:09,165 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:31:09,828 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:31:09,828 - __main__ - INFO - 📊 Sequence: 608682765189120
-2025-08-22 19:31:09,829 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 19:37:37,271 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:37:37,271 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:37:37,271 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:37:37,271 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:37:37,968 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:37:37,968 - __main__ - INFO - 📊 Sequence: 608682765189120
-2025-08-22 19:37:37,968 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-22 19:37:37,968 - __main__ - INFO - New Wallet
-2025-08-22 19:37:37,968 - __main__ - INFO - <Keypair [public_key=GCGSKVH7JJGBJDDYKA3I66XQCMWELDHKOTQOT55ZDGY6N36XD7AJQORK, private_key_exists=True]>
-2025-08-22 19:37:37,968 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 19:37:37,968 - __main__ - INFO - 📤 Source Account: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:37:37,968 - __main__ - INFO - 📥 Destination Account: GCGSKVH7JJGBJDDYKA3I66XQCMWELDHKOTQOT55ZDGY6N36XD7AJQORK
-2025-08-22 19:37:37,968 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 19:37:38,119 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 608682765189120
-2025-08-22 19:37:38,120 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:37:38,120 - __main__ - INFO - 🔖 Memo: Creating account GCGSKVH7...
-2025-08-22 19:37:38,120 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:37:38,120 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:37:43,533 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 19:37:43,533 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/d3cc4e91c4ba970672b161d5ddcbf4a591864bbaeb98a3d33f2f8e36b2b94da5
-2025-08-22 19:40:35,263 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:40:35,263 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:40:35,263 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:40:35,263 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:40:36,128 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:40:36,129 - __main__ - INFO - 📊 Sequence: 608682765189121
-2025-08-22 19:40:36,129 - __main__ - INFO - 💎 XLM Balance: 9899.9999900
-2025-08-22 19:40:36,129 - __main__ - INFO - New Wallet
-2025-08-22 19:40:36,130 - __main__ - INFO - <Keypair [public_key=GCJAA2I4LS63UWVKPDPRX5NW7MUU6F7ZD3VFD7UDOJAXKI2XBVMAP2DY, private_key_exists=True]>
-2025-08-22 19:40:36,130 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 19:40:36,130 - __main__ - INFO - 📤 Source Account: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:40:36,130 - __main__ - INFO - 📥 Destination Account: GCJAA2I4LS63UWVKPDPRX5NW7MUU6F7ZD3VFD7UDOJAXKI2XBVMAP2DY
-2025-08-22 19:40:36,130 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 19:40:36,283 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 608682765189121
-2025-08-22 19:40:36,284 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:40:36,284 - __main__ - INFO - 🔖 Memo: Creating account GCJAA2I4...
-2025-08-22 19:40:36,285 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:40:36,285 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:40:38,994 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 19:40:38,994 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/cf8b08b6e1184b5cb5f7795b29aa65f8a328e55167dd176787a0a1852f60ef93
-2025-08-22 19:40:38,994 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-22 19:40:38,994 - __main__ - INFO - 📤 From: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:40:38,994 - __main__ - INFO - 📥 To: GCJAA2I4LS63UWVKPDPRX5NW7MUU6F7ZD3VFD7UDOJAXKI2XBVMAP2DY
-2025-08-22 19:40:38,994 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-22 19:40:39,146 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:40:39,146 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:40:39,147 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:40:43,994 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 19:40:43,994 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/d56f61733d25c0ed083171adf5af3cd4b316924f46a9a3557c4fb0f6a3003201
-2025-08-22 19:42:03,579 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:42:03,579 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:42:03,579 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:42:03,579 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:42:04,357 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:42:04,357 - __main__ - INFO - 📊 Sequence: 608682765189123
-2025-08-22 19:42:04,357 - __main__ - INFO - 💎 XLM Balance: 9022.9999700
-2025-08-22 19:42:04,357 - __main__ - INFO - New Wallet
-2025-08-22 19:42:04,357 - __main__ - INFO - <Keypair [public_key=GBZYDRSPD4ZIQ7NTGD2DYSRONR45FL2DEIHDLB3RMC34BQJXIMRCWTNQ, private_key_exists=True]>
-2025-08-22 19:42:04,358 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 19:42:04,358 - __main__ - INFO - 📤 Source Account: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:42:04,358 - __main__ - INFO - 📥 Destination Account: GBZYDRSPD4ZIQ7NTGD2DYSRONR45FL2DEIHDLB3RMC34BQJXIMRCWTNQ
-2025-08-22 19:42:04,358 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 19:42:04,511 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 608682765189123
-2025-08-22 19:42:04,512 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:42:04,512 - __main__ - INFO - 🔖 Memo: Creating account GBZYDRSP...
-2025-08-22 19:42:04,514 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:42:04,514 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:42:09,541 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 19:42:09,542 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/9f34a90b4882e3c6dfcdacff14487b878b7943f71ca9c1f4241e13c7afbcbdf5
-2025-08-22 19:42:09,542 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-22 19:42:09,542 - __main__ - INFO - 📤 From: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:42:09,542 - __main__ - INFO - 📥 To: GBZYDRSPD4ZIQ7NTGD2DYSRONR45FL2DEIHDLB3RMC34BQJXIMRCWTNQ
-2025-08-22 19:42:09,542 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-22 19:42:09,706 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:42:09,708 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:42:09,708 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:42:13,996 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 19:42:13,997 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/aae45ed8567bc562a92c37b58e13ac33dd97f8a06b3926dad207aa2d856a9352
-2025-08-22 19:42:48,488 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:42:48,488 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:42:48,489 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:42:48,489 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:42:49,112 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:42:49,112 - __main__ - INFO - 📊 Sequence: 608682765189125
-2025-08-22 19:42:49,112 - __main__ - INFO - 💎 XLM Balance: 6591.9999300
-2025-08-22 19:42:49,112 - __main__ - INFO - New Wallet
-2025-08-22 19:42:49,112 - __main__ - INFO - <Keypair [public_key=GCBJGBEB7X4KGIAMP74PUKJYOKSPAUFZ7ZYFYS36ODCA3RC5I3WJEULT, private_key_exists=True]>
-2025-08-22 19:42:49,112 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 19:42:49,113 - __main__ - INFO - 📤 Source Account: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:42:49,113 - __main__ - INFO - 📥 Destination Account: GCBJGBEB7X4KGIAMP74PUKJYOKSPAUFZ7ZYFYS36ODCA3RC5I3WJEULT
-2025-08-22 19:42:49,113 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 19:42:49,265 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 608682765189125
-2025-08-22 19:42:49,266 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:42:49,266 - __main__ - INFO - 🔖 Memo: Creating account GCBJGBEB...
-2025-08-22 19:42:49,267 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:42:49,267 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:42:54,541 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 19:42:54,542 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/582a6b28f75fdbfe2cb6a3c574d3b143e3f564e419589a8a37f6108a7f6fc4f7
-2025-08-22 19:42:54,542 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-22 19:42:54,542 - __main__ - INFO - 📤 From: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:42:54,542 - __main__ - INFO - 📥 To: GCBJGBEB7X4KGIAMP74PUKJYOKSPAUFZ7ZYFYS36ODCA3RC5I3WJEULT
-2025-08-22 19:42:54,542 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-22 19:42:54,695 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:42:54,696 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:42:54,696 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:42:59,542 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 19:42:59,542 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/73fc71fa0bf9ff73fd62ca82b86d716bc0a9454421ccdec83d943fc3ca65549f
-2025-08-22 19:44:31,651 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:44:31,651 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:44:31,651 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:44:31,651 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:44:32,529 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:44:32,530 - __main__ - INFO - 📊 Sequence: 608682765189127
-2025-08-22 19:44:32,530 - __main__ - INFO - 💎 XLM Balance: 5714.9999100
-2025-08-22 19:44:32,530 - __main__ - INFO - New Wallet
-2025-08-22 19:44:32,530 - __main__ - INFO - <Keypair [public_key=GDYZCJCLFAWPWHJVIAW5FBOYZPMPQZ7PY3HSILQVEFV6MBGOFJL7H7YV, private_key_exists=True]>
-2025-08-22 19:44:32,530 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 19:44:32,530 - __main__ - INFO - 📤 Source Account: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:44:32,531 - __main__ - INFO - 📥 Destination Account: GDYZCJCLFAWPWHJVIAW5FBOYZPMPQZ7PY3HSILQVEFV6MBGOFJL7H7YV
-2025-08-22 19:44:32,531 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 19:44:32,683 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 608682765189127
-2025-08-22 19:44:32,684 - __main__ - ERROR - ❌ Erro inesperado: Value of argument "amount" must represent a positive number and the max valid value is 922337203685.4775807: 100100100100100100100
-2025-08-22 19:44:48,197 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:44:48,197 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:44:48,197 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:44:48,197 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:44:48,805 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:44:48,805 - __main__ - INFO - 📊 Sequence: 608682765189127
-2025-08-22 19:44:48,805 - __main__ - INFO - 💎 XLM Balance: 5714.9999100
-2025-08-22 19:44:48,806 - __main__ - INFO - New Wallet
-2025-08-22 19:44:48,806 - __main__ - INFO - <Keypair [public_key=GBTZ5XEJJ7PRP7F4YVSZ7UQOMVFMDMR44F3N34KHQDEHC4NCOXZ7I4MX, private_key_exists=True]>
-2025-08-22 19:44:48,806 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 19:44:48,806 - __main__ - INFO - 📤 Source Account: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:44:48,806 - __main__ - INFO - 📥 Destination Account: GBTZ5XEJJ7PRP7F4YVSZ7UQOMVFMDMR44F3N34KHQDEHC4NCOXZ7I4MX
-2025-08-22 19:44:48,806 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 19:44:48,970 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 608682765189127
-2025-08-22 19:44:48,971 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:44:48,971 - __main__ - INFO - 🔖 Memo: Creating account GBTZ5XEJ...
-2025-08-22 19:44:48,972 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:44:48,972 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:44:54,546 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-22 19:44:54,546 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/06296aee77ba5af3f717fdb17113506bb57b4b6c093f5f076731f6fb735013fb
-2025-08-22 19:45:25,019 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:45:25,019 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:45:25,019 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:45:25,019 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:45:25,633 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:45:25,633 - __main__ - INFO - 📊 Sequence: 608682765189128
-2025-08-22 19:45:25,633 - __main__ - INFO - 💎 XLM Balance: 4837.9998900
-2025-08-22 19:45:25,633 - __main__ - INFO - New Wallet
-2025-08-22 19:45:25,633 - __main__ - INFO - <Keypair [public_key=GDF4ILZYARYPH6AT5RDCWC27XZLTL2P3OPOQNSRAH2YI5NH2BFLP2ZDP, private_key_exists=True]>
-2025-08-22 19:45:25,633 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 19:45:25,633 - __main__ - INFO - 📤 Source Account: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:45:25,633 - __main__ - INFO - 📥 Destination Account: GDF4ILZYARYPH6AT5RDCWC27XZLTL2P3OPOQNSRAH2YI5NH2BFLP2ZDP
-2025-08-22 19:45:25,633 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 19:45:25,787 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 608682765189128
-2025-08-22 19:45:25,788 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:45:25,788 - __main__ - INFO - 🔖 Memo: Creating account GDF4ILZY...
-2025-08-22 19:45:25,789 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:45:25,789 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:45:30,002 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAAAGQAAimYAAAACQAAAAEAAAAAAAAAAAAAAABoqPMjAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdERjRJTFpZLi4uAAAAAQAAAAAAAAABAAAAAMvELzgEcPP4E+xGKwtfvlc16ftz3QbKID6wjrT6CVb9AAAAAAAAAAHPIMqAAAAAAAAAAAH5Oii/AAAAQCTlNOwbiWmZfbbZySSM/GQ4tPdJWCwNPHUBL7p4hTZxnpTj/FHtb88HpG2a/scxhd2FdIxN/kWh0Mg28BniNwo=",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_no_destination"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAB////+wAAAAA="
-  }
-}, headers={'Date': 'Fri, 22 Aug 2025 22:45:29 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '973', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-22 19:45:30,003 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAAAGQAAimYAAAACQAAAAEAAAAAAAAAAAAAAABoqPMjAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdERjRJTFpZLi4uAAAAAQAAAAAAAAABAAAAAMvELzgEcPP4E+xGKwtfvlc16ftz3QbKID6wjrT6CVb9AAAAAAAAAAHPIMqAAAAAAAAAAAH5Oii/AAAAQCTlNOwbiWmZfbbZySSM/GQ4tPdJWCwNPHUBL7p4hTZxnpTj/FHtb88HpG2a/scxhd2FdIxN/kWh0Mg28BniNwo=', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_no_destination']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAB////+wAAAAA='}
-2025-08-22 19:46:56,431 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 19:46:56,431 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:46:56,431 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 19:46:56,431 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:46:57,253 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 19:46:57,255 - __main__ - INFO - 📊 Sequence: 608682765189129
-2025-08-22 19:46:57,256 - __main__ - INFO - 💎 XLM Balance: 4837.9998800
-2025-08-22 19:46:57,258 - __main__ - INFO - New Wallet
-2025-08-22 19:46:57,258 - __main__ - INFO - <Keypair [public_key=GAKC4WTWAORBF2Z5WDM5A2YENCDQJK62CEFC2GEBHB2VW27EPMZDXK6E, private_key_exists=True]>
-2025-08-22 19:46:57,258 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-22 19:46:57,258 - __main__ - INFO - 📤 Source Account: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 19:46:57,258 - __main__ - INFO - 📥 Destination Account: GAKC4WTWAORBF2Z5WDM5A2YENCDQJK62CEFC2GEBHB2VW27EPMZDXK6E
-2025-08-22 19:46:57,258 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-22 19:46:57,411 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 608682765189129
-2025-08-22 19:46:57,412 - __main__ - INFO - 📝 Transação construída
-2025-08-22 19:46:57,412 - __main__ - INFO - 🔖 Memo: Creating account GAKC4WTW...
-2025-08-22 19:46:57,414 - __main__ - INFO - ✍️ Transação assinada
-2025-08-22 19:46:57,414 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-22 19:46:59,554 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAAAGQAAimYAAAACgAAAAEAAAAAAAAAAAAAAABoqPN/AAAAAQAAAAdmYWlsZWQhAAAAAAEAAAAAAAAAAQAAAAAULlp2A6IS6z2w2dBrBGiHBKvaEQotGIE4dVtr5HsyOwAAAAAAAAABzyDKgAAAAAAAAAAB+ToovwAAAECncw0m/jKFuoR2W030hVvG1ZiGCGAy/wM81qEJ0xxLz0vYPvbyLF78E7F8/R/Xy/OU1dLRU/MlshLM0X0X41cB",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_no_destination"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAB////+wAAAAA="
-  }
-}, headers={'Date': 'Fri, 22 Aug 2025 22:46:59 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '945', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-22 19:46:59,554 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAAAGQAAimYAAAACgAAAAEAAAAAAAAAAAAAAABoqPN/AAAAAQAAAAdmYWlsZWQhAAAAAAEAAAAAAAAAAQAAAAAULlp2A6IS6z2w2dBrBGiHBKvaEQotGIE4dVtr5HsyOwAAAAAAAAABzyDKgAAAAAAAAAAB+ToovwAAAECncw0m/jKFuoR2W030hVvG1ZiGCGAy/wM81qEJ0xxLz0vYPvbyLF78E7F8/R/Xy/OU1dLRU/MlshLM0X0X41cB', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_no_destination']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAB////+wAAAAA='}
-2025-08-22 20:07:19,231 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:07:19,231 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:07:19,231 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:07:19,231 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:07:20,450 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:07:20,450 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:07:20,450 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:07:20,605 - __main__ - ERROR - 'TransactionBuilder' object has no attribute 'append_invoke_host_function'
-2025-08-22 20:07:43,306 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:07:43,306 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:07:43,306 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:07:43,306 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:07:43,910 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:07:43,910 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:07:43,910 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:07:44,072 - __main__ - ERROR - 'TransactionBuilder' object has no attribute 'append_invoke_contract_op'
-2025-08-22 20:08:06,837 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:08:06,837 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:08:06,837 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:08:06,837 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:08:07,462 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:08:07,462 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:08:07,462 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:08:07,625 - __main__ - ERROR - TransactionBuilder.append_invoke_contract_function_op() got an unexpected keyword argument 'contract_address'
-2025-08-22 20:08:32,709 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:08:32,709 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:08:32,709 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:08:32,709 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:08:33,473 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:08:33,473 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:08:33,473 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:14:51,875 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:14:51,875 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:14:51,876 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:14:51,876 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:14:52,552 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:14:52,552 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:14:52,552 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:14:53,674 - __main__ - INFO - error_result_xdr='AAAAAAAAyj7////6AAAAAA==' diagnostic_events_xdr=None status=<SendTransactionStatus.ERROR: 'ERROR'> hash='15b9bb3c03bab2cd313abc626a545142282f782cc5bb7dba391dd35da2d5671b' latest_ledger=142268 latest_ledger_close_time=1755904491
-2025-08-22 20:17:07,187 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:17:07,187 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:17:07,187 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:17:07,187 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:17:07,971 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:17:07,971 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:17:07,971 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:17:09,026 - __main__ - INFO - 488a745a2575307cd0a38072ed1a71be523a9702442956875b003eae46090a33
-2025-08-22 20:20:55,711 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:20:55,711 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:20:55,711 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:20:55,711 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:20:56,395 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:20:56,395 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:20:56,395 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:20:57,171 - __main__ - ERROR - Simulation transaction failed, the response contains error information.
-2025-08-22 20:21:25,666 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:21:25,666 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:21:25,666 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:21:25,666 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:21:26,282 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:21:26,282 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:21:26,282 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:21:41,497 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=0, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)'))': /
-2025-08-22 20:21:42,287 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/85aea2069c77fc31341cad857bef3167ee52cd5d98dba773a2a2508b8a50e470
-2025-08-22 20:22:06,762 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:22:06,762 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:22:06,762 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:22:06,762 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:22:07,380 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:22:07,380 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:22:07,380 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:22:08,242 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/a7c0221a2c851ab49d7a7e1db45469e544eb39522f2e102019384ef9fcb93f44
-2025-08-22 20:22:28,235 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:22:28,235 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:22:28,235 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:22:28,235 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:22:28,892 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:22:28,893 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:22:28,893 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:22:29,696 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/b9c5c40306f9bada627f26762a55df8f7312b5c070de29e801769bbe5758f007
-2025-08-22 20:22:43,647 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:22:43,647 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:22:43,647 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:22:43,647 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:22:44,261 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:22:44,262 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:22:44,262 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:22:45,090 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/e0ae74a7c2437210250772ea4196c30d9253ed030baa523da47b954981c22d4b
-2025-08-22 20:24:18,864 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:24:18,864 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:24:18,864 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:24:18,865 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:24:19,756 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:24:19,757 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:24:19,757 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:24:20,821 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/ad55fd0296c1e814d604d5972a5736478eb725b46b23bf02cf7b38627b0057e1
-2025-08-22 20:24:21,001 - __main__ - ERROR - name 'TransactionMeta' is not defined
-2025-08-22 20:24:42,203 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:24:42,203 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:24:42,203 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:24:42,203 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:24:42,839 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:24:42,839 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:24:42,839 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:24:43,702 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/33b26a580c5804b45258c6d1c12508519b6dd126205b293f8b2c420128272cf1
-2025-08-22 20:24:43,880 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-22 20:25:04,765 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:25:04,765 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:25:04,765 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:25:04,765 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:25:05,369 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:25:05,369 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:25:05,369 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:25:06,239 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/4325094b3425c0bb14fd30d56e339c6ac38c7d453c50fe3a72ca72e7e88a6ac2
-2025-08-22 20:25:06,404 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-22 20:25:27,723 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:25:27,724 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:25:27,724 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:25:27,724 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:25:28,344 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:25:28,344 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:25:28,344 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:25:29,146 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/a804f48daf5335c6f2bb6037a49bd800776a2149d08bc920cb5ace6548009aa5
-2025-08-22 20:25:29,304 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-22 20:25:52,151 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:25:52,152 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:25:52,152 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:25:52,152 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:25:52,797 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:25:52,797 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:25:52,797 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:25:53,683 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/3223221800add68f0f10244c11088767cd64f93e6ecfce4b9ccf4a7d36ab1dd0
-2025-08-22 20:25:55,867 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-22 20:27:05,479 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:27:05,479 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:27:05,479 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:27:05,479 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:27:06,287 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:27:06,288 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:27:06,288 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:27:07,155 - __main__ - ERROR - <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAAyj4AAimYAAAACwAAAAEAAAAAAAAAAAAAAABoqPzoAAAAAQAAABhMZW5kbyBvIHJhbmsgZG8gY29udHJhdG8AAAABAAAAAAAAABgAAAAAAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAACGdldF9yYW5rAAAAAAAAAAAAAAABAAAAAAAAAAMAAAAGAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAAEAAAAAEAAAABAAAADwAAAARSYW5rAAAAAQAAAAYAAAABAomhqiZxASuge38Rd/YFUVR7jgG2seYxtjDcbujUKb8AAAAUAAAAAQAAAAd4IsO30KWds8UqxKO7tqMW9QP1teVn4j7ymEzCb42zAAAAAAAABxEWAAAAAAAAAAAAAAAAAADJ2gAAAAA=",
-    "result_codes": {
-      "transaction": "tx_bad_auth"
-    },
-    "result_xdr": "AAAAAAAAyj7////6AAAAAA=="
-  }
-}, headers={'Date': 'Fri, 22 Aug 2025 23:27:07 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '1056', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-22 20:27:31,445 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:27:31,445 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:27:31,445 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:27:31,445 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:27:32,050 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:27:32,051 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:27:32,051 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:27:32,858 - __main__ - ERROR - <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAAyj4AAimYAAAACwAAAAEAAAAAAAAAAAAAAABoqP0CAAAAAQAAABhMZW5kbyBvIHJhbmsgZG8gY29udHJhdG8AAAABAAAAAAAAABgAAAAAAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAACGdldF9yYW5rAAAAAAAAAAAAAAABAAAAAAAAAAMAAAAGAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAAEAAAAAEAAAABAAAADwAAAARSYW5rAAAAAQAAAAYAAAABAomhqiZxASuge38Rd/YFUVR7jgG2seYxtjDcbujUKb8AAAAUAAAAAQAAAAd4IsO30KWds8UqxKO7tqMW9QP1teVn4j7ymEzCb42zAAAAAAAABxEWAAAAAAAAAAAAAAAAAADJ2gAAAAH5Oii/AAAAQMxAov0K7WwGdd6gVnlLL7va+71IPQu2nc8weipvBVU2DwhikmRPTwEsTttCam89helD8u+MPUOVz/NS4iwb5Qg=",
-    "result_codes": {
-      "transaction": "tx_soroban_invalid"
-    },
-    "result_xdr": "AAAAAAAAAAD////vAAAAAA=="
-  }
-}, headers={'Date': 'Fri, 22 Aug 2025 23:27:32 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '1159', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-22 20:27:44,694 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:27:44,695 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:27:44,695 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:27:44,695 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:27:45,320 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:27:45,320 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:27:45,320 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:27:46,628 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/5fbfaf113f8e0dc02393d443ecaffb68a1aefd229ce06baec48f75ec5c99e0f1
-2025-08-22 20:27:48,788 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-22 20:28:19,400 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:28:19,400 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:28:19,400 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:28:19,400 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:28:20,008 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:28:20,008 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:28:20,008 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:28:21,018 - __main__ - ERROR - <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAAyj4AAimYAAAACwAAAAEAAAAAAAAAAAAAAABoqP0yAAAAAQAAABhMZW5kbyBvIHJhbmsgZG8gY29udHJhdG8AAAABAAAAAAAAABgAAAAAAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAACGdldF9yYW5rAAAAAAAAAAAAAAABAAAAAAAAAAMAAAAGAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAAEAAAAAEAAAABAAAADwAAAARSYW5rAAAAAQAAAAYAAAABAomhqiZxASuge38Rd/YFUVR7jgG2seYxtjDcbujUKb8AAAAUAAAAAQAAAAd4IsO30KWds8UqxKO7tqMW9QP1teVn4j7ymEzCb42zAAAAAAAABxEWAAAAAAAAAAAAAAAAAADJ2gAAAAH5Oii/AAAAQKa3PgH4QHRBN1UHlqECe/zVvx7ZhOodbYTqEGZKqXVSohAQZ2+LNefIcD7rot7BSFlQraUjjO/NzAg/VIKdJgw=",
-    "result_codes": {
-      "transaction": "tx_soroban_invalid"
-    },
-    "result_xdr": "AAAAAAAAAAD////vAAAAAA=="
-  }
-}, headers={'Date': 'Fri, 22 Aug 2025 23:28:21 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '1159', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-22 20:30:58,727 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:30:58,727 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:30:58,727 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:30:58,727 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:30:59,416 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:30:59,416 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:30:59,416 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:30:59,589 - __main__ - INFO - <Account [account=<MuxedAccount [account_id=GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR, account_muxed_id=None]>, sequence=608682765189130]>
-2025-08-22 20:31:00,731 - __main__ - ERROR - <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAAyj4AAimYAAAACwAAAAEAAAAAAAAAAAAAAABoqP3RAAAAAQAAABhMZW5kbyBvIHJhbmsgZG8gY29udHJhdG8AAAABAAAAAAAAABgAAAAAAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAACGdldF9yYW5rAAAAAAAAAAAAAAABAAAAAAAAAAMAAAAGAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAAEAAAAAEAAAABAAAADwAAAARSYW5rAAAAAQAAAAYAAAABAomhqiZxASuge38Rd/YFUVR7jgG2seYxtjDcbujUKb8AAAAUAAAAAQAAAAd4IsO30KWds8UqxKO7tqMW9QP1teVn4j7ymEzCb42zAAAAAAAABxEWAAAAAAAAAAAAAAAAAADJ2gAAAAH5Oii/AAAAQHUunaom6cS5vjSsxQAsZPqU/fY8xU5d5Kqb9MHD+RXKBjEk9l1pnG9EeM2jTKN0KiGBs8NDqCs4oQN1breqZwo=",
-    "result_codes": {
-      "transaction": "tx_soroban_invalid"
-    },
-    "result_xdr": "AAAAAAAAAAD////vAAAAAA=="
-  }
-}, headers={'Date': 'Fri, 22 Aug 2025 23:31:00 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '1159', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-22 20:31:23,620 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:31:23,620 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:31:23,620 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:31:23,620 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:31:24,225 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:31:24,225 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:31:24,226 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:31:24,387 - __main__ - INFO - <Account [account=<MuxedAccount [account_id=GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR, account_muxed_id=None]>, sequence=608682765189130]>
-2025-08-22 20:31:25,481 - __main__ - ERROR - <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADM8DD2vodZyoEneGS4/2h7PEREhYDlpRl+o6bg+ToovwAByVkAAimYAAAACwAAAAEAAAAAAAAAAAAAAABoqP3qAAAAAQAAABhMZW5kbyBvIHJhbmsgZG8gY29udHJhdG8AAAABAAAAAAAAABgAAAAAAAAAAQKJoaomcQEroHt/EXf2BVFUe44BtrHmMbYw3G7o1Cm/AAAACG5ld19nYW1lAAAABAAAABIAAAAAAAAAAMzwMPa+h1nKgSd4ZLj/aHs8RESFgOWlGX6jpuD5Oii/AAAADgAAAAVMdWNhcwAAAAAAAAQAAABZAAAABAAAAAoAAAAAAAAAAQAAAAAAAAACAAAABgAAAAECiaGqJnEBK6B7fxF39gVRVHuOAbax5jG2MNxu6NQpvwAAABQAAAABAAAAB3giw7fQpZ2zxSrEo7u2oxb1A/W15WfiPvKYTMJvjbMAAAAAAgAAAAYAAAABAomhqiZxASuge38Rd/YFUVR7jgG2seYxtjDcbujUKb8AAAAQAAAAAQAAAAEAAAAPAAAABFJhbmsAAAABAAAABgAAAAECiaGqJnEBK6B7fxF39gVRVHuOAbax5jG2MNxu6NQpvwAAABIAAAAAAAAAAMzwMPa+h1nKgSd4ZLj/aHs8RESFgOWlGX6jpuD5Oii/AAAAAQAIDrIAAAAAAAABZAAAAAAAAcj1AAAAAfk6KL8AAABAFsD8LLSnpWrVJFDyY/BVFbRObGqIXjN5lLHZ3Lovdlzp/BmEkLclv8RQQLoInamPEg6H9Q+OBqfRBgYpV7ZnCg==",
-    "result_codes": {
-      "transaction": "tx_soroban_invalid"
-    },
-    "result_xdr": "AAAAAAAAAAD////vAAAAAA=="
-  }
-}, headers={'Date': 'Fri, 22 Aug 2025 23:31:25 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '1379', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-22 20:31:34,286 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:31:34,286 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:31:34,286 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:31:34,286 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:31:35,111 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:31:35,111 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:31:35,111 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:31:35,264 - __main__ - INFO - <Account [account=<MuxedAccount [account_id=GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR, account_muxed_id=None]>, sequence=608682765189130]>
-2025-08-22 20:31:35,937 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/047c9e4b8f3cf2c85c215f53267cd7d2478148c6bfb2dec39032ca7fdbd8fa9d
-2025-08-22 20:31:38,100 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-22 20:34:07,893 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:34:07,893 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:34:07,894 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:34:07,894 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:34:08,571 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:34:08,572 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:34:08,572 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:34:08,725 - __main__ - INFO - <Account [account=<MuxedAccount [account_id=GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR, account_muxed_id=None]>, sequence=608682765189130]>
-2025-08-22 20:34:09,444 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/852ba387f27d55080fcdcb54bbbf6ee4602c8f73e2efaebbbbc4e594f4e53f4a
-2025-08-22 20:34:11,631 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-22 20:35:03,089 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:35:03,089 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:35:03,089 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:35:03,089 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:35:03,735 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:35:03,736 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:35:03,736 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:35:03,916 - __main__ - INFO - <Account [account=<MuxedAccount [account_id=GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR, account_muxed_id=None]>, sequence=608682765189130]>
-2025-08-22 20:35:04,228 - __main__ - ERROR - Extra data: line 1 column 5 (char 4)
-2025-08-22 20:35:10,596 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:35:10,596 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:35:10,596 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:35:10,596 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:35:11,204 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:35:11,204 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:35:11,204 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:35:11,365 - __main__ - INFO - <Account [account=<MuxedAccount [account_id=GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR, account_muxed_id=None]>, sequence=608682765189130]>
-2025-08-22 20:35:12,116 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/ace4971d2e379506b636fbb1ef1407d4865cd8ebb1e009233ab01825aeaa21f1
-2025-08-22 20:35:14,278 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-22 20:38:25,121 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-22 20:38:25,121 - __main__ - INFO - 📍 Public Key: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:38:25,122 - __main__ - INFO - 🔐 Secret Key: SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX
-2025-08-22 20:38:25,122 - __main__ - INFO - 🔍 Consultando saldo da conta: GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR
-2025-08-22 20:38:25,957 - __main__ - INFO - ✅ Conta encontrada
-2025-08-22 20:38:25,957 - __main__ - INFO - 📊 Sequence: 608682765189130
-2025-08-22 20:38:25,957 - __main__ - INFO - 💎 XLM Balance: 4837.9998700
-2025-08-22 20:38:26,114 - __main__ - INFO - <Account [account=<MuxedAccount [account_id=GDGPAMHWX2DVTSUBE54GJOH7NB5TYRCEQWAOLJIZP2R2NYHZHIUL7IRR, account_muxed_id=None]>, sequence=608682765189130]>
-2025-08-22 20:38:26,869 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/272a754d685fbb25046d047622aedeacbdccccbdf600dafc31713b54f99ad351
-2025-08-22 20:38:29,035 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-24 11:29:51,770 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:29:51,771 - __main__ - INFO - 📍 Public Key: GDAVYVEN7D5OFGD25NXU4RXL4VNJ5IQR5DJLJGMDYQJEV6QZQUPN775H
-2025-08-24 11:29:51,771 - __main__ - INFO - 🔐 Secret Key: SBQM4CHDPWZI7B3A5WONX55CR5RTPSWSIF7QFQA3LDIGS4R2AOOAPJFJ
-2025-08-24 11:30:12,336 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:30:12,336 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:30:12,336 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:30:17,548 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:30:17,549 - __main__ - INFO - 🔍 Consultando saldo da conta: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:30:18,353 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:30:18,353 - __main__ - INFO - 📊 Sequence: 732270449131520
-2025-08-24 11:30:18,353 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:30:18,529 - __main__ - INFO - <Account [account=<MuxedAccount [account_id=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J, account_muxed_id=None]>, sequence=732270449131520]>
-2025-08-24 11:30:19,370 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/0404ba129dd34cca385f3828fefeea535b08c76427569b7e5fd0b10447feb671
-2025-08-24 11:30:21,539 - __main__ - ERROR - 'NoneType' object has no attribute 'encode'
-2025-08-24 11:31:24,013 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:31:24,014 - __main__ - INFO - 📍 Public Key: GD6YZO6AUMOBLBLWZ7K2QKZXH5NNOWMCYR3667XU43POJ6NAP3UIFJKS
-2025-08-24 11:31:24,014 - __main__ - INFO - 🔐 Secret Key: SBBHSZ6CH5KENBH5WP6PXMXCTGQSLWGXIGLPLCZCY52TIONM6QW3DRWX
-2025-08-24 11:31:27,091 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:31:27,091 - __main__ - INFO - 🔍 Consultando saldo da conta: GD6YZO6AUMOBLBLWZ7K2QKZXH5NNOWMCYR3667XU43POJ6NAP3UIFJKS
-2025-08-24 11:31:27,748 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:31:27,749 - __main__ - INFO - 📊 Sequence: 732330578673664
-2025-08-24 11:31:27,749 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:31:27,752 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:31:27,752 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:31:27,752 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:31:27,753 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:31:27,753 - __main__ - INFO - 📤 Source Account: GD6YZO6AUMOBLBLWZ7K2QKZXH5NNOWMCYR3667XU43POJ6NAP3UIFJKS
-2025-08-24 11:31:27,753 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:31:27,753 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:31:27,918 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732330578673664
-2025-08-24 11:31:27,920 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:31:27,920 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:31:27,923 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:31:27,923 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:31:32,094 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAAD9jLvAoxwVhXbP1agrNz9a11mCxHfvfvTm3uT5oH7oggAAAGQAApoNAAAAAQAAAAEAAAAAAAAAAAAAAABoqyJdAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAaB+6IIAAABA8YxdjAXF2ak1kgxcGIlODFBvj7bEqP1rZ2AwaLH/soiCOom8ePD3QR6DDFPxW4MMkL7dWhUoRjp+bqK6x4OqCg==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:31:32 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:31:32,095 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAAD9jLvAoxwVhXbP1agrNz9a11mCxHfvfvTm3uT5oH7oggAAAGQAApoNAAAAAQAAAAEAAAAAAAAAAAAAAABoqyJdAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAaB+6IIAAABA8YxdjAXF2ak1kgxcGIlODFBvj7bEqP1rZ2AwaLH/soiCOom8ePD3QR6DDFPxW4MMkL7dWhUoRjp+bqK6x4OqCg==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:32:00,614 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:32:00,614 - __main__ - INFO - 📍 Public Key: GDXHJ7EOZH6DJ74IZQFR23JI3MCBM62KRSWLQ2MMPFR3DGP4XTDHVVXH
-2025-08-24 11:32:00,614 - __main__ - INFO - 🔐 Secret Key: SBY7M3AYZVMW5QJS23RBGPMY6DPFLPSSWE6MF2BSUPEHMU7JJGNXBITK
-2025-08-24 11:32:02,549 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:32:02,550 - __main__ - INFO - 🔍 Consultando saldo da conta: GDXHJ7EOZH6DJ74IZQFR23JI3MCBM62KRSWLQ2MMPFR3DGP4XTDHVVXH
-2025-08-24 11:32:03,305 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:32:03,306 - __main__ - INFO - 📊 Sequence: 732360643444736
-2025-08-24 11:32:03,306 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:32:03,309 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:32:03,309 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:32:03,309 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:32:03,310 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:32:03,310 - __main__ - INFO - 📤 Source Account: GDXHJ7EOZH6DJ74IZQFR23JI3MCBM62KRSWLQ2MMPFR3DGP4XTDHVVXH
-2025-08-24 11:32:03,310 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:32:03,310 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:32:03,478 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732360643444736
-2025-08-24 11:32:03,479 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:32:03,479 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:32:03,481 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:32:03,482 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:32:07,663 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADudPyOyfw0/4jMCx1tKNsEFntKjKy4aYx5Y7GZ/LzGegAAAGQAApoUAAAAAQAAAAEAAAAAAAAAAAAAAABoqyKBAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAfy8xnoAAABAviqdZt1C+8KYWjiE+sH9UTQseZQP1aVDrU+pkqyIH6JbcKXKs2cVyUbKxHaw8tyS55bLLRmBaG0DlQDrV9zqCw==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:32:07 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:32:07,664 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAADudPyOyfw0/4jMCx1tKNsEFntKjKy4aYx5Y7GZ/LzGegAAAGQAApoUAAAAAQAAAAEAAAAAAAAAAAAAAABoqyKBAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAfy8xnoAAABAviqdZt1C+8KYWjiE+sH9UTQseZQP1aVDrU+pkqyIH6JbcKXKs2cVyUbKxHaw8tyS55bLLRmBaG0DlQDrV9zqCw==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:32:39,857 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:32:39,857 - __main__ - INFO - 📍 Public Key: GAGE6EK2ZIXPPRBDPO2NL3FAFGTEHTFEJGADVJGCYJ6VIIGGZTCHBLTQ
-2025-08-24 11:32:39,857 - __main__ - INFO - 🔐 Secret Key: SC2OJEFDHJZYRERFPCAEDVECKI2WPLVGWAKJ2U55LLGLYANNP5PRL35H
-2025-08-24 11:32:42,081 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:32:42,081 - __main__ - INFO - 🔍 Consultando saldo da conta: GAGE6EK2ZIXPPRBDPO2NL3FAFGTEHTFEJGADVJGCYJ6VIIGGZTCHBLTQ
-2025-08-24 11:32:42,715 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:32:42,715 - __main__ - INFO - 📊 Sequence: 732395003183104
-2025-08-24 11:32:42,715 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:32:42,715 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:32:42,715 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:32:42,715 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:32:42,715 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:32:42,716 - __main__ - INFO - 📤 Source Account: GAGE6EK2ZIXPPRBDPO2NL3FAFGTEHTFEJGADVJGCYJ6VIIGGZTCHBLTQ
-2025-08-24 11:32:42,716 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:32:42,716 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:32:56,623 - __main__ - DEBUG - ==============================
-2025-08-24 11:32:56,624 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:32:56,624 - __main__ - INFO - 📍 Public Key: GBDJ4W3JAAQKPETTHWGZHUFY66YMBYLDSI7KBKZ46EETO6PIJL4LXYLH
-2025-08-24 11:32:56,624 - __main__ - INFO - 🔐 Secret Key: SDAYCEQ4VVJP6UDWPTJQZL52M72LX2UP24QXYHCAKWMYEHLLWAWID6ZR
-2025-08-24 11:32:56,628 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): friendbot.stellar.org:443
-2025-08-24 11:33:02,129 - urllib3.connectionpool - DEBUG - https://friendbot.stellar.org:443 "GET /?addr=GBDJ4W3JAAQKPETTHWGZHUFY66YMBYLDSI7KBKZ46EETO6PIJL4LXYLH HTTP/1.1" 200 None
-2025-08-24 11:33:02,130 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:33:02,131 - __main__ - INFO - 🔍 Consultando saldo da conta: GBDJ4W3JAAQKPETTHWGZHUFY66YMBYLDSI7KBKZ46EETO6PIJL4LXYLH
-2025-08-24 11:33:02,133 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): horizon-testnet.stellar.org:443
-2025-08-24 11:33:02,837 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GBDJ4W3JAAQKPETTHWGZHUFY66YMBYLDSI7KBKZ46EETO6PIJL4LXYLH HTTP/1.1" 200 608
-2025-08-24 11:33:02,838 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:33:02,839 - __main__ - INFO - 📊 Sequence: 732412183052288
-2025-08-24 11:33:02,839 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:33:02,842 - __main__ - DEBUG - ==============================
-2025-08-24 11:33:02,842 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:33:02,842 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:33:02,842 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:33:02,843 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:33:02,843 - __main__ - INFO - 📤 Source Account: GBDJ4W3JAAQKPETTHWGZHUFY66YMBYLDSI7KBKZ46EETO6PIJL4LXYLH
-2025-08-24 11:33:02,843 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:33:02,843 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:33:03,009 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GBDJ4W3JAAQKPETTHWGZHUFY66YMBYLDSI7KBKZ46EETO6PIJL4LXYLH HTTP/1.1" 200 608
-2025-08-24 11:33:03,009 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732412183052288
-2025-08-24 11:33:03,009 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:33:03,009 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:33:03,010 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:33:03,010 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:33:07,093 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "POST /transactions HTTP/1.1" 400 969
-2025-08-24 11:33:07,095 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAABGnltpACCnknM9jZPQuPewwOFjkj6gqzzxCTd56Er4uwAAAGQAApogAAAAAQAAAAEAAAAAAAAAAAAAAABoqyK9AAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAehK+LsAAABApYg3KdJEyoFjnCyznmeSkhY8wAcfSxHVD8UJtCq810kICiVzxVjF10rIKq5clV3AYQRuu7WKnrWVzU9NjL5PAA==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:33:07 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:33:07,095 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAABGnltpACCnknM9jZPQuPewwOFjkj6gqzzxCTd56Er4uwAAAGQAApogAAAAAQAAAAEAAAAAAAAAAAAAAABoqyK9AAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAehK+LsAAABApYg3KdJEyoFjnCyznmeSkhY8wAcfSxHVD8UJtCq810kICiVzxVjF10rIKq5clV3AYQRuu7WKnrWVzU9NjL5PAA==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:34:19,717 - __main__ - DEBUG - ============================================================
-2025-08-24 11:34:19,717 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:34:19,717 - __main__ - INFO - 📍 Public Key: GD5YC75J5EM3BYJ4XTSQMCM3357CD7GWTBD5YKFOQDOSKKPBBOI6MQRK
-2025-08-24 11:34:19,717 - __main__ - INFO - 🔐 Secret Key: SCDE56LTT7QE3IGGC3AMDH6EFENV6GLYVR5ZM4OX3REIK5Y52ESLMVHI
-2025-08-24 11:34:19,717 - __main__ - DEBUG - ============================================================
-2025-08-24 11:34:19,723 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): friendbot.stellar.org:443
-2025-08-24 11:34:22,545 - urllib3.connectionpool - DEBUG - https://friendbot.stellar.org:443 "GET /?addr=GD5YC75J5EM3BYJ4XTSQMCM3357CD7GWTBD5YKFOQDOSKKPBBOI6MQRK HTTP/1.1" 200 None
-2025-08-24 11:34:22,547 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:34:22,547 - __main__ - DEBUG - ============================================================
-2025-08-24 11:34:22,547 - __main__ - INFO - 🔍 Consultando saldo da conta: GD5YC75J5EM3BYJ4XTSQMCM3357CD7GWTBD5YKFOQDOSKKPBBOI6MQRK
-2025-08-24 11:34:22,550 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): horizon-testnet.stellar.org:443
-2025-08-24 11:34:23,270 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GD5YC75J5EM3BYJ4XTSQMCM3357CD7GWTBD5YKFOQDOSKKPBBOI6MQRK HTTP/1.1" 200 607
-2025-08-24 11:34:23,270 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:34:23,270 - __main__ - INFO - 📊 Sequence: 732480902529024
-2025-08-24 11:34:23,270 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:34:23,271 - __main__ - DEBUG - ============================================================
-2025-08-24 11:34:23,272 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:34:23,272 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:34:23,272 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:34:23,272 - __main__ - DEBUG - ============================================================
-2025-08-24 11:34:23,272 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:34:23,272 - __main__ - INFO - 📤 Source Account: GD5YC75J5EM3BYJ4XTSQMCM3357CD7GWTBD5YKFOQDOSKKPBBOI6MQRK
-2025-08-24 11:34:23,272 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:34:23,272 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:34:23,439 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GD5YC75J5EM3BYJ4XTSQMCM3357CD7GWTBD5YKFOQDOSKKPBBOI6MQRK HTTP/1.1" 200 607
-2025-08-24 11:34:23,441 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732480902529024
-2025-08-24 11:34:23,442 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:34:23,442 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:34:23,443 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:34:23,444 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:34:27,542 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "POST /transactions HTTP/1.1" 400 969
-2025-08-24 11:34:27,544 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAAD7gX+p6Rmw4Ty85QYJm99+IfzWmEfcKK6A3SUp4QuR5gAAAGQAApowAAAAAQAAAAEAAAAAAAAAAAAAAABoqyMNAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAeELkeYAAABAmKoGoMQcw0bGq3cqEu4o/oIy4zhhkk0d3MD0tThzmYMlYIgkIbgvo8QhPRoDhfGHD3oJG1l369Z0bNZ053mgAg==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:34:27 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:34:27,544 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAAD7gX+p6Rmw4Ty85QYJm99+IfzWmEfcKK6A3SUp4QuR5gAAAGQAApowAAAAAQAAAAEAAAAAAAAAAAAAAABoqyMNAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAeELkeYAAABAmKoGoMQcw0bGq3cqEu4o/oIy4zhhkk0d3MD0tThzmYMlYIgkIbgvo8QhPRoDhfGHD3oJG1l369Z0bNZ053mgAg==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:34:27,544 - __main__ - DEBUG - ============================================================
-2025-08-24 11:34:27,545 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:34:27,545 - __main__ - INFO - 📤 From: GD5YC75J5EM3BYJ4XTSQMCM3357CD7GWTBD5YKFOQDOSKKPBBOI6MQRK
-2025-08-24 11:34:27,545 - __main__ - INFO - 📥 To: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:34:27,545 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:34:27,719 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GD5YC75J5EM3BYJ4XTSQMCM3357CD7GWTBD5YKFOQDOSKKPBBOI6MQRK HTTP/1.1" 200 626
-2025-08-24 11:34:27,720 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:34:27,721 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:34:27,721 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:34:27,890 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J HTTP/1.1" 200 608
-2025-08-24 11:34:32,543 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "POST /transactions HTTP/1.1" 200 995
-2025-08-24 11:34:32,543 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:34:32,543 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/203746234b8e52d9aa52d9f74974f0de0957a8e6b0968e1a15e8b55f033ac241
-2025-08-24 11:35:29,053 - __main__ - INFO - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:35:29,053 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:35:29,054 - __main__ - INFO - 📍 Public Key: GADGRTY7MABANIYVCTF2IORVFEZ3TTRMAJTYR56TVSUE3XSYSCVCSOXS
-2025-08-24 11:35:29,054 - __main__ - INFO - 🔐 Secret Key: SAKDI73ZSMR6VM6J3UNA3A3XJTOJMLA7QUKEMVNXGX4CUYPMBAR3WXO6
-2025-08-24 11:35:29,054 - __main__ - INFO - ==============================FUND_ACCOUNT==============================
-2025-08-24 11:35:32,537 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:35:32,538 - __main__ - INFO - ==============================GET_ACCOUNT_BALANCE==============================
-2025-08-24 11:35:32,538 - __main__ - INFO - 🔍 Consultando saldo da conta: GADGRTY7MABANIYVCTF2IORVFEZ3TTRMAJTYR56TVSUE3XSYSCVCSOXS
-2025-08-24 11:35:33,217 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:35:33,217 - __main__ - INFO - 📊 Sequence: 732541032071168
-2025-08-24 11:35:33,217 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:35:33,220 - __main__ - INFO - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:35:33,220 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:35:33,220 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:35:33,221 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:35:33,221 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:35:33,221 - __main__ - INFO - 📤 Source Account: GADGRTY7MABANIYVCTF2IORVFEZ3TTRMAJTYR56TVSUE3XSYSCVCSOXS
-2025-08-24 11:35:33,221 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:35:33,221 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:35:33,395 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732541032071168
-2025-08-24 11:35:33,395 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:35:33,396 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:35:33,396 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:35:33,396 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:35:37,538 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAAAGaM8fYAIGoxUUy6Q6NSkzuc4sAmeI99OsqE3eWJCqKQAAAGQAApo+AAAAAQAAAAEAAAAAAAAAAAAAAABoqyNTAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAViQqikAAABAEp7u436p0nfXwLKtx+rMsHyvq7W1LYXVWE/9rmn3pHnaK9b9MzNz7e8xaD9WRAtzRWLXAApS60YCDmdkTZj3BA==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:35:37 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:35:37,539 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAAAGaM8fYAIGoxUUy6Q6NSkzuc4sAmeI99OsqE3eWJCqKQAAAGQAApo+AAAAAQAAAAEAAAAAAAAAAAAAAABoqyNTAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAViQqikAAABAEp7u436p0nfXwLKtx+rMsHyvq7W1LYXVWE/9rmn3pHnaK9b9MzNz7e8xaD9WRAtzRWLXAApS60YCDmdkTZj3BA==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:35:37,539 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:35:37,539 - __main__ - INFO - 📤 From: GADGRTY7MABANIYVCTF2IORVFEZ3TTRMAJTYR56TVSUE3XSYSCVCSOXS
-2025-08-24 11:35:37,539 - __main__ - INFO - 📥 To: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:35:37,539 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:35:37,718 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:35:37,720 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:35:37,720 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:35:42,549 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:35:42,549 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/8cbd44ea3989246e0a2cb23d0c00b0dc2f81be353c89b5a43d342af3d09e60f8
-2025-08-24 11:36:08,382 - __main__ - INFO - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:36:08,383 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:36:08,383 - __main__ - INFO - 📍 Public Key: GDYWKSYYO6YQMNQ753GRUGFMWU3OMCE5DJ3ELWPWAWLZ44WND3QQXXUZ
-2025-08-24 11:36:08,383 - __main__ - INFO - 🔐 Secret Key: SCFTLLJD6XIHL7WD3SQPFMAZK5DMU7TO47Q2CD2Q7LGR6KVXSRASXVC5
-2025-08-24 11:36:08,383 - __main__ - INFO - ==============================FUND_ACCOUNT==============================
-2025-08-24 11:36:12,590 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:36:12,590 - __main__ - INFO - ==============================GET_ACCOUNT_BALANCE==============================
-2025-08-24 11:36:12,590 - __main__ - INFO - 🔍 Consultando saldo da conta: GDYWKSYYO6YQMNQ753GRUGFMWU3OMCE5DJ3ELWPWAWLZ44WND3QQXXUZ
-2025-08-24 11:36:13,391 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:36:13,391 - __main__ - INFO - 📊 Sequence: 732575391809536
-2025-08-24 11:36:13,391 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:36:13,394 - __main__ - INFO - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:36:13,394 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:36:13,395 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:36:13,395 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:36:13,395 - __main__ - INFO - ==============================CREATE_ACCOUNT_OPERATION==============================
-2025-08-24 11:36:13,395 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:36:13,395 - __main__ - INFO - 📤 Source Account: GDYWKSYYO6YQMNQ753GRUGFMWU3OMCE5DJ3ELWPWAWLZ44WND3QQXXUZ
-2025-08-24 11:36:13,395 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:36:13,395 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:36:13,566 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732575391809536
-2025-08-24 11:36:13,566 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:36:13,566 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:36:13,567 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:36:13,567 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:36:18,120 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADxZUsYd7EGNh/uzRoYrLU25gidGnZF2fYFl55yzR7hCwAAAGQAAppGAAAAAQAAAAEAAAAAAAAAAAAAAABoqyN7AAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAc0e4QsAAABABHVeEKBQZdwt0Sjj3+YwTb5JSvN1HWJ+DxQzFj3j4ShPVo62GiDdJ90vMfYZtK07Iv5PEHMafQHqkWa3/gvABg==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:36:18 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:36:18,121 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAADxZUsYd7EGNh/uzRoYrLU25gidGnZF2fYFl55yzR7hCwAAAGQAAppGAAAAAQAAAAEAAAAAAAAAAAAAAABoqyN7AAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAc0e4QsAAABABHVeEKBQZdwt0Sjj3+YwTb5JSvN1HWJ+DxQzFj3j4ShPVo62GiDdJ90vMfYZtK07Iv5PEHMafQHqkWa3/gvABg==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:36:18,121 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:36:18,121 - __main__ - INFO - 📤 From: GDYWKSYYO6YQMNQ753GRUGFMWU3OMCE5DJ3ELWPWAWLZ44WND3QQXXUZ
-2025-08-24 11:36:18,121 - __main__ - INFO - 📥 To: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:36:18,121 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:36:18,288 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:36:18,289 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:36:18,290 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:36:23,238 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:36:23,238 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/e4a71f10561dc8389c83a612e1ec95b666651d8e2377df24204c4abef81a88a3
-2025-08-24 11:37:02,695 - __main__ - INFO - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:37:02,696 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:37:02,696 - __main__ - INFO - 📍 Public Key: GDEXU2C5SWET2VF7CQA5NDKZF64SLJRKGAKL56BZICGVW73WK4RTULHU
-2025-08-24 11:37:02,696 - __main__ - INFO - 🔐 Secret Key: SCRD77BMHGS3YHLM7EBB7AJBU77IXU7DZ4ZEOSJCWSN6IX6MMTJCP63X
-2025-08-24 11:37:02,696 - __main__ - INFO - ==============================FUND_ACCOUNT==============================
-2025-08-24 11:37:08,088 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:37:08,089 - __main__ - INFO - ==============================GET_ACCOUNT_BALANCE==============================
-2025-08-24 11:37:08,089 - __main__ - INFO - 🔍 Consultando saldo da conta: GDEXU2C5SWET2VF7CQA5NDKZF64SLJRKGAKL56BZICGVW73WK4RTULHU
-2025-08-24 11:37:08,752 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:37:08,753 - __main__ - INFO - 📊 Sequence: 732622636449792
-2025-08-24 11:37:08,753 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:37:08,755 - __main__ - INFO - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:37:08,756 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:37:08,756 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:37:08,756 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:37:08,756 - __main__ - INFO - ==============================CREATE_ACCOUNT_OPERATION==============================
-2025-08-24 11:37:08,757 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:37:08,757 - __main__ - INFO - 📤 Source Account: GDEXU2C5SWET2VF7CQA5NDKZF64SLJRKGAKL56BZICGVW73WK4RTULHU
-2025-08-24 11:37:08,757 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:37:08,757 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:37:08,924 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732622636449792
-2025-08-24 11:37:08,926 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:37:08,926 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:37:08,928 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:37:08,928 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:37:13,104 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADJemhdlYk9VL8UAdaNWS+5JaYqMBS++DlAjVt/dlcjOgAAAGQAAppRAAAAAQAAAAEAAAAAAAAAAAAAAABoqyOyAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAXZXIzoAAABAJKDb+o/C/xMpeU9zGsakoKR1WifJ6MUW0pzfcXoXAvk6SpOE411bow+aKZWSkg3xTAzVjWmmsxKy68cDUJSlDA==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:37:13 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:37:13,105 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAADJemhdlYk9VL8UAdaNWS+5JaYqMBS++DlAjVt/dlcjOgAAAGQAAppRAAAAAQAAAAEAAAAAAAAAAAAAAABoqyOyAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAXZXIzoAAABAJKDb+o/C/xMpeU9zGsakoKR1WifJ6MUW0pzfcXoXAvk6SpOE411bow+aKZWSkg3xTAzVjWmmsxKy68cDUJSlDA==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:37:13,105 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:37:13,105 - __main__ - INFO - 📤 From: GDEXU2C5SWET2VF7CQA5NDKZF64SLJRKGAKL56BZICGVW73WK4RTULHU
-2025-08-24 11:37:13,105 - __main__ - INFO - 📥 To: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:37:13,105 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:37:13,281 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:37:13,282 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:37:13,283 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:38:33,677 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:38:33,678 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:38:33,678 - __main__ - INFO - 📍 Public Key: GDH3RPI7X7I7SSOQ7SLVLYAZM7ZMSMR3OPOVHIJETDWMAUHQ5TRLJBG6
-2025-08-24 11:38:33,679 - __main__ - INFO - 🔐 Secret Key: SAAR7HGDV6NDAOWFM3OE6PPFWIVNEZFL3NOF5CHYYXA57JDE3NOL7VXD
-2025-08-24 11:38:33,679 - __main__ - WARNING - ==============================FUND_ACCOUNT==============================
-2025-08-24 11:38:38,067 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:38:38,067 - __main__ - WARNING - ==============================GET_ACCOUNT_BALANCE==============================
-2025-08-24 11:38:38,067 - __main__ - INFO - 🔍 Consultando saldo da conta: GDH3RPI7X7I7SSOQ7SLVLYAZM7ZMSMR3OPOVHIJETDWMAUHQ5TRLJBG6
-2025-08-24 11:38:38,813 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:38:38,813 - __main__ - INFO - 📊 Sequence: 732699945861120
-2025-08-24 11:38:38,813 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:38:38,816 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:38:38,817 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:38:38,817 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:38:38,817 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:38:38,817 - __main__ - INFO - ==============================CREATE_ACCOUNT_OPERATION==============================
-2025-08-24 11:38:38,817 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:38:38,817 - __main__ - INFO - 📤 Source Account: GDH3RPI7X7I7SSOQ7SLVLYAZM7ZMSMR3OPOVHIJETDWMAUHQ5TRLJBG6
-2025-08-24 11:38:38,817 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:38:38,818 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:38:38,995 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732699945861120
-2025-08-24 11:38:38,996 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:38:38,996 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:38:38,997 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:38:38,997 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:38:42,600 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAADPuL0fv9H5SdD8l1XgGWfyyTI7c91ToSSY7MBQ8OzitAAAAGQAAppjAAAAAQAAAAEAAAAAAAAAAAAAAABoqyQMAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAfDs4rQAAABAOCCboVOAekuPnLVxtF5Z5MvP1FuNATaPK2nrFMwHOXbrC5DGhvZYi2SquiXvqoH5KNOCJDvcnMF48fMeDhMQAw==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:38:42 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:38:42,601 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAADPuL0fv9H5SdD8l1XgGWfyyTI7c91ToSSY7MBQ8OzitAAAAGQAAppjAAAAAQAAAAEAAAAAAAAAAAAAAABoqyQMAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAfDs4rQAAABAOCCboVOAekuPnLVxtF5Z5MvP1FuNATaPK2nrFMwHOXbrC5DGhvZYi2SquiXvqoH5KNOCJDvcnMF48fMeDhMQAw==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:38:42,601 - __main__ - INFO - ==============================payment_operation==============================
-2025-08-24 11:38:42,601 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:38:42,601 - __main__ - INFO - 📤 From: GDH3RPI7X7I7SSOQ7SLVLYAZM7ZMSMR3OPOVHIJETDWMAUHQ5TRLJBG6
-2025-08-24 11:38:42,601 - __main__ - INFO - 📥 To: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:38:42,601 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:38:42,767 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:38:42,768 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:38:42,768 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:38:47,616 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:38:47,616 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/af0a43bcd72a4366da26efcd32412745700da4c55ce90b6cc73909c0f2b46221
-2025-08-24 11:39:10,150 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:39:10,150 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:39:10,150 - __main__ - INFO - 📍 Public Key: GBTVZGTSYB3R7ZYFY7CSMT3ZOBPC3VNDWMOZIYCNSTIDND6Z3NPHJD6V
-2025-08-24 11:39:10,150 - __main__ - INFO - 🔐 Secret Key: SCAKRLBLCH3C4GFRW7BEC6EJ4F3LATM5DKZVW6RADSECJL7CLPUCDAVU
-2025-08-24 11:39:10,150 - __main__ - WARNING - ==============================FUND_ACCOUNT==============================
-2025-08-24 11:39:10,154 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): friendbot.stellar.org:443
-2025-08-24 11:39:12,524 - urllib3.connectionpool - DEBUG - https://friendbot.stellar.org:443 "GET /?addr=GBTVZGTSYB3R7ZYFY7CSMT3ZOBPC3VNDWMOZIYCNSTIDND6Z3NPHJD6V HTTP/1.1" 200 None
-2025-08-24 11:39:12,524 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:39:12,525 - __main__ - WARNING - ==============================GET_ACCOUNT_BALANCE==============================
-2025-08-24 11:39:12,525 - __main__ - INFO - 🔍 Consultando saldo da conta: GBTVZGTSYB3R7ZYFY7CSMT3ZOBPC3VNDWMOZIYCNSTIDND6Z3NPHJD6V
-2025-08-24 11:39:12,525 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): horizon-testnet.stellar.org:443
-2025-08-24 11:39:13,228 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GBTVZGTSYB3R7ZYFY7CSMT3ZOBPC3VNDWMOZIYCNSTIDND6Z3NPHJD6V HTTP/1.1" 200 606
-2025-08-24 11:39:13,228 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:39:13,228 - __main__ - INFO - 📊 Sequence: 732730010632192
-2025-08-24 11:39:13,228 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:39:13,229 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:39:13,229 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:39:13,229 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:39:13,229 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:39:13,229 - __main__ - WARNING - ==============================CREATE_ACCOUNT_OPERATION==============================
-2025-08-24 11:39:13,229 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:39:13,229 - __main__ - INFO - 📤 Source Account: GBTVZGTSYB3R7ZYFY7CSMT3ZOBPC3VNDWMOZIYCNSTIDND6Z3NPHJD6V
-2025-08-24 11:39:13,229 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:39:13,229 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:39:13,408 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GBTVZGTSYB3R7ZYFY7CSMT3ZOBPC3VNDWMOZIYCNSTIDND6Z3NPHJD6V HTTP/1.1" 200 606
-2025-08-24 11:39:13,408 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732730010632192
-2025-08-24 11:39:13,408 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:39:13,408 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:39:13,408 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:39:13,408 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:39:17,533 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "POST /transactions HTTP/1.1" 400 969
-2025-08-24 11:39:17,535 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAABnXJpywHcf5wXHxSZPeXBeLdWjsx2UYE2U0DaP2dtedAAAAGQAAppqAAAAAQAAAAEAAAAAAAAAAAAAAABoqyQvAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAdnbXnQAAABAD2XQedQmnhnRNeIt4eLwPtgF+VIppOzz02lDYQL045kcrrYWnWSKTUaJwi+aXWjmJariU5l38Pkjk5rIoaWLBQ==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:39:17 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:39:17,535 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAABnXJpywHcf5wXHxSZPeXBeLdWjsx2UYE2U0DaP2dtedAAAAGQAAppqAAAAAQAAAAEAAAAAAAAAAAAAAABoqyQvAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAdnbXnQAAABAD2XQedQmnhnRNeIt4eLwPtgF+VIppOzz02lDYQL045kcrrYWnWSKTUaJwi+aXWjmJariU5l38Pkjk5rIoaWLBQ==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:39:17,535 - __main__ - WARNING - ==============================payment_operation==============================
-2025-08-24 11:39:17,535 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:39:17,535 - __main__ - INFO - 📤 From: GBTVZGTSYB3R7ZYFY7CSMT3ZOBPC3VNDWMOZIYCNSTIDND6Z3NPHJD6V
-2025-08-24 11:39:17,535 - __main__ - INFO - 📥 To: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:39:17,535 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:39:17,710 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GBTVZGTSYB3R7ZYFY7CSMT3ZOBPC3VNDWMOZIYCNSTIDND6Z3NPHJD6V HTTP/1.1" 200 628
-2025-08-24 11:39:17,710 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:39:17,711 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:39:17,711 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:39:17,887 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "GET /accounts/GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J HTTP/1.1" 200 610
-2025-08-24 11:39:23,076 - urllib3.connectionpool - DEBUG - https://horizon-testnet.stellar.org:443 "POST /transactions HTTP/1.1" 200 997
-2025-08-24 11:39:23,076 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:39:23,076 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/bbed408cc5bbd70509acb3e4343e40789d79c2930b5bd48d17b5de119e79512f
-2025-08-24 11:39:46,686 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:39:46,686 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:39:46,687 - __main__ - INFO - 📍 Public Key: GCXAJA7CXQKVL5MLBHOMJ5JDGGVF7HBCMEEKACSKWR4ZMLLVFSMJNLI7
-2025-08-24 11:39:46,687 - __main__ - INFO - 🔐 Secret Key: SBNVCGCVKLVOVFRWMDRRXJBEFB45SMZ73XCZNS6WKEWY7BIQ3ZXLJVPG
-2025-08-24 11:39:46,687 - __main__ - WARNING - ==============================FUND_ACCOUNT==============================
-2025-08-24 11:39:52,532 - __main__ - INFO - ✅ Conta funded com sucesso!
-2025-08-24 11:39:52,533 - __main__ - WARNING - ==============================GET_ACCOUNT_BALANCE==============================
-2025-08-24 11:39:52,533 - __main__ - INFO - 🔍 Consultando saldo da conta: GCXAJA7CXQKVL5MLBHOMJ5JDGGVF7HBCMEEKACSKWR4ZMLLVFSMJNLI7
-2025-08-24 11:39:53,248 - __main__ - INFO - ✅ Conta encontrada
-2025-08-24 11:39:53,248 - __main__ - INFO - 📊 Sequence: 732764370370560
-2025-08-24 11:39:53,248 - __main__ - INFO - 💎 XLM Balance: 10000.0000000
-2025-08-24 11:39:53,251 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:39:53,252 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:39:53,252 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:39:53,252 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:39:53,252 - __main__ - WARNING - ==============================CREATE_ACCOUNT_OPERATION==============================
-2025-08-24 11:39:53,252 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:39:53,252 - __main__ - INFO - 📤 Source Account: GCXAJA7CXQKVL5MLBHOMJ5JDGGVF7HBCMEEKACSKWR4ZMLLVFSMJNLI7
-2025-08-24 11:39:53,252 - __main__ - INFO - 📥 Destination Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:39:53,252 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:39:53,432 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732764370370560
-2025-08-24 11:39:53,434 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:39:53,434 - __main__ - INFO - 🔖 Memo: Creating account GBJ5W7X6...
-2025-08-24 11:39:53,436 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:39:53,436 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:39:58,084 - __main__ - ERROR - ❌ Erro de requisição: <Response [status_code=400, text={
-  "type": "https://stellar.org/horizon-errors/transaction_failed",
-  "title": "Transaction Failed",
-  "status": 400,
-  "detail": "The transaction failed when submitted to the stellar network. The `extras.result_codes` field on this response contains further details.  Descriptions of each code can be found at: https://developers.stellar.org/api/errors/http-status-codes/horizon-specific/transaction-failed/",
-  "extras": {
-    "envelope_xdr": "AAAAAgAAAACuBIPivBVV9YsJ3MT1IzGqX5wiYQigCkq0eZYtdSyYlgAAAGQAAppyAAAAAQAAAAEAAAAAAAAAAAAAAABoqyRXAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAXUsmJYAAABAuPCbmcOO3XAEIcupC43R5DXlJ3KC/Hfhh/JhPvwUsW+14cjcUl+RciYImuGjyEV31/SIZLO+9nZ3iqdWQGvFCg==",
-    "result_codes": {
-      "transaction": "tx_failed",
-      "operations": [
-        "op_already_exists"
-      ]
-    },
-    "result_xdr": "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA="
-  }
-}, headers={'Date': 'Sun, 24 Aug 2025 14:39:58 GMT', 'Content-Type': 'application/problem+json; charset=utf-8', 'Content-Length': '969', 'Connection': 'keep-alive', 'Cache-Control': 'no-cache, no-store, max-age=0', 'Vary': 'Origin'}, url=https://horizon-testnet.stellar.org/transactions]>
-2025-08-24 11:39:58,085 - __main__ - ERROR - 📄 Details: {'envelope_xdr': 'AAAAAgAAAACuBIPivBVV9YsJ3MT1IzGqX5wiYQigCkq0eZYtdSyYlgAAAGQAAppyAAAAAQAAAAEAAAAAAAAAAAAAAABoqyRXAAAAAQAAABxDcmVhdGluZyBhY2NvdW50IEdCSjVXN1g2Li4uAAAAAQAAAAAAAAAAAAAAAFPbfv70zw/jbNaV/rfvOmuLWXh+wPOhsRIKs3qZCj4SAAAAADuaygAAAAAAAAAAAXUsmJYAAABAuPCbmcOO3XAEIcupC43R5DXlJ3KC/Hfhh/JhPvwUsW+14cjcUl+RciYImuGjyEV31/SIZLO+9nZ3iqdWQGvFCg==', 'result_codes': {'transaction': 'tx_failed', 'operations': ['op_already_exists']}, 'result_xdr': 'AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA='}
-2025-08-24 11:39:58,086 - __main__ - WARNING - ==============================PAYMENT_OPERATION==============================
-2025-08-24 11:39:58,086 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:39:58,086 - __main__ - INFO - 📤 From: GCXAJA7CXQKVL5MLBHOMJ5JDGGVF7HBCMEEKACSKWR4ZMLLVFSMJNLI7
-2025-08-24 11:39:58,086 - __main__ - INFO - 📥 To: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:39:58,086 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:39:58,252 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:39:58,253 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:39:58,253 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:40:03,160 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:40:03,160 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/25adaf934992072b76de1a19f232d589899b5c41fd993ac1351105e68bf71606
-2025-08-24 11:40:41,834 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:40:41,835 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:40:41,835 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:40:41,835 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:40:41,835 - __main__ - WARNING - ==============================FUND_ACCOUNT==============================
-2025-08-24 11:40:42,511 - __main__ - ERROR - ❌ Erro ao fundir conta: 400 Client Error: Bad Request for url: https://friendbot.stellar.org/?addr=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:40:42,512 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:40:42,512 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:40:42,512 - __main__ - INFO - 📍 Public Key: GCLUZK37JCHH2SJVDTKHLQ4BUTK6OQ4LOJXCF2PCRYLHSIJXHPLOEMBA
-2025-08-24 11:40:42,512 - __main__ - INFO - 🔐 Secret Key: SD3ING5DO2MFDT2BJHE7GFDBVT35AHEBVTS2U7FLVNP2J4PQYAJQDX3E
-2025-08-24 11:40:42,512 - __main__ - WARNING - ==============================CREATE_ACCOUNT_OPERATION==============================
-2025-08-24 11:40:42,512 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:40:42,512 - __main__ - INFO - 📤 Source Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:40:42,512 - __main__ - INFO - 📥 Destination Account: GCLUZK37JCHH2SJVDTKHLQ4BUTK6OQ4LOJXCF2PCRYLHSIJXHPLOEMBA
-2025-08-24 11:40:42,513 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:40:43,295 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732270449131520
-2025-08-24 11:40:43,296 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:40:43,296 - __main__ - INFO - 🔖 Memo: Creating account GCLUZK37...
-2025-08-24 11:40:43,298 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:40:43,298 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:40:48,140 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:40:48,140 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/ad077bb3b47a8a82efe0427b0ff81d4a5396d59abff30204402d24d2bf6a9b01
-2025-08-24 11:40:48,141 - __main__ - WARNING - ==============================PAYMENT_OPERATION==============================
-2025-08-24 11:40:48,141 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:40:48,141 - __main__ - INFO - 📤 From: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:40:48,141 - __main__ - INFO - 📥 To: GCLUZK37JCHH2SJVDTKHLQ4BUTK6OQ4LOJXCF2PCRYLHSIJXHPLOEMBA
-2025-08-24 11:40:48,141 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:40:48,317 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:40:48,318 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:40:48,318 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:40:53,156 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:40:53,157 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/656cb262b1fcd562b0b596f24a2fba6a8c5e9a4b405eb896fdcc006a7df705f7
-2025-08-24 11:41:10,454 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:41:10,454 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:41:10,454 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:41:10,454 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
-2025-08-24 11:41:10,454 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
-2025-08-24 11:41:10,454 - __main__ - INFO - ✅ Keypair criado com sucesso
-2025-08-24 11:41:10,454 - __main__ - INFO - 📍 Public Key: GAA3ALX73FZXVT2FKLWVKMH3ZQW5LADH2GI5EG2GVAS7HDFLKJW5KB5E
-2025-08-24 11:41:10,454 - __main__ - INFO - 🔐 Secret Key: SBZWZV7INRYOTNWMPE6TWTW7K5GT5VKDZVB6UHXP2V4PMXFN7YRM2FVW
-2025-08-24 11:41:10,454 - __main__ - WARNING - ==============================CREATE_ACCOUNT_OPERATION==============================
-2025-08-24 11:41:10,454 - __main__ - INFO - 🏗️ Iniciando criação de conta via CreateAccount operation
-2025-08-24 11:41:10,454 - __main__ - INFO - 📤 Source Account: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:41:10,454 - __main__ - INFO - 📥 Destination Account: GAA3ALX73FZXVT2FKLWVKMH3ZQW5LADH2GI5EG2GVAS7HDFLKJW5KB5E
-2025-08-24 11:41:10,455 - __main__ - INFO - 💰 Starting Balance: 100 XLM
-2025-08-24 11:41:11,130 - __main__ - INFO - ✅ Conta fonte carregada - Sequence: 732270449131522
-2025-08-24 11:41:11,130 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:41:11,131 - __main__ - INFO - 🔖 Memo: Creating account GAA3ALX7...
-2025-08-24 11:41:11,131 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:41:11,131 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:41:13,530 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:41:13,530 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/9653df7d6bb0625e460b5a649d1f1610513029f936fc7633318b98916b6596c2
-2025-08-24 11:41:13,531 - __main__ - WARNING - ==============================PAYMENT_OPERATION==============================
-2025-08-24 11:41:13,531 - __main__ - INFO - 💸 Iniciando pagamento XLM
-2025-08-24 11:41:13,531 - __main__ - INFO - 📤 From: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
-2025-08-24 11:41:13,531 - __main__ - INFO - 📥 To: GAA3ALX73FZXVT2FKLWVKMH3ZQW5LADH2GI5EG2GVAS7HDFLKJW5KB5E
-2025-08-24 11:41:13,531 - __main__ - INFO - 💰 Amount: 777 XLM
-2025-08-24 11:41:13,707 - __main__ - INFO - 📝 Transação construída
-2025-08-24 11:41:13,707 - __main__ - INFO - ✍️ Transação assinada
-2025-08-24 11:41:13,707 - __main__ - INFO - 📡 Submetendo transação...
-2025-08-24 11:41:18,555 - __main__ - INFO - ✅ Transação submetida com sucesso
-2025-08-24 11:41:18,555 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/f95e96f5f734c5bf69b17f58ddc4481eeaba01f75e7c23239d42ffee780e70c7
+2025-08-24 12:44:03,216 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:44:03,217 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:44:03,217 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:44:03,217 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:44:03,217 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:44:03,217 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:44:03,217 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:44:03,217 - __main__ - INFO - Parameters: []
+2025-08-24 12:44:03,811 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:44:03,812 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:44:03,973 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:44:34,632 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:44:34,633 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:44:34,633 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:44:34,633 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:44:34,634 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:44:34,634 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:44:34,634 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:44:34,634 - __main__ - INFO - Parameters: []
+2025-08-24 12:44:35,274 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:44:35,275 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:44:35,444 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:45:07,481 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:45:07,481 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:45:07,481 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:45:07,481 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:45:07,482 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:45:07,482 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:45:07,482 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:45:07,483 - __main__ - INFO - Parameters: []
+2025-08-24 12:45:08,082 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:45:08,083 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:45:08,247 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:45:08,247 - __main__ - INFO - error=None transaction_data='AAAAAAAAAAMAAAAGAAAAAXrHyI0IU69xjaTQfZunkZtCNtnPt92HTkhlA3sMfVGUAAAAEAAAAAEAAAABAAAADwAAAARSYW5rAAAAAQAAAAYAAAABesfIjQhTr3GNpNB9m6eRm0I22c+33YdOSGUDewx9UZQAAAAUAAAAAQAAAAdZq7Ky0+YQhbJcPOUVRlBELr57SKiqBfLC0MFlpHyA4gAAAAAABvMFAAAAAAAAAAAAAAAAAADJxw==' min_resource_fee=51655 events=['AAAAAQAAAAAAAAAAAAAAAgAAAAAAAAADAAAADwAAAAdmbl9jYWxsAAAAAA0AAAAgesfIjQhTr3GNpNB9m6eRm0I22c+33YdOSGUDewx9UZQAAAAPAAAACGdldF9yYW5rAAAAAQ==', 'AAAAAQAAAAAAAAABesfIjQhTr3GNpNB9m6eRm0I22c+33YdOSGUDewx9UZQAAAACAAAAAAAAAAIAAAAPAAAACWZuX3JldHVybgAAAAAAAA8AAAAIZ2V0X3JhbmsAAAAQAAAAAQAAAAA='] results=[SimulateHostFunctionResult(auth=[], xdr='AAAAEAAAAAEAAAAA')] restore_preamble=None state_changes=None latest_ledger=171392
+2025-08-24 12:46:26,930 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:46:26,930 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:46:26,930 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:46:26,930 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:46:26,932 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:46:26,932 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:46:26,932 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:46:26,932 - __main__ - INFO - Parameters: []
+2025-08-24 12:46:27,643 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:46:27,643 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:46:27,823 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:46:27,823 - __main__ - INFO - error=None transaction_data='AAAAAAAAAAMAAAAGAAAAAXrHyI0IU69xjaTQfZunkZtCNtnPt92HTkhlA3sMfVGUAAAAEAAAAAEAAAABAAAADwAAAARSYW5rAAAAAQAAAAYAAAABesfIjQhTr3GNpNB9m6eRm0I22c+33YdOSGUDewx9UZQAAAAUAAAAAQAAAAdZq7Ky0+YQhbJcPOUVRlBELr57SKiqBfLC0MFlpHyA4gAAAAAABvMFAAAAAAAAAAAAAAAAAADJxw==' min_resource_fee=51655 events=['AAAAAQAAAAAAAAAAAAAAAgAAAAAAAAADAAAADwAAAAdmbl9jYWxsAAAAAA0AAAAgesfIjQhTr3GNpNB9m6eRm0I22c+33YdOSGUDewx9UZQAAAAPAAAACGdldF9yYW5rAAAAAQ==', 'AAAAAQAAAAAAAAABesfIjQhTr3GNpNB9m6eRm0I22c+33YdOSGUDewx9UZQAAAACAAAAAAAAAAIAAAAPAAAACWZuX3JldHVybgAAAAAAAA8AAAAIZ2V0X3JhbmsAAAAQAAAAAQAAAAA='] results=[SimulateHostFunctionResult(auth=[], xdr='AAAAEAAAAAEAAAAA')] restore_preamble=None state_changes=None latest_ledger=171407
+2025-08-24 12:46:27,823 - __main__ - INFO - Simulation returned: []
+2025-08-24 12:46:27,823 - __main__ - INFO - ✅ Resultado: []
+2025-08-24 12:46:43,249 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:46:43,249 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:46:43,249 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:46:43,249 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:46:43,250 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:46:43,250 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:46:43,250 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:46:43,250 - __main__ - INFO - Parameters: []
+2025-08-24 12:46:43,746 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:46:43,747 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:46:43,912 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:46:43,912 - __main__ - INFO - Simulation returned: []
+2025-08-24 12:46:43,912 - __main__ - INFO - ✅ Resultado: []
+2025-08-24 12:49:09,603 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:49:09,603 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:49:09,603 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:49:09,603 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:49:09,606 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:49:09,606 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:49:09,606 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:49:09,606 - __main__ - INFO - Parameters: []
+2025-08-24 12:49:10,347 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:49:10,348 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:49:10,515 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:49:10,515 - __main__ - INFO - Simulation returned: []
+2025-08-24 12:49:10,515 - __main__ - INFO - ✅ Resultado: []
+2025-08-24 12:49:25,820 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:49:25,820 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:49:25,820 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:49:25,820 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:49:25,821 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:49:25,821 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:49:25,821 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:49:25,821 - __main__ - INFO - Parameters: []
+2025-08-24 12:49:26,455 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:49:26,456 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:49:26,618 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:49:26,618 - __main__ - INFO - Simulation returned: []
+2025-08-24 12:49:26,618 - __main__ - INFO - ✅ Resultado: []
+2025-08-24 12:49:26,618 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:49:26,618 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:49:26,619 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:49:26,619 - __main__ - INFO - Parameters: ['GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J', 'lucas000', 77, 10]
+2025-08-24 12:49:26,774 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:49:26,774 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:50:08,821 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:50:08,821 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:50:08,821 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:50:08,821 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:50:08,822 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:50:08,822 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:50:08,822 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:50:08,822 - __main__ - INFO - Parameters: []
+2025-08-24 12:50:09,542 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:50:09,542 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:50:09,723 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:50:09,724 - __main__ - INFO - Simulation returned: []
+2025-08-24 12:50:09,724 - __main__ - INFO - ✅ Resultado: []
+2025-08-24 12:50:09,724 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:50:09,724 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:50:09,725 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:50:09,725 - __main__ - INFO - Parameters: ['GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J', 'lucas000', 77, 10]
+2025-08-24 12:50:09,901 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:50:09,902 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:51:52,839 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:51:52,839 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:51:52,839 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:51:52,839 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:51:52,840 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:51:52,840 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:51:52,840 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:51:52,840 - __main__ - INFO - Parameters: []
+2025-08-24 12:51:53,431 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:51:53,431 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:51:53,598 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:51:53,598 - __main__ - INFO - Simulation returned: []
+2025-08-24 12:51:53,598 - __main__ - INFO - ✅ Resultado: []
+2025-08-24 12:51:53,598 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:51:53,598 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:51:53,598 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:51:53,598 - __main__ - INFO - Parameters: [<SCVal [type=18, address=<SCAddress [type=0, account_id=<AccountID [account_id=<PublicKey [type=0, ed25519=<Uint256 [uint256=b'S\xdb~\xfe\xf4\xcf\x0f\xe3l\xd6\x95\xfe\xb7\xef:k\x8bYx~\xc0\xf3\xa1\xb1\x12\n\xb3z\x99\n>\x12']>]>]>]>]>, <SCVal [type=14, str=<SCString [sc_string=b'lucas000']>]>, <SCVal [type=4, i32=<Int32 [int32=77]>]>, <SCVal [type=4, i32=<Int32 [int32=10]>]>]
+2025-08-24 12:51:53,748 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:51:53,749 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:51:53,918 - __main__ - INFO - Transaction prepared successfully
+2025-08-24 12:51:53,918 - __main__ - INFO - Transaction signed successfully
+2025-08-24 12:51:54,081 - __main__ - INFO - Transaction sent successfully
+2025-08-24 12:51:54,081 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/af64922985ec024bb2fe202cc19384d8a7adcf6a304048628eba77fac1917961
+2025-08-24 12:51:54,081 - __main__ - INFO - Transaction hash: af64922985ec024bb2fe202cc19384d8a7adcf6a304048628eba77fac1917961
+2025-08-24 12:51:58,569 - __main__ - INFO - Transaction found after 28 attempts
+2025-08-24 12:51:58,569 - __main__ - INFO - Transaction completed successfully
+2025-08-24 12:51:58,572 - __main__ - INFO - Function returned: None
+2025-08-24 12:51:58,572 - __main__ - ERROR - ❌ Função retornou None devido a erro na transação
+2025-08-24 12:51:58,572 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:51:58,572 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:51:58,572 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:51:58,572 - __main__ - INFO - Parameters: []
+2025-08-24 12:51:58,726 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:51:58,726 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:51:58,886 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:51:58,887 - __main__ - INFO - Simulation returned: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:51:58,887 - __main__ - INFO - ✅ Resultado: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:53:02,997 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:53:02,998 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:53:02,998 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:02,998 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:53:03,000 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:53:03,000 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:53:03,000 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:53:03,000 - __main__ - INFO - Parameters: []
+2025-08-24 12:53:03,679 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:03,680 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:53:03,849 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:53:03,850 - __main__ - INFO - Simulation returned: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:53:03,850 - __main__ - INFO - ✅ Resultado: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:53:03,850 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:53:03,850 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:53:03,850 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:53:03,850 - __main__ - INFO - Parameters: [<SCVal [type=18, address=<SCAddress [type=0, account_id=<AccountID [account_id=<PublicKey [type=0, ed25519=<Uint256 [uint256=b'S\xdb~\xfe\xf4\xcf\x0f\xe3l\xd6\x95\xfe\xb7\xef:k\x8bYx~\xc0\xf3\xa1\xb1\x12\n\xb3z\x99\n>\x12']>]>]>]>]>, <SCVal [type=14, str=<SCString [sc_string=b'lucas000']>]>, <SCVal [type=4, i32=<Int32 [int32=77]>]>, <SCVal [type=4, i32=<Int32 [int32=10]>]>]
+2025-08-24 12:53:04,009 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:04,010 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:53:04,187 - __main__ - INFO - Transaction prepared successfully
+2025-08-24 12:53:04,189 - __main__ - INFO - Transaction signed successfully
+2025-08-24 12:53:04,367 - __main__ - INFO - Transaction sent successfully
+2025-08-24 12:53:04,367 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/7c0399a02af83b7dfba85ba857ba05f942f323162fa3c40efd0e1ba858c2a1f5
+2025-08-24 12:53:04,367 - __main__ - INFO - Transaction hash: 7c0399a02af83b7dfba85ba857ba05f942f323162fa3c40efd0e1ba858c2a1f5
+2025-08-24 12:53:18,617 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:53:18,618 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:53:18,618 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:18,618 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:53:18,620 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:53:18,620 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:53:18,620 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:53:18,620 - __main__ - INFO - Parameters: []
+2025-08-24 12:53:19,080 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:19,080 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:53:19,242 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:53:19,242 - __main__ - INFO - Simulation returned: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:53:19,242 - __main__ - INFO - ✅ Resultado: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:53:19,242 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:53:19,242 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:53:19,242 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:53:19,242 - __main__ - INFO - Parameters: [<SCVal [type=18, address=<SCAddress [type=0, account_id=<AccountID [account_id=<PublicKey [type=0, ed25519=<Uint256 [uint256=b'S\xdb~\xfe\xf4\xcf\x0f\xe3l\xd6\x95\xfe\xb7\xef:k\x8bYx~\xc0\xf3\xa1\xb1\x12\n\xb3z\x99\n>\x12']>]>]>]>]>, <SCVal [type=14, str=<SCString [sc_string=b'lucas000']>]>, <SCVal [type=4, i32=<Int32 [int32=77]>]>, <SCVal [type=4, i32=<Int32 [int32=10]>]>]
+2025-08-24 12:53:19,409 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:19,409 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:53:19,581 - __main__ - INFO - Transaction prepared successfully
+2025-08-24 12:53:19,581 - __main__ - INFO - Transaction signed successfully
+2025-08-24 12:53:19,751 - __main__ - INFO - Transaction sent successfully
+2025-08-24 12:53:19,751 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/359272c4077dddb574133a5b246844c3b1572902c9a850d26fcfe1e643f13dcf
+2025-08-24 12:53:19,751 - __main__ - INFO - Transaction hash: 359272c4077dddb574133a5b246844c3b1572902c9a850d26fcfe1e643f13dcf
+2025-08-24 12:53:30,322 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:53:30,323 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:53:30,323 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:30,323 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:53:30,325 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:53:30,325 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:53:30,325 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:53:30,325 - __main__ - INFO - Parameters: []
+2025-08-24 12:53:30,910 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:30,911 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:53:31,072 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:53:31,072 - __main__ - INFO - Simulation returned: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:53:31,072 - __main__ - INFO - ✅ Resultado: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:53:31,072 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:53:31,072 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:53:31,072 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:53:31,072 - __main__ - INFO - Parameters: [<SCVal [type=18, address=<SCAddress [type=0, account_id=<AccountID [account_id=<PublicKey [type=0, ed25519=<Uint256 [uint256=b'S\xdb~\xfe\xf4\xcf\x0f\xe3l\xd6\x95\xfe\xb7\xef:k\x8bYx~\xc0\xf3\xa1\xb1\x12\n\xb3z\x99\n>\x12']>]>]>]>]>, <SCVal [type=14, str=<SCString [sc_string=b'lucas000']>]>, <SCVal [type=4, i32=<Int32 [int32=77]>]>, <SCVal [type=4, i32=<Int32 [int32=10]>]>]
+2025-08-24 12:53:31,222 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:31,222 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:53:31,387 - __main__ - INFO - Transaction prepared successfully
+2025-08-24 12:53:31,387 - __main__ - INFO - Transaction signed successfully
+2025-08-24 12:53:31,536 - __main__ - INFO - Transaction sent successfully
+2025-08-24 12:53:31,536 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/b03fb6be72da6336b1ec39081925daf3f3325fb8e3b7d0d8a761e16638f69df0
+2025-08-24 12:53:31,536 - __main__ - INFO - Transaction hash: b03fb6be72da6336b1ec39081925daf3f3325fb8e3b7d0d8a761e16638f69df0
+2025-08-24 12:53:33,777 - __main__ - INFO - Transaction found after 900ms
+2025-08-24 12:53:33,778 - __main__ - INFO - Transaction completed successfully
+2025-08-24 12:53:33,781 - __main__ - INFO - Function returned: None
+2025-08-24 12:53:33,782 - __main__ - ERROR - ❌ Função retornou None devido a erro na transação
+2025-08-24 12:53:33,782 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:53:33,782 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:53:33,782 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:53:33,782 - __main__ - INFO - Parameters: []
+2025-08-24 12:53:33,937 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:53:33,938 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:53:34,099 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:53:34,101 - __main__ - INFO - Simulation returned: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:53:34,102 - __main__ - INFO - ✅ Resultado: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:54:47,825 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:54:47,825 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:54:47,825 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:54:47,826 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:54:47,829 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:54:47,829 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:54:47,829 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:54:47,829 - __main__ - INFO - Parameters: []
+2025-08-24 12:54:48,517 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:54:48,517 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:54:48,673 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:54:48,673 - __main__ - INFO - Simulation returned: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:54:48,673 - __main__ - INFO - ✅ Resultado: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:54:48,674 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:54:48,674 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:54:48,674 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:54:48,674 - __main__ - INFO - Parameters: [<SCVal [type=18, address=<SCAddress [type=0, account_id=<AccountID [account_id=<PublicKey [type=0, ed25519=<Uint256 [uint256=b'S\xdb~\xfe\xf4\xcf\x0f\xe3l\xd6\x95\xfe\xb7\xef:k\x8bYx~\xc0\xf3\xa1\xb1\x12\n\xb3z\x99\n>\x12']>]>]>]>]>, <SCVal [type=14, str=<SCString [sc_string=b'lucas000']>]>, <SCVal [type=4, i32=<Int32 [int32=77]>]>, <SCVal [type=4, i32=<Int32 [int32=10]>]>]
+2025-08-24 12:54:48,822 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:54:48,822 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:54:48,989 - __main__ - INFO - Transaction prepared successfully
+2025-08-24 12:54:48,990 - __main__ - INFO - Transaction signed successfully
+2025-08-24 12:54:49,143 - __main__ - INFO - Transaction sent successfully
+2025-08-24 12:54:49,143 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/67d927b113eaada8022c9e4444b678583158f0a8e1924249e58fb00a09a95235
+2025-08-24 12:54:49,143 - __main__ - INFO - Transaction hash: 67d927b113eaada8022c9e4444b678583158f0a8e1924249e58fb00a09a95235
+2025-08-24 12:54:53,968 - __main__ - INFO - Transaction found after 1900ms
+2025-08-24 12:54:53,968 - __main__ - INFO - Transaction completed successfully
+2025-08-24 12:54:53,968 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:54:53,968 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:54:53,968 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:54:53,968 - __main__ - INFO - Parameters: []
+2025-08-24 12:54:54,125 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:54:54,125 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:54:54,295 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:54:54,297 - __main__ - INFO - Simulation returned: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:54:54,297 - __main__ - INFO - ✅ Resultado: [{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:56:27,527 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:56:27,527 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:56:27,527 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:56:27,527 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:56:27,529 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:56:27,529 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:56:27,529 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:56:27,529 - __main__ - INFO - Parameters: []
+2025-08-24 12:56:28,212 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:56:28,213 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:56:28,377 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:56:41,013 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:56:41,014 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:56:41,014 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:56:41,014 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:56:41,016 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:56:41,016 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:56:41,016 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:56:41,016 - __main__ - INFO - Parameters: []
+2025-08-24 12:56:41,647 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:56:41,648 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:56:41,831 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:57:08,252 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:57:08,252 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:57:08,252 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:57:08,252 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:57:08,254 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:57:08,254 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:57:08,254 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:57:08,254 - __main__ - INFO - Parameters: []
+2025-08-24 12:57:08,870 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:57:08,870 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:57:09,079 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:57:09,080 - __main__ - INFO - ✅ Resultado:
+[{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:57:09,080 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:57:09,080 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:57:09,080 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:57:09,080 - __main__ - INFO - Parameters: [<SCVal [type=18, address=<SCAddress [type=0, account_id=<AccountID [account_id=<PublicKey [type=0, ed25519=<Uint256 [uint256=b'S\xdb~\xfe\xf4\xcf\x0f\xe3l\xd6\x95\xfe\xb7\xef:k\x8bYx~\xc0\xf3\xa1\xb1\x12\n\xb3z\x99\n>\x12']>]>]>]>]>, <SCVal [type=14, str=<SCString [sc_string=b'lucas000']>]>, <SCVal [type=4, i32=<Int32 [int32=77]>]>, <SCVal [type=4, i32=<Int32 [int32=10]>]>]
+2025-08-24 12:57:09,238 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:57:09,239 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:57:09,406 - __main__ - INFO - Transaction prepared successfully
+2025-08-24 12:57:09,406 - __main__ - INFO - Transaction signed successfully
+2025-08-24 12:57:09,572 - __main__ - INFO - Transaction sent successfully
+2025-08-24 12:57:09,572 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/d449f9087644a11eb6ddaaff838c96168e6d01b15e329c40d7e911ac76903788
+2025-08-24 12:57:09,572 - __main__ - INFO - Transaction hash: d449f9087644a11eb6ddaaff838c96168e6d01b15e329c40d7e911ac76903788
+2025-08-24 12:57:14,149 - __main__ - INFO - Transaction found after 1700ms
+2025-08-24 12:57:14,149 - __main__ - INFO - Transaction completed successfully
+2025-08-24 12:57:14,150 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:57:14,150 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:57:14,150 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:57:14,151 - __main__ - INFO - Parameters: []
+2025-08-24 12:57:14,528 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:57:14,529 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:57:14,691 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:57:14,692 - __main__ - INFO - ✅ Resultado:
+[{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:58:01,279 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 12:58:01,280 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 12:58:01,280 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:58:01,280 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 12:58:01,282 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:58:01,282 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:58:01,282 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:58:01,282 - __main__ - INFO - Parameters: []
+2025-08-24 12:58:01,914 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:58:01,914 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:58:02,078 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:58:02,080 - __main__ - INFO - ✅ Resultado:
+[{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 12:58:02,080 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 12:58:02,080 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 12:58:02,080 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:58:02,080 - __main__ - INFO - Parameters: [<SCVal [type=18, address=<SCAddress [type=0, account_id=<AccountID [account_id=<PublicKey [type=0, ed25519=<Uint256 [uint256=b'S\xdb~\xfe\xf4\xcf\x0f\xe3l\xd6\x95\xfe\xb7\xef:k\x8bYx~\xc0\xf3\xa1\xb1\x12\n\xb3z\x99\n>\x12']>]>]>]>]>, <SCVal [type=14, str=<SCString [sc_string=b'lucas000']>]>, <SCVal [type=4, i32=<Int32 [int32=77]>]>, <SCVal [type=4, i32=<Int32 [int32=10]>]>]
+2025-08-24 12:58:02,236 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:58:02,237 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:58:02,400 - __main__ - INFO - Transaction prepared successfully
+2025-08-24 12:58:02,401 - __main__ - INFO - Transaction signed successfully
+2025-08-24 12:58:02,721 - __main__ - INFO - Transaction sent successfully
+2025-08-24 12:58:02,722 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/cbdb06eb964fecec406b49c571fa0afadf84bd589072bfd3af5b4f60a75a0712
+2025-08-24 12:58:02,722 - __main__ - INFO - Transaction hash: cbdb06eb964fecec406b49c571fa0afadf84bd589072bfd3af5b4f60a75a0712
+2025-08-24 12:58:04,198 - __main__ - INFO - Transaction found after 600ms
+2025-08-24 12:58:04,199 - __main__ - INFO - Transaction completed successfully
+2025-08-24 12:58:04,199 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 12:58:04,199 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 12:58:04,199 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 12:58:04,199 - __main__ - INFO - Parameters: []
+2025-08-24 12:58:04,360 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 12:58:04,361 - __main__ - INFO - Transaction built successfully
+2025-08-24 12:58:04,523 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 12:58:04,526 - __main__ - INFO - ✅ Resultado:
+[{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 13:01:10,521 - __main__ - WARNING - ==============================CREATE_KEYPAIR==============================
+2025-08-24 13:01:10,522 - __main__ - INFO - ✅ Keypair criado com sucesso
+2025-08-24 13:01:10,522 - __main__ - INFO - 📍 Public Key: GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 13:01:10,522 - __main__ - INFO - 🔐 Secret Key: SCV4NEXOJDRYDF7HYM3ZP6XAKBENVRKUJUOXIEPALUBIUGIBF6FHZR7M
+2025-08-24 13:01:10,524 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 13:01:10,524 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 13:01:10,524 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 13:01:10,524 - __main__ - INFO - Parameters: []
+2025-08-24 13:01:11,050 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 13:01:11,051 - __main__ - INFO - Transaction built successfully
+2025-08-24 13:01:11,213 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 13:01:11,214 - __main__ - INFO - ✅ Resultado:
+[{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
+2025-08-24 13:01:11,215 - __main__ - WARNING - ==============================NEW_GAME==============================
+2025-08-24 13:01:11,215 - __main__ - INFO - Starting invoke_function for new_game
+2025-08-24 13:01:11,215 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 13:01:11,215 - __main__ - INFO - Parameters: [<SCVal [type=18, address=<SCAddress [type=0, account_id=<AccountID [account_id=<PublicKey [type=0, ed25519=<Uint256 [uint256=b'S\xdb~\xfe\xf4\xcf\x0f\xe3l\xd6\x95\xfe\xb7\xef:k\x8bYx~\xc0\xf3\xa1\xb1\x12\n\xb3z\x99\n>\x12']>]>]>]>]>, <SCVal [type=14, str=<SCString [sc_string=b'lucas000']>]>, <SCVal [type=4, i32=<Int32 [int32=77]>]>, <SCVal [type=4, i32=<Int32 [int32=10]>]>]
+2025-08-24 13:01:11,372 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 13:01:11,372 - __main__ - INFO - Transaction built successfully
+2025-08-24 13:01:11,534 - __main__ - INFO - Transaction prepared successfully
+2025-08-24 13:01:11,535 - __main__ - INFO - Transaction signed successfully
+2025-08-24 13:01:11,693 - __main__ - INFO - Transaction sent successfully
+2025-08-24 13:01:11,693 - __main__ - INFO - 🔗 https://stellar.expert/explorer/testnet/tx/7a1f91f21a9a162f9361df0d998cf940f3a2c58680ef986e963d0e25dfc7e0fb
+2025-08-24 13:01:11,693 - __main__ - INFO - Transaction hash: 7a1f91f21a9a162f9361df0d998cf940f3a2c58680ef986e963d0e25dfc7e0fb
+2025-08-24 13:01:14,463 - __main__ - INFO - Transaction found after 1100ms
+2025-08-24 13:01:14,464 - __main__ - INFO - Transaction completed successfully
+2025-08-24 13:01:14,464 - __main__ - WARNING - ==============================GET_RANK==============================
+2025-08-24 13:01:14,464 - __main__ - INFO - Starting invoke_function for get_rank
+2025-08-24 13:01:14,464 - __main__ - INFO - Contract ID: CB5MPSENBBJ264MNUTIH3G5HSGNUENWZZ6353B2OJBSQG6YMPVIZJH63
+2025-08-24 13:01:14,464 - __main__ - INFO - Parameters: []
+2025-08-24 13:01:14,617 - __main__ - INFO - Loaded account for GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J
+2025-08-24 13:01:14,618 - __main__ - INFO - Transaction built successfully
+2025-08-24 13:01:14,778 - __main__ - INFO - Transaction simulated successfully
+2025-08-24 13:01:14,781 - __main__ - INFO - ✅ Resultado:
+[{'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}, {'game_time': 10, 'nickname': 'lucas000', 'player': <Address [type=ACCOUNT, address=GBJ5W7X66THQ7Y3M22K75N7PHJVYWWLYP3APHINRCIFLG6UZBI7BFD5J]>, 'score': 77}]
