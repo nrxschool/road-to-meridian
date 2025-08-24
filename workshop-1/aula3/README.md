@@ -1,121 +1,760 @@
-## Roteiro da Apresentação - Dia 3: WebAssembly com Rust
+# Roteiro Final: Workshop: Road to Meridian – Dia 3: WebAssembly com Rust
 
-Slide: Workshop: Road to Meridian
-Roteiro: Hello World de novo! Sejam todos bem-vindos ao último dia do nosso Workshop: Road to Meridian! Chegamos ao gran finale do nosso intensivão de 3 dias. Hoje, vamos criar um módulo **WebAssembly** com duas funções, integrá-lo à API CRUD do Dia 2, e criar um **CRUD-E** com uma rota para executar essas funções dinamicamente. Na verdade o que você criou até agora sem você saber foi um protótipo da blockchain Stellar. Preparados para fechar com chave de ouro? Bora lá!
+## Introdução: O Gran Finale do Nosso Workshop! 🚀
 
-Slide: 2. Programação
-Roteiro: Pra gente se guiar hoje, olha só o nosso roteiro. Primeiro, vamos entender a história do WebAssembly, o que ele resolve e por que as blockchains estão adotando ele. Depois, vamos mergulhar no que é WebAssembly de verdade, com suas siglas e runtimes. Em seguida, vamos criar funções em Rust que podem ser compiladas para WebAssembly. Aí, a gente vai compilar nosso código Rust para WebAssembly e transformar o arquivo `.wasm` em bytes. Depois, a gente vai integrar tudo isso na nossa API CRUD, adicionando uma rota de execução. Pra finalizar, vamos validar o resultado e fazer um _hands-on_ pra colocar a mão na massa. Muita coisa, mas vamos juntos, passo a passo!
+Olá pessoal!
 
-Slide: 3. História do WebAssembly
-Roteiro: Pra começar, vamos falar da história do WebAssembly, ou WASM. Pensa no WASM como uma tecnologia que veio pra resolver um monte de problemas de performance, segurança e portabilidade. Ele não é um assembly tradicional, e não é só pra web, apesar do nome. Ele é um padrão de formato binário e uma máquina virtual que pode rodar em qualquer lugar: no navegador, em servidores, em blockchains. É super versátil!
+**Hello World pela última vez neste workshop!**
 
-Slide: O que é?
-Roteiro: Pra deixar bem claro, o WebAssembly é uma plataforma de execução super segura e agnóstica ao host. Isso significa que ele não se importa onde ele está rodando, seja no seu navegador, no seu servidor ou até numa blockchain. Ele não é um assembly no sentido tradicional, e o nome "Web" pode enganar, porque ele vai muito além da web. Ele é um padrão de formato binário e uma máquina virtual abstrata que pode ser implementada em qualquer sistema. É uma tecnologia que veio pra revolucionar a forma como a gente executa código.
+Sejam todos muito bem-vindos ao último dia do **Workshop: Road to Meridian**!
 
-Slide: Como surgiu?
-Roteiro: O WebAssembly nasceu lá em 2015, pelas mãos do Graydon Hoar, enquanto ele trabalhava na Mozilla. Ele era a evolução natural do `asm.js`, que era um jeito de otimizar o JavaScript. Em 2017, ele se tornou um padrão oficial do W3C, que é tipo o órgão que define os padrões da internet. Ele nasceu com o foco em rodar código de alto desempenho no navegador, tipo C++ e Rust, mas logo se expandiu para servidores, blockchain e até edge computing. É uma história de sucesso de uma tecnologia que começou pequena e se tornou gigante.
+Chegamos ao gran finale do nosso intensivão de 3 dias. Que jornada incrível fizemos juntos, não foi? No primeiro dia, mergulhamos nos fundamentos do Rust e criamos nossa primeira biblioteca. No segundo dia, construímos uma API CRUD completa e robusta.
 
-Slide: Quais aplicações?
-Roteiro: O WebAssembly tem um monte de aplicações incríveis! Pra games, ele permite rodar engines como Unity e Unreal direto no navegador. Pra aplicativos web pesados, como Figma e Photoshop online, ele garante uma performance incrível. Pra inteligência artificial e machine learning, ele permite rodar modelos localmente no navegador. E o mais legal pra gente: ele é super importante pra blockchain, pra execução segura de smart contracts, como na Polkadot, CosmWasm e Near. Ele também é usado em edge computing e pra criar plugins seguros. É uma tecnologia que está em todo lugar!
+E hoje? Hoje vamos fechar com chave de ouro! Vamos criar um módulo **WebAssembly** com funções matemáticas, integrá-lo à nossa API CRUD do Dia 2, e transformar nosso sistema em um **CRUD-E** — onde o "E" significa "Execute" — com uma rota especial para executar essas funções dinamicamente.
 
-Slide: Por que Blockchains Adotam WASM?
-Roteiro: Agora, a pergunta de um milhão de dólares: por que as blockchains estão adotando o WebAssembly? Simples: performance, segurança e flexibilidade. Contratos inteligentes em WASM são muito mais rápidos que em outras tecnologias, o que é crucial pra escalabilidade. Ele permite escrever contratos em várias linguagens, não só em uma específica. Garante que o mesmo código vai ter o mesmo resultado em qualquer lugar, o que é essencial pra validação de transações. O ambiente sandboxed do WASM reduz a chance de vulnerabilidades. E facilita a comunicação entre diferentes blockchains. É por isso que o WASM é o futuro das blockchains!
+E aqui vai um spoiler interessante: o que vocês criaram até agora, sem nem perceber, foi um protótipo funcional de como funciona a blockchain Stellar! Isso mesmo — vocês estão construindo os fundamentos de uma blockchain!
 
-Slide: 4. O que é WebAssembly?
-Roteiro: Agora que a gente já sabe a história, vamos mergulhar no que é WebAssembly de verdade, e entender o ecossistema em volta dele. A gente vai falar de WASM, WASI, WAT, Wasmer e Wasmtime. Parece sopa de letrinhas, mas é bem tranquilo, vem cá...
+Preparados para descobrir o poder do WebAssembly e fechar este workshop de forma espetacular? Vamos nessa!
 
-Slide: WAT (WebAssembly Text Format)
-Roteiro: O WAT, ou WebAssembly Text Format, é a representação textual do WASM. Pensa que é como o código-fonte de um programa, mas para o WebAssembly. Ele é legível por humanos, o que é super útil pra gente depurar ou até escrever WASM na mão, se for o caso. É como olhar por trás da cortina e ver como as coisas funcionam de verdade.
+## Capítulo 1: A História Revolucionária do WebAssembly
 
-Slide: Exemplo em WAT
-Roteiro: Olha só um exemplo de código em WAT. Parece um pouco estranho no começo, mas é bem lógico. A gente define um módulo, uma função `add` que recebe dois parâmetros e retorna um resultado. E aí a gente faz as operações. Repara que esse exemplo adiciona 1 à soma, é só pra ilustrar. É a forma textual de representar o que o WebAssembly vai executar.
+Antes de colocarmos a mão na massa, precisamos entender o que é WebAssembly e por que ele está revolucionando não apenas o desenvolvimento web, mas também o mundo das blockchains.
 
-Slide: WASM (WebAssembly)
-Roteiro: O WASM, ou WebAssembly, é o formato binário que a gente gera. Pensa que é como o arquivo executável do seu programa, mas para o ambiente WebAssembly. Ele é agnóstico ao host, ou seja, ele não sabe nada sobre o sistema de arquivos, rede ou relógio por padrão. Isso o torna super seguro e portátil. É o artefato final que a gente vai rodar.
+### O Que É WebAssembly?
 
-Slide: WASI (WebAssembly System Interface)
-Roteiro: O WASI, ou WebAssembly System Interface, é uma especificação que permite que os módulos WASM acessem funcionalidades do sistema, como arquivos, rede, variáveis de ambiente e tempo. Pensa que é como uma ponte entre o WASM e o sistema operacional. Ele garante que esse acesso seja feito de forma segura, determinística e multiplataforma. É o que permite que o WASM vá além do navegador e rode em servidores e outros ambientes.
+WebAssembly, ou WASM como é carinhosamente conhecido, é muito mais do que o nome sugere. Não é apenas "assembly para a web" — é uma plataforma de execução completa projetada para ser agnóstica ao host e segura por padrão.
 
-Slide: Runtimes WASM
-Roteiro: Pra rodar os módulos WASM, a gente precisa de um `runtime`. Pensa que é como o motor que executa o código. Existem vários, mas vamos falar de três importantes: Wasmi, Wasmtime e Wasmer. O Wasmi é um interpretador puro em Rust, super leve e bom pra embutir em outras aplicações. O Wasmtime é focado em performance e compatibilidade com o WASI, ótimo pra linha de comando. E o Wasmer é super portátil, pode empacotar aplicações pra rodar em qualquer lugar. Cada um tem seu uso ideal, e a gente vai usar o `wasmi` hoje.
+Pense no WebAssembly como uma máquina virtual universal que pode rodar em qualquer lugar: navegadores, servidores, dispositivos edge, e até mesmo blockchains. É um formato binário padronizado que permite executar código de alto desempenho de forma segura e portável.
 
-Slide: Nosso Foco Hoje
-Roteiro: Pra hoje, nosso foco vai ser em quatro pontos principais. Primeiro, a gente vai refatorar nossa biblioteca de calculadora pra um módulo WebAssembly. Depois, vamos refatorar nosso CRUD pra ele conseguir suportar e executar esses módulos WASM. Em seguida, a gente vai enviar o bytecode WASM para o nosso servidor. E pra executar, a gente vai usar o `wasmi`. No final, a gente vai entender WASM, WASI, WAT, Wasmi e Wasmtime na prática. É um dia cheio, mas super recompensador!
+### Como Surgiu Esta Revolução?
 
-Slide: 5. Funções em Rust
-Roteiro: Agora, vamos criar as funções em Rust que a gente vai compilar para WebAssembly. A gente vai criar um novo projeto de biblioteca, mas com umas configurações especiais pra gerar um arquivo `.wasm` bem otimizado. As funções vão ser simples: soma, multiplicação, subtração e divisão. É como preparar os ingredientes da nossa receita WebAssembly.
+A história do WebAssembly é fascinante e tem uma conexão direta com o Rust! Foi criado por **Graydon Hoare** — o mesmo criador do Rust — enquanto trabalhava na Mozilla em **2015**.
 
-Slide: Criando o Projeto `wasm-math`
-Roteiro: Pra começar, a gente vai criar um novo projeto de biblioteca chamado `wasm-math`. É só rodar `cargo new --lib wasm-math` e depois `cd wasm-math`. Esse projeto vai ser a base do nosso módulo WebAssembly.
+O WebAssembly nasceu como a evolução natural do asm.js, que era um subset otimizado de JavaScript. A ideia era simples, mas revolucionária: permitir que linguagens como C++, Rust e outras rodassem no navegador com performance próxima ao código nativo.
 
-Slide: Configurando o Cargo.toml
-Roteiro: Agora, a gente precisa configurar o `Cargo.toml` do nosso projeto `wasm-math` pra ele gerar um arquivo `.wasm` otimizado. A gente adiciona `crate-type = ["cdylib"]` na seção `[lib]`, que diz pro Rust pra gerar uma biblioteca dinâmica. E na seção `[profile.release]`, a gente coloca umas configurações pra deixar o binário final menor e mais rápido. Isso é super importante pra WebAssembly, onde o tamanho do arquivo importa muito. É como otimizar a receita pra ela ficar perfeita.
+Em **2017**, o WebAssembly se tornou um **padrão oficial do W3C**, consolidando sua importância no ecossistema de desenvolvimento.
 
-Slide: Código das Funções (`src/lib.rs`)
-Roteiro: Agora, no `src/lib.rs` do nosso projeto `wasm-math`, a gente vai escrever as funções de soma, multiplicação, subtração e divisão. Repara que a gente usa `#[no_mangle]` e `pub extern "C"`. O `#[no_mangle]` impede que o compilador mude o nome da função, garantindo que o WebAssembly consiga encontrar ela. E o `pub extern "C"` faz com que a função seja compatível com a convenção de chamada C, que é o que o WebAssembly espera. É como escrever uma receita em um idioma que todo mundo entende.
+### Aplicações Que Mudaram o Jogo
 
-Slide: Explicação das Funções
-Roteiro: Pra deixar bem claro, o `extern "C"` é super importante porque ele define como a função vai ser chamada na memória, de um jeito que o WebAssembly entende. É como ter um padrão de comunicação. E o `#[no_mangle]` é pra garantir que o nome da função não seja alterado pelo compilador, assim o runtime WASM consegue encontrar e chamar a função direitinho. Sem esses dois, a gente não conseguiria usar nossas funções Rust no WebAssembly. É a ponte entre o Rust e o mundo WASM.
+O WebAssembly rapidamente se expandiu além do navegador e hoje está presente em:
 
-Slide: 6. Compilando para WebAssembly
-Roteiro: Agora que a gente escreveu o código, é hora de compilar ele para WebAssembly. É como transformar nossa receita em um bolo de verdade, mas um bolo especial que pode ser comido em qualquer lugar. A gente vai gerar o arquivo `.wasm` que é o nosso binário WebAssembly.
+**🎮 Games**: Engines como Unity e Unreal Engine podem ser portadas diretamente para o browser, permitindo jogos AAA rodando nativamente na web.
 
-Slide: Instalando o Target WASM
-Roteiro: Pra compilar pra WebAssembly, a gente precisa instalar um "target" especial no Rust. É só rodar `rustup target add wasm32-unknown-unknown`. Isso diz pro Rust que a gente quer compilar para um ambiente WebAssembly de 32 bits, que não conhece o sistema operacional. É um passo importante pra preparar o ambiente de compilação.
+**📦 Aplicações Web Pesadas**: Ferramentas como Figma, Photoshop online e editores de vídeo usam WASM para entregar performance desktop no navegador.
 
-Slide: Compilando o Projeto
-Roteiro: Depois de instalar o target, é só rodar `cargo build --target wasm32-unknown-unknown --release`. O `--release` é pra gerar um binário otimizado e menor, o que é ideal pra WebAssembly. Esse comando vai compilar nosso código Rust e gerar o arquivo `.wasm` que a gente precisa. É a mágica acontecendo!
+**🧠 Inteligência Artificial**: Modelos de machine learning podem rodar localmente no browser, garantindo privacidade e reduzindo latência.
 
-Slide: Saída da Compilação
-Roteiro: Depois de compilar, você vai encontrar o arquivo `math.wasm` dentro da pasta `target/wasm32-unknown-unknown/release/`. Esse é o nosso arquivo binário WebAssembly, que contém as funções que a gente criou e está pronto pra ser executado em um runtime WASM. É o nosso bolo pronto pra ser servido!
+**🔐 Blockchain**: Aqui está o ponto mais interessante para nós! Blockchains como Polkadot, CosmWasm e Near Protocol usam WASM para smart contracts.
 
-Slide: Converter Wasm para bytes
-Roteiro: Pra gente conseguir enviar o nosso arquivo `.wasm` para a nossa API, a gente precisa transformar ele em uma lista de números, ou bytes. Esse comando que está na tela faz exatamente isso: ele pega o arquivo `.wasm`, transforma em uma sequência de bytes separados por vírgula, e salva tudo em um arquivo `BYTES_RESULT.txt`. É como pegar um bolo e transformar ele em uma lista de ingredientes, mas de um jeito que o computador entende. A gente vai usar essa lista de bytes pra enviar pra nossa API.
+**🌐 Edge Computing**: Runtimes como Wasmer e Fastly executam código WASM próximo aos usuários, reduzindo latência.
 
-Slide: 8. Integrando com o CRUD
-Roteiro: Agora, a gente vai integrar o nosso módulo WebAssembly na API CRUD que a gente fez ontem. A gente vai adicionar uma nova rota, que eu chamo de `Execute`, transformando nosso CRUD em um CRUD-E. Essa rota vai permitir que a gente envie o bytecode WASM e execute as funções que estão dentro dele dinamicamente. É como dar superpoderes à nossa API!
+**🔧 Plug-ins Seguros**: Permite isolar código de terceiros com segurança total e controle granular.
 
-Slide: Configurando Dependências
-Roteiro: Pra integrar o WASM na nossa API, a gente precisa adicionar uma nova dependência no `Cargo.toml` do nosso projeto CRUD: o `wasmi`. Ele é o runtime WASM que a gente vai usar pra executar o bytecode. As outras dependências já conhecemos do dia anterior. Com o `wasmi` adicionado, a gente está pronto pra dar o próximo passo.
+### Por Que as Blockchains Estão Adotando WASM?
 
-Slide: Modelo de Dados Atualizado (`src/models.rs`)
-Roteiro: A gente vai dar uma pequena atualizada no nosso modelo de dados `DataEntry` lá no `src/models.rs`. Em vez de `data1` e `data2`, a gente vai ter `func_names` (que vai ser uma lista de nomes de funções) e `bytecode` (que vai ser o nosso arquivo `.wasm` em formato de bytes). Isso permite que a gente salve o módulo WASM e os nomes das funções que ele exporta na nossa API. É como dar um upgrade no nosso cofre pra ele guardar coisas novas.
+Esta é a parte mais empolgante! As blockchains estão migrando massivamente para WebAssembly por razões muito convincentes:
 
-Slide: Nova Rota Execute (`src/handlers/execute.rs`)
-Roteiro: Agora, a gente vai criar um novo arquivo, `src/handlers/execute.rs`, que vai ser responsável pela nossa nova rota de execução. Essa rota vai receber o ID do módulo WASM que a gente quer executar, o nome da função e os argumentos. É aqui que a mágica de rodar o WebAssembly na nossa API vai acontecer. Vamos ver o código!
+**Performance Superior**: Smart contracts em WASM são 10 a 100 vezes mais rápidos que na EVM (Ethereum Virtual Machine). Isso é crucial para escalabilidade.
 
-Slide: `execute.rs`: Imports e Struct
-Roteiro: No início do `execute.rs`, a gente importa tudo que vai precisar: o `Request` e `Response` do Tide, o nosso `AppState`, e as coisas do `serde` e `serde_json` pra lidar com JSON. E o mais importante: a gente importa as coisas do `wasmi` pra conseguir carregar e executar o módulo WASM. A gente também define uma `struct ExecRequest` que é o formato que a gente espera receber na requisição: o nome da função (`func`) e dois argumentos (`arg`). É a nossa receita de como a requisição deve vir.
+**Linguagens Múltiplas**: Diferente do Ethereum que força você a usar Solidity, blockchains WASM permitem escrever smart contracts em Rust, C++, Go, AssemblyScript e outras linguagens.
 
-Slide: `execute_fn`: Início e Validação do Body
-Roteiro: A função `execute_fn` é o coração da nossa nova rota. Ela é assíncrona e recebe a requisição. A primeira coisa que a gente faz é tentar ler o corpo da requisição como JSON e transformar na nossa `ExecRequest`. Se o JSON não estiver no formato certo, a gente retorna um erro 400, que significa "requisição inválida". É como um porteiro que só deixa entrar quem tem o convite certo.
+**Determinismo Garantido**: O mesmo código WASM produzirá exatamente o mesmo resultado em qualquer ambiente, o que é essencial para validação de transações em blockchain.
 
-Slide: Extração do ID e Busca no HashMap
-Roteiro: Depois de validar o corpo da requisição, a gente extrai o ID da URL. Esse ID vai nos dizer qual módulo WASM a gente quer executar. A gente pega o estado global da aplicação, trava o `Mutex` pra ter acesso seguro ao nosso `HashMap`, e procura o `DataEntry` com aquele ID. Se a gente não encontrar, retorna um erro 404, "não encontrado". Se encontrar, a gente pega o `bytecode` do módulo WASM que está salvo lá. É como ir na nossa biblioteca e pegar o livro certo pelo número de registro.
+**Segurança Aprimorada**: O ambiente sandboxed do WASM reduz drasticamente a superfície de ataque e minimiza vulnerabilidades.
 
-Slide: Carregando e Instanciando o Módulo WASM
-Roteiro: Agora que a gente tem os bytes do módulo WASM, a gente usa o `wasmi` pra carregar e instanciar ele. Pensa que é como pegar o bolo que a gente fez e colocar ele na mesa pra ser servido. A gente cria um `Engine`, um `Module` a partir dos bytes, e uma `Store` pra guardar o estado da execução. Se der algum erro nesse processo, a gente retorna um erro 500, "erro interno do servidor". É a parte onde o nosso código Rust ganha a capacidade de executar o WebAssembly.
+**Interoperabilidade**: Facilita a comunicação entre diferentes blockchains e a criação de aplicações descentralizadas mais complexas.
 
-Slide: Resolvendo a Função e Executando
-Roteiro: Com o módulo WASM instanciado, a gente busca a função que a gente quer executar pelo nome (`exec_req.func`). Se a função não for encontrada, a gente retorna um erro. Depois, a gente verifica se a assinatura da função está correta, ou seja, se ela espera os tipos de argumentos que a gente está passando. E aí, a gente chama a função com os argumentos que vieram na requisição. Se der algum erro na execução, a gente retorna um erro 500. É o momento em que o código WASM é executado de verdade!
+## Capítulo 2: Entendendo o Ecossistema WebAssembly
 
-Slide: Respondendo com o Resultado
-Roteiro: E pra finalizar, a gente pega o resultado da execução do módulo WASM e retorna ele como um JSON na resposta HTTP. A gente define o tipo de conteúdo como JSON e retorna um status 200, que significa "OK". É a nossa API CRUD-E entregando o resultado da execução do WebAssembly para o cliente. Que legal, né? A gente conseguiu fazer o Rust executar código de outro lugar!
+Para trabalhar efetivamente com WebAssembly, precisamos entender seus componentes principais. É como aprender um novo idioma — precisamos conhecer o vocabulário básico!
 
-Slide: 9. Validando o Resultado
-Roteiro: Agora que a gente implementou a rota de execução, é hora de testar tudo e ver se o nosso CRUD-E está funcionando direitinho. A gente já compilou e converteu nossa biblioteca `.wasm` para bytes. Agora, vamos enviar esses bytes para o nosso servidor e depois testar a rota de execução.
+### WAT (WebAssembly Text Format)
 
-Slide: Passo 1: Salvar o .wasm no Servidor
-Roteiro: Primeiro, a gente precisa salvar o nosso módulo `.wasm` no servidor. A gente vai usar o comando `curl` com o método `POST` para a rota `/data`, igual a gente fez ontem pra criar um item. Mas agora, a gente vai enviar o JSON com os `func_names` (os nomes das funções que a gente quer expor) e o `bytecode` (que é a lista de bytes do nosso arquivo `.wasm` que a gente gerou no `BYTES_RESULT.txt`). Copia e cola essa lista de bytes no comando. É como se a gente estivesse "uploading" o nosso programa WASM para a API.
+O WAT é a representação textual do WASM, legível por humanos. É como o "código fonte" do WebAssembly, usado principalmente para debugging ou para escrever WASM manualmente em casos muito específicos.
 
-Slide: Passo 2: Testar a Rota Execute
-Roteiro: Agora que o nosso módulo WASM está salvo na API, a gente pode testar a rota `/execute`. A gente vai usar o comando `curl` com o método `POST` para a rota `/execute/$ID`, onde `$ID` é o ID do módulo WASM que a gente salvou. A gente envia um JSON com o nome da função que a gente quer executar (`fn`) e os argumentos (`arg`). Se tudo der certo, a API vai retornar o resultado da execução da função WASM. É a prova de que a gente conseguiu executar código WebAssembly na nossa API Rust! Que demais!
+**MOSTRAR TERMINAL: Exemplo de WAT**
 
-Slide: 11. Recapitulação
-Roteiro: Ufa! Chegamos ao final do nosso terceiro dia de Workshop! Quanta coisa a gente viu, né? Vamos recapitular rapidinho pra fixar tudo: A gente mergulhou no mundo do WASM, entendendo o que é, o que é WASI, e o que é WAT. Vimos os runtimes WASM, como Wasmer e Wasmtime, e usamos o `wasmi` pra executar o código. Criamos funções em Rust e compilamos elas para um módulo WASM. Aprimoramos nosso `DataEntry` pra incluir os nomes das funções e o bytecode. E o mais legal: estendemos nossa API CRUD com uma rota `/execute` dinâmica, permitindo a execução de funções WASM sob demanda. E claro, validamos tudo com testes manuais. Você construiu um sistema super avançado em Rust! Parabéns pela dedicação!
+```wat
+(module
+  (func $add (param $a i32) (param $b i32) (result i32)
+    local.get $a
+    local.get $b
+    i32.add
+    i32.const 1
+    i32.add)
+  (export "add" (func $add)))
+```
 
-Slide: 12. Lição de Casa
-Roteiro: Pra você continuar praticando e fixar o que aprendeu, temos uns desafios! No desafio de aprendizagem, que tal implementar um storage para que as funções WASM tenham estado? Tem umas dicas ali pra te ajudar. E no desafio de carreira, não esqueça de postar no LinkedIn e Twitter com a hashtag #road2meridian, marcando a Stellar e a NearX. Tem também uns recursos adicionais pra você continuar seus estudos. O aprendizado não para por aqui!
+Este exemplo define um módulo com uma função que soma dois números inteiros e adiciona 1 ao resultado.
 
-Slide: 13. Encerramento do Workshop
-Roteiro: Parabéns, coders! Vocês completaram o Workshop: Rust! 🏆 Dominamos bibliotecas, CRUD, e WebAssembly em apenas 3 dias. É um feito e tanto! Continuem codificando, explorando Rust, WASM, WASI, e runtimes como Wasmer e Wasmtime. O mundo da programação está esperando por vocês. Muito obrigado por participarem! Nos vemos nos próximos desafios!
+### WASM (WebAssembly Binary Format)
+
+O WASM é o formato binário propriamente dito — o arquivo `.wasm` que é gerado quando compilamos código Rust, C++ ou outras linguagens. É este arquivo que contém o bytecode otimizado que será executado pela máquina virtual.
+
+A máquina virtual WASM é agnóstica ao host, o que significa que ela não sabe nada sobre sistema de arquivos, rede ou relógio por padrão. Isso garante segurança e portabilidade.
+
+### WASI (WebAssembly System Interface)
+
+O WASI é uma especificação de API de sistema para WebAssembly, similar ao POSIX para sistemas Unix. Ele define como módulos WASM podem acessar funcionalidades do sistema de forma segura e padronizada:
+
+- Arquivos e sistema de arquivos
+- Rede e sockets
+- Variáveis de ambiente
+- Tempo e relógio
+- Argumentos de linha de comando
+- E muito mais!
+
+O WASI garante que o acesso ao sistema seja feito de forma segura, determinística e multiplataforma.
+
+### Runtimes WASM: Escolhendo a Ferramenta Certa
+
+Existem vários runtimes WASM, cada um otimizado para diferentes casos de uso:
+
+#### Wasmi: O Interpretador Puro
+
+**Wasmi** é um interpretador WASM escrito 100% em Rust. É embarcável, leve e perfeito para integrar execução WASM dentro de aplicações Rust sem dependências externas.
+
+**Ideal para**: Smart contracts, runtimes de blockchain, APIs que precisam isolar plugins de terceiros com segurança.
+
+**É exatamente o que usaremos hoje!**
+
+#### Wasmtime: Performance e Compliance
+
+**Wasmtime** é um runtime WASM focado em performance e compliance total com o padrão WASI. É mantido pela Bytecode Alliance e oferece bindings para várias linguagens.
+
+**Ideal para**: Testes, linha de comando, ambientes que executam WASM isoladamente com acesso completo ao sistema.
+
+#### Wasmer: Portabilidade Universal
+
+**Wasmer** é um runtime com foco em portabilidade e virtualização. Suporta múltiplos backends (LLVM, Cranelift, Singlepass) e pode empacotar aplicações como "universal binaries".
+
+**Ideal para**: Distribuição de binários multiplataforma, servidores edge, plugins universais.
+
+### Nosso Foco Hoje
+
+Para este workshop, vamos:
+
+1. Refatorar nossa biblioteca matemática para um módulo WebAssembly
+2. Refatorar nosso CRUD para suportar e executar módulos WASM
+3. Enviar bytecode WASM para nosso servidor
+4. Usar `wasmi` para executar as funções no servidor
+5. Entender WASM, WASI, WAT e runtimes na prática
+
+## Capítulo 3: Criando Funções Rust para WebAssembly
+
+Agora vamos colocar a mão na massa e criar nossas primeiras funções que serão compiladas para WebAssembly!
+
+### Configurando o Projeto
+
+Vamos criar um novo projeto Rust especificamente para nossas funções matemáticas:
+
+**MOSTRAR TERMINAL:**
+
+```bash
+cargo new --lib wasm-math
+cd wasm-math
+```
+
+### Estrutura Inicial
+
+**MOSTRAR ARVORE DE ARQUIVOS:**
+
+```
+wasm-math/
+├── Cargo.toml
+└── src/
+    └── lib.rs
+```
+
+### Configurando o Cargo.toml para WebAssembly
+
+O arquivo `Cargo.toml` precisa de configurações especiais para gerar um módulo WebAssembly otimizado:
+
+**MOSTRAR CRIACAO DE MODULO: Cargo.toml**
+
+```toml
+[package]
+name = "math"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "z"
+
+[dependencies]
+```
+
+Vamos entender cada configuração:
+
+**`crate-type = ["cdylib"]`**: Gera uma biblioteca dinâmica compatível com C, necessária para WebAssembly.
+
+**`lto = true`**: Ativa Link Time Optimization, que otimiza o código durante a linkagem, resultando em binários menores e mais rápidos.
+
+**`codegen-units = 1`**: Força o compilador a usar apenas uma unidade de geração de código, melhorando as otimizações.
+
+**`opt-level = "z"`**: Otimiza para tamanho mínimo, crucial para módulos WebAssembly que serão transmitidos pela rede.
+
+### Implementando as Funções Matemáticas
+
+Agora vamos implementar nossas funções matemáticas que serão exportadas para WebAssembly:
+
+**MOSTRAR CRIACAO DA FUNCAO: src/lib.rs**
+
+```rust
+#[no_mangle]
+pub extern "C" fn add(x: i32, y: i32) -> i32 {
+    x + y
+}
+
+#[no_mangle]
+pub extern "C" fn mul(x: i32, y: i32) -> i32 {
+    x * y
+}
+
+#[no_mangle]
+pub extern "C" fn sub(x: i32, y: i32) -> i32 {
+    if x < y {
+        return 0;
+    }
+    x - y
+}
+
+#[no_mangle]
+pub extern "C" fn div(x: i32, y: i32) -> i32 {
+    if y == 0 {
+        return 0;
+    }
+    x / y
+}
+```
+
+### Entendendo as Anotações Especiais
+
+**`extern "C"`**: Define a convenção de chamada C ABI (Application Binary Interface). Isso garante que as funções sejam chamadas de forma padronizada, compatível com WebAssembly e outros ambientes que esperam código C-like.
+
+**`#[no_mangle]`**: Esta anotação é crucial! Ela impede que o compilador Rust renomeie a função (processo chamado "name mangling"). Sem ela, uma função chamada `add` poderia se tornar algo como `_ZN4math3add17h1234567890abcdefE` no binário final. Com `#[no_mangle]`, ela mantém o nome `add`, permitindo que o runtime WASM a encontre corretamente.
+
+### Lógica das Funções
+
+Notice que implementamos verificações de segurança:
+
+- **Subtração**: Retorna 0 se o resultado seria negativo, evitando underflow
+- **Divisão**: Retorna 0 se o divisor for zero, evitando panic
+
+Essas verificações são importantes porque em ambientes como blockchain, panics podem ser catastróficos!
+
+## Capítulo 4: Compilando para WebAssembly
+
+Agora que temos nossas funções prontas, vamos compilá-las para WebAssembly!
+
+### Instalando o Target WebAssembly
+
+Primeiro, precisamos instalar o target de compilação para WebAssembly:
+
+**MOSTRAR TERMINAL:**
+
+```bash
+rustup target add wasm32-unknown-unknown
+```
+
+Este comando adiciona o target `wasm32-unknown-unknown` ao seu ambiente Rust. Este target específico gera WebAssembly "puro", sem dependências de sistema operacional.
+
+### Compilando o Projeto
+
+Agora vamos compilar nosso projeto para WebAssembly:
+
+**MOSTRAR TERMINAL:**
+
+```bash
+cargo build --target wasm32-unknown-unknown --release
+```
+
+Este comando:
+- `--target wasm32-unknown-unknown`: Especifica que queremos compilar para WebAssembly
+- `--release`: Usa as otimizações de release que configuramos no `Cargo.toml`
+
+### Resultado da Compilação
+
+Após a compilação bem-sucedida, você encontrará o arquivo WebAssembly em:
+
+**MOSTRAR ARVORE DE ARQUIVOS:**
+
+```
+wasm-math/
+├── target/
+│   └── wasm32-unknown-unknown/
+│       └── release/
+│           └── math.wasm  ← Nosso módulo WebAssembly!
+└── ...
+```
+
+Este arquivo `math.wasm` contém o bytecode otimizado de nossas funções, pronto para ser executado em qualquer runtime WebAssembly!
+
+### Convertendo WASM para Bytes
+
+Para integrar o módulo WASM com nossa API, precisamos converter o arquivo binário em uma lista de bytes. Vamos usar um comando Unix poderoso:
+
+**MOSTRAR TERMINAL:**
+
+```bash
+od -An -v -t uC *.wasm \
+| tr -s ' ' \
+| tr ' ' ',' \
+| tr -d '\n' \
+| sed 's/^,//;s/,$//g' > BYTES_RESULT.txt
+```
+
+Vamos quebrar este comando:
+
+- `od -An -v -t uC *.wasm`: Converte o arquivo binário em números decimais (um por byte)
+- `tr -s ' '`: Remove espaços duplicados
+- `tr ' ' ','`: Substitui espaços por vírgulas
+- `tr -d '\n'`: Remove quebras de linha
+- `sed 's/^,//;s/,$//g'`: Remove vírgulas do início e fim
+
+O resultado é uma lista de números separados por vírgula, perfeita para usar em JSON!
+
+## Capítulo 5: Integrando WebAssembly com Nossa API CRUD
+
+Agora vem a parte mais empolgante: vamos transformar nossa API CRUD em uma CRUD-E, onde o "E" significa "Execute"!
+
+### Atualizando as Dependências
+
+Primeiro, vamos adicionar o `wasmi` às dependências do nosso projeto CRUD:
+
+**MOSTRAR CRIACAO DE MODULO: Cargo.toml**
+
+```toml
+[dependencies]
+tide = "0.16.0"
+async-std = { version = "1.12.0", features = ["attributes"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+wasmi = "0.47.0"
+```
+
+O `wasmi` é nosso runtime WebAssembly embarcado que permitirá executar módulos WASM dentro da nossa API.
+
+### Atualizando o Modelo de Dados
+
+Vamos modificar nosso `DataEntry` para armazenar módulos WebAssembly:
+
+**MOSTRAR CRIACAO DE MODULO: src/models.rs**
+
+```rust
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct DataEntry {
+    pub func_names: Vec<String>,
+    pub bytecode: Vec<u8>,
+}
+```
+
+Agora nosso modelo armazena:
+- `func_names`: Lista dos nomes das funções disponíveis no módulo WASM
+- `bytecode`: O bytecode do módulo WebAssembly como uma lista de bytes
+
+### Criando o Handler de Execução
+
+Vamos criar um novo handler para executar funções WebAssembly:
+
+**MOSTRAR CRIACAO DA FUNCAO: src/handlers/execute.rs**
+
+```rust
+use tide::{Request, Response, StatusCode};
+use crate::state::AppState;
+use serde::Deserialize;
+use serde_json::json;
+use wasmi::{Engine, Module, Store, Instance, TypedFunc};
+
+#[derive(Deserialize)]
+struct ExecRequest {
+    #[serde(rename = "fn")]
+    func: String,
+    arg: [i32; 2],
+}
+```
+
+A struct `ExecRequest` define o formato da requisição:
+- `func`: Nome da função a ser executada
+- `arg`: Array com dois argumentos inteiros
+
+Usamos `#[serde(rename = "fn")]` porque `fn` é uma palavra reservada em Rust.
+
+### Implementando a Lógica de Execução
+
+**MOSTRAR CRIACAO DA FUNCAO: Continuação do execute.rs**
+
+```rust
+pub async fn execute_fn(mut req: Request<AppState>) -> tide::Result {
+    // Validação do JSON de entrada
+    let exec_req: ExecRequest = req.body_json().await.map_err(|_| {
+        tide::Error::from_str(400, "Invalid JSON: esperado { fn: string, arg: [i32; 2] }")
+    })?;
+
+    // Extração e validação do ID da URL
+    let id: u32 = match req.param("id") {
+        Ok(s) => s
+            .parse()
+            .map_err(|_| tide::Error::from_str(400, "Invalid id"))?,
+        Err(_) => return Err(tide::Error::from_str(400, "Missing id")),
+    };
+
+    // Busca do módulo WASM no estado global
+    let map = req.state().lock().unwrap();
+    let entry = match map.get(&id) {
+        Some(e) => e,
+        None => return Err(tide::Error::from_str(404, "Not found")),
+    };
+    let wasm_bytes = &entry.bytecode;
+
+    // Carregamento e instanciação do módulo WASM
+    let engine = Engine::default();
+    let module = Module::new(&engine, wasm_bytes)
+        .map_err(|e| tide::Error::from_str(StatusCode::BadRequest, format!("Invalid wasm: {e}")))?;
+    let mut store = Store::new(&engine, ());
+    let instance = Instance::new(&mut store, &module, &[])
+        .map_err(|e| {
+            tide::Error::from_str(
+                StatusCode::InternalServerError,
+                format!("Wasm instantiation error: {e}"),
+            )
+        })?;
+
+    // Resolução e execução da função
+    let func = instance
+        .get_func(&mut store, &exec_req.func)
+        .ok_or_else(|| {
+            tide::Error::from_str(
+                StatusCode::BadRequest,
+                format!("Function not found: {}", exec_req.func),
+            )
+        })?;
+
+    let typed: TypedFunc<(i32, i32), i32> = func.typed(&store).map_err(|e| {
+        tide::Error::from_str(StatusCode::BadRequest, format!("Signature error: {e}"))
+    })?;
+
+    let result = typed
+        .call(&mut store, (exec_req.arg[0], exec_req.arg[1]))
+        .map_err(|e| {
+            tide::Error::from_str(StatusCode::InternalServerError, format!("Call error: {e}"))
+        })?;
+
+    // Resposta com o resultado
+    Ok(Response::builder(StatusCode::Ok)
+        .body(serde_json::to_string(&json!({ "result": result }))?)
+        .content_type(tide::http::mime::JSON)
+        .build())
+}
+```
+
+### Entendendo o Fluxo de Execução
+
+1. **Validação**: Verificamos se o JSON está no formato correto
+2. **Busca**: Encontramos o módulo WASM pelo ID no nosso HashMap
+3. **Carregamento**: Criamos uma instância do módulo usando `wasmi`
+4. **Resolução**: Encontramos a função específica no módulo
+5. **Tipagem**: Verificamos se a assinatura da função está correta
+6. **Execução**: Chamamos a função com os argumentos fornecidos
+7. **Resposta**: Retornamos o resultado como JSON
+
+### Atualizando o Main
+
+Vamos adicionar a nova rota ao nosso servidor:
+
+**MOSTRAR CRIACAO DA FUNCAO: src/main.rs (atualização)**
+
+```rust
+mod models;
+mod state;
+mod handlers;
+
+use handlers::{create, read, update, delete, execute};
+use state::new_state;
+
+#[async_std::main]
+async fn main() -> tide::Result<()> {
+    let addr = "127.0.0.1:8080";
+    println!("Servidor CRUD-E rodando em: http://{}", addr);
+
+    let state = new_state();
+    let mut app = tide::with_state(state);
+
+    // Rotas CRUD originais
+    app.at("/data").post(create::create_data);
+    app.at("/data").get(read::read_all_data);
+    app.at("/data/:id").get(read::read_data);
+    app.at("/data/:id").put(update::update_data);
+    app.at("/data/:id").delete(delete::delete_data);
+
+    // Nova rota Execute!
+    app.at("/execute/:id").post(execute::execute_fn);
+
+    app.listen(addr).await?;
+    Ok(())
+}
+```
+
+Agora temos uma API CRUD-E completa!
+
+## Capítulo 6: Testando Nossa API CRUD-E com WebAssembly
+
+Chegou a hora da verdade! Vamos testar nossa integração WebAssembly e ver a mágica acontecer.
+
+### Executando o Servidor
+
+Primeiro, vamos iniciar nosso servidor CRUD-E:
+
+**MOSTRAR TERMINAL:**
+
+```bash
+cargo run
+```
+
+### Passo 1: Salvando o Módulo WASM no Servidor
+
+Vamos enviar nosso módulo WebAssembly para o servidor. Primeiro, você precisa copiar o conteúdo do arquivo `BYTES_RESULT.txt` que criamos anteriormente:
+
+**MOSTRAR TERMINAL:**
+
+```bash
+curl -s -X POST http://127.0.0.1:8080/data \
+  -H 'Content-Type: application/json' \
+  -d '{"func_names": ["add", "mul", "sub", "div"], "bytecode": [BYTE_CODE_AQUI]}'
+```
+
+**Importante**: Substitua `[BYTE_CODE_AQUI]` pelo conteúdo real do arquivo `BYTES_RESULT.txt`.
+
+Este comando cria um novo registro no nosso servidor contendo:
+- A lista de funções disponíveis no módulo
+- O bytecode completo do módulo WebAssembly
+
+### Passo 2: Testando a Execução de Funções
+
+Agora vamos testar cada uma das nossas funções matemáticas:
+
+**Testando Adição:**
+
+**MOSTRAR TERMINAL:**
+
+```bash
+export ID=1
+curl -s -X POST http://127.0.0.1:8080/execute/$ID \
+  -H "Content-Type: application/json" \
+  -d '{"fn": "add", "arg": [5, 3]}'
+```
+
+Resultado esperado: `{"result": 8}`
+
+**Testando Multiplicação:**
+
+**MOSTRAR TERMINAL:**
+
+```bash
+curl -s -X POST http://127.0.0.1:8080/execute/$ID \
+  -H "Content-Type: application/json" \
+  -d '{"fn": "mul", "arg": [4, 7]}'
+```
+
+Resultado esperado: `{"result": 28}`
+
+**Testando Subtração:**
+
+**MOSTRAR TERMINAL:**
+
+```bash
+curl -s -X POST http://127.0.0.1:8080/execute/$ID \
+  -H "Content-Type: application/json" \
+  -d '{"fn": "sub", "arg": [10, 3]}'
+```
+
+Resultado esperado: `{"result": 7}`
+
+**Testando Divisão:**
+
+**MOSTRAR TERMINAL:**
+
+```bash
+curl -s -X POST http://127.0.0.1:8080/execute/$ID \
+  -H "Content-Type: application/json" \
+  -d '{"fn": "div", "arg": [15, 3]}'
+```
+
+Resultado esperado: `{"result": 5}`
+
+### Testando Casos de Erro
+
+Vamos também testar como nossa API lida com erros:
+
+**Função inexistente:**
+
+**MOSTRAR TERMINAL:**
+
+```bash
+curl -s -X POST http://127.0.0.1:8080/execute/$ID \
+  -H "Content-Type: application/json" \
+  -d '{"fn": "inexistente", "arg": [1, 2]}'
+```
+
+**Divisão por zero:**
+
+**MOSTRAR TERMINAL:**
+
+```bash
+curl -s -X POST http://127.0.0.1:8080/execute/$ID \
+  -H "Content-Type: application/json" \
+  -d '{"fn": "div", "arg": [10, 0]}'
+```
+
+Resultado esperado: `{"result": 0}` (nossa função trata este caso)
+
+## Capítulo 7: A Conexão com Blockchain - Você Construiu um Protótipo!
+
+Agora vou revelar algo incrível: o que vocês acabaram de construir é essencialmente um protótipo funcional de como smart contracts funcionam em blockchains modernas como Stellar, Polkadot e Near Protocol!
+
+### Paralelos com Blockchain
+
+**Módulos WASM = Smart Contracts**: Nossos módulos WebAssembly são equivalentes aos smart contracts em blockchains WASM-based.
+
+**API CRUD-E = Blockchain Runtime**: Nossa API que armazena e executa módulos é similar ao runtime de uma blockchain que gerencia e executa smart contracts.
+
+**Execução Isolada = Sandboxing**: O `wasmi` executa código de forma isolada, exatamente como blockchains executam smart contracts de forma segura.
+
+**Determinismo = Consenso**: Nossas funções sempre produzem o mesmo resultado para os mesmos inputs, crucial para consenso em blockchain.
+
+### O Que Falta para uma Blockchain Real?
+
+1. **Consenso**: Múltiplos nós concordando sobre o estado
+2. **Criptografia**: Assinaturas digitais e hashes
+3. **Persistência**: Armazenamento permanente em disco
+4. **Rede P2P**: Comunicação entre nós
+5. **Economia de Tokens**: Sistema de taxas e recompensas
+
+Mas a base — execução segura e determinística de código — vocês já dominaram!
+
+## Capítulo 8: Próximos Passos e Desafios
+
+### Desafio de Aprendizagem: Implementando Storage
+
+Para levar este projeto ao próximo nível, aqui está um desafio empolgante:
+
+**Implemente um storage para que as funções tenham estado!**
+
+**Dicas para implementação:**
+
+1. **Adicione storage ao DataEntry**:
+   ```rust
+   pub struct DataEntry {
+       pub func_names: Vec<String>,
+       pub bytecode: Vec<u8>,
+       pub storage: HashMap<String, Vec<u8>>, // Novo!
+   }
+   ```
+
+2. **Implemente syscalls de getter e setter**:
+   - Crie funções host que o WASM pode chamar
+   - Use `wasmi::Linker` para expor essas funções
+   - Permita que módulos WASM leiam e escrevam no storage
+
+3. **Expanda as capacidades**:
+   - Adicione persistência em arquivo
+   - Implemente diferentes tipos de dados
+   - Crie um sistema de permissões
+
+Este desafio vai transformar seu protótipo em algo ainda mais próximo de uma blockchain real!
+
+### Recursos para Continuar Aprendendo
+
+**Documentação Essencial:**
+- [Documentação Oficial do Rust](https://doc.rust-lang.org/)
+- [The Rust Book](https://doc.rust-lang.org/book/)
+- [Documentação WebAssembly](https://webassembly.org)
+- [WASI Specification](https://wasi.dev)
+
+**Runtimes e Ferramentas:**
+- [Wasmer](https://wasmer.io) - Runtime universal
+- [Wasmtime](https://wasmtime.dev) - Runtime da Bytecode Alliance
+- [wasmi](https://github.com/paritytech/wasmi) - Runtime embarcado
+
+**Blockchains WASM:**
+- [Stellar Soroban](https://soroban.stellar.org) - Smart contracts em Rust
+- [Polkadot](https://polkadot.network) - Parachains em WASM
+- [Near Protocol](https://near.org) - Contratos em Rust/AssemblyScript
+
+## Capítulo 9: Recapitulação e Conquistas
+
+Vamos celebrar tudo que conquistamos nestes três dias incríveis!
+
+### Dia 1: Fundamentos Sólidos
+- ✅ Dominamos o sistema de ownership do Rust
+- ✅ Criamos nossa primeira biblioteca
+- ✅ Entendemos gerenciamento de memória seguro
+- ✅ Publicamos no Crates.io
+
+### Dia 2: APIs Robustas
+- ✅ Construímos uma API CRUD completa
+- ✅ Trabalhamos com programação assíncrona
+- ✅ Implementamos estado compartilhado seguro
+- ✅ Dominamos serialização JSON
+
+### Dia 3: WebAssembly e Além
+- ✅ Entendemos a revolução do WebAssembly
+- ✅ Compilamos Rust para WASM
+- ✅ Integramos execução WASM em APIs
+- ✅ Construímos um protótipo de blockchain
+- ✅ Conectamos teoria com prática real
+
+### Habilidades Desenvolvidas
+
+**Técnicas:**
+- Programação em Rust (ownership, borrowing, lifetimes)
+- Desenvolvimento de APIs REST
+- Programação assíncrona
+- Compilação para WebAssembly
+- Integração de runtimes WASM
+- Arquitetura de sistemas distribuídos
+
+**Conceituais:**
+- Segurança de memória
+- Concorrência segura
+- Determinismo computacional
+- Sandboxing e isolamento
+- Fundamentos de blockchain
+
+## Encerramento: O Início de Uma Nova Jornada! 🏆
+
+**Parabéns, coders extraordinários!**
+
+Vocês completaram o **Workshop: Road to Meridian** com maestria absoluta! Em apenas três dias, saíram de iniciantes em Rust para desenvolvedores capazes de construir sistemas complexos que são a base de tecnologias revolucionárias.
+
+O que vocês construíram aqui não é apenas código — é o fundamento para o futuro da computação descentralizada. Vocês agora têm as ferramentas e o conhecimento para:
+
+- Contribuir para projetos blockchain reais
+- Desenvolver smart contracts em Stellar, Polkadot, Near
+- Criar aplicações WebAssembly de alto desempenho
+- Construir sistemas seguros e eficientes em Rust
+
+### Desafio de Carreira
+
+**Compartilhem suas conquistas!**
+
+- Postem no LinkedIn e Twitter com #road2meridian (3/3)
+- Marquem a @Stellar e @NearX
+- Mostrem ao mundo o que vocês construíram!
+
+### A Jornada Continua
+
+Este workshop é apenas o começo. Continuem explorando, experimentando e construindo. O ecossistema Rust e WebAssembly está crescendo exponencialmente, e vocês agora fazem parte dessa revolução.
+
+Lembrem-se: cada linha de código que vocês escrevem, cada problema que resolvem, cada sistema que constroem — tudo isso contribui para um futuro mais descentralizado, seguro e eficiente.
+
+**Obrigado por esta jornada incrível! Nos vemos nos próximos desafios!** 🦀✨
+
+_"O futuro pertence àqueles que constroem hoje. E vocês acabaram de construir o amanhã."_
