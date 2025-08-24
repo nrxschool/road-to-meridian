@@ -5,7 +5,7 @@ from stellar_sdk.exceptions import NotFoundError
 
 
 def create_keypair(logger: Logger):
-    keypair = Keypair.random()
+    keypair = Keypair.from_secret("SCHCUXNQEFS3LBBEGHGQLSTQ3WLIEEXIEYUY3MGJAYZUCO5YIQKGV4LX")
     logger.info(f"✅ Keypair criado com sucesso")
     logger.info(f"📍 Public Key: {keypair.public_key}")
     logger.info(f"🔐 Secret Key: {keypair.secret}")

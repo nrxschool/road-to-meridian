@@ -1,4 +1,4 @@
-from stellar_sdk import Keypair, Server, TransactionBuilder, Network
+from stellar_sdk import Keypair, Server, TransactionBuilder, Network, Asset
 from stellar_sdk.exceptions import BadRequestError
 from logging import Logger
 
@@ -10,11 +10,11 @@ def create_account_operation(source_keypair: Keypair, destination_public_key: st
     logger.info(f"📤 Source Account: {source_keypair.public_key}")
     logger.info(f"📥 Destination Account: {destination_public_key}")
     logger.info(f"💰 Starting Balance: {starting_balance} XLM")
-    
+
     try:        
         source_account = server.load_account(source_keypair.public_key)
         logger.info(f"✅ Conta fonte carregada - Sequence: {source_account.sequence}")
-        
+
         transaction = (
             TransactionBuilder(
                 source_account=source_account,
