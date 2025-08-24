@@ -80,3 +80,26 @@ old_get_rank(my_wallet, CONTRACT_ID, soroban_server, logger)
 
 
 ## NEW WAY
+from contract.new.read import get_rank as new_get_rank
+from contract.new.write import new_game as new_create_new_game
+
+
+# Ler ranking usando nova implementação
+new_get_rank(my_wallet, CONTRACT_ID, soroban_server, logger)
+
+# Criar novo jogo usando nova implementação
+new_create_new_game(
+    my_wallet,
+    CONTRACT_ID,
+    [
+        scval.to_address(my_wallet.public_key),
+        scval.to_string("player_new"),
+        scval.to_int32(150),
+        scval.to_int32(15),
+    ],
+    soroban_server,
+    logger,
+)
+
+# Ler ranking novamente para verificar a adição
+new_get_rank(my_wallet, CONTRACT_ID, soroban_server, logger)
