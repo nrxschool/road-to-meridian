@@ -13,6 +13,8 @@ theme: gaia
 
 Nesta aula, vamos mergulhar no desenvolvimento completo de smart contracts na blockchain Stellar usando Rust. Você aprenderá desde a criação do contrato até a integração com frontend, construindo um jogo interativo que demonstra os conceitos fundamentais de desenvolvimento Web3.
 
+---
+
 ### Programa da aula:
 
 0. **Quem somos e o que é o Road to Meridian?**

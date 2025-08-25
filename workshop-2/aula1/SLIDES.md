@@ -79,40 +79,6 @@ Bem-vindos ao **Workshop: Road to Meridian 2**! Hoje vamos mergulhar no mundo do
 
 ---
 
-### Stellar
-
-- +13Bi de captalização de mercado.
-- Fundada em 2014 pelo Jed McCaleb, founder da Mt. Gox e co-founder da Ripple.
-- Smartcontracts em Rust lançados em 2023 por Grandon Hoare.
-
----
-
-### Road to Meridian
-
-#### Workshop 1: Introdução ao Rust
-
-- Aula 1: Criar e Publicar Bibliotecas em Rust
-- Aula 2: Criar e Deployar Rest API CRUD em Rust
-- Aula 3: Criar e Integrar WebAssembly em Rust
-
----
-
-#### Workshop 2: Smartcontracts Básico na Stellar com Soroban
-
-- Aula 1: Básico de Blockchain e Hello World
-- Aula 2: Smartcontracts e Integração com Backend
-- Aula 3: Smartcontracts e Integração com Frontend
-
----
-
-#### Workshop 3: Smartcontracts Avançado na Stellar com Soroban
-
-- Aula 1: Segurança em Smartcontracts
-- Aula 2: Composabilidade em Protocolos Soroban
-- Aula 3: Implementando Passkey Authn
-
----
-
 ## 1. Conceitos Fundamentais de Blockchain
 
 Para entender smartcontracts, precisamos primeiro dominar os conceitos básicos de blockchain. Vamos começar pelos pilares fundamentais!
