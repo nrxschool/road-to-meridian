@@ -3,17 +3,17 @@ marp: true
 theme: gaia
 ---
 
-# **Workshop: Road to Meridian**
+# **Workshop: Road to Meridian 1**
 
 ## **Dia 3: WebAssembly com Rust**
 
 ---
 
-## **1. Abertura**
+## Abertura
 
 **Hello World!**
 
-Sejam todos bem-vindos ao último dia do **Workshop: Road to Meridian**!
+Sejam todos bem-vindos ao último dia do **Workshop: Road to Meridian 1**!
 
 Chegamos ao gran finale do nosso intensivão de 3 dias. Hoje, vamos criar um módulo **WebAssembly** com duas funções, integrá-lo à API CRUD do Dia 2, e criar um **CRUD-E** com uma rota para executar essas funções dinamicamente.
 
@@ -21,18 +21,73 @@ Na verdade o que você criou até agora sem você saber foi um protótipo da blo
 
 Preparados para fechar com chave de ouro?
 
+### Programa da aula:
+
+0. **Quem somos e o que é o Road to Meridian?**
+1. **História do WebAssembly?**: Qual problema resolve, o que é, por que as blockchain estão adotando.
+2. **O que é WebAssembly?**: WASM, WASI, WAT, Wasmer e Wasmtime
+3. **Funções em Rust**: `(u32, u32) -> u32` para soma e subtração
+4. **Compilando para WebAssembly**: Usando cargo
+5. **Transformando .wasm em Array u8**: Convertendo para integração
+6. **Integrando com o CRUD**: Adicionando a rota Execute (CRUDE)
+7. **Validando o Resultado**: Testando e verificando a execução
+8. **Hands-on**: Codificação prática
+
 ---
 
-## **2. Programação**
+## 0. Apresentação
 
-0. **História do WebAssembly?**: Qual problema resolve, o que é, por que as blockchain estão adotando.
-1. **O que é WebAssembly?**: WASM, WASI, WAT, Wasmer e Wasmtime
-2. **Funções em Rust**: `(u32, u32) -> u32` para soma e subtração
-3. **Compilando para WebAssembly**: Usando cargo
-4. **Transformando .wasm em Array u8**: Convertendo para integração
-5. **Integrando com o CRUD**: Adicionando a rota Execute (CRUDE)
-6. **Validando o Resultado**: Testando e verificando a execução
-7. **Hands-on**: Codificação prática
+### Lucas Oliveira
+
+- Matemático (formado em 2021).
+- +5 anos como Engenheiro Senior de Blockchain.
+- Criação de Layer 1, SDKs, smart contracts (EVM e não-EVM).
+- Liderou a entrega de 2 Projetos do DREX.
+- Embaixador da Stellar no Brasil.
+- Contribuidor F/OSS: +3 bibliotecas crypto publicadas.
+- Head of Education @ NearX: Liderança em educação blockchain na LATAM.
+
+---
+
+### NearX
+
+- Plataforma de educação em tecnologias emergentes (Web3, IA, Blockchain).
+- Consultoria em Blockchain para Empresas.
+- 30 Alunos na Pós Graduação Lato Senso.
+- +9.000 alunos na Plataforma.
+- +2.500 membros no Discord.
+- Oferece: Pós-graduação, Plataforma por assinatura, Mentorias, Bootcamps, Hackathons
+- Parcerias: Stellar, Animoca Brands, Optimism, Arbitrum, Starknet, ZkVerify, MultiverseX.
+
+### Stellar
+
+- +13Bi de captalização de mercado.
+- Fundada em 2014 pelo Jed McCaleb, founder da Mt. Gox e co-founder da Ripple.
+- Smartcontracts em Rust lançados em 2023 por Grandon Hoare.
+
+### Road to Meridian
+
+#### Workshop 1: Introdução ao Rust
+
+- Aula 1: Criar e Publicar Bibliotecas em Rust
+- Aula 2: Criar e Deployar Rest API CRUD em Rust
+- Aula 3: Criar e Integrar WebAssembly em Rust
+
+---
+
+#### Workshop 2: Smartcontracts Básico na Stellar com Soroban
+
+- Aula 1: Básico de Blockchain e Hello World
+- Aula 2: Smartcontracts e Integração com Backend
+- Aula 3: Smartcontracts e Integração com Frontend
+
+---
+
+#### Workshop 3: Smartcontracts Avançado na Stellar com Soroban
+
+- Aula 1: Segurança em Smartcontracts
+- Aula 2: Composabilidade em Protocolos Soroban
+- Aula 3: Implementando Passkey Authn
 
 ---
 

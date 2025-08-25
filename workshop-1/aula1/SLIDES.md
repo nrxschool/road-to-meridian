@@ -3,26 +3,25 @@ marp: true
 theme: gaia
 ---
 
-# **Workshop: Road to Meridian**
+# **Workshop: Road to Meridian 1**
 
 ## **Dia 1: Bibliotecas em Rust**
 
 ---
 
-## **1. Abertura**
+## Abertura
 
 **Hello World!**
 
-Sejam todos bem-vindos ao **Workshop: Road to Meridian**!
+Sejam todos bem-vindos ao **Workshop: Road to Meridian 1**!
 
 Este é o primeiro dia do nosso intensivão de 3 dias para dominar o básico do Rust, a linguagem que combina segurança, performance e produtividade.
 
 Hoje vamos criar nossa primeira **Biblioteca em Rust** e explorar os fundamentos da linguagem!
 
----
+### Programa da aula:
 
-## **2. Programação**
-
+0. **Quem somos e o que é o Road to Meridian**
 1. **O que é Rust?**: Fundamentos e por que usá-lo.
 2. **Compilador + Ambiente**: Configurando `cargo`, `rustc` e `rustup`.
 3. **Hello World**: Nosso primeiro código Rust.
@@ -30,6 +29,62 @@ Hoje vamos criar nossa primeira **Biblioteca em Rust** e explorar os fundamentos
 5. **Testes**: Validando nossa Biblioteca com testes automatizados.
 6. **Crates.io**: Criando conta e publicando nossa Biblioteca.
 7. **Usando Bibliotecas**: Baixando e integrando crates.
+
+---
+
+## 0. Apresentação
+
+### Lucas Oliveira
+
+- Matemático (formado em 2021).
+- +5 anos como Engenheiro Senior de Blockchain.
+- Criação de Layer 1, SDKs, smart contracts (EVM e não-EVM).
+- Liderou a entrega de 2 Projetos do DREX.
+- Embaixador da Stellar no Brasil.
+- Contribuidor F/OSS: +3 bibliotecas crypto publicadas.
+- Head of Education @ NearX: Liderança em educação blockchain na LATAM.
+
+---
+
+### NearX
+
+- Plataforma de educação em tecnologias emergentes (Web3, IA, Blockchain).
+- Consultoria em Blockchain para Empresas.
+- 30 Alunos na Pós Graduação Lato Senso.
+- +9.000 alunos na Plataforma.
+- +2.500 membros no Discord.
+- Oferece: Pós-graduação, Plataforma por assinatura, Mentorias, Bootcamps, Hackathons
+- Parcerias: Stellar, Animoca Brands, Optimism, Arbitrum, Starknet, ZkVerify, MultiverseX.
+
+### Stellar
+
+- +13Bi de captalização de mercado.
+- Fundada em 2014 pelo Jed McCaleb, founder da Mt. Gox e co-founder da Ripple.
+- Smartcontracts em Rust lançados em 2023 por Grandon Hoare.
+
+### Road to Meridian
+
+#### Workshop 1: Introdução ao Rust
+
+- Aula 1: Criar e Publicar Bibliotecas em Rust
+- Aula 2: Criar e Deployar Rest API CRUD em Rust
+- Aula 3: Criar e Integrar WebAssembly em Rust
+
+---
+
+#### Workshop 2: Smartcontracts Básico na Stellar com Soroban
+
+- Aula 1: Básico de Blockchain e Hello World
+- Aula 2: Smartcontracts e Integração com Backend
+- Aula 3: Smartcontracts e Integração com Frontend
+
+---
+
+#### Workshop 3: Smartcontracts Avançado na Stellar com Soroban
+
+- Aula 1: Segurança em Smartcontracts
+- Aula 2: Composabilidade em Protocolos Soroban
+- Aula 3: Implementando Passkey Authn
 
 ---
 
