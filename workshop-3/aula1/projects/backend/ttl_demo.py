@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Script de demonstração do contrato TTL
-Mostra como estender TTL e o que acontece quando expira
-"""
 
 import stellar_sdk
 from stellar_sdk import Keypair, Network, SorobanServer, TransactionBuilder
