@@ -1,31 +1,44 @@
-# Workshop: Rust (Overview)
+# Road to Meridian - Workshop Series
 
-Bem-vindo ao Workshop de Rust! Este repositório contém os materiais das 3 aulas intensivas:
+Bem-vindo ao **Road to Meridian**! Uma série de workshops intensivos para dominar Rust e desenvolvimento blockchain na Stellar Network.
 
-- [Aula1 Básico](./aula1.md): 📚 Introdução ao Rust e criação de uma biblioteca básica. Exploramos conceitos fundamentais como ownership, funções, testes automatizados e publicação no crates.io.
-- [Aula2 Intermediário](./aula2.md): 🛠️ Desenvolvimento de uma API CRUD em Rust com o framework Tide. Abordagem prática com gerenciamento de memória, async runtimes, e deploy com Railway.
-- [Aula3 Avançado](./aula3.md): 🚀 Compilação de módulos Rust para WebAssembly (WASM) e integração com a API. Criamos rotas dinâmicas para executar funções WASM com `wasmi`.
+## 🦀 Workshop 1: Fundamentos de Rust
 
-Aproveite os conteúdos e bons estudos com Rust! 🦀
+Três aulas intensivas cobrindo os fundamentos da linguagem Rust:
 
-Aula 1:
+- **[Aula 1: Bibliotecas em Rust](./workshop-1/aula1/)**: 📚 Do zero ao crates.io! Configuração do ambiente (cargo, rustc, rustup), primeiro Hello World, tipos e funções, criação de módulos, testes automatizados e publicação da sua primeira biblioteca no crates.io.
+- **[Aula 2: CRUD em Rust](./workshop-1/aula2/)**: 🛠️ Sistema CRUD completo com Tide framework. Domínio das 3 leis do ownership, gerenciamento de memória, async runtimes, operações de banco de dados e deploy em produção.
+- **[Aula 3: WebAssembly com Rust](./workshop-1/aula3/)**: 🚀 Do Rust ao WASM! Compilação de módulos para WebAssembly, integração com APIs existentes, criação de um sistema CRUD-E (Execute) com execução dinâmica de funções WASM usando wasmi.
 
-- blockchain básico
-- ferramentas
-- deploy Rust Hello World
+## ⭐ Workshop 2: Smart Contracts na Stellar
 
-Aula 2:
+Três aulas focadas no desenvolvimento de smart contracts para a Stellar Network:
 
-- storage types e TTL
-- auth
-- erros, loggins e events
-- Integrar tudo no backend python (FastAPI) via restapi
-- deploy no railway e testnet
+- **[Aula 1: Introdução a Smart Contracts](./workshop-2/aula1/)**: 🌟 Fundamentos de blockchain, Stellar Network, Soroban platform, configuração do ambiente e deploy do primeiro Hello World na testnet.
+- **[Aula 2: Desenvolvimento Completo](./workshop-2/aula2/)**: 🎮 Jogo interativo completo na blockchain! Storage types, testes unitários, deploy e integração com SDK JavaScript para frontend.
+- **[Aula 3: Integração Frontend e Backend](./workshop-2/aula3/)**: 🌐 Stack completa Web3! Desenvolvimento de carteiras, contas, backend com Python e stellar SDK.
 
-Aula 3
+## 🔒 Workshop 3: Smart Contracts Avançado e Segurança
 
-- wallets
-- criptografia: hash, chaves e assinaturas
-- redes: mainet e testnet
-- integrar tudo no frontend e contratos
-- deploy no vercel e testnet
+Três aulas avançadas sobre segurança e padrões avançados em smart contracts (em desenvolvimento):
+
+- **[Aula 1: Segurança e Testes Avançados](./workshop-3/aula1/)**: 🛡️ Boas práticas de segurança, Time to Live (TTL), fuzz testing para encontrar vulnerabilidades, autenticação simples e múltipla, implementação de multisig.
+- **[Aula 2: Arquiteturas Avançadas](./workshop-3/aula2/)**: 🏗️ Cross contracts (comunicação entre contratos), autenticação profunda, padrões de deployer, contratos upgradable e governança.
+- **[Aula 3: Frontend Web3 Moderno](./workshop-3/aula3/)**: 🔐 Projeto completo de frontend Web3 com autenticação Passkey (WebAuthn), carteiras modernas e UX/UI de última geração.
+
+## 🚀 Estrutura dos Workshops
+
+Cada workshop segue uma progressão natural:
+
+- **Workshop 1**: Base sólida em Rust
+- **Workshop 2**: Desenvolvimento de smart contracts na Stellar Network
+- **Workshop 3**: Especialização em segurança e padrões avançados em smart contracts
+
+Cada aula contém:
+
+- 📖 **README.md**: Roteiro completo e detalhado
+- 🎯 **SLIDES.md**: Apresentação visual (formato Marp)
+- 📁 **projetos/**: Código prático e exemplos
+- 🖼️ **assets/**: Recursos visuais e diagramas
+
+Aproveite os conteúdos e boa jornada rumo ao Meridian! 🦀⭐
