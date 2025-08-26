@@ -95,53 +95,91 @@ O TTL é um mecanismo fundamental para controlar o tempo de vida dos dados no st
 
 ### Contrato TTL Demo
 
-**MOSTRAR CRIACAO DE MODULO:**
-
 ```rust
+#![no_std]
+use soroban_sdk::{contract, contractimpl, symbol_short, Env, Symbol};
+
+const INSTANCE: Symbol = symbol_short!("instance");
+const TEMPORARY: Symbol = symbol_short!("temporary");
+const PERSISTENT: Symbol = symbol_short!("persisten");
+
 #[contract]
 pub struct TtlContract;
 
 #[contractimpl]
 impl TtlContract {
-    pub fn store_temporary(env: Env, key: Symbol, value: u32, ttl: u32) {
-        env.storage().temporary().set(&key, &value);
-        env.storage().temporary().extend_ttl(&key, ttl, ttl);
+    pub fn __constructor(env: Env) {
+        if env.storage().instance().has(&INSTANCE) {
+            return;
+        }
+        env.storage().instance().set(&INSTANCE, &0);
+        env.storage().temporary().set(&TEMPORARY, &0);
+        env.storage().persistent().set(&PERSISTENT, &0);
     }
-    
-    pub fn store_persistent(env: Env, key: Symbol, value: u32) {
-        env.storage().persistent().set(&key, &value);
+}
+
+```
+
+---
+
+### Implementação [INSTANCE]
+
+```rust
+#[contractimpl]
+impl TtlContract {
+    pub fn acc_instance(env: &Env) {
+        let mut counter = env.storage().instance().get(&INSTANCE).unwrap_or(0);
+        counter += 1;
+        env.storage().instance().set(&INSTANCE, &counter);
     }
-    
-    pub fn get_data(env: Env, key: Symbol) -> Option<u32> {
-        env.storage().temporary().get(&key)
-            .or_else(|| env.storage().persistent().get(&key))
+
+    pub fn get_instance(env: &Env) -> i32 {
+        env.storage().instance().get(&INSTANCE).unwrap_or(0)
     }
 }
 ```
 
 ---
 
-### Script Python para Teste de TTL
+### Implementação [TEMPORARY]
 
-**MOSTRAR TERMINAL:** `python ttl_test.py`
+```rust
+#[contractimpl]
+impl TtlContract {
+    pub fn acc_temporary(env: &Env) {
+        let mut counter = env.storage().temporary().get(&TEMPORARY).unwrap_or(0);
+        counter += 1;
+        env.storage().temporary().set(&TEMPORARY, &counter);
+    }
 
-```python
-import stellar_sdk
-from stellar_sdk.soroban import SorobanServer
-import time
-
-# Testar armazenamento temporário
-contract.store_temp("temp_key", 42, 100)  # TTL de 100 ledgers
-print(f"Valor inicial: {contract.get_data('temp_key')}")
-
-# Simular passagem do tempo
-time.sleep(10)
-print(f"Após 10s: {contract.get_data('temp_key')}")
-
-# Estender TTL
-contract.extend_ttl("temp_key", 200)
-print("TTL estendido para 200 ledgers")
+    pub fn get_temporary(env: &Env) -> i32 {
+        env.storage().temporary().get(&TEMPORARY).unwrap_or(0)
+    }
+}
 ```
+
+---
+
+### Implementação [PERSISTENCE]
+
+```rust
+#[contractimpl]
+impl TtlContract {
+    pub fn acc_persistent(env: &Env) {
+        let mut counter = env.storage().persistent().get(&PERSISTENT).unwrap_or(0);
+        counter += 1;
+        env.storage().persistent().set(&PERSISTENT, &counter);
+    }
+
+    pub fn get_persistent(env: &Env) -> i32 {
+        env.storage().persistent().get(&PERSISTENT).unwrap_or(0)
+    }
+}
+```
+
+---
+
+### HANDS-ON
 
 ---
 
@@ -152,8 +190,6 @@ Fuzzing é uma técnica de teste que envia dados aleatórios ou malformados para
 ---
 
 ### Contrato Simples para Fuzzing
-
-**MOSTRAR CRIACAO DE MODULO:**
 
 ```rust
 #[contract]
@@ -167,7 +203,7 @@ impl FuzzContract {
         }
         a / b
     }
-    
+
     pub fn process_array(env: Env, data: Vec<u32>) -> u32 {
         if data.len() > 1000 {
             panic_with_error!(&env, Error::ArrayTooLarge);
@@ -188,32 +224,32 @@ impl FuzzContract {
 mod fuzz_tests {
     use super::*;
     use quickcheck::{quickcheck, TestResult};
-    
+
     #[quickcheck]
     fn fuzz_divide(a: i32, b: i32) -> TestResult {
         if b == 0 {
             return TestResult::discard();
         }
-        
+
         let env = Env::default();
         let contract = FuzzContract::new(&env, contract_address);
-        
+
         let result = contract.divide(&a, &b);
         TestResult::from_bool(result == a / b)
     }
-    
+
     #[quickcheck]
     fn fuzz_array_processing(data: Vec<u32>) -> TestResult {
         if data.len() > 1000 {
             return TestResult::discard();
         }
-        
+
         let env = Env::default();
         let contract = FuzzContract::new(&env, contract_address);
-        
+
         let result = contract.process_array(&data);
         let expected: u32 = data.iter().sum();
-        
+
         TestResult::from_bool(result == expected)
     }
 }
@@ -255,21 +291,21 @@ impl AuthContract {
     pub fn initialize(env: Env, admin: Address) {
         env.storage().instance().set(&symbol_short!("admin"), &admin);
     }
-    
+
     pub fn set_value(env: Env, caller: Address, value: u32) {
         caller.require_auth();
-        
+
         let admin: Address = env.storage().instance()
             .get(&symbol_short!("admin"))
             .unwrap();
-            
+
         if caller != admin {
             panic_with_error!(&env, Error::Unauthorized);
         }
-        
+
         env.storage().persistent().set(&symbol_short!("value"), &value);
     }
-    
+
     pub fn get_value(env: Env) -> Option<u32> {
         env.storage().persistent().get(&symbol_short!("value"))
     }
@@ -283,7 +319,7 @@ impl AuthContract {
 **MOSTRAR TERMINAL:** `node auth_test.js`
 
 ```javascript
-const { Keypair, Contract, SorobanRpc } = require('@stellar/stellar-sdk');
+const { Keypair, Contract, SorobanRpc } = require("@stellar/stellar-sdk");
 
 // Criar keypairs
 const admin = Keypair.random();
@@ -294,24 +330,24 @@ await contract.initialize({ admin: admin.publicKey() });
 
 // Teste com admin (deve funcionar)
 try {
-    await contract.set_value(
-        { caller: admin.publicKey(), value: 42 },
-        { source: admin }
-    );
-    console.log('✅ Admin conseguiu definir valor');
+  await contract.set_value(
+    { caller: admin.publicKey(), value: 42 },
+    { source: admin }
+  );
+  console.log("✅ Admin conseguiu definir valor");
 } catch (error) {
-    console.log('❌ Erro inesperado:', error);
+  console.log("❌ Erro inesperado:", error);
 }
 
 // Teste com usuário não autorizado (deve falhar)
 try {
-    await contract.set_value(
-        { caller: user.publicKey(), value: 99 },
-        { source: user }
-    );
-    console.log('❌ Usuário não autorizado conseguiu definir valor!');
+  await contract.set_value(
+    { caller: user.publicKey(), value: 99 },
+    { source: user }
+  );
+  console.log("❌ Usuário não autorizado conseguiu definir valor!");
 } catch (error) {
-    console.log('✅ Usuário não autorizado foi rejeitado');
+  console.log("✅ Usuário não autorizado foi rejeitado");
 }
 ```
 
@@ -364,40 +400,40 @@ impl MultisigContract {
 impl MultisigContract {
     pub fn propose_change(env: Env, signer: Address, new_value: bool) {
         signer.require_auth();
-        
+
         let mut state: MultisigState = env.storage().instance()
             .get(&symbol_short!("state")).unwrap();
-            
+
         if !state.signers.contains(&signer) {
             panic_with_error!(&env, Error::NotASigner);
         }
-        
+
         state.pending_change = Some(new_value);
         state.approvals = vec![&env, signer];
-        
+
         env.storage().instance().set(&symbol_short!("state"), &state);
     }
-    
+
     pub fn approve_change(env: Env, signer: Address) {
         signer.require_auth();
-        
+
         let mut state: MultisigState = env.storage().instance()
             .get(&symbol_short!("state")).unwrap();
-            
+
         if !state.signers.contains(&signer) {
             panic_with_error!(&env, Error::NotASigner);
         }
-        
+
         if !state.approvals.contains(&signer) {
             state.approvals.push(signer);
         }
-        
+
         if state.approvals.len() >= state.threshold {
             state.value = state.pending_change.unwrap();
             state.pending_change = None;
             state.approvals = vec![&env];
         }
-        
+
         env.storage().instance().set(&symbol_short!("state"), &state);
     }
 }

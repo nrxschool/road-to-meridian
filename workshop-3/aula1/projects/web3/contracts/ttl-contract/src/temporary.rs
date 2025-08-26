@@ -12,4 +12,3 @@ impl TtlContract {
         env.storage().temporary().get(&TEMPORARY).unwrap_or(0)
     }
 }
-
