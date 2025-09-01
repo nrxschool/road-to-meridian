@@ -285,6 +285,11 @@ Nosso projeto será um simulador de estacionamento em que:
 
 ---
 
+FOTO GRANDE COM O PALAVRAO BORRADO
+https://programming-motherfucker.com/become.html
+
+---
+
 ## Revisão
 
 - TTL: definição, tipos de storage (Instance, Persistent, Temporary) e como a extensão de TTL afeta cada um
