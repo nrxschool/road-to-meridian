@@ -22,8 +22,8 @@ Três aulas focadas no desenvolvimento de smart contracts para a Stellar Network
 
 Três aulas avançadas sobre segurança e padrões avançados em smart contracts (em desenvolvimento):
 
-- **[Aula 1: Segurança e Testes Avançados](./workshop-3/aula1/)**: 🛡️ Boas práticas de segurança, Time to Live (TTL), fuzz testing para encontrar vulnerabilidades, autenticação simples e múltipla, implementação de multisig.
-- **[Aula 2: Arquiteturas Avançadas](./workshop-3/aula2/)**: 🏗️ Cross contracts (comunicação entre contratos), autenticação profunda, padrões de deployer, contratos upgradable e governança.
+- **[Aula 1: Segurança e Modelagem de Ameaças](./workshop-3/aula1/)**: 🛡️ Boas práticas de segurança, Time to Live (TTL), fuzz testing para encontrar vulnerabilidades, autenticação simples e múltipla, implementação de multisig.
+- **[Aula 2: Composabilidade em Protocolos Soroban](./workshop-3/aula2/)**: 🏗️ Cross contracts (comunicação entre contratos), autenticação profunda, padrões de deployer, contratos upgradable e governança.
 - **[Aula 3: Frontend Web3 Moderno](./workshop-3/aula3/)**: 🔐 Projeto completo de frontend Web3 com autenticação Passkey (WebAuthn), carteiras modernas e UX/UI de última geração.
 
 ## 🚀 Estrutura dos Workshops

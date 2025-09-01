@@ -9,7 +9,7 @@ theme: gaia
 
 ---
 
-Bem-vindos ao **Workshop: Road to Meridian 3**! Hoje vamos mergulhar profundamente na segurança de smart contracts na Stellar Network. Esta aula vai abordar conceitos avançados como TTL (Time to Live), autenticação, multiassinatura e testes de segurança com fuzzing.
+Bem-vindos ao **Workshop: Road to Meridian 3**! Hoje vamos mergulhar profundamente na segurança de smart contracts na Stellar Network. Esta aula abordará conceitos avançados como TTL (Time to Live), autenticação, multiassinatura e testes de segurança com fuzzing.
 
 ---
 
@@ -28,7 +28,7 @@ Bem-vindos ao **Workshop: Road to Meridian 3**! Hoje vamos mergulhar profundamen
 ### Lucas Oliveira
 
 - Matemático (formado em 2021).
-- +5 anos como Engenheiro Senior de Blockchain.
+- +5 anos como Engenheiro Sênior de Blockchain.
 - Criação de Layer 1, SDKs, smart contracts (EVM e não-EVM).
 - Liderou a entrega de 2 Projetos do DREX.
 - Embaixador da Stellar no Brasil.
@@ -41,7 +41,7 @@ Bem-vindos ao **Workshop: Road to Meridian 3**! Hoje vamos mergulhar profundamen
 
 - Plataforma de educação em tecnologias emergentes (Web3, IA, Blockchain).
 - Consultoria em Blockchain para Empresas.
-- 30 Alunos na Pós Graduação Lato Senso.
+- 30 Alunos na Pós-Graduação Lato Sensu.
 - +9.000 alunos na Plataforma.
 - +2.500 membros no Discord.
 - Oferece: Pós-graduação, Plataforma por assinatura, Mentorias, Bootcamps, Hackathons
@@ -51,7 +51,7 @@ Bem-vindos ao **Workshop: Road to Meridian 3**! Hoje vamos mergulhar profundamen
 
 ### Stellar
 
-- +13Bi de captalização de mercado.
+- +13Bi de capitalização de mercado.
 - Fundada em 2014 por Jed McCaleb, fundador da Mt. Gox e cofundador da Ripple.
 - Smart contracts em Rust lançados em 2023 por Graydon Hoare.
 
@@ -62,7 +62,7 @@ Bem-vindos ao **Workshop: Road to Meridian 3**! Hoje vamos mergulhar profundamen
 #### Workshop 1: Introdução ao Rust
 
 - Aula 1: Criar e Publicar Bibliotecas em Rust
-- Aula 2: Criar e Deployar Rest API CRUD em Rust
+- Aula 2: Criar e Fazer Deploy de Rest API CRUD em Rust
 - Aula 3: Criar e Integrar WebAssembly em Rust
 
 ---
@@ -91,11 +91,11 @@ Bem-vindos ao **Workshop: Road to Meridian 3**! Hoje vamos mergulhar profundamen
 
 O TTL é um mecanismo que controla o tempo de vida dos smart contracts. Vamos explorar os três tipos de storage e como o TTL afeta cada um.
 
-Diferente do mundo EVM, aqui os contratos não vivem para sempre. Além disso, o tempo de vida do contrato nem sempre é o mesmo que o tempo de vida dos dados do contrato.
+Diferentemente do mundo EVM, aqui os contratos não vivem para sempre. Além disso, o tempo de vida do contrato nem sempre é o mesmo que o tempo de vida dos dados do contrato.
 
 ---
 
-### Por que?
+### Por quê?
 
 O arquivamento de estado (via TTL) impede que o ledger cresça indefinidamente. Isso permite:
 
@@ -116,7 +116,7 @@ Vamos ver como isso funciona.
 | Expirado | TTL = 0 | Dados expiram e se tornam inativos            |
 
 - O TTL é baseado nos ledgers (blocos).
-- Decrementa -1 a cada novo ledger (aprox. a cada 5 segundos na Stellar).
+- Decrementa -1 a cada novo ledger (aproximadamente a cada 5 segundos na Stellar).
 
 ---
 
@@ -150,120 +150,165 @@ Precisamos apenas entender que:
 
 ---
 
-## 3. Boas Práticas de Segurança
-
-IMAGEM SOBRE SEGURANçA
+## 3. Boas Práticas de Segurança e Modelagem de Ameaças
 
 ---
 
-### <div align="center">#1. Threat Modeling</div>
+### <div align="center">THREAT MODELING</div>
 
-- Desde o início (STRIDE), com diagramas de fluxo de dados e revisão contínua a cada mudança de design. [Documentação oficial Stellar](https://developers.stellar.org/docs/build/security-docs/threat-modeling/threat-modeling-how-to)
-
----
-
-### <div align="center">#2. STRIDE Template</div>
-
-- Utilize o template STRIDE para documentar ativos, ameaças, impactos e mitigação; registre riscos aceitos quando aplicável. [STRIDE Template](https://developers.stellar.org/docs/build/security-docs/threat-modeling/STRIDE-template)
+- O que estamos fazendo?
+- O que pode dar errado?
+- O que vamos fazer sobre isso?
+- Fizemos um bom trabalho?
 
 ---
 
-### <div align="center">#3. Autenticação Segura</div>
+### <div align="center">O que estamos fazendo?</div>
 
-- Use soluções de autenticação prontas e bem testadas; evite reinventar login; habilite MFA sempre que possível. [Boas Práticas de Autenticação](https://developers.stellar.org/docs/build/security-docs/securing-web-based-projects)
+**Entidades Externas**
 
----
+- Sistemas ou atores fora do controle da aplicação/empresa
+- Exemplos: usuários, APIs externas, serviços de terceiros
 
-### <div align="center">#4. Camada HTTP Segura</div>
+**Processos**
 
-- Fortaleça a camada HTTP com cabeçalhos de segurança e valide com ferramentas como Mozilla Observatory. [Segurança Web](https://developers.stellar.org/docs/build/security-docs/securing-web-based-projects)
+- Código e sistemas sob controle da aplicação/empresa
+- Exemplos: serviços de backend, smart contracts, lógica de negócio
 
----
+**Fluxos de Dados**
 
-### <div align="center">#5. Proteção contra CSRF e SQL Injection</div>
+- Movimento de dados entre sistemas
+- Exemplos: chamadas de API, interações com contratos, consultas ao banco de dados
 
-- Proteja contra CSRF e injeção de SQL; ative proteção CSRF e prefira ORM a consultas SQL construídas a partir de entrada do usuário. [Segurança Web](https://developers.stellar.org/docs/build/security-docs/securing-web-based-projects)
+**Armazenamento de Dados**
 
----
+- Onde os dados persistem no sistema
+- Exemplos: armazenamento de contratos Soroban, bancos de dados, servidores de arquivos
 
-### <div align="center">#6. Políticas Públicas e Educação</div>
+**Fronteiras de Confiança**
 
-- Estabeleça políticas públicas e educação de usuários para reduzir phishing e engenharia social. [Segurança Web](https://developers.stellar.org/docs/build/security-docs/securing-web-based-projects)
-
----
-
-### <div align="center">#7. Documentação de Fluxo de Dados</div>
-
-- Documente o fluxo de dados, fronteiras de confiança e áreas de controle; use isso como base para o threat modeling. [Como Documentar](https://developers.stellar.org/docs/build/security-docs/threat-modeling/threat-modeling-how-to)
-
----
-
-### <div align="center">#8. Exemplos Práticos para Treinamento</div>
-
-- Use exemplos práticos para treinar o time em STRIDE e identificação de ameaças (ex.: Pizza Restaurant example). [Exemplo Prático](https://developers.stellar.org/docs/build/security-docs/threat-modeling/pizza-restaurant-example)
+- Áreas onde as premissas de confiança mudam entre sistemas
+- Exemplo: Fronteira frontend/backend onde a validação de entrada deve ocorrer
+- Crítico para identificar pontos de controle de segurança
 
 ---
 
-### <div align="center">#9. Matriz de Mitigação</div>
+### <div align="center">O que pode dar errado? {STRIDE}</div>
 
-- Construa uma matriz de mitigação (ameaça -> contramedida) e mantenha-a atualizada ao longo do ciclo de vida. [STRIDE Template](https://developers.stellar.org/docs/build/security-docs/threat-modeling/STRIDE-template) | [Como Fazer](https://developers.stellar.org/docs/build/security-docs/threat-modeling/threat-modeling-how-to)
+**Falsificação**
+
+- Definição: Um atacante pode se passar por outra pessoa, frequentemente aproveitando falhas na verificação do usuário final em sistemas downstream.
+- Pergunta a Fazer: O atacante poderia induzir uma ação se passando por outra pessoa?
+
+**Adulteração**
+
+- Definição: Um atacante pode modificar dados enviados para ter um efeito diferente do previsto.
+- Pergunta a Fazer: A requisição poderia ser modificada de alguma forma para executar uma ação diferente da pretendida?
+
+**Repúdio**
+
+- Definição: Um usuário pode alegar que não realizou a ação que foi tomada.
+- Pergunta a Fazer: O usuário pode "refutar" a ação, alegando que não a realizou?
+
+**Divulgação de Informação**
+
+- Definição: Compartilhamento excessivo de dados que deveriam ser mantidos privados.
+- Pergunta a Fazer: Existem áreas onde mais informações estão sendo compartilhadas ou informações limitadas estão sendo compartilhadas com mais pessoas do que o estritamente necessário?
+
+**Negação de Serviço**
+
+- Definição: Um atacante pode afetar negativamente a disponibilidade de um sistema.
+- Pergunta a Fazer: Existe alguma parte da aplicação que pode ser sobrecarregada ou tornada totalmente indisponível devido à demanda excessiva?
+
+**Elevação de Privilégio**
+
+- Definição: Refere-se à capacidade de um atacante obter privilégios e funções adicionais além do que inicialmente foi concedido, seja por meios legítimos ou ilegítimos.
+- Pergunta a Fazer: Alguém pode ganhar privilégios adicionais sem autenticação e autorização adequadas?
 
 ---
 
-### <div align="center">#10. Melhoria Contínua</div>
+### <div align="center">O que vamos fazer sobre isso?</div>
 
-- Adote a mentalidade de melhoria contínua: segurança e atacantes evoluem; revise periodicamente controles, dependências e configurações. [Segurança Web](https://developers.stellar.org/docs/build/security-docs/securing-web-based-projects) | [Como Fazer](https://developers.stellar.org/docs/build/security-docs/threat-modeling/threat-modeling-how-to)
+#### Medidas de Mitigação
+
+- Padrões de Segurança
+- Testes TDD e BDD
+- Testes fuzzy
+- Código auditado pela comunidade
+- Análise estática de código
+- Auditorias
+
+#### Matriz de Risco
+
+A matriz de risco nos ajuda a priorizar ameaças baseadas em:
+
+**Probabilidade/Impacto**
+
+IMAGEM DE MATRIZ DE RISCO: https://www.espm.br/wp-content/uploads/Matriz-de-risco.png
+
+- Alto: Ação imediata necessária
+- Médio: Planejar mitigação
+- Baixo: Monitorar
 
 ---
 
-## 4. Hands On
+### <div align="center">Fizemos um bom trabalho?</div>
 
-Para condensar tudo que aprendemos vamos criar um projeto simples para fixar o conhecimento.
+- O diagrama de fluxo de dados foi referenciado desde sua criação?
+- O modelo STRIDE revelou novos problemas ou preocupações de design que não haviam sido previamente abordados ou considerados?
+- Os tratamentos identificados na seção "O que vamos fazer sobre isso" abordaram adequadamente os problemas identificados?
+- Foram encontrados problemas adicionais após o modelo de ameaças?
+
+---
+
+## 4. Hands-on
+
+Para condensar tudo o que aprendemos, vamos criar um projeto simples para fixar o conhecimento.
 
 - TTL: Instance, Persistent e Temporary
-- Autenticação simples e múltipla
+- Autenticação simples e múltipla 
 - Boas práticas de segurança
 
 ---
 
 ### Como?
 
-Nosso projeto será um simulador de estacionamento onde:
+Nosso projeto será um simulador de estacionamento em que:
 
 - Qualquer usuário pode estacionar seu carro
-- Apenas o admin pode alterar os preços do estacionamento
-- Apenas dois admins podem sacar o valor do estacionamento
-- O ticket é cobrado por hora
+- Apenas o administrador pode alterar os preços do estacionamento
+- Apenas dois administradores podem sacar o valor do estacionamento
+- O tíquete é cobrado por hora
 - É possível comprar um passe anual
-- O usuário precisa tirar o carro antes do ticket expirar ou será multado
-- A multa custa o passe anual
+- O usuário precisa retirar o carro antes de o tíquete expirar ou será multado
+- A multa custa o valor do passe anual
 
 ---
 
 ## Revisão
 
-- TTL: definição, tipos de storage (Instance, Persistent, Temporary) e como a extensão de TTL afeta cada um.
-- Autorização e autenticação: ordem correta (autenticar depois autorizar), múltiplos usuários e possibilidade de personalizar a checagem.
-- Boas práticas: threat modeling (STRIDE), camadas de defesa na web (HTTP seguro, CSRF/ORM), políticas contra phishing e melhoria contínua.
-- Hands-on: simulador de estacionamento abordando TTL, autenticação e práticas de segurança.
+- TTL: definição, tipos de storage (Instance, Persistent, Temporary) e como a extensão de TTL afeta cada um
+- Autorização e autenticação: ordem correta (autenticar e depois autorizar), múltiplos usuários e possibilidade de personalizar a verificação
+- Boas práticas: threat modeling (STRIDE), camadas de defesa na web (HTTP seguro, CSRF/ORM), políticas contra phishing e melhoria contínua
+- Hands-on: simulador de estacionamento abordando TTL, autenticação e práticas de segurança
 
 ---
 
-## Lição de casa
+## Lição de Casa
 
 ### Desafio de Aprendizagem
 
-- Fácil: Liste quais dados do seu contrato poderiam usar Temporary vs Persistent e justifique o TTL de cada um.
-- Médio: Desenhe um diagrama de fluxo de dados (DFD) do seu projeto e aplique STRIDE a pelo menos 2 ameaças, propondo mitigação.
-- Difícil: Crie um checklist de segurança para seu repositório (autenticação, cabeçalhos HTTP, CSRF, políticas anti-phishing) e aplique-o em uma branch de hardening.
+- Fácil: Liste quais dados do seu contrato poderiam usar Temporary versus Persistent e justifique o TTL de cada um
+- Médio: Desenhe um diagrama de fluxo de dados (DFD) do seu projeto e aplique STRIDE a pelo menos duas ameaças, propondo mitigação
+- Difícil: Aplique testes fuzzy no seu contrato
 
 ### Desafio de Carreira
 
-- Publique no LinkedIn/Twitter um resumo do que aprendeu sobre segurança em smart contracts e threat modeling; inclua um DFD simples do seu projeto e marque a comunidade.
+- Publique no LinkedIn/Twitter um resumo do que aprendeu sobre segurança em smart contracts e threat modeling; inclua um DFD simples do seu projeto e marque a comunidade
 
 ### Desafio de Comunidade
 
-- Compartilhe seu DFD e matriz de mitigação no Discord da turma; dê feedback construtivo em pelo menos 2 colegas.
+- Compartilhe seu DFD e matriz de mitigação no Discord da turma; dê feedback construtivo em pelo menos dois colegas
 
 ---
 
