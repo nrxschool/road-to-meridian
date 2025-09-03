@@ -52,6 +52,7 @@ pub fn purchase_hourly_ticket(
         hours_paid: hours,
         amount_paid: payment,
         entry_time: current_time,
+        has_exited: false
     };
     
     // Store ticket and add revenue

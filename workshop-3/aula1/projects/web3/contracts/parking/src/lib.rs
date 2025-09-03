@@ -92,7 +92,7 @@ impl ParkingContract {
     // INITIALIZATION FUNCTIONS
     // ========================================================================
     
-    /// Initialize the parking contract with administrators and pricing
+    /// Construct the parking contract with administrators and pricing
     /// Must be called once before any other operations
     /// 
     /// # Arguments
@@ -102,7 +102,7 @@ impl ParkingContract {
     /// * `hourly_price` - Price per hour in stroops
     /// * `annual_price` - Annual pass price in stroops
     /// * `total_spots` - Total number of parking spots
-    pub fn initialize(
+    pub fn __constructor(
         env: Env,
         admin1: Address,
         admin2: Address,

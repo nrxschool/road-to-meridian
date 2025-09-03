@@ -138,7 +138,7 @@ Vamos ver como isso funciona.
 
 ---
 
-### 2. Autorização e Autenticação
+## 2. Autorização e Autenticação
 
 Precisamos apenas entender que:
 
