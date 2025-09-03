@@ -94,7 +94,7 @@ Vocês estão prestes a descobrir como construir aplicações descentralizadas r
 
 Cross Contracts é um dos pilares fundamentais da composabilidade no Soroban. Permite que contratos inteligentes interajam entre si de forma segura e eficiente, criando um ecossistema interoperável de aplicações descentralizadas.
 
-### O que são Cross Contracts?
+### O que é Cross Contracts?
 
 Cross Contracts refere-se à capacidade de um contrato inteligente invocar funções de outros contratos na rede Stellar. Isso permite:
 
@@ -102,34 +102,30 @@ Cross Contracts refere-se à capacidade de um contrato inteligente invocar funç
 - **Reutilização de código**: Aproveitar funcionalidades existentes
 - **Modularidade**: Separar responsabilidades em contratos especializados
 
-### Cross-Contract Invocation
+### Cross-Contract Call
 
-O Soroban oferece suporte nativo para chamadas entre contratos através do `Address` e métodos de invocação:
+O Soroban oferece suporte nativo para chamadas entre contratos através do `contractimport!` macro e tipos Client:
 
 ```rust
-use soroban_sdk::{contract, contractimpl, Address, Env};
+use soroban_sdk::{contractclient, Address, Env};
+
+#[contractclient(name = "FlipperClient")]
+pub trait FlipperInterface {
+    fn get(env: Env) -> bool;
+    fn flip(env: Env);
+}
 
 #[contract]
-pub struct CrossContractExample;
+pub struct TokenFactory;
 
 #[contractimpl]
-impl CrossContractExample {
-    pub fn call_other_contract(
-        env: Env,
-        contract_address: Address,
-        method: Symbol,
-        args: Vec<Val>
-    ) -> Val {
-        env.invoke_contract(&contract_address, &method, args)
+impl TokenFactory {
+    pub fn get_flipper_value(env: Env, contract: Address) -> bool {
+        let flipper_client = flipper::Client::new(&env, &contract);
+        flipper_client.get()
     }
 }
 ```
-
-### Padrões de Interoperabilidade
-
-**1. Interface Contracts**: Definir interfaces padronizadas para interação
-**2. Proxy Patterns**: Usar contratos intermediários para roteamento
-**3. Registry Patterns**: Manter registros de contratos disponíveis
 
 ---
 
@@ -145,34 +141,47 @@ O Soroban oferece um framework de autorização avançado que inclui:
 - **Biblioteca de Autorização**: Ferramentas integradas para validação de permissões
 - **Regras Complexas**: Capacidade de implementar lógicas de autorização sofisticadas
 
-### require_auth - Controle de Acesso
+---
 
-A função `require_auth` é o mecanismo principal para validar autenticação:
+### Controle de Acesso em Profundidade
+
+Esse tipo de autenticação visa identificar um usuário mesmo depois de várias chamadas entre contratos.
+
+User -> Contrato-a -> Contrato-b -> Contrato-c
+
+Como podemos validar no Contrato-C se o user assinou essa chamada?
+
+Isso é muito útil, veja esse caso:
+
+---
+
+### Caso Real: Soroswap
+
+No Soroswap, quando um usuário faz uma troca de tokens (swap), a transação passa por múltiplos contratos:
+
+1. Router Contract (entrada)
+2. Factory Contract (localiza pool)
+3. Pool Contract (executa swap)
+
+O Pool Contract precisa validar se o usuário original autorizou a operação, mesmo após passar por dois contratos intermediários. Isso previne manipulações não autorizadas e garante que apenas trocas legítimas sejam executadas.
+
+Outros casos incluem:
+
+- Sistemas de governança em DAOs
+- Protocolos de empréstimo compostos
+- Plataformas de NFT com royalties em cascata
+
+---
+
+### Deep Contract Auth
+
+O Soroban oferece autenticação profunda através de `require_auth` e `require_auth_for_args`:
 
 ```rust
-use soroban_sdk::{contract, contractimpl, Address, Env};
-
-#[contract]
-pub struct AuthContract;
-
-#[contractimpl]
-impl AuthContract {
-    pub fn protected_function(env: Env, user: Address, amount: i128) {
-        // Requer autenticação do usuário
-        user.require_auth();
-
-        // Lógica protegida aqui
-        // ...
-    }
-
-    pub fn multi_auth_function(env: Env, users: Vec<Address>) {
-        // Requer autenticação de múltiplos usuários
-        for user in users.iter() {
-            user.require_auth();
-        }
-    }
-}
+CODIGO
 ```
+
+---
 
 ### Padrões de Segurança
 
@@ -195,47 +204,17 @@ O Deployer Pattern, também conhecido como Factory Pattern, permite que um contr
 - **Padronização**: Garantir que todos os contratos sigam as mesmas especificações
 - **Controle**: Manter registro e controle sobre contratos criados
 
+---
+
 ### Factory Contract Implementation
 
 O Soroban SDK oferece funcionalidades nativas para deploy programático:
 
 ```rust
-use soroban_sdk::{
-    contract, contractimpl, Address, Bytes, Env, Symbol
-};
-
-#[contract]
-pub struct TokenFactory;
-
-#[contractimpl]
-impl TokenFactory {
-    pub fn create_token(
-        env: Env,
-        wasm_hash: Bytes,
-        salt: Bytes,
-        init_args: Vec<Val>
-    ) -> Address {
-        // Deploy do novo contrato
-        let contract_address = env.deployer()
-            .with_current_contract(salt)
-            .deploy(wasm_hash);
-
-        // Inicializar o contrato recém-criado
-        env.invoke_contract(
-            &contract_address,
-            &Symbol::new(&env, "initialize"),
-            init_args
-        );
-
-        contract_address
-    }
-
-    pub fn get_deployed_contracts(env: Env) -> Vec<Address> {
-        // Retornar lista de contratos deployados
-        // Implementação específica...
-    }
-}
+CODIGO
 ```
+
+---
 
 ### Vantagens do Deployer Pattern
 
@@ -258,42 +237,17 @@ O Soroban oferece diferentes abordagens para implementar contratos atualizáveis
 - **Diamond Pattern**: Modularizar funcionalidades em múltiplos contratos
 - **Versioning Pattern**: Manter múltiplas versões com migração controlada
 
+---
+
 ### Implementação do Proxy Pattern
 
 O padrão mais comum utiliza um contrato proxy que delega chamadas para contratos de implementação:
 
 ```rust
-use soroban_sdk::{
-    contract, contractimpl, Address, Env, Symbol, Vec, Val
-};
-
-#[contract]
-pub struct UpgradeableProxy;
-
-#[contractimpl]
-impl UpgradeableProxy {
-    pub fn initialize(env: Env, admin: Address, implementation: Address) {
-        env.storage().instance().set(&Symbol::new(&env, "admin"), &admin);
-        env.storage().instance().set(&Symbol::new(&env, "impl"), &implementation);
-    }
-
-    pub fn upgrade(env: Env, new_implementation: Address) {
-        let admin: Address = env.storage().instance()
-            .get(&Symbol::new(&env, "admin")).unwrap();
-        admin.require_auth();
-
-        env.storage().instance()
-            .set(&Symbol::new(&env, "impl"), &new_implementation);
-    }
-
-    pub fn delegate_call(env: Env, method: Symbol, args: Vec<Val>) -> Val {
-        let implementation: Address = env.storage().instance()
-            .get(&Symbol::new(&env, "impl")).unwrap();
-
-        env.invoke_contract(&implementation, &method, args)
-    }
-}
+CODIGO
 ```
+
+---
 
 ### Boas Práticas para Upgrades
 
@@ -380,10 +334,23 @@ Nosso projeto será uma plataforma de Gestão de tarefas em que:
 
 **Recursos:**
 
-- [Soroban Documentation](https://soroban.stellar.org/docs)
-- [Soroban Examples](https://github.com/stellar/soroban-examples)
-- [Stellar CLI Reference](https://developers.stellar.org/docs/tools/cli)
-- [Soroban SDK Docs](https://docs.rs/soroban-sdk/latest/soroban_sdk/)
+### Documentação Oficial
+
+- [Soroban Documentation](https://soroban.stellar.org/) - Documentação completa do Soroban
+- [Stellar Developer Portal](https://developers.stellar.org/) - Portal de desenvolvedores Stellar
+- [Soroban SDK Rust Docs](https://docs.rs/soroban-sdk/) - Documentação da SDK Rust
+
+### Exemplos e Tutoriais
+
+- [Soroban Examples](https://github.com/stellar/soroban-examples) - Exemplos oficiais de contratos
+- [Soroban How-To Guides](https://soroban.stellar.org/docs/how-to-guides) - Guias práticos
+- [Stellar DApp Examples](https://github.com/stellar/stellar-dapp-examples) - Exemplos de DApps
+
+### Ferramentas de Desenvolvimento
+
+- [Stellar CLI](https://github.com/stellar/stellar-cli) - Ferramenta de linha de comando
+- [Soroban RPC](https://soroban.stellar.org/docs/reference/rpc) - Referência da API RPC
+- [Stellar Build](https://stellar.build/) - Plataforma de desenvolvimento
 
 ### Desafio de Carreira
 
