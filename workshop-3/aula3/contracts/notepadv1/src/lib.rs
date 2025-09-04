@@ -1,29 +1,16 @@
 #![no_std]
 use soroban_sdk::{
-    contract, contractimpl, contracttype, symbol_short, Address, BytesN, Env, String, Symbol,
+    contract, contractimpl, Address, BytesN, Env, String,
 };
 
-const COUNTER: Symbol = symbol_short!("counter");
+// Módulos modularizados seguindo o princípio de responsabilidade única
+mod admin;
+mod storage;
+mod notepad;
 
-#[contracttype]
-#[derive(Clone)]
-enum DataKey {
-    Admin,
-}
-
-#[derive(Clone)]
-#[contracttype]
-pub struct Note {
-    pub content: String,
-}
-
-impl Default for Note {
-    fn default() -> Self {
-        Self {
-            content: String::from_str(&Env::default(), ""),
-        }
-    }
-}
+use admin::AdminManager;
+use notepad::NotepadManager;
+use storage::Note;
 
 #[contract]
 pub struct Notepad;
@@ -31,59 +18,47 @@ pub struct Notepad;
 #[contractimpl]
 impl Notepad {
     pub fn __constructor(env: Env, admin: Address) {
-        env.storage().instance().set(&DataKey::Admin, &admin);
-        env.storage().instance().set(&COUNTER, &0);
+        NotepadManager::initialize(&env, admin);
     }
 }
 
 #[contractimpl]
 impl Notepad {
     pub fn add_note(env: Env, caller: Address, note: String) {
-        Self::check_admin(env.clone(), caller.clone());
-
-        let note = Note { content: note };
-
-        let counter: i64 = env.storage().instance().get(&COUNTER).unwrap_or(0);
-        env.storage().instance().set(&COUNTER, &(counter + 1));
-
-        env.storage().persistent().set(&counter, &note);
+        NotepadManager::add_note(&env, caller, note);
     }
 
     pub fn get_note(env: Env, counter: i64) -> Note {
-        env.storage().persistent().get(&counter).unwrap_or_default()
+        NotepadManager::get_note(&env, counter)
     }
 
     pub fn get_counter(env: Env) -> i64 {
-        env.storage().instance().get(&COUNTER).unwrap_or(0)
+        NotepadManager::get_counter(&env)
     }
 }
 
 #[contractimpl]
 impl Notepad {
     pub fn check_admin(env: Env, caller: Address) {
-        let admin: Address = env.storage().instance().get(&DataKey::Admin).unwrap();
-        caller.require_auth();
-        assert_eq!(admin, caller);
+        NotepadManager::check_admin(&env, caller);
     }
 
     pub fn set_admin(env: Env, caller: Address, new_admin: Address) {
-        Self::check_admin(env.clone(), caller.clone());
-        env.storage().instance().set(&DataKey::Admin, &new_admin);
+        AdminManager::set_admin(&env, caller, new_admin);
     }
 
     pub fn get_admin(env: Env) -> Address {
-        env.storage().instance().get(&DataKey::Admin).unwrap()
+        AdminManager::get_admin(&env)
     }
 }
 
 #[contractimpl]
 impl Notepad {
     pub fn version() -> u32 {
-        1
+        NotepadManager::version()
     }
 
     pub fn upgrade(env: Env, caller: Address, new_wasm_hash: BytesN<32>) {
-        Self::check_admin(env.clone(), caller.clone());
-        env.deployer().update_current_contract_wasm(new_wasm_hash);
+        NotepadManager::upgrade(&env, caller, new_wasm_hash);
     }
 }
