@@ -1,28 +1,12 @@
 import { Plus, BookOpen, TrendingUp } from 'lucide-react';
 import Button from '../components/ui/Button';
-import type { Page } from '../types';
+import { useAuthStore } from '../stores';
+import { useNoteOperations, useNavigation } from '../hooks';
 
-interface NotepadPageProps {
-  userName: string;
-  selectedEmojis: string[];
-  currentNote: string;
-  notes: string[];
-  onSetCurrentNote: (note: string) => void;
-  onAddNote: () => void;
-  onKeyPress: (e: React.KeyboardEvent) => void;
-  onNavigate: (page: Page) => void;
-}
-
-const NotepadPage = ({
-  userName,
-  selectedEmojis,
-  currentNote,
-  notes,
-  onSetCurrentNote,
-  onAddNote,
-  onKeyPress,
-  onNavigate,
-}: NotepadPageProps) => {
+const NotepadPage = () => {
+  const { userName, selectedEmojis } = useAuthStore();
+  const { currentNote, notes, handleAddNote, handleKeyPress, handleNoteChange } = useNoteOperations();
+  const { navigateToPage } = useNavigation();
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-300 to-yellow-400 p-8">
       <div className="max-w-2xl mx-auto">
@@ -42,15 +26,15 @@ const NotepadPage = ({
             </label>
             <div className="flex gap-3 items-center">
               <input
-                type="text"
-                placeholder="Type your note here..."
-                value={currentNote}
-                onChange={(e) => onSetCurrentNote(e.target.value)}
-                onKeyPress={onKeyPress}
-                className="flex-1 p-4 border-3 border-orange-300 rounded-xl text-lg focus:outline-none focus:border-teal-500 transition-colors"
-              />
-              <button
-                onClick={onAddNote}
+              type="text"
+              placeholder="Type your note here..."
+              value={currentNote}
+              onChange={(e) => handleNoteChange(e.target.value)}
+              onKeyPress={handleKeyPress}
+              className="flex-1 p-4 border-3 border-orange-300 rounded-xl text-lg focus:outline-none focus:border-teal-500 transition-colors"
+            />
+            <button
+              onClick={handleAddNote}
                 disabled={!currentNote.trim()}
                 className="bg-teal-500 hover:bg-teal-600 disabled:bg-gray-300 text-white p-4 rounded-xl transition-colors shadow-lg"
               >
@@ -62,7 +46,7 @@ const NotepadPage = ({
 
           <div className="text-center space-y-4">
             <Button
-              onClick={() => onNavigate('notesList')}
+              onClick={() => navigateToPage('notesList')}
               variant="gradient"
               size="lg"
               className="mx-auto bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500"
@@ -73,7 +57,7 @@ const NotepadPage = ({
 
             {notes.length > 0 && (
               <Button
-                onClick={() => onNavigate('analytics')}
+                onClick={() => navigateToPage('analytics')}
                 variant="gradient"
                 size="lg"
                 className="mx-auto bg-gradient-to-r from-blue-400 to-purple-400 hover:from-blue-500 hover:to-purple-500"

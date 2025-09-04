@@ -1,26 +1,21 @@
 import { TrendingUp } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import Button from '../components/ui/Button';
-import type { Page, AnalyticsData } from '../types';
+import { useAuthStore } from '../stores';
+import { useAnalytics, useNavigation } from '../hooks';
+import type { AnalyticsData } from '../types';
 
-interface AnalyticsPageProps {
-  userName: string;
-  selectedEmojis: string[];
-  notes: string[];
-  onNavigate: (page: Page) => void;
-}
-
-const AnalyticsPage = ({
-  userName,
-  selectedEmojis,
-  notes,
-  onNavigate,
-}: AnalyticsPageProps) => {
-  const analyticsData: AnalyticsData[] = notes.map((note, index) => ({
-    name: `Nota ${index + 1}`,
-    avgChars: Math.round(notes.slice(0, index + 1).reduce((acc, n) => acc + n.length, 0) / (index + 1)),
-    lastNoteChars: note.length
-  }));
+const AnalyticsPage = () => {
+  const { userName, selectedEmojis } = useAuthStore();
+  const { navigateToPage } = useNavigation();
+  const {
+    analyticsData,
+    totalNotes,
+    totalCharacters,
+    averageCharacters,
+    longestNote,
+    shortestNote
+  } = useAnalytics();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-300 to-yellow-400 p-8">
@@ -117,14 +112,14 @@ const AnalyticsPage = ({
               </div>
               <div className="flex items-center gap-2 text-green-600 font-medium">
                 <TrendingUp className="h-4 w-4" />
-                <span>{notes.length} notas analisadas</span>
+                <span>{totalNotes} notas analisadas</span>
               </div>
             </div>
           </div>
           
           <div className="text-center">
             <Button
-              onClick={() => onNavigate('notepad')}
+              onClick={() => navigateToPage('notepad')}
               variant="primary"
               size="lg"
             >

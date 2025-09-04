@@ -1,7 +1,12 @@
-import type { EmojiSelectorProps } from '../../types';
+import { useNavigationStore, useEmojiStore } from '../../stores';
+import { useEmojiOperations } from '../../hooks';
 
-const EmojiSelector = ({ isOpen, onClose, onSelect, allEmojis }: EmojiSelectorProps) => {
-  if (!isOpen) return null;
+const EmojiSelector = () => {
+  const { showEmojiModal, closeEmojiModal } = useNavigationStore();
+  const { allEmojis } = useEmojiStore();
+  const { handleEmojiSelect } = useEmojiOperations();
+  
+  if (!showEmojiModal) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -12,7 +17,7 @@ const EmojiSelector = ({ isOpen, onClose, onSelect, allEmojis }: EmojiSelectorPr
           {allEmojis.map((emoji, index) => (
             <button
               key={index}
-              onClick={() => onSelect(emoji)}
+              onClick={() => handleEmojiSelect(emoji)}
               className="bg-gray-100 hover:bg-teal-100 p-4 rounded-lg text-center transition-colors text-3xl"
             >
               {emoji}
@@ -22,7 +27,7 @@ const EmojiSelector = ({ isOpen, onClose, onSelect, allEmojis }: EmojiSelectorPr
 
         <div className="text-center">
           <button
-            onClick={onClose}
+            onClick={closeEmojiModal}
             className="bg-gray-400 hover:bg-gray-500 text-white py-3 px-6 rounded-lg font-bold transition-colors"
           >
             Cancel

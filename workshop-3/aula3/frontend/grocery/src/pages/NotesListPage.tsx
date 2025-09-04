@@ -1,20 +1,12 @@
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import Button from '../components/ui/Button';
-import type { Page } from '../types';
+import { useAuthStore } from '../stores';
+import { useNoteOperations, useNavigation } from '../hooks';
 
-interface NotesListPageProps {
-  userName: string;
-  selectedEmojis: string[];
-  notes: string[];
-  onNavigate: (page: Page) => void;
-}
-
-const NotesListPage = ({
-  userName,
-  selectedEmojis,
-  notes,
-  onNavigate,
-}: NotesListPageProps) => {
+const NotesListPage = () => {
+  const { userName, selectedEmojis } = useAuthStore();
+  const { notes } = useNoteOperations();
+  const { navigateToPage } = useNavigation();
   const [animationParent] = useAutoAnimate();
 
   return (
@@ -57,7 +49,7 @@ const NotesListPage = ({
           
           <div className="text-center">
             <Button
-              onClick={() => onNavigate('notepad')}
+              onClick={() => navigateToPage('notepad')}
               variant="primary"
               size="lg"
             >

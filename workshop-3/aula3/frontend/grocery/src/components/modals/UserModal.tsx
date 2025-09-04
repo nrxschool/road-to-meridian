@@ -1,17 +1,16 @@
 import { X, Shuffle } from 'lucide-react';
-import type { UserModalProps } from '../../types';
+import { useNavigation, useEmojiOperations } from '../../hooks';
+import { useAuthStore, useNavigationStore } from '../../stores';
 
-const UserModal = ({
-  isOpen,
-  onClose,
-  onNext,
-  userName,
-  setUserName,
-  selectedEmojis,
-  onEmojiClick,
-  onRandomEmojis,
-}: UserModalProps) => {
-  if (!isOpen) return null;
+const UserModal = () => {
+  const { showModal, closeModal, handleModalNext } = useNavigation();
+  const { userName, selectedEmojis, setUserName } = useAuthStore();
+  const {
+    handleEmojiClick,
+    handleRandomEmojis
+  } = useEmojiOperations();
+  
+  if (!showModal) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -33,7 +32,7 @@ const UserModal = ({
           <div className="text-center mb-4">
             <p className="text-lg font-bold text-gray-800 mb-4">Your emojis:</p>
             <button
-              onClick={onRandomEmojis}
+              onClick={handleRandomEmojis}
               className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-bold transition-colors flex items-center gap-2 mx-auto shadow-lg"
             >
               <Shuffle size={18} />
@@ -45,7 +44,7 @@ const UserModal = ({
             {selectedEmojis.map((emoji, index) => (
               <button
                 key={index}
-                onClick={() => onEmojiClick(index)}
+                onClick={() => handleEmojiClick(index)}
                 className="bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 p-6 rounded-2xl text-center transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg transform hover:scale-105"
               >
                 <div className="text-4xl mb-3">{emoji}</div>
@@ -57,14 +56,14 @@ const UserModal = ({
 
         <div className="flex gap-3">
           <button
-            onClick={onClose}
+            onClick={closeModal}
             className="bg-red-500 hover:bg-red-600 text-white p-3 rounded-lg flex items-center justify-center transition-colors shadow-lg"
           >
             <X size={20} />
           </button>
           
           <button
-            onClick={onNext}
+            onClick={handleModalNext}
             disabled={!userName.trim()}
             className="flex-1 bg-teal-500 hover:bg-teal-600 disabled:bg-gray-300 text-white py-3 px-6 rounded-lg font-bold text-lg transition-colors"
           >

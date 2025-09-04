@@ -1,101 +1,49 @@
-import { useState } from 'react';
-import type { Page } from '../types';
+// This file provides backward compatibility during refactoring
+// Uses new modular hooks internally
 
-const allEmojis = ['😊', '🎉', '✨', '🎈', '🌟', '💫', '🔥', '💎', '🍀', '🎯', '🏆', '🎪', '🎭', '🎨', '🎵', '🎸', '🍕', '🍔', '🍰', '🍪'];
+import { useAuthStore } from '../stores';
+import { useNoteOperations } from './useNoteOperations';
+import { useEmojiOperations } from './useEmojiOperations';
+import { useNavigation } from './useNavigation';
 
 export const useAppState = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('grocery');
-  const [showModal, setShowModal] = useState(false);
-  const [showEmojiModal, setShowEmojiModal] = useState(false);
-  const [editingEmojiIndex, setEditingEmojiIndex] = useState<number | null>(null);
-  const [userName, setUserName] = useState('');
-  const [selectedEmojis, setSelectedEmojis] = useState(['😊', '🎉', '✨']);
-  const [currentNote, setCurrentNote] = useState('');
-  const [notes, setNotes] = useState<string[]>([]);
-
-  const getRandomEmojis = () => {
-    const shuffled = [...allEmojis].sort(() => 0.5 - Math.random());
-    setSelectedEmojis(shuffled.slice(0, 3));
-  };
-
-  const handleEmojiClick = (index: number) => {
-    setEditingEmojiIndex(index);
-    setShowEmojiModal(true);
-  };
-
-  const handleEmojiSelect = (emoji: string) => {
-    if (editingEmojiIndex !== null) {
-      const newEmojis = [...selectedEmojis];
-      newEmojis[editingEmojiIndex] = emoji;
-      setSelectedEmojis(newEmojis);
-    }
-    setShowEmojiModal(false);
-    setEditingEmojiIndex(null);
-  };
-
-  const handleBuyNowClick = () => {
-    setShowModal(true);
-  };
-
-  const handleModalNext = () => {
-    if (userName.trim()) {
-      setShowModal(false);
-      setCurrentPage('notepad');
-    }
-  };
-
-  const handleAddNote = () => {
-    if (currentNote.trim()) {
-      setNotes(prev => [...prev, currentNote.trim()]);
-      setCurrentNote('');
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleAddNote();
-    }
-  };
-
-  const navigateToPage = (page: Page) => {
-    setCurrentPage(page);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
-  const closeEmojiModal = () => {
-    setShowEmojiModal(false);
-    setEditingEmojiIndex(null);
-  };
+  // Use new modular hooks
+  const { userName, setUserName } = useAuthStore();
+  const noteOps = useNoteOperations();
+  const emojiOps = useEmojiOperations();
+  const navigation = useNavigation();
 
   return {
-    // State
-    currentPage,
-    showModal,
-    showEmojiModal,
-    editingEmojiIndex,
+    // Navigation state
+    currentPage: navigation.currentPage,
+    showModal: navigation.showModal,
+    showEmojiModal: navigation.showEmojiModal,
+    
+    // User state
     userName,
-    selectedEmojis,
-    currentNote,
-    notes,
-    allEmojis,
+    selectedEmojis: emojiOps.selectedEmojis,
+    
+    // Notes state
+    currentNote: noteOps.currentNote,
+    notes: noteOps.notes,
+    
+    // Emoji state
+    allEmojis: emojiOps.allEmojis,
     
     // Setters
     setUserName,
-    setCurrentNote,
+    setCurrentNote: noteOps.handleNoteChange,
     
     // Handlers
-    getRandomEmojis,
-    handleEmojiClick,
-    handleEmojiSelect,
-    handleBuyNowClick,
-    handleModalNext,
-    handleAddNote,
-    handleKeyPress,
-    navigateToPage,
-    closeModal,
-    closeEmojiModal,
+    getRandomEmojis: emojiOps.handleRandomEmojis,
+    handleEmojiClick: emojiOps.handleEmojiClick,
+    handleEmojiSelect: emojiOps.handleEmojiSelect,
+    handleBuyNowClick: navigation.handleBuyNowClick,
+    handleModalNext: navigation.handleModalNext,
+    handleAddNote: noteOps.handleAddNote,
+    handleKeyPress: noteOps.handleKeyPress,
+    navigateToPage: navigation.navigateToPage,
+    closeModal: navigation.closeModal,
+    closeEmojiModal: navigation.closeEmojiModal,
   };
 };
