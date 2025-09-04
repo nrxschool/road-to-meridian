@@ -89,7 +89,6 @@ impl Notepad {
 
 #[contractimpl]
 impl Notepad {
-
     pub fn add_note_on_contract(env: Env, caller: Address, note: String, contract: Address) {
         // Require authorization for the cross-contract call with specific arguments
         caller.require_auth();
