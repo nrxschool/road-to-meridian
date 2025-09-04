@@ -1,7 +1,8 @@
 export type Page = 'grocery' | 'notepad' | 'notesList' | 'analytics';
+export type DynamicPage = Page | string; // Suporte para páginas dinâmicas como '/joao'
 
 export interface AppState {
-  currentPage: Page;
+  currentPage: DynamicPage;
   showModal: boolean;
   showEmojiModal: boolean;
   editingEmojiIndex: number | null;
@@ -9,6 +10,24 @@ export interface AppState {
   selectedEmojis: string[];
   currentNote: string;
   notes: string[];
+}
+
+export interface Note {
+  content: string;
+  timestamp: string;
+  id: string;
+}
+
+export interface UserData {
+  userName: string;
+  selectedEmojis: string[];
+  notes: Note[];
+  createdAt: string;
+  lastVisit: string;
+}
+
+export interface UserPageProps {
+  username: string;
 }
 
 export interface EmojiSelectorProps {
@@ -36,7 +55,7 @@ export interface PageProps {
   currentNote: string;
   setCurrentNote: (note: string) => void;
   onAddNote: () => void;
-  onNavigate: (page: Page) => void;
+  onNavigate: (page: DynamicPage) => void;
 }
 
 export interface AnalyticsData {

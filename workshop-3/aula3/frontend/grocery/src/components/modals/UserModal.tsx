@@ -1,14 +1,41 @@
 import { X, Shuffle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useNavigation, useEmojiOperations } from '../../hooks';
 import { useAuthStore, useNavigationStore } from '../../stores';
+import type { UserData } from '../../types';
 
 const UserModal = () => {
-  const { showModal, closeModal, handleModalNext } = useNavigation();
+  const navigate = useNavigate();
+  const { showModal, closeModal } = useNavigation();
   const { userName, selectedEmojis, setUserName } = useAuthStore();
   const {
     handleEmojiClick,
     handleRandomEmojis
   } = useEmojiOperations();
+
+  const handlePurchase = () => {
+    if (!userName.trim()) return;
+
+    // Criar dados do usuário
+    const userData: UserData = {
+      userName: userName.trim(),
+      selectedEmojis: [...selectedEmojis],
+      notes: [],
+      createdAt: new Date().toISOString(),
+      lastVisit: new Date().toISOString()
+    };
+
+    // Salvar no localStorage
+    const userKey = `user_${userName.toLowerCase().replace(/\s+/g, '-')}`;
+    localStorage.setItem(userKey, JSON.stringify(userData));
+
+    // Fechar modal
+    closeModal();
+
+    // Redirecionar para página personalizada
+    const username = userName.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/${username}`);
+  };
   
   if (!showModal) return null;
 
@@ -63,11 +90,11 @@ const UserModal = () => {
           </button>
           
           <button
-            onClick={handleModalNext}
+            onClick={handlePurchase}
             disabled={!userName.trim()}
             className="flex-1 bg-teal-500 hover:bg-teal-600 disabled:bg-gray-300 text-white py-3 px-6 rounded-lg font-bold text-lg transition-colors"
           >
-            Next
+            🛒 Comprar Bloco de Notas
           </button>
         </div>
       </div>

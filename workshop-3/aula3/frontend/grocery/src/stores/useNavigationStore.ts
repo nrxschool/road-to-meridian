@@ -1,12 +1,13 @@
 import { create } from 'zustand';
-import type { Page } from '../types';
+import type { Page, DynamicPage } from '../types';
 
 interface NavigationState {
-  currentPage: Page;
+  currentPage: DynamicPage;
   showModal: boolean;
   showEmojiModal: boolean;
   editingEmojiIndex: number | null;
   navigateToPage: (page: Page) => void;
+  setCurrentPage: (page: DynamicPage) => void;
   openModal: () => void;
   closeModal: () => void;
   openEmojiModal: (index?: number) => void;
@@ -21,6 +22,8 @@ export const useNavigationStore = create<NavigationState>((set) => ({
   editingEmojiIndex: null,
   
   navigateToPage: (page: Page) => set({ currentPage: page }),
+  
+  setCurrentPage: (page: DynamicPage) => set({ currentPage: page }),
   
   openModal: () => set({ showModal: true }),
   
