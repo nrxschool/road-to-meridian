@@ -1,4 +1,4 @@
-use soroban_sdk::{contracttype, Env, String, Symbol, Vec, symbol_short};
+use soroban_sdk::{contracttype, Env, String, Symbol, symbol_short};
 
 const COUNTER: Symbol = symbol_short!("counter");
 
@@ -57,10 +57,5 @@ impl StorageManager {
     /// Cria uma nova nota com conteúdo
     pub fn create_note(content: String) -> Note {
         Note { content }
-    }
-
-    /// Verifica se uma nota existe
-    pub fn note_exists(env: &Env, counter: i64) -> bool {
-        env.storage().persistent().has(&counter)
     }
 }

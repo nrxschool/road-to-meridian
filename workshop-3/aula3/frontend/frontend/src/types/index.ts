@@ -1,5 +1,6 @@
-export type Page = 'grocery' | 'notepad' | 'notesList' | 'analytics';
+export type Page = 'grocery' | 'notepad' | 'notesList' | 'analytics' | 'home' | 'notes' | 'profile';
 export type DynamicPage = Page | string; // Suporte para páginas dinâmicas como '/joao'
+export type BottomNavPage = 'home' | 'notes' | 'profile';
 
 export interface AppState {
   currentPage: DynamicPage;
@@ -62,4 +63,18 @@ export interface AnalyticsData {
   name: string;
   avgChars: number;
   lastNoteChars: number;
+}
+
+export interface StellarWallet {
+  publicKey: string;
+  shortKey: string;
+  balance?: string;
+  isConnected: boolean;
+}
+
+export interface ProfileMenuItem {
+  id: string;
+  label: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  description: string;
 }

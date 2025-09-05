@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useNavigationStore, useAuthStore } from '../stores';
 import type { Page } from '../types';
 
@@ -13,6 +14,7 @@ export const useNavigation = () => {
   } = useNavigationStore();
   
   const { userName } = useAuthStore();
+  const navigate = useNavigate();
 
   const handleBuyNowClick = () => {
     openModal();
@@ -21,7 +23,8 @@ export const useNavigation = () => {
   const handleModalNext = () => {
     if (userName.trim()) {
       closeModal();
-      navigateToPage('notepad');
+      // Redirecionar para a página do notepad
+      navigate('/notepad');
     }
   };
 

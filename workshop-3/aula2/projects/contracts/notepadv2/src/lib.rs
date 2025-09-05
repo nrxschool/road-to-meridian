@@ -1,5 +1,5 @@
 #![no_std]
-use soroban_sdk::{contract, contractimpl, IntoVal};
+use soroban_sdk::{contract, contractimpl};
 use soroban_sdk::{Address, BytesN, Env, String, Vec};
 
 // Módulos modularizados seguindo o princípio de responsabilidade única
@@ -38,7 +38,7 @@ impl Notepad {
 
 #[contractimpl]
 impl Notepad {
-    pub fn check_admin(env: Env, caller: Address) {
+    pub fn check_admin(_env: Env, caller: Address) {
         AdminManager::check_admin(caller);
     }
 
