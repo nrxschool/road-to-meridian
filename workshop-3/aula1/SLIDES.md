@@ -266,7 +266,7 @@ IMAGEM DE MATRIZ DE RISCO: https://www.espm.br/wp-content/uploads/Matriz-de-risc
 Para condensar tudo o que aprendemos, vamos criar um projeto simples para fixar o conhecimento.
 
 - TTL: Instance, Persistent e Temporary
-- Autenticação simples e múltipla 
+- Autenticação simples e múltipla
 - Boas práticas de segurança
 
 ---
@@ -275,13 +275,15 @@ Para condensar tudo o que aprendemos, vamos criar um projeto simples para fixar 
 
 Nosso projeto será um simulador de estacionamento em que:
 
-- Qualquer usuário pode estacionar seu carro
-- Apenas o administrador pode alterar os preços do estacionamento
-- Apenas dois administradores podem sacar o valor do estacionamento
-- O tíquete é cobrado por hora
-- É possível comprar um passe anual
-- O usuário precisa retirar o carro antes de o tíquete expirar ou será multado
-- A multa custa o valor do passe anual
+| Funcionalidade | Descrição                                                                    |
+| -------------- | ---------------------------------------------------------------------------- |
+| Estacionamento | Qualquer usuário pode estacionar seu carro                                   |
+| Preços         | Apenas o administrador pode alterar os preços do estacionamento              |
+| Saques         | Apenas dois administradores podem sacar o valor do estacionamento            |
+| Cobrança       | O tíquete é cobrado por hora                                                 |
+| Passe Anual    | É possível comprar um passe anual                                            |
+| Expiração      | O usuário precisa retirar o carro antes de o tíquete expirar ou será multado |
+| Multa          | A multa custa o valor do passe anual                                         |
 
 ---
 
