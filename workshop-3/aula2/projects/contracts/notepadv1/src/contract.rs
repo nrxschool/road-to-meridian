@@ -29,6 +29,7 @@ impl Notepad {
     pub fn get_all_notes(env: Env) -> Vec<String> {
         notepad_core::get_all_notes(&env)
     }
+
     pub fn get_notes_counter(env: Env) -> u32 {
         notepad_core::get_notes_counter(&env)
     }

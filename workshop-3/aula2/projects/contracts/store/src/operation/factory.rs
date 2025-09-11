@@ -20,6 +20,7 @@ pub fn deploy_notepad(env: &Env, caller: Address, name: String) -> Result<Addres
     } else {
         return Err(Error::DeployNewHash);
     };
+
     // Generate a unique salt based on caller address and name
     // This ensures each deployment has a unique address
     let salt = generate_salt(env, &caller, &name);

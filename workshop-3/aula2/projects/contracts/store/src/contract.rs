@@ -16,9 +16,7 @@ impl Store {
         env.storage().persistent().set(&DataKey::Admin, &admin);
         env.storage().persistent().set(&DataKey::Token, &xlm);
         env.storage().persistent().set(&DataKey::Price, &10_000_000);
-        env.storage()
-            .persistent()
-            .set(&DataKey::NotepadWasmHash, &notepad_wasm_hash);
+        env.storage().persistent().set(&DataKey::NotepadWasmHash, &notepad_wasm_hash);
     }
 
     pub fn set_admin(env: Env, caller: Address, new_admin: Address) -> Result<(), Error> {
