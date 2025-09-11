@@ -1,4 +1,4 @@
-use soroban_sdk::{Address, Env, String, Vec};
+use soroban_sdk::{Address, Env, String};
 
 // Define the interface of the external notepad contract
 #[soroban_sdk::contractclient(name = "NotepadClient")]
