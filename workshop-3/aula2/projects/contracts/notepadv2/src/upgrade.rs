@@ -1,7 +1,7 @@
 use soroban_sdk::{BytesN, Env};
 
 pub fn version() -> u32 {
-    2
+    20
 }
 
 pub fn upgrade(env: Env, new_wasm_hash: BytesN<32>) {
