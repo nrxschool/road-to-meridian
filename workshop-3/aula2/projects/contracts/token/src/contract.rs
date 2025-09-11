@@ -11,14 +11,14 @@ pub struct Meridian;
 
 #[contractimpl]
 impl Meridian {
-    pub fn __constructor(e: &Env, recipient: Address, owner: Address) {
+    pub fn __constructor(e: &Env, owner: Address) {
         Base::set_metadata(
             e,
             18,
             String::from_str(e, "Meridian"),
             String::from_str(e, "MERIDIAN2"),
         );
-        Base::mint(e, &recipient, 100000000000000000000000000);
+        Base::mint(e, &owner, 100000000000000000000000000);
         ownable::set_owner(e, &owner);
     }
 

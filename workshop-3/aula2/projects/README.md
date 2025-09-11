@@ -20,24 +20,28 @@ stellar contract upload --wasm $NOTEPADV2_WASM --source lucas
 # Deploy Token
 
 ```bash
-stellar contract deploy --wasm $TOKEN_WASM --source lucas
+stellar contract deploy --wasm $TOKEN_WASM --source lucas -- --owner $(stellar keys public-key lucas) 
 ```
 
 # Deploy Store
 
 ```bash
-stellar contract deploy --wasm $STORE_WASM --source lucas
+stellar contract deploy --wasm $STORE_WASM --source lucas \
+    -- \
+    --admin $(stellar keys public-key lucas) \
+    --xlm TOKEN_ID \
+    --notepad_wasm_hash NOTEPAD_WASM_HASH
 ```
 
 # Invoke `store.buy_notepad`
 
 ```bash
-contract invoke \
+stellar contract invoke \
   --id STORE_ID \
   --source lucas \
   -- buy_notepad \
   --caller $(stellar keys public-key lucas) \
-  --name bob
+  --name lucas
 ```
 
 # Invoke `notepadv1.add_note`
