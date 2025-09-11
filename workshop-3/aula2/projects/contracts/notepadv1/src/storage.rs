@@ -1,4 +1,4 @@
-use soroban_sdk::{contracttype, Env, String, Symbol, symbol_short};
+use soroban_sdk::{contracttype, symbol_short, Env, String, Symbol};
 
 const COUNTER: Symbol = symbol_short!("counter");
 
@@ -58,6 +58,4 @@ impl StorageManager {
     pub fn create_note(content: String) -> Note {
         Note { content }
     }
-
-
 }

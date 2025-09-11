@@ -1,12 +1,10 @@
 #![no_std]
-use soroban_sdk::{
-    contract, contractimpl, Address, BytesN, Env, String,
-};
+use soroban_sdk::{contract, contractimpl, Address, BytesN, Env, String};
 
 // Módulos modularizados seguindo o princípio de responsabilidade única
 mod admin;
-mod storage;
 mod notepad;
+mod storage;
 
 use admin::AdminManager;
 use notepad::NotepadManager;

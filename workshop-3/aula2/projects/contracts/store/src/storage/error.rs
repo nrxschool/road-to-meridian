@@ -5,4 +5,6 @@ use soroban_sdk::contracterror;
 #[repr(u32)]
 pub enum Error {
     Unauthorized = 1,
+    NoAllowance = 2,
+    InvalidName = 3,
 }

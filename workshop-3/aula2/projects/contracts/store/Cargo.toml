@@ -1,11 +1,15 @@
 [package]
-name = "notepad"
-version = "0.0.1"
-edition = "2021"
+name = "store"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
 publish = false
 
+[package.metadata.stellar]
+cargo_inherit = true
+
 [lib]
-crate-type = ["lib", "cdylib"]
+crate-type = ["cdylib"]
 doctest = false
 
 [dependencies]

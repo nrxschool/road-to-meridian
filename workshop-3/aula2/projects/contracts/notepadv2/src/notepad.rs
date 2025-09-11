@@ -1,6 +1,6 @@
-use soroban_sdk::{Address, BytesN, Env, String, Vec};
 use crate::admin::AdminManager;
-use crate::storage::{StorageManager, Note};
+use crate::storage::{Note, StorageManager};
+use soroban_sdk::{Address, BytesN, Env, String, Vec};
 
 /// Módulo responsável por funcionalidades específicas do notepad v2
 pub struct NotepadManager;
@@ -26,31 +26,40 @@ impl NotepadManager {
     }
 
     /// Adiciona uma nota em um contrato específico (funcionalidade v2)
-    pub fn add_note_on_contract(env: &Env, caller: Address, note_content: String, contract: Address) {
+    pub fn add_note_on_contract(
+        env: &Env,
+        caller: Address,
+        note_content: String,
+        contract: Address,
+    ) {
         AdminManager::check_admin(caller);
-        
+
         // Cria a nota
         let note = StorageManager::create_note(note_content);
-        
+
         // Usa o endereço do contrato como parte da chave para armazenamento
         let counter = StorageManager::increment_counter(env);
-        
+
         // Armazena a nota usando uma tupla como chave (contract, counter)
         let storage_key = (contract, counter);
         env.storage().persistent().set(&storage_key, &note);
     }
 
     /// Obtém todas as notas de um contrato específico (funcionalidade v2)
-    pub fn get_all_notes_from_contract(env: &Env, contract: Address, max_counter: i64) -> Vec<Note> {
+    pub fn get_all_notes_from_contract(
+        env: &Env,
+        contract: Address,
+        max_counter: i64,
+    ) -> Vec<Note> {
         let mut notes = Vec::new(env);
-        
+
         for i in 1..=max_counter {
             let storage_key = (contract.clone(), i);
             if let Some(note) = env.storage().persistent().get(&storage_key) {
                 notes.push_back(note);
             }
         }
-        
+
         notes
     }
 
@@ -70,6 +79,4 @@ impl NotepadManager {
         AdminManager::initialize_admin(env, admin);
         StorageManager::initialize_counter(env);
     }
-
-
 }

@@ -19,7 +19,7 @@ pub fn get_admin(env: Env) {
     env.storage().persistent().get(&DataKey::Admin).unwrap()
 }
 
-fn only_admin(e: &Env, caller: Address) -> Result<(), Error> {
+pub fn only_admin(e: &Env, caller: Address) -> Result<(), Error> {
     let admin: Address = e.storage().persistent().get(&DataKey::Admin).unwrap();
     if admin != caller {
         return Err(Error::Unauthorized);

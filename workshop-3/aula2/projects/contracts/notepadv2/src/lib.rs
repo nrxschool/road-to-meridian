@@ -4,8 +4,8 @@ use soroban_sdk::{Address, BytesN, Env, String, Vec};
 
 // Módulos modularizados seguindo o princípio de responsabilidade única
 mod admin;
-mod storage;
 mod notepad;
+mod storage;
 
 use admin::AdminManager;
 use notepad::NotepadManager;
@@ -64,7 +64,12 @@ impl Notepad {
 
 #[contractimpl]
 impl Notepad {
-    pub fn add_note_on_contract(env: Env, caller: Address, note_content: String, contract: Address) {
+    pub fn add_note_on_contract(
+        env: Env,
+        caller: Address,
+        note_content: String,
+        contract: Address,
+    ) {
         NotepadManager::add_note_on_contract(&env, caller, note_content, contract);
     }
 

@@ -6,4 +6,6 @@ pub enum DataKey {
     Admin,
     Token,
     Price,
+    Balance,
+    NotepadWasmHash,
 }

@@ -1,6 +1,6 @@
-use soroban_sdk::{Address, BytesN, Env, String};
 use crate::admin::AdminManager;
-use crate::storage::{StorageManager, Note};
+use crate::storage::{Note, StorageManager};
+use soroban_sdk::{Address, BytesN, Env, String};
 
 /// Módulo responsável por funcionalidades específicas do notepad v1
 pub struct NotepadManager;
