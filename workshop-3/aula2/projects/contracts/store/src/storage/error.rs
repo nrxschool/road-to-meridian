@@ -7,4 +7,5 @@ pub enum Error {
     Unauthorized = 1,
     NoAllowance = 2,
     InvalidName = 3,
+    DeployNewHash = 4,
 }

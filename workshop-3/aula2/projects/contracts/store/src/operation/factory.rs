@@ -11,12 +11,15 @@ pub fn deploy_notepad(env: &Env, caller: Address, name: String) -> Result<Addres
     }
 
     // Get the stored WASM hash for notepad contracts
-    let wasm_hash: BytesN<32> = env
+    let wasm_hash = if let Some(hash) = env
         .storage()
         .persistent()
-        .get(&DataKey::NotepadWasmHash)
-        .unwrap();
-
+        .get::<DataKey, BytesN<32>>(&DataKey::NotepadWasmHash)
+    {
+        hash
+    } else {
+        return Err(Error::DeployNewHash);
+    };
     // Generate a unique salt based on caller address and name
     // This ensures each deployment has a unique address
     let salt = generate_salt(env, &caller, &name);
