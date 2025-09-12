@@ -1,13 +1,17 @@
 // Stellar Network Configuration
 export const STELLAR_CONFIG = {
   // Testnet RPC URL
-  rpcUrl: 'https://soroban-testnet.stellar.org',
+  rpcUrl: import.meta.env.VITE_RPC_URL || 'https://soroban-testnet.stellar.org',
   
   // Network passphrase for testnet
-  networkPassphrase: 'Test SDF Network ; September 2015',
+  networkPassphrase: import.meta.env.VITE_NETWORK_PASSPHRASE || 'Test SDF Network ; October 2022',
   
   // Deployed Flipper Contract Address
-  contractAddress: 'CDCXOUO6NPG4ZTDE2XHUXXC7NX2DKBYQC4DR76IN2MAOGQFGKAOK67Q6'
+  contractAddress: import.meta.env.VITE_FLIPPER_CONTRACT_ID || 'CDCXOUO6NPG4ZTDE2XHUXXC7NX2DKBYQC4DR76IN2MAOGQFGKAOK67Q6',
+  
+  // Launchtube Configuration
+  launchtubeUrl: import.meta.env.VITE_LAUNCHTUBE_URL || 'https://testnet.launchtube.xyz',
+  launchtubeJwt: import.meta.env.VITE_LAUNCHTUBE_JWT
 }
 
 // Contract method names

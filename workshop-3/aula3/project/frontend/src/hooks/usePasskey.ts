@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 interface PasskeyCredential {
   id: string;
@@ -19,6 +19,7 @@ export const usePasskey = (): UsePasskeyReturn => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [credential, setCredential] = useState<PasskeyCredential | null>(null);
+  const [initialized, setInitialized] = useState(false);
 
   // Check if WebAuthn is supported
   const isSupported = typeof window !== 'undefined' && 
@@ -29,6 +30,22 @@ export const usePasskey = (): UsePasskeyReturn => {
 
   const clearError = useCallback(() => {
     setError(null);
+  }, []);
+
+  // Initialize saved passkey on mount
+  useEffect(() => {
+    const initializeSavedPasskey = () => {
+      const savedCredentialId = localStorage.getItem('passkey_credential_id');
+      const savedPublicKey = localStorage.getItem('passkey_public_key');
+      
+      if (savedCredentialId && savedPublicKey) {
+        setCredential({ id: savedCredentialId, publicKey: savedPublicKey });
+      }
+      
+      setInitialized(true);
+    };
+
+    initializeSavedPasskey();
   }, []);
 
   const createPasskey = useCallback(async () => {

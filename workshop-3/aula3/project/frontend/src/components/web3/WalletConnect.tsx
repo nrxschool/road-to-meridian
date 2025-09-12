@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Wallet, AlertCircle, Key } from 'lucide-react'
+import { Wallet, AlertCircle, Key, ExternalLink } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/Card'
 import { useWalletStore } from '../../stores/useWalletStore'
@@ -22,21 +22,9 @@ export const WalletConnect: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
   const [showTouchIDSetup, setShowTouchIDSetup] = useState(false)
 
+  // Auto-connect when credential is available from saved passkey
   useEffect(() => {
-    // Try to reconnect on component mount
-    const tryReconnect = async () => {
-      const savedCredentialId = localStorage.getItem('passkey_credential_id')
-      const savedPublicKey = localStorage.getItem('passkey_public_key')
-      if (savedCredentialId && savedPublicKey) {
-        connect(savedPublicKey)
-      }
-    }
-    tryReconnect()
-  }, [connect])
-
-  // Auto-connect when credential is available
-  useEffect(() => {
-    if (credential && !isConnected) {
+    if (credential && credential.publicKey && !isConnected) {
       connect(credential.publicKey)
     }
   }, [credential, isConnected, connect])
@@ -81,10 +69,27 @@ export const WalletConnect: React.FC = () => {
   }
 
   const handleDisconnect = () => {
-    disconnect()
-    localStorage.removeItem('passkey_credential_id')
-    localStorage.removeItem('passkey_public_key')
-    setError(null)
+    try {
+      // Clear wallet store state
+      disconnect()
+      
+      // Clear all passkey related data from localStorage
+      localStorage.removeItem('passkey_credential_id')
+      localStorage.removeItem('passkey_public_key')
+      localStorage.removeItem('flipper_state')
+      
+      // Clear any errors
+      setError(null)
+      clearError()
+      
+      // Reset component state
+      setShowCreateForm(false)
+      setShowTouchIDSetup(false)
+      setUsername('')
+    } catch (err) {
+      console.error('Error during disconnect:', err)
+      setError('Failed to disconnect properly')
+    }
   }
 
   if (isConnected && publicKey) {
@@ -105,14 +110,26 @@ export const WalletConnect: React.FC = () => {
             backgroundColor: '#f3f4f6',
             border: '2px solid #d1d5db'
           }}>
-            <p style={{ fontSize: '14px', fontWeight: '500', marginBottom: '4px' }}>Contract Address:</p>
-            <p style={{
-              fontSize: '12px',
-              fontFamily: 'monospace',
-              wordBreak: 'break-all'
-            }}>
-              {publicKey.slice(0, 8)}...{publicKey.slice(-8)}
-            </p>
+            <p style={{ fontSize: '14px', fontWeight: '500', marginBottom: '4px' }}>Wallet Address:</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <p style={{
+                fontSize: '12px',
+                fontFamily: 'monospace',
+                wordBreak: 'break-all',
+                flex: 1
+              }}>
+                {publicKey.slice(0, 8)}...{publicKey.slice(-8)}
+              </p>
+              <Button
+                onClick={() => window.open(`https://stellar.expert/explorer/testnet/account/${publicKey}`, '_blank')}
+                variant="outline"
+                size="sm"
+                style={{ padding: '4px 8px', minWidth: 'auto' }}
+                title="View on Stellar Expert"
+              >
+                <ExternalLink style={{ height: '14px', width: '14px' }} />
+              </Button>
+            </div>
           </div>
           <Button 
             onClick={handleDisconnect}
