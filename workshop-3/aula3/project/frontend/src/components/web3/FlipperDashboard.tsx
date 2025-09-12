@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui
 import { useContractStore } from '../../stores/useContractStore'
 import { useWalletStore } from '../../stores/useWalletStore'
 import { getContractAddress } from '../../lib/stellar'
-import { cn } from '../../lib/utils'
 
 export const FlipperDashboard: React.FC = () => {
   const { isConnected } = useWalletStore()
@@ -33,8 +32,8 @@ export const FlipperDashboard: React.FC = () => {
 
   if (!isConnected) {
     return (
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
+      <Card style={{ width: '100%', maxWidth: '448px' }}>
+        <CardHeader style={{ textAlign: 'center' }}>
           <CardTitle>Contract Dashboard</CardTitle>
           <CardDescription>
             Please connect your wallet to interact with the contract
@@ -45,13 +44,13 @@ export const FlipperDashboard: React.FC = () => {
   }
 
   return (
-    <Card className="w-full max-w-md">
-      <CardHeader className="text-center">
-        <CardTitle className="flex items-center justify-center gap-2">
+    <Card style={{ width: '100%', maxWidth: '448px' }}>
+      <CardHeader style={{ textAlign: 'center' }}>
+        <CardTitle style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
           {currentState ? (
-            <ToggleRight className="h-6 w-6 text-green-600" />
+            <ToggleRight style={{ height: '24px', width: '24px', color: '#059669' }} />
           ) : (
-            <ToggleLeft className="h-6 w-6 text-gray-400" />
+            <ToggleLeft style={{ height: '24px', width: '24px', color: '#9ca3af' }} />
           )}
           Flipper Contract
         </CardTitle>
@@ -60,28 +59,48 @@ export const FlipperDashboard: React.FC = () => {
         </CardDescription>
       </CardHeader>
       
-      <CardContent className="space-y-4">
+      <CardContent style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {error && (
-          <div className="flex items-center gap-2 p-3 bg-red-50 border-2 border-red-200 text-red-800">
-            <AlertCircle className="h-4 w-4" />
-            <p className="text-sm">{error}</p>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '12px',
+            backgroundColor: '#fef2f2',
+            border: '2px solid #fecaca',
+            color: '#991b1b'
+          }}>
+            <AlertCircle style={{ height: '16px', width: '16px' }} />
+            <p style={{ fontSize: '14px' }}>{error}</p>
           </div>
         )}
         
-        <div className="p-6 bg-gray-100 border-2 border-gray-300 text-center">
-          <div className="text-4xl font-bold mb-2">
+        <div style={{
+          padding: '24px',
+          backgroundColor: '#f3f4f6',
+          border: '2px solid #d1d5db',
+          textAlign: 'center'
+        }}>
+          <div style={{
+            fontSize: '36px',
+            fontWeight: 'bold',
+            marginBottom: '8px'
+          }}>
             {currentState ? 'TRUE' : 'FALSE'}
           </div>
-          <p className="text-sm text-gray-600">
+          <p style={{
+            fontSize: '14px',
+            color: '#6b7280'
+          }}>
             Contract State
           </p>
         </div>
         
-        <div className="flex gap-2">
+        <div style={{ display: 'flex', gap: '8px' }}>
           <Button 
             onClick={handleFlip}
             disabled={isLoading}
-            className="flex-1"
+            style={{ flex: 1 }}
             size="lg"
           >
             {isLoading ? 'Flipping...' : 'Flip State'}
@@ -93,14 +112,35 @@ export const FlipperDashboard: React.FC = () => {
             variant="outline"
             size="lg"
           >
-            <RefreshCw className={cn('h-4 w-4', isLoading && 'animate-spin')} />
+            <RefreshCw style={{
+              height: '16px',
+              width: '16px',
+              animation: isLoading ? 'spin 1s linear infinite' : 'none'
+            }} />
           </Button>
         </div>
         
-        <div className="text-xs text-gray-600 text-center space-y-1">
+        <div style={{
+          fontSize: '12px',
+          color: '#6b7280',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '4px'
+        }}>
           <p>Click "Flip State" to toggle the contract state</p>
-          <div className="mt-3 p-2 bg-gray-50 border border-gray-200 rounded">
-            <p className="font-mono text-xs break-all">
+          <div style={{
+            marginTop: '12px',
+            padding: '8px',
+            backgroundColor: '#f9fafb',
+            border: '1px solid #e5e7eb',
+            borderRadius: '4px'
+          }}>
+            <p style={{
+              fontFamily: 'monospace',
+              fontSize: '12px',
+              wordBreak: 'break-all'
+            }}>
               Contract: {getContractAddress()}
             </p>
           </div>

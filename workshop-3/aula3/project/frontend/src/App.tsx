@@ -7,13 +7,39 @@ function App() {
   const { isConnected } = useWalletStore()
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4">
-      <div className="w-full max-w-md space-y-6">
-        <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight">
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#ffffff',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '16px'
+    }}>
+      <div style={{
+        width: '100%',
+        maxWidth: '448px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '24px'
+      }}>
+        <div style={{
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px'
+        }}>
+          <h1 style={{
+            fontSize: '30px',
+            fontWeight: 'bold',
+            letterSpacing: '-0.025em',
+            margin: 0
+          }}>
             Stellar Flipper
           </h1>
-          <p className="text-gray-600">
+          <p style={{
+            color: '#6b7280',
+            margin: 0
+          }}>
             A simple DApp to interact with a Stellar smart contract
           </p>
         </div>
@@ -21,7 +47,9 @@ function App() {
         <WalletConnect />
         
         {isConnected && (
-          <div className="animate-in slide-in-from-bottom-4 duration-300">
+          <div style={{
+            animation: 'slideInFromBottom 0.3s ease-out'
+          }}>
             <FlipperDashboard />
           </div>
         )}

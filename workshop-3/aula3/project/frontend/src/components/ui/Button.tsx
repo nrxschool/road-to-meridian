@@ -1,5 +1,4 @@
 import React from 'react'
-import { cn } from '../../lib/utils'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'default' | 'outline' | 'secondary'
@@ -8,32 +7,69 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
+  ({ style, variant = 'default', size = 'default', ...props }, ref) => {
+    const getVariantStyles = () => {
+      switch (variant) {
+        case 'outline':
+          return {
+            border: '2px solid #d1d5db',
+            backgroundColor: '#ffffff',
+            color: '#111827'
+          }
+        case 'secondary':
+          return {
+            backgroundColor: '#e5e7eb',
+            color: '#374151',
+            border: '2px solid #e5e7eb'
+          }
+        default:
+          return {
+            backgroundColor: '#2563eb',
+            color: '#ffffff',
+            border: '2px solid #2563eb'
+          }
+      }
+    }
+
+    const getSizeStyles = () => {
+      switch (size) {
+        case 'sm':
+          return {
+            height: '36px',
+            paddingLeft: '12px',
+            paddingRight: '12px'
+          }
+        case 'lg':
+          return {
+            height: '44px',
+            paddingLeft: '32px',
+            paddingRight: '32px'
+          }
+        default:
+          return {
+            height: '40px',
+            paddingLeft: '16px',
+            paddingRight: '16px',
+            paddingTop: '8px',
+            paddingBottom: '8px'
+          }
+      }
+    }
+
     return (
       <button
-        className={cn(
-          // Base styles with square borders
-          'inline-flex items-center justify-center font-medium transition-colors',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-          'disabled:pointer-events-none disabled:opacity-50',
-          'border-2', // Square borders
-          
-          // Variants
-          {
-            'bg-blue-600 text-white border-blue-600 hover:bg-blue-700': variant === 'default',
-            'border-gray-300 bg-white hover:bg-gray-100 hover:text-gray-900': variant === 'outline',
-            'bg-gray-200 text-gray-800 border-gray-200 hover:bg-gray-300': variant === 'secondary',
-          },
-          
-          // Sizes
-          {
-            'h-10 px-4 py-2': size === 'default',
-            'h-9 px-3': size === 'sm',
-            'h-11 px-8': size === 'lg',
-          },
-          
-          className
-        )}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontWeight: '500',
+          transition: 'colors 0.2s',
+          cursor: 'pointer',
+          borderRadius: '6px',
+          ...getVariantStyles(),
+          ...getSizeStyles(),
+          ...style
+        }}
         ref={ref}
         {...props}
       />
