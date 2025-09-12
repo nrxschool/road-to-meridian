@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ToggleLeft, ToggleRight, RefreshCw, AlertCircle } from 'lucide-react'
+import { AlertCircle } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/Card'
 import { useContractStore } from '../../stores/useContractStore'
@@ -46,17 +46,9 @@ export const FlipperDashboard: React.FC = () => {
   return (
     <Card style={{ width: '100%', maxWidth: '448px' }}>
       <CardHeader style={{ textAlign: 'center' }}>
-        <CardTitle style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-          {currentState ? (
-            <ToggleRight style={{ height: '24px', width: '24px', color: '#059669' }} />
-          ) : (
-            <ToggleLeft style={{ height: '24px', width: '24px', color: '#9ca3af' }} />
-          )}
+        <CardTitle>
           Flipper Contract
         </CardTitle>
-        <CardDescription>
-          Current state: {currentState ? 'ON' : 'OFF'}
-        </CardDescription>
       </CardHeader>
       
       <CardContent style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -96,29 +88,14 @@ export const FlipperDashboard: React.FC = () => {
           </p>
         </div>
         
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <Button 
-            onClick={handleFlip}
-            disabled={isLoading}
-            style={{ flex: 1 }}
-            size="lg"
-          >
-            {isLoading ? 'Flipping...' : 'Flip State'}
-          </Button>
-          
-          <Button 
-            onClick={handleRefresh}
-            disabled={isLoading}
-            variant="outline"
-            size="lg"
-          >
-            <RefreshCw style={{
-              height: '16px',
-              width: '16px',
-              animation: isLoading ? 'spin 1s linear infinite' : 'none'
-            }} />
-          </Button>
-        </div>
+        <Button 
+          onClick={handleFlip}
+          disabled={isLoading}
+          style={{ width: '100%' }}
+          size="lg"
+        >
+          {isLoading ? 'Flipping...' : 'Flip State'}
+        </Button>
         
         <div style={{
           fontSize: '12px',
@@ -136,13 +113,20 @@ export const FlipperDashboard: React.FC = () => {
             border: '1px solid #e5e7eb',
             borderRadius: '4px'
           }}>
-            <p style={{
-              fontFamily: 'monospace',
-              fontSize: '12px',
-              wordBreak: 'break-all'
-            }}>
+            <a 
+              href={`https://stellar.expert/explorer/testnet/contract/${getContractAddress()}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: 'monospace',
+                fontSize: '12px',
+                wordBreak: 'break-all',
+                color: '#2563eb',
+                textDecoration: 'underline'
+              }}
+            >
               Contract: {getContractAddress()}
-            </p>
+            </a>
           </div>
           <p>Current network: Testnet</p>
         </div>
