@@ -1,3 +1,5 @@
+# ❤️
+
 ```bash
 NOTEPADV1_WASM="./target/wasm32v1-none/release/notepadv1.wasm"
 NOTEPADV2_WASM="./target/wasm32v1-none/release/notepadv2.wasm"
@@ -20,7 +22,7 @@ stellar contract upload --wasm $NOTEPADV2_WASM --source lucas
 # Deploy Token
 
 ```bash
-stellar contract deploy --wasm $TOKEN_WASM --source lucas -- --owner $(stellar keys public-key lucas) 
+stellar contract deploy --wasm $TOKEN_WASM --source lucas -- --owner $(stellar keys public-key lucas)
 ```
 
 # Deploy Store
@@ -80,7 +82,7 @@ contract invoke \
 ```bash
 contract invoke \
   --id STORE_ID \
-  --source lucas \
+  --source grazy \
   -- buy_notepad \
   --caller $(stellar keys public-key lucas) \
   --name bob
@@ -94,7 +96,7 @@ contract invoke \
   --source lucas \
   -- add_note \
   --caller $(stellar keys public-key lucas) \
-  --note "tive uma grande ideia"
+  --note "tive uma grande ideia denovo"
 ```
 
 # Invoke `notepadv2.get_note`
@@ -112,11 +114,11 @@ contract invoke \
 ```bash
 contract invoke \
   --id NOTEPADV1_ID \
-  --source lucas \
+  --source grazy \
   -- add_note_contract \
   --contract NOTEPADV2_ID \
   --caller $(stellar keys public-key bob) \
-  --note_content "tive uma grande ideia" \
+  --note_content "todo dia uma nova ideia" \
 ```
 
 # Invoke `notepadv1.get_note_contract(v2)`
