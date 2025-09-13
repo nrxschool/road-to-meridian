@@ -10,7 +10,10 @@ const STATE: Symbol = symbol_short!("STATE");
 #[contractimpl]
 impl Flipper {
     pub fn state(env: Env) -> bool {
-        env.storage().instance().get(&STATE).unwrap_or(false)
+        env.storage()
+            .instance()
+            .get::<Symbol, bool>(&STATE)
+            .unwrap_or(false)
     }
 
     pub fn flip(env: Env) {

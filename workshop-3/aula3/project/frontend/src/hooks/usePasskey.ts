@@ -87,7 +87,7 @@ export const usePasskey = (): UsePasskeyReturn => {
           attestation: 'direct', // Request direct attestation for better platform integration
         },
       }) as PublicKeyCredential;
-
+Triste fim
       if (!credential) {
         throw new Error('Falha ao criar passkey');
       }
