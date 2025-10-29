@@ -42,3 +42,12 @@ Cada aula contém:
 - 🖼️ **assets/**: Recursos visuais e diagramas
 
 Aproveite os conteúdos e boa jornada rumo ao Meridian! 🦀⭐
+
+---
+
+# 💡 Este repositório é parte dos cursos, workshops ou bootcamps da NearX School.
+
+Quer acompanhar a aula completa em vídeo e entrar na comunidade? 
+👉 https://nearx.com.br/register | Comunidade: https://discord.com/invite/wavXA98gd8
+
+_NearX School: Aprenda o futuro, hoje._
